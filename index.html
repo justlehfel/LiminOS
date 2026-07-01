@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LiminOS | Proprietary Liminality Database</title>
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -160,7 +157,6 @@
 
     <main class="flex-1 h-full overflow-y-auto relative z-10 scroll-smooth pb-20 md:pb-0 hide-scrollbar" id="main-content">
         
-        <!-- ================= HOME VIEW ================= -->
         <section id="view-home" class="page-view block-view p-6 md:p-12 lg:p-16 max-w-7xl mx-auto">
             <header class="mb-16 animate-slide-up" style="animation-delay: 0.1s;">
                 <div class="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-liminal-muted mb-6">SYSTEM DASHBOARD</div>
@@ -199,7 +195,6 @@
             </div>
         </section>
 
-        <!-- ================= LIVE TELEMETRY VIEW ================= -->
         <section id="view-live" class="page-view flex-col p-6 md:p-8 max-w-[1600px] mx-auto min-h-full">
             <header class="mb-6 flex flex-col md:flex-row justify-between md:items-end gap-4 animate-slide-up">
                 <div>
@@ -216,7 +211,6 @@
             </header>
 
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 flex-1 mb-6">
-                <!-- Visualizer 1: Anomaly Radar -->
                 <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 p-4 flex flex-col relative overflow-hidden h-[300px]">
                     <h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono mb-2 z-10">Entity/Anomaly Proximity Sweep</h3>
                     <div class="flex-1 relative flex items-center justify-center">
@@ -224,7 +218,6 @@
                     </div>
                 </div>
 
-                <!-- Visualizer 2: Dimensional Resonance Heatmap -->
                 <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 p-4 flex flex-col relative overflow-hidden h-[300px]">
                     <h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono mb-2 z-10 flex justify-between">
                         <span>Dimensional Resonance Matrix</span>
@@ -235,18 +228,15 @@
                     </div>
                 </div>
 
-                <!-- Scrolling Event Log -->
                 <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 flex flex-col h-[300px]">
                     <div class="p-3 border-b border-liminal-border bg-blue-900/10">
                         <h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono">Real-Time Event Log</h3>
                     </div>
                     <div class="flex-1 overflow-y-auto p-3 space-y-1.5 font-mono text-[9px] hide-scrollbar" id="live-metrics-list">
-                        <!-- Populated by JS -->
-                    </div>
+                        </div>
                 </div>
             </div>
 
-            <!-- Fixed Fluctuating Metrics Grid -->
             <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 flex flex-col overflow-hidden">
                 <div class="p-4 border-b border-liminal-border bg-black/80 flex items-center justify-between">
                     <h3 class="text-xs font-bold text-white uppercase tracking-wider font-mono">Global Node Diagnostics (30 Arrays)</h3>
@@ -256,12 +246,10 @@
                     </div>
                 </div>
                 <div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3" id="fixed-metrics-grid">
-                    <!-- Populated by JS -->
-                </div>
+                    </div>
             </div>
         </section>
 
-        <!-- ================= CLASSIFICATION MATRIX VIEW ================= -->
         <section id="view-classifications" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto">
             <header class="mb-12 animate-slide-up">
                 <h2 class="text-4xl font-bold text-white mb-4 tracking-tight border-b-2 border-red-500 pb-4 inline-block">Liminality Classification Index</h2>
@@ -269,11 +257,9 @@
             </header>
 
             <div id="classification-container" class="space-y-12">
-                <!-- Injected via JS -->
-            </div>
+                </div>
         </section>
 
-        <!-- ================= LEVELS LIST VIEW ================= -->
         <section id="view-levels" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto">
             <header class="mb-10 border-b border-liminal-border pb-6">
                 <h2 class="text-4xl font-bold text-white tracking-tight flex items-center gap-4">
@@ -282,11 +268,9 @@
                 <p class="text-liminal-muted font-mono text-sm mt-3">Full proprietary topological and spatial database.</p>
             </header>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="levels-grid">
-                <!-- Injected via JS -->
-            </div>
+                </div>
         </section>
 
-        <!-- ================= ENTITIES LIST VIEW ================= -->
         <section id="view-entities" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto">
             <header class="mb-10 border-b border-liminal-border pb-6">
                 <h2 class="text-4xl font-bold text-white tracking-tight flex items-center gap-4">
@@ -295,16 +279,12 @@
                 <p class="text-liminal-muted font-mono text-sm mt-3">Categorization of anomalous flora, fauna, and conceptual beings.</p>
             </header>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="entities-grid">
-                <!-- Injected via JS -->
-            </div>
+                </div>
         </section>
 
-        <!-- ================= UNIFIED DATA VIEW (Template for Levels and Entities) ================= -->
         <section id="view-data" class="page-view flex-col min-h-full">
-            <!-- Hero Banner -->
             <div class="relative w-full h-64 md:h-80 overflow-hidden border-b border-liminal-border flex-shrink-0" id="data-hero">
                 <div class="absolute inset-0 bg-[#0a0a07]"></div>
-                <!-- Swapped out static image style to properly tile the injected procedural textures -->
                 <div id="data-hero-bg-tile" class="absolute inset-0 opacity-40 mix-blend-luminosity transform scale-105 transition-transform duration-[10s]" style="background-repeat: repeat; background-size: auto;"></div>
                 
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a07] via-[#0a0a07]/80 to-transparent"></div>
@@ -313,43 +293,33 @@
                 <div class="absolute bottom-0 left-0 p-6 md:px-12 md:py-8 w-full animate-slide-up flex flex-col md:flex-row md:items-end justify-between gap-4 z-10">
                     <div>
                         <div class="flex flex-wrap items-center gap-2 mb-3" id="data-tags">
-                            <!-- Tags injected via JS -->
-                        </div>
+                            </div>
                         <h2 class="text-5xl md:text-7xl font-bold text-white tracking-tight flex items-baseline gap-4 drop-shadow-2xl">
                             <span id="data-title-id">ID</span>
                             <span class="text-2xl md:text-3xl text-liminal-primary font-mono font-normal tracking-normal opacity-90" id="data-title-name">"Name"</span>
                         </h2>
                     </div>
                     <div class="text-right font-mono text-[10px] text-liminal-muted hidden md:block" id="data-hero-stats">
-                        <!-- Stats injected via JS -->
-                    </div>
+                        </div>
                 </div>
             </div>
 
-            <!-- Main Content Area: Content and Sidebar -->
             <div class="flex-1 w-full flex flex-col xl:flex-row relative">
                 
-                <!-- Left Column: Content Tabs -->
                 <div class="flex-1 xl:w-[55%] p-6 md:p-10 lg:p-14 overflow-y-auto hide-scrollbar z-10 bg-[#0a0a07]">
                     
                     <div class="flex flex-wrap gap-2 border-b border-liminal-border mb-8 sticky top-0 bg-[#0a0a07]/90 backdrop-blur-md z-20 pt-2 pb-2" id="data-tabs-container">
-                        <!-- Tabs injected via JS depending on Data Type -->
-                    </div>
+                        </div>
 
                     <div id="data-content-area" class="relative">
-                        <!-- Content sections injected via JS -->
-                    </div>
+                        </div>
                 </div>
 
-                <!-- Right Column: Interactive Elements & Metrics -->
                 <div class="w-full xl:w-[45%] flex flex-col border-l border-liminal-border z-20 xl:sticky top-0 xl:h-[calc(100vh-20rem)] bg-[#050505]">
                     
-                    <!-- Top Right Module (Map Engine for Levels, Custom Graphic for Entities) -->
                     <div class="h-[50vh] xl:h-[55%] border-b border-liminal-border relative flex flex-col bg-[#030303]" id="data-interactive-module">
-                        <!-- Injected via JS -->
-                    </div>
+                        </div>
 
-                    <!-- Metrics Data Container -->
                     <div class="flex-1 bg-[#050505] overflow-y-auto hide-scrollbar flex flex-col relative">
                         <div class="p-4 border-b border-liminal-border bg-black/80 sticky top-0 z-10 flex justify-between items-center backdrop-blur-md shadow-md">
                             <div>
@@ -364,19 +334,27 @@
                         <input type="text" id="metrics-search" placeholder="Search metrics... (e.g. Hume, Time, Wall)" class="hidden w-full bg-black/50 border-b border-liminal-primary/30 p-4 text-xs text-white font-mono outline-none" onkeyup="filterMetrics()">
 
                         <div id="metrics-container" class="pb-10">
-                            <!-- Populated by JS -->
-                        </div>
+                            </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- LOAD EXTERNAL DATA SOURCE -->
     <script src="data.js"></script>
 
-    <!-- CORE LOGIC AND ENGINE -->
     <script>
+        function toggleFullscreen(elemId) {
+            const elem = document.getElementById(elemId);
+            if (!document.fullscreenElement) {
+                elem.requestFullscreen().catch(err => {
+                    console.warn(`Fullscreen error: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
         const Router = {
             currentDataId: null,
             currentDataType: null,
@@ -571,6 +549,9 @@
 
                         <div id="map-container" class="flex-1 w-full relative outline-none bg-[#030303]" tabindex="0">
                             <canvas id="levelMap" class="absolute inset-0 block w-full h-full"></canvas>
+                            <button onclick="toggleFullscreen('map-container')" class="absolute top-4 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center shadow-2xl z-30">
+                                <i class="ph ph-corners-out"></i>
+                            </button>
                             <div class="absolute top-4 left-4 bg-black/80 p-3 rounded border border-white/5 backdrop-blur-md pointer-events-none shadow-2xl">
                                 <div class="text-[8px] font-mono text-liminal-muted mb-1 tracking-widest flex items-center gap-2">
                                     <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
@@ -591,11 +572,10 @@
                                     <button onclick="mapEngine.changeZ(-1)" class="text-liminal-muted hover:text-white transition w-full py-1 hover:bg-white/5 rounded"><i class="ph ph-caret-down"></i></button>
                                 </div>
                             </div>
-                            <div class="absolute top-4 right-4 text-right pointer-events-none">
+                            <div class="absolute top-4 right-4 text-right pointer-events-none z-20">
                                 <div class="text-[9px] font-mono text-liminal-muted uppercase bg-black/60 px-2 py-1 rounded backdrop-blur border border-white/5 inline-block">Double-click to drop pin</div>
                             </div>
 
-                            <!-- Pin Modal -->
                             <div id="pin-modal" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-liminal-panel border border-liminal-border p-5 rounded-lg shadow-2xl z-50 w-72 backdrop-blur-xl">
                                 <div class="flex items-center gap-2 mb-3">
                                     <i class="ph-fill ph-map-pin text-liminal-primary text-lg"></i>
@@ -616,21 +596,40 @@
                     setTimeout(() => { mapEngine.init(data.mapConfig); }, 50);
                 } else {
                     document.getElementById('metrics-panel-title').innerHTML = `<i class="ph ph-fingerprint text-purple-400"></i> Biological/Anomalous Telemetry`;
-                    // Entity Visual Graphic
-                    moduleContainer.innerHTML = `
-                        <div class="flex-1 relative flex items-center justify-center bg-[#050505] overflow-hidden">
-                            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEg0VjRIMEoiIGZpbGw9IiMxYTFhMWEiIGZpbGwtb3BhY2l0eT0iMC41Ii8+Cjwvc3ZnPg==')] opacity-30"></div>
-                            <div class="relative z-10 flex flex-col items-center">
-                                <div class="w-32 h-32 rounded-full border-2 border-purple-500/30 flex items-center justify-center relative mb-4 animate-pulse-fast">
-                                    <div class="absolute inset-0 rounded-full border-t-2 border-purple-500 animate-spin-slow"></div>
-                                    <i class="ph ph-ghost text-6xl text-purple-400 opacity-80"></i>
+                    
+                    const isTraceable = data.traceable !== false;
+                    
+                    if (isTraceable) {
+                        moduleContainer.innerHTML = `
+                            <div class="flex-1 relative flex items-center justify-center bg-[#050505] overflow-hidden">
+                                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEg0VjRIMEoiIGZpbGw9IiMxYTFhMWEiIGZpbGwtb3BhY2l0eT0iMC41Ii8+Cjwvc3ZnPg==')] opacity-30"></div>
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="w-64 h-64 border border-purple-500/20 rounded-full absolute animate-[ping_3s_linear_infinite]"></div>
+                                    <div class="w-48 h-48 border border-purple-500/30 rounded-full absolute"></div>
+                                    <div class="w-32 h-32 border border-purple-500/50 rounded-full absolute"></div>
                                 </div>
-                                <h3 class="text-white font-mono font-bold tracking-widest">ENTITY SIGNATURE TRACKING</h3>
-                                <p class="text-xs text-purple-400 font-mono mt-2">NO REAL-TIME VISUAL AVAILABLE</p>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse shadow-[0_0_15px_#ef4444] mb-4"></div>
+                                    <h3 class="text-white font-mono font-bold tracking-widest text-center">BIOMETRIC SIGNATURE LOCKED</h3>
+                                    <p class="text-[10px] text-red-400 font-mono mt-1 text-center">TRACKING ACTIVE</p>
+                                </div>
                             </div>
-                        </div>
-                    `;
-                    // Stop map drawing if it was running
+                        `;
+                    } else {
+                        moduleContainer.innerHTML = `
+                            <div class="flex-1 relative flex items-center justify-center bg-[#050505] overflow-hidden">
+                                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEg0VjRIMEoiIGZpbGw9IiMxYTFhMWEiIGZpbGwtb3BhY2l0eT0iMC41Ii8+Cjwvc3ZnPg==')] opacity-30"></div>
+                                <div class="relative z-10 flex flex-col items-center">
+                                    <div class="w-32 h-32 rounded-full border-2 border-purple-500/30 flex items-center justify-center relative mb-4 animate-pulse-fast">
+                                        <div class="absolute inset-0 rounded-full border-t-2 border-purple-500 animate-spin-slow"></div>
+                                        <i class="ph ph-ghost text-6xl text-purple-400 opacity-80"></i>
+                                    </div>
+                                    <h3 class="text-white font-mono font-bold tracking-widest">ENTITY SIGNATURE TRACKING</h3>
+                                    <p class="text-xs text-purple-400 font-mono mt-2">NO REAL-TIME VISUAL AVAILABLE</p>
+                                </div>
+                            </div>
+                        `;
+                    }
                     if(mapEngine.animationFrame) cancelAnimationFrame(mapEngine.animationFrame);
                 }
             },
@@ -877,7 +876,13 @@
             zoomIn() { this.zoom = Math.min(10, this.zoom * 1.5); },
             zoomOut() { this.zoom = Math.max(0.1, this.zoom * 0.7); },
             resetView() { this.camX = 0; this.camY = 0; this.zoom = 1; this.updateHUD(); },
-            changeZ(delta) { this.camZ += delta; document.getElementById('hud-z').innerText = this.camZ; },
+            changeZ(delta) { 
+                let newZ = this.camZ + delta;
+                if (this.config.minZ !== undefined && newZ < this.config.minZ) return;
+                if (this.config.maxZ !== undefined && newZ > this.config.maxZ) return;
+                this.camZ = newZ; 
+                document.getElementById('hud-z').innerText = this.camZ; 
+            },
             
             jumpToCoordinates() {
                 this.camX = parseFloat(document.getElementById('search-x').value) || 0;
@@ -952,6 +957,23 @@
                 }
                 ctx.stroke();
 
+                // Surface Areas (Custom 2D shapes for levels)
+                if (this.config.surfaceAreas) {
+                    this.config.surfaceAreas.forEach(area => {
+                        if (area.z === undefined || area.z === this.camZ) {
+                            const sx = (area.x - this.camX) * scale;
+                            const sy = (area.y - this.camY) * scale;
+                            ctx.fillStyle = area.color;
+                            ctx.fillRect(sx, sy, area.w * scale, area.h * scale);
+                            if (area.tag && this.zoom > 0.6) {
+                                ctx.fillStyle = area.textColor || '#ffffff';
+                                ctx.font = 'bold 10px "JetBrains Mono"';
+                                ctx.fillText(area.tag, sx + (area.w * scale)/2, sy + (area.h * scale)/2);
+                            }
+                        }
+                    });
+                }
+
                 // Walls
                 ctx.strokeStyle = '#eab308';
                 ctx.lineWidth = Math.max(1.5, scale * 0.15);
@@ -976,28 +998,30 @@
 
                 // POIs
                 ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-                for (let x = startX; x < endX; x += gs) {
-                    for (let y = startY; y < endY; y += gs) {
-                        const poiHash = deterministicHash(x, y, this.camZ, this.config.seed, 'is_poi');
-                        if (poiHash < this.config.poiChance) {
-                            const poiTypeHash = deterministicHash(x, y, this.camZ, this.config.seed, 'poi_type');
-                            const poi = this.config.pois[Math.floor(poiTypeHash * this.config.pois.length)];
-                            
-                            const px = (x + gs/2 - this.camX) * scale;
-                            const py = (y + gs/2 - this.camY) * scale;
+                if (this.config.pois) {
+                    for (let x = startX; x < endX; x += gs) {
+                        for (let y = startY; y < endY; y += gs) {
+                            const poiHash = deterministicHash(x, y, this.camZ, this.config.seed, 'is_poi');
+                            if (poiHash < this.config.poiChance) {
+                                const poiTypeHash = deterministicHash(x, y, this.camZ, this.config.seed, 'poi_type');
+                                const poi = this.config.pois[Math.floor(poiTypeHash * this.config.pois.length)];
+                                
+                                const px = (x + gs/2 - this.camX) * scale;
+                                const py = (y + gs/2 - this.camY) * scale;
 
-                            ctx.beginPath();
-                            ctx.arc(px, py, scale * 0.8, 0, Math.PI * 2);
-                            ctx.fillStyle = poi.color + '22'; ctx.fill();
-                            ctx.lineWidth = 1; ctx.strokeStyle = poi.color; ctx.stroke();
-                            
-                            ctx.font = `${Math.max(10, scale)}px sans-serif`;
-                            ctx.fillStyle = '#fff'; ctx.fillText(poi.icon, px, py + 1);
+                                ctx.beginPath();
+                                ctx.arc(px, py, scale * 0.8, 0, Math.PI * 2);
+                                ctx.fillStyle = poi.color + '22'; ctx.fill();
+                                ctx.lineWidth = 1; ctx.strokeStyle = poi.color; ctx.stroke();
+                                
+                                ctx.font = `${Math.max(10, scale)}px sans-serif`;
+                                ctx.fillStyle = '#fff'; ctx.fillText(poi.icon, px, py + 1);
 
-                            if (this.zoom > 1.2) {
-                                ctx.font = `10px "JetBrains Mono"`;
-                                ctx.fillStyle = poi.color;
-                                ctx.fillText(poi.name, px, py + scale * 1.5);
+                                if (this.zoom > 1.2) {
+                                    ctx.font = `10px "JetBrains Mono"`;
+                                    ctx.fillStyle = poi.color;
+                                    ctx.fillText(poi.name, px, py + scale * 1.5);
+                                }
                             }
                         }
                     }
