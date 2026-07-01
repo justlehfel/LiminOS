@@ -5,52 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LiminOS | Proprietary Liminality Database</title>
     
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
                     colors: {
                         liminal: {
-                            bg: '#030303',
-                            panel: '#080808',
-                            border: '#1a1a1a',
-                            primary: '#eab308', 
-                            primaryHover: '#ca8a04',
-                            text: '#d4d4d4',
-                            muted: '#666666',
-                            danger: '#ef4444',
-                            safe: '#22c55e',
-                            glass: 'rgba(8, 8, 8, 0.8)'
+                            bg: '#030303', panel: '#080808', border: '#1a1a1a', primary: '#eab308', 
+                            primaryHover: '#ca8a04', text: '#d4d4d4', muted: '#666666', danger: '#ef4444', safe: '#22c55e'
                         }
                     },
                     animation: {
-                        'flicker': 'flicker 0.15s infinite',
-                        'scanline': 'scanline 8s linear infinite',
-                        'fade-in': 'fadeIn 0.5s ease-out forwards',
-                        'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                        'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'data-stream': 'dataStream 20s linear infinite',
-                        'spin-slow': 'spin 4s linear infinite',
+                        'flicker': 'flicker 0.15s infinite', 'scanline': 'scanline 8s linear infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards', 'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite', 'spin-slow': 'spin 4s linear infinite',
                     },
                     keyframes: {
                         flicker: { '0%, 100%': { opacity: 1 }, '50%': { opacity: 0.95 } },
-                        scanline: { '0%': { transform: 'translateY(-100%)' }, '100%': { transform: 'translateY(100vh)' } },
                         fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
-                        slideUp: { '0%': { opacity: 0, transform: 'translateY(20px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
-                        dataStream: { '0%': { backgroundPosition: '0 0' }, '100%': { backgroundPosition: '0 1000px' } }
+                        slideUp: { '0%': { opacity: 0, transform: 'translateY(20px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } }
                     }
                 }
             }
@@ -64,7 +42,6 @@
         ::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #eab308; }
 
-        /* Advanced CRT Effects */
         .crt::before {
             content: " "; display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.04), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.04));
@@ -74,22 +51,15 @@
         #map-container { cursor: crosshair; overflow: hidden; position: relative; outline: none; }
         #map-container.dragging { cursor: grabbing; }
         
-        /* SPA View Logic */
         .page-view { display: none; opacity: 0; transition: opacity 0.3s ease; }
         .page-view.active { display: flex; opacity: 1; }
         .page-view.active.block-view { display: block; }
-        
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Typography Formatting for dynamic content */
         .lore-content p { margin-bottom: 1.2rem; line-height: 1.8; color: #a3a3a3; font-size: 0.95rem; }
         .lore-content h3 { font-size: 1.5rem; font-weight: 800; color: #fff; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid #1a1a1a; padding-bottom: 0.5rem; }
         .lore-content h4 { font-size: 1.1rem; font-weight: 600; color: #eab308; margin-top: 1.5rem; margin-bottom: 0.5rem; }
-        
-        @keyframes radar-ping { 0% { transform: scale(0.5); opacity: 0.8; } 100% { transform: scale(2); opacity: 0; } }
-        .radar-ping::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #eab308; animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
-
         .terminal-text { font-family: 'JetBrains Mono', monospace; color: #22c55e; text-shadow: 0 0 5px rgba(34, 197, 94, 0.5); }
     </style>
 </head>
@@ -111,34 +81,12 @@
             </div>
 
             <ul class="p-4 space-y-1 mt-2 font-mono text-sm" id="nav-menu">
-                <li>
-                    <a href="#/home" class="nav-btn flex items-center gap-3 px-4 py-3 rounded text-liminal-muted hover:text-white hover:bg-white/5 transition-all border-l-2 border-transparent" data-target="home">
-                        <i class="ph ph-cpu text-lg"></i> Main Terminal
-                    </a>
-                </li>
-                <li>
-                    <a href="#/live" class="nav-btn flex items-center gap-3 px-4 py-3 rounded text-liminal-muted hover:text-white hover:bg-white/5 transition-all border-l-2 border-transparent" data-target="live">
-                        <i class="ph ph-activity text-lg text-blue-400"></i> Live Telemetry
-                    </a>
-                </li>
-                <li>
-                    <a href="#/classifications" class="nav-btn flex items-center gap-3 px-4 py-3 rounded text-liminal-muted hover:text-white hover:bg-white/5 transition-all border-l-2 border-transparent" data-target="classifications">
-                        <i class="ph ph-warning-octagon text-lg text-red-400"></i> Classification Matrix
-                    </a>
-                </li>
-                <li class="pt-6 pb-2 px-4 text-[10px] tracking-widest text-liminal-muted uppercase font-bold flex items-center gap-2">
-                    <i class="ph ph-database"></i> Spatial Database
-                </li>
-                <li>
-                    <a href="#/levels" class="nav-btn flex items-center gap-3 px-4 py-3 rounded text-liminal-muted hover:text-white hover:bg-white/5 transition-all border-l-2 border-transparent" data-target="levels">
-                        <i class="ph ph-stack text-lg text-liminal-primary"></i> Levels Archive
-                    </a>
-                </li>
-                <li>
-                    <a href="#/entities" class="nav-btn flex items-center gap-3 px-4 py-3 rounded text-liminal-muted hover:text-white hover:bg-white/5 transition-all border-l-2 border-transparent" data-target="entities">
-                        <i class="ph ph-ghost text-lg text-purple-400"></i> Entities Index
-                    </a>
-                </li>
+                <li><a href="#/home" class="nav-btn flex items-center gap-3 px-4 py-3 rounded text-liminal-muted hover:text-white hover:bg-white/5 transition-all border-l-2 border-transparent" data-target="home"><i class="ph ph-cpu text-lg"></i> Main Terminal</a></li>
+                <li><a href="#/live" class="nav-btn flex items-center gap-3 px-4 py-3 rounded text-liminal-muted hover:text-white hover:bg-white/5 transition-all border-l-2 border-transparent" data-target="live"><i class="ph ph-activity text-lg text-blue-400"></i> Live Telemetry</a></li>
+                <li><a href="#/classifications" class="nav-btn flex items-center gap-3 px-4 py-3 rounded text-liminal-muted hover:text-white hover:bg-white/5 transition-all border-l-2 border-transparent" data-target="classifications"><i class="ph ph-warning-octagon text-lg text-red-400"></i> Classification Matrix</a></li>
+                <li class="pt-6 pb-2 px-4 text-[10px] tracking-widest text-liminal-muted uppercase font-bold flex items-center gap-2"><i class="ph ph-database"></i> Spatial Database</li>
+                <li><a href="#/levels" class="nav-btn flex items-center gap-3 px-4 py-3 rounded text-liminal-muted hover:text-white hover:bg-white/5 transition-all border-l-2 border-transparent" data-target="levels"><i class="ph ph-stack text-lg text-liminal-primary"></i> Levels Archive</a></li>
+                <li><a href="#/entities" class="nav-btn flex items-center gap-3 px-4 py-3 rounded text-liminal-muted hover:text-white hover:bg-white/5 transition-all border-l-2 border-transparent" data-target="entities"><i class="ph ph-ghost text-lg text-purple-400"></i> Entities Index</a></li>
             </ul>
         </div>
         
@@ -160,7 +108,6 @@
 
     <main class="flex-1 h-full overflow-y-auto relative z-10 scroll-smooth pb-20 md:pb-0 hide-scrollbar" id="main-content">
         
-        <!-- ================= HOME VIEW ================= -->
         <section id="view-home" class="page-view block-view p-6 md:p-12 lg:p-16 max-w-7xl mx-auto">
             <header class="mb-16 animate-slide-up" style="animation-delay: 0.1s;">
                 <div class="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-liminal-muted mb-6">SYSTEM DASHBOARD</div>
@@ -169,7 +116,6 @@
                     You are accessing the highly classified <span class="text-liminal-primary font-bold">LiminOS Terminal</span>. This independent, proprietary framework provides strictly deterministic mapping, precise dimensional metrics, and absolute anomalous telemetry decoupled from M.E.G. interference.
                 </p>
             </header>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-slide-up" style="animation-delay: 0.2s;">
                 <div class="glass-panel p-6 rounded-xl border-t-2 border-t-liminal-primary relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors">
                     <div class="text-5xl font-mono font-bold text-white relative z-10">14,291</div>
@@ -188,18 +134,12 @@
                     <h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Global Threat</h3>
                 </div>
             </div>
-
             <div class="mt-12 flex gap-4 animate-slide-up" style="animation-delay: 0.3s;">
-                <a href="#/levels" class="bg-liminal-primary text-black font-bold px-8 py-4 rounded hover:bg-liminal-primaryHover transition flex items-center gap-2">
-                    Access Level Archive <i class="ph ph-arrow-right"></i>
-                </a>
-                <a href="#/entities" class="bg-white/5 border border-white/10 text-white font-bold px-8 py-4 rounded hover:bg-white/10 transition flex items-center gap-2">
-                    Access Entity Index <i class="ph ph-arrow-right"></i>
-                </a>
+                <a href="#/levels" class="bg-liminal-primary text-black font-bold px-8 py-4 rounded hover:bg-liminal-primaryHover transition flex items-center gap-2">Access Level Archive <i class="ph ph-arrow-right"></i></a>
+                <a href="#/entities" class="bg-white/5 border border-white/10 text-white font-bold px-8 py-4 rounded hover:bg-white/10 transition flex items-center gap-2">Access Entity Index <i class="ph ph-arrow-right"></i></a>
             </div>
         </section>
 
-        <!-- ================= LIVE TELEMETRY VIEW ================= -->
         <section id="view-live" class="page-view flex-col p-6 md:p-8 max-w-[1600px] mx-auto min-h-full">
             <header class="mb-6 flex flex-col md:flex-row justify-between md:items-end gap-4 animate-slide-up">
                 <div>
@@ -216,333 +156,186 @@
             </header>
 
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 flex-1 mb-6">
-                <!-- Visualizer 1: Anomaly Radar -->
                 <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 p-4 flex flex-col relative overflow-hidden h-[300px]">
                     <h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono mb-2 z-10">Entity/Anomaly Proximity Sweep</h3>
-                    <div class="flex-1 relative flex items-center justify-center">
-                        <canvas id="live-radar-canvas" class="absolute inset-0 w-full h-full opacity-80"></canvas>
-                    </div>
+                    <div class="flex-1 relative flex items-center justify-center"><canvas id="live-radar-canvas" class="absolute inset-0 w-full h-full opacity-80"></canvas></div>
                 </div>
-
-                <!-- Visualizer 2: Dimensional Resonance Heatmap -->
                 <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 p-4 flex flex-col relative overflow-hidden h-[300px]">
-                    <h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono mb-2 z-10 flex justify-between">
-                        <span>Dimensional Resonance Matrix</span>
-                        <span class="text-liminal-primary" id="matrix-status">STABLE</span>
-                    </h3>
-                    <div class="flex-1 relative">
-                        <canvas id="live-matrix-canvas" class="absolute inset-0 w-full h-full"></canvas>
-                    </div>
+                    <h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono mb-2 z-10 flex justify-between"><span>Dimensional Resonance Matrix</span><span class="text-liminal-primary" id="matrix-status">STABLE</span></h3>
+                    <div class="flex-1 relative"><canvas id="live-matrix-canvas" class="absolute inset-0 w-full h-full"></canvas></div>
                 </div>
-
-                <!-- Scrolling Event Log -->
                 <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 flex flex-col h-[300px]">
-                    <div class="p-3 border-b border-liminal-border bg-blue-900/10">
-                        <h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono">Real-Time Event Log</h3>
-                    </div>
-                    <div class="flex-1 overflow-y-auto p-3 space-y-1.5 font-mono text-[9px] hide-scrollbar" id="live-metrics-list">
-                        <!-- Populated by JS -->
-                    </div>
+                    <div class="p-3 border-b border-liminal-border bg-blue-900/10"><h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono">Real-Time Event Log</h3></div>
+                    <div class="flex-1 overflow-y-auto p-3 space-y-1.5 font-mono text-[9px] hide-scrollbar" id="live-metrics-list"></div>
                 </div>
             </div>
 
-            <!-- Fixed Fluctuating Metrics Grid -->
             <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 flex flex-col overflow-hidden">
                 <div class="p-4 border-b border-liminal-border bg-black/80 flex items-center justify-between">
                     <h3 class="text-xs font-bold text-white uppercase tracking-wider font-mono">Global Node Diagnostics (30 Arrays)</h3>
-                    <div class="flex items-center gap-2">
-                        <div class="w-2 h-2 rounded-full bg-liminal-safe shadow-[0_0_8px_#22c55e] animate-pulse"></div>
-                        <span class="text-[9px] font-mono text-liminal-safe">LIVE</span>
-                    </div>
+                    <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-liminal-safe shadow-[0_0_8px_#22c55e] animate-pulse"></div><span class="text-[9px] font-mono text-liminal-safe">LIVE</span></div>
                 </div>
-                <div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3" id="fixed-metrics-grid">
-                    <!-- Populated by JS -->
-                </div>
+                <div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3" id="fixed-metrics-grid"></div>
             </div>
         </section>
 
-        <!-- ================= CLASSIFICATION MATRIX VIEW ================= -->
         <section id="view-classifications" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto">
             <header class="mb-12 animate-slide-up">
                 <h2 class="text-4xl font-bold text-white mb-4 tracking-tight border-b-2 border-red-500 pb-4 inline-block">Liminality Classification Index</h2>
-                <p class="text-liminal-muted font-mono leading-relaxed mt-4 max-w-3xl">Standardized threat algorithms applied globally across the proprietary LiminOS network. Do not deviate from protocol. Understanding hazard semantics drastically improves survival expectancy.</p>
+                <p class="text-liminal-muted font-mono leading-relaxed mt-4 max-w-3xl">Standardized threat algorithms applied globally across the proprietary LiminOS network. Do not deviate from protocol.</p>
             </header>
-
-            <div id="classification-container" class="space-y-12">
-                <!-- Injected via JS -->
-            </div>
+            <div id="classification-container" class="space-y-12"></div>
         </section>
 
-        <!-- ================= LEVELS LIST VIEW ================= -->
         <section id="view-levels" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto">
             <header class="mb-10 border-b border-liminal-border pb-6">
-                <h2 class="text-4xl font-bold text-white tracking-tight flex items-center gap-4">
-                    <i class="ph ph-stack text-liminal-primary"></i> Levels Archive
-                </h2>
+                <h2 class="text-4xl font-bold text-white tracking-tight flex items-center gap-4"><i class="ph ph-stack text-liminal-primary"></i> Levels Archive</h2>
                 <p class="text-liminal-muted font-mono text-sm mt-3">Full proprietary topological and spatial database.</p>
             </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="levels-grid">
-                <!-- Injected via JS -->
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="levels-grid"></div>
         </section>
 
-        <!-- ================= ENTITIES LIST VIEW ================= -->
         <section id="view-entities" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto">
             <header class="mb-10 border-b border-liminal-border pb-6">
-                <h2 class="text-4xl font-bold text-white tracking-tight flex items-center gap-4">
-                    <i class="ph ph-ghost text-purple-400"></i> Entities Index
-                </h2>
+                <h2 class="text-4xl font-bold text-white tracking-tight flex items-center gap-4"><i class="ph ph-ghost text-purple-400"></i> Entities Index</h2>
                 <p class="text-liminal-muted font-mono text-sm mt-3">Categorization of anomalous flora, fauna, and conceptual beings.</p>
             </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="entities-grid">
-                <!-- Injected via JS -->
-            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="entities-grid"></div>
         </section>
 
-        <!-- ================= UNIFIED DATA VIEW (Template for Levels and Entities) ================= -->
         <section id="view-data" class="page-view flex-col min-h-full">
-            <!-- Hero Banner -->
             <div class="relative w-full h-64 md:h-80 overflow-hidden border-b border-liminal-border flex-shrink-0" id="data-hero">
                 <div class="absolute inset-0 bg-[#0a0a07]"></div>
-                <!-- Swapped out static image style to properly tile the injected procedural textures -->
                 <div id="data-hero-bg-tile" class="absolute inset-0 opacity-40 mix-blend-luminosity transform scale-105 transition-transform duration-[10s]" style="background-repeat: repeat; background-size: auto;"></div>
-                
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a07] via-[#0a0a07]/80 to-transparent"></div>
                 <div class="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
                 
                 <div class="absolute bottom-0 left-0 p-6 md:px-12 md:py-8 w-full animate-slide-up flex flex-col md:flex-row md:items-end justify-between gap-4 z-10">
                     <div>
-                        <div class="flex flex-wrap items-center gap-2 mb-3" id="data-tags">
-                            <!-- Tags injected via JS -->
-                        </div>
+                        <div class="flex flex-wrap items-center gap-2 mb-3" id="data-tags"></div>
                         <h2 class="text-5xl md:text-7xl font-bold text-white tracking-tight flex items-baseline gap-4 drop-shadow-2xl">
                             <span id="data-title-id">ID</span>
                             <span class="text-2xl md:text-3xl text-liminal-primary font-mono font-normal tracking-normal opacity-90" id="data-title-name">"Name"</span>
                         </h2>
                     </div>
-                    <div class="text-right font-mono text-[10px] text-liminal-muted hidden md:block" id="data-hero-stats">
-                        <!-- Stats injected via JS -->
-                    </div>
                 </div>
             </div>
 
-            <!-- Main Content Area: Content and Sidebar -->
             <div class="flex-1 w-full flex flex-col xl:flex-row relative">
-                
-                <!-- Left Column: Content Tabs -->
                 <div class="flex-1 xl:w-[55%] p-6 md:p-10 lg:p-14 overflow-y-auto hide-scrollbar z-10 bg-[#0a0a07]">
-                    
-                    <div class="flex flex-wrap gap-2 border-b border-liminal-border mb-8 sticky top-0 bg-[#0a0a07]/90 backdrop-blur-md z-20 pt-2 pb-2" id="data-tabs-container">
-                        <!-- Tabs injected via JS depending on Data Type -->
-                    </div>
-
-                    <div id="data-content-area" class="relative">
-                        <!-- Content sections injected via JS -->
-                    </div>
+                    <div class="flex flex-wrap gap-2 border-b border-liminal-border mb-8 sticky top-0 bg-[#0a0a07]/90 backdrop-blur-md z-20 pt-2 pb-2" id="data-tabs-container"></div>
+                    <div id="data-content-area" class="relative"></div>
                 </div>
 
-                <!-- Right Column: Interactive Elements & Metrics -->
                 <div class="w-full xl:w-[45%] flex flex-col border-l border-liminal-border z-20 xl:sticky top-0 xl:h-[calc(100vh-20rem)] bg-[#050505]">
-                    
-                    <!-- Top Right Module (Map Engine for Levels, Custom Graphic for Entities) -->
-                    <div class="h-[50vh] xl:h-[55%] border-b border-liminal-border relative flex flex-col bg-[#030303]" id="data-interactive-module">
-                        <!-- Injected via JS -->
-                    </div>
+                    <div class="h-[50vh] xl:h-[55%] border-b border-liminal-border relative flex flex-col bg-[#030303]" id="data-interactive-module"></div>
 
-                    <!-- Metrics Data Container -->
                     <div class="flex-1 bg-[#050505] overflow-y-auto hide-scrollbar flex flex-col relative">
                         <div class="p-4 border-b border-liminal-border bg-black/80 sticky top-0 z-10 flex justify-between items-center backdrop-blur-md shadow-md">
                             <div>
-                                <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2" id="metrics-panel-title">
-                                    <i class="ph ph-chart-polar text-liminal-primary"></i> Absolute Telemetry
-                                </h3>
+                                <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2" id="metrics-panel-title"><i class="ph ph-chart-polar text-liminal-primary"></i> Absolute Telemetry</h3>
                                 <p class="text-[9px] text-liminal-muted font-mono mt-1">Cross-referencing Global & Specific Data Models</p>
                             </div>
                             <button onclick="document.getElementById('metrics-search').classList.toggle('hidden')" class="w-8 h-8 rounded bg-white/5 flex items-center justify-center text-liminal-muted hover:text-white hover:bg-white/10 transition-colors"><i class="ph ph-magnifying-glass"></i></button>
                         </div>
-                        
                         <input type="text" id="metrics-search" placeholder="Search metrics... (e.g. Hume, Time, Wall)" class="hidden w-full bg-black/50 border-b border-liminal-primary/30 p-4 text-xs text-white font-mono outline-none" onkeyup="filterMetrics()">
-
-                        <div id="metrics-container" class="pb-10">
-                            <!-- Populated by JS -->
-                        </div>
+                        <div id="metrics-container" class="pb-10"></div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- LOAD EXTERNAL DATA SOURCE -->
     <script src="data.js"></script>
 
-    <!-- CORE LOGIC AND ENGINE -->
     <script>
         const Router = {
-            currentDataId: null,
-            currentDataType: null,
+            currentDataId: null, currentDataType: null,
             init() {
                 window.addEventListener('hashchange', () => this.handleRoute());
-                if (!window.location.hash) { window.location.hash = '/home'; } 
-                else { this.handleRoute(); }
-                
+                if (!window.location.hash) { window.location.hash = '/home'; } else { this.handleRoute(); }
                 this.buildClassifications();
                 this.buildDirectory('levels', LiminOSDatabase.levels);
                 this.buildDirectory('entities', LiminOSDatabase.entities);
             },
-
             handleRoute() {
                 const hash = window.location.hash.replace('#/', '');
-                
-                // Reset Nav
                 document.querySelectorAll('.nav-btn').forEach(btn => {
                     const target = btn.dataset.target;
-                    // Highlight if exactly matches, OR if we are in a sub-page of that category
                     if (target === hash || (target === 'levels' && hash.startsWith('level/')) || (target === 'entities' && hash.startsWith('entity/'))) {
-                        btn.classList.add('bg-white/10', 'text-white', 'border-liminal-primary');
-                        btn.classList.remove('text-liminal-muted', 'border-transparent');
+                        btn.classList.add('bg-white/10', 'text-white', 'border-liminal-primary'); btn.classList.remove('text-liminal-muted', 'border-transparent');
                     } else {
-                        btn.classList.remove('bg-white/10', 'text-white', 'border-liminal-primary');
-                        btn.classList.add('text-liminal-muted', 'border-transparent');
+                        btn.classList.remove('bg-white/10', 'text-white', 'border-liminal-primary'); btn.classList.add('text-liminal-muted', 'border-transparent');
                     }
                 });
-
                 document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
-                
                 LiveEngine.stop();
 
-                if (hash === 'home') {
-                    document.getElementById('view-home').classList.add('active');
-                } else if (hash === 'live') {
-                    document.getElementById('view-live').classList.add('active');
-                    LiveEngine.start();
-                } else if (hash === 'classifications') {
-                    document.getElementById('view-classifications').classList.add('active');
-                } else if (hash === 'levels') {
-                    document.getElementById('view-levels').classList.add('active');
-                } else if (hash === 'entities') {
-                    document.getElementById('view-entities').classList.add('active');
-                } else if (hash.startsWith('level/')) {
+                if (hash === 'home') document.getElementById('view-home').classList.add('active');
+                else if (hash === 'live') { document.getElementById('view-live').classList.add('active'); LiveEngine.start(); }
+                else if (hash === 'classifications') document.getElementById('view-classifications').classList.add('active');
+                else if (hash === 'levels') document.getElementById('view-levels').classList.add('active');
+                else if (hash === 'entities') document.getElementById('view-entities').classList.add('active');
+                else if (hash.startsWith('level/')) {
                     const id = hash.split('/')[1];
-                    if(LiminOSDatabase.levels[id]) {
-                        document.getElementById('view-data').classList.add('active');
-                        this.loadData(LiminOSDatabase.levels[id], 'level');
-                    } else { window.location.hash = '/levels'; }
+                    if(LiminOSDatabase.levels[id]) { document.getElementById('view-data').classList.add('active'); this.loadData(LiminOSDatabase.levels[id], 'level'); } 
+                    else window.location.hash = '/levels';
                 } else if (hash.startsWith('entity/')) {
                     const id = hash.split('/')[1];
-                    if(LiminOSDatabase.entities[id]) {
-                        document.getElementById('view-data').classList.add('active');
-                        this.loadData(LiminOSDatabase.entities[id], 'entity');
-                    } else { window.location.hash = '/entities'; }
-                } else {
-                    window.location.hash = '/home';
-                }
-                
+                    if(LiminOSDatabase.entities[id]) { document.getElementById('view-data').classList.add('active'); this.loadData(LiminOSDatabase.entities[id], 'entity'); } 
+                    else window.location.hash = '/entities';
+                } else { window.location.hash = '/home'; }
                 document.getElementById('main-content').scrollTop = 0;
             },
-
             buildClassifications() {
                 const container = document.getElementById('classification-container');
                 let html = '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">';
-                
                 LiminOSClassifications.general.forEach(c => {
-                    html += `
-                        <div class="glass-panel p-5 rounded border border-white/5 bg-black/40 hover:bg-white/5 transition-colors cursor-help group">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="w-3 h-3 rounded-full ${c.color} shadow-[0_0_10px_currentColor] group-hover:animate-pulse"></div>
-                                <h3 class="text-white font-bold font-mono tracking-wide">${c.class}</h3>
-                            </div>
-                            <p class="text-xs text-liminal-primary font-bold uppercase mb-2 tracking-widest">${c.name}</p>
-                            <p class="text-sm text-liminal-muted leading-relaxed">${c.desc}</p>
-                        </div>
-                    `;
+                    html += `<div class="glass-panel p-5 rounded border border-white/5 bg-black/40 hover:bg-white/5 transition-colors cursor-help group"><div class="flex items-center gap-3 mb-3"><div class="w-3 h-3 rounded-full ${c.color} shadow-[0_0_10px_currentColor] group-hover:animate-pulse"></div><h3 class="text-white font-bold font-mono tracking-wide">${c.class}</h3></div><p class="text-xs text-liminal-primary font-bold uppercase mb-2 tracking-widest">${c.name}</p><p class="text-sm text-liminal-muted leading-relaxed">${c.desc}</p></div>`;
                 });
-                html += '</div>';
-
-                html += '<h3 class="text-2xl font-bold text-white mt-12 mb-6 border-b border-white/10 pb-2">Specialized Anomalous Classes</h3>';
-                html += '<div class="grid grid-cols-1 md:grid-cols-3 gap-4">';
+                html += '</div><h3 class="text-2xl font-bold text-white mt-12 mb-6 border-b border-white/10 pb-2">Specialized Anomalous Classes</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-4">';
                 LiminOSClassifications.special.forEach(c => {
-                    html += `
-                        <div class="glass-panel p-5 rounded border border-${c.color.split('-')[1]}-500/30 bg-black/40 hover:bg-white/5 transition-colors cursor-help group">
-                            <h3 class="text-${c.color.split('-')[1]}-400 font-bold font-mono tracking-wide text-lg mb-1">${c.class}</h3>
-                            <p class="text-xs text-white font-bold uppercase mb-3 tracking-widest">${c.name}</p>
-                            <p class="text-sm text-liminal-muted leading-relaxed">${c.desc}</p>
-                        </div>
-                    `;
+                    html += `<div class="glass-panel p-5 rounded border border-${c.color.split('-')[1]}-500/30 bg-black/40 hover:bg-white/5 transition-colors cursor-help group"><h3 class="text-${c.color.split('-')[1]}-400 font-bold font-mono tracking-wide text-lg mb-1">${c.class}</h3><p class="text-xs text-white font-bold uppercase mb-3 tracking-widest">${c.name}</p><p class="text-sm text-liminal-muted leading-relaxed">${c.desc}</p></div>`;
                 });
                 html += '</div>';
-
                 container.innerHTML = html;
             },
-
             buildDirectory(type, dataObj) {
                 const container = document.getElementById(`${type}-grid`);
                 let html = '';
                 const prefix = type === 'levels' ? 'level' : 'entity';
                 const icon = type === 'levels' ? 'ph-hexagon' : 'ph-ghost';
-                
                 Object.keys(dataObj).forEach(key => {
                     const item = dataObj[key];
-                    html += `
-                        <a href="#/${prefix}/${key}" class="glass-panel p-5 rounded-xl border border-white/5 bg-black/40 hover:bg-white/10 hover:border-liminal-primary/50 transition-all cursor-pointer group flex flex-col h-full relative overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                            <div class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-50 transition-opacity group-hover:scale-105 duration-700" style="background-image: url('${item.heroImage}'); background-repeat: repeat; background-size: auto;"></div>
-                            
-                            <div class="relative z-20 flex-1 flex flex-col justify-end">
-                                <div class="w-10 h-10 rounded bg-liminal-primary/10 border border-liminal-primary/30 flex items-center justify-center text-liminal-primary mb-3 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
-                                    <i class="ph-fill ${icon} text-xl"></i>
-                                </div>
-                                <h4 class="text-white font-bold text-2xl tracking-tight">${item.title}</h4>
-                                <p class="text-liminal-primary font-mono text-sm mb-4">"${item.name}"</p>
-                                <div class="flex flex-wrap gap-1">
-                                    ${item.tags.slice(0,2).map(tag => `<span class="px-1.5 py-0.5 bg-black/80 border border-white/10 text-[9px] font-bold rounded tracking-widest uppercase text-gray-300">${tag.label}</span>`).join('')}
-                                </div>
-                            </div>
-                        </a>
-                    `;
+                    html += `<a href="#/${prefix}/${key}" class="glass-panel p-5 rounded-xl border border-white/5 bg-black/40 hover:bg-white/10 hover:border-liminal-primary/50 transition-all cursor-pointer group flex flex-col h-full relative overflow-hidden"><div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div><div class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-50 transition-opacity group-hover:scale-105 duration-700" style="background-image: url('${item.heroImage}'); background-repeat: repeat; background-size: auto;"></div><div class="relative z-20 flex-1 flex flex-col justify-end"><div class="w-10 h-10 rounded bg-liminal-primary/10 border border-liminal-primary/30 flex items-center justify-center text-liminal-primary mb-3 shadow-[0_0_15px_rgba(234,179,8,0.1)]"><i class="ph-fill ${icon} text-xl"></i></div><h4 class="text-white font-bold text-2xl tracking-tight">${item.title}</h4><p class="text-liminal-primary font-mono text-sm mb-4">"${item.name}"</p><div class="flex flex-wrap gap-1">${item.tags.slice(0,2).map(tag => `<span class="px-1.5 py-0.5 bg-black/80 border border-white/10 text-[9px] font-bold rounded tracking-widest uppercase text-gray-300">${tag.label}</span>`).join('')}</div></div></a>`;
                 });
                 container.innerHTML = html;
             },
-
             loadData(data, type) {
-                this.currentDataId = data.id;
-                this.currentDataType = type;
-
+                this.currentDataId = data.id; this.currentDataType = type;
                 document.getElementById('data-title-id').innerText = data.title;
                 document.getElementById('data-title-name').innerText = `"${data.name}"`;
-                
-                // Adjusted to handle procedural tile backgrounds
                 document.getElementById('data-hero-bg-tile').style.backgroundImage = `url('${data.heroImage}')`;
-                
-                const tagsContainer = document.getElementById('data-tags');
-                tagsContainer.innerHTML = data.tags.map(tag => 
-                    `<span class="px-2 py-1 ${tag.class} border text-[10px] font-bold rounded tracking-widest uppercase shadow-sm">${tag.label}</span>`
-                ).join('');
+                document.getElementById('data-tags').innerHTML = data.tags.map(tag => `<span class="px-2 py-1 ${tag.class} border text-[10px] font-bold rounded tracking-widest uppercase shadow-sm">${tag.label}</span>`).join('');
 
-                // Build Tabs based on what data exists
-                const tabsContainer = document.getElementById('data-tabs-container');
                 let tabsHtml = `<button class="tab-btn active px-4 py-2 text-xs md:text-sm font-bold text-liminal-primary border-b-2 border-liminal-primary transition-colors uppercase tracking-wide" onclick="switchTab('lore')">Documentation</button>`;
-                
                 if(data.survivalGuide) tabsHtml += `<button class="tab-btn px-4 py-2 text-xs md:text-sm font-bold text-liminal-muted border-b-2 border-transparent hover:text-white transition-colors uppercase tracking-wide" onclick="switchTab('survival')">Survival / Interaction</button>`;
                 if(data.history) tabsHtml += `<button class="tab-btn px-4 py-2 text-xs md:text-sm font-bold text-liminal-muted border-b-2 border-transparent hover:text-white transition-colors uppercase tracking-wide" onclick="switchTab('history')">Historical Logs</button>`;
                 if(data.resonanceScan) tabsHtml += `<button class="tab-btn px-4 py-2 text-xs md:text-sm font-bold text-liminal-muted border-b-2 border-transparent hover:text-white transition-colors uppercase tracking-wide" onclick="switchTab('resonance')">Resonance Scan</button>`;
-                tabsContainer.innerHTML = tabsHtml;
+                document.getElementById('data-tabs-container').innerHTML = tabsHtml;
 
-                // Build Content Area
-                const contentArea = document.getElementById('data-content-area');
                 let contentHtml = `<div id="tab-lore" class="tab-content animate-fade-in lore-content block">${data.lore}</div>`;
                 if(data.survivalGuide) contentHtml += `<div id="tab-survival" class="tab-content hidden animate-fade-in lore-content">${data.survivalGuide}</div>`;
                 if(data.history) contentHtml += `<div id="tab-history" class="tab-content hidden animate-fade-in lore-content">${data.history}</div>`;
                 if(data.resonanceScan) contentHtml += `<div id="tab-resonance" class="tab-content hidden animate-fade-in">${data.resonanceScan}</div>`;
-                contentArea.innerHTML = contentHtml;
+                document.getElementById('data-content-area').innerHTML = contentHtml;
 
-                // Determine Metrics & Interactive Module
                 const globalDataToUse = type === 'level' ? GlobalMetrics : GlobalEntityMetrics;
                 this.buildMetricsUI(data.specificMetrics, globalDataToUse);
                 
                 const moduleContainer = document.getElementById('data-interactive-module');
                 if (type === 'level') {
                     document.getElementById('metrics-panel-title').innerHTML = `<i class="ph ph-chart-polar text-liminal-primary"></i> Spatial Telemetry`;
-                    // Inject Map HTML
                     moduleContainer.innerHTML = `
                         <div class="h-14 border-b border-liminal-border bg-black/90 backdrop-blur-xl flex items-center justify-between px-4 z-20 flex-shrink-0">
                             <div class="flex items-center gap-3">
@@ -550,38 +343,25 @@
                                     <i class="ph-fill ph-crosshair text-liminal-primary relative z-10"></i>
                                     <div class="absolute inset-0 bg-liminal-primary/20 blur-sm rounded-full animate-pulse"></div>
                                 </div>
-                                <div class="flex flex-col">
-                                    <span class="text-[10px] md:text-xs font-bold text-white uppercase tracking-wider font-mono">Cartography Engine</span>
-                                    <span class="text-[8px] text-liminal-safe font-mono tracking-widest">DETERMINISTIC UPLINK</span>
-                                </div>
+                                <div class="flex flex-col"><span class="text-[10px] md:text-xs font-bold text-white uppercase tracking-wider font-mono">Cartography Engine</span><span class="text-[8px] text-liminal-safe font-mono tracking-widest">DETERMINISTIC UPLINK</span></div>
                             </div>
-                            
                             <div class="flex items-center gap-1 md:gap-2 font-mono text-[10px] md:text-xs">
-                                <div class="flex items-center bg-black/50 border border-liminal-border rounded hover:border-white/20 transition-colors">
-                                    <span class="text-liminal-muted px-2 border-r border-liminal-border">X</span>
-                                    <input type="number" id="search-x" class="bg-transparent w-16 md:w-20 text-center text-white p-1.5 outline-none focus:bg-white/5" value="0">
-                                </div>
-                                <div class="flex items-center bg-black/50 border border-liminal-border rounded hover:border-white/20 transition-colors">
-                                    <span class="text-liminal-muted px-2 border-r border-liminal-border">Y</span>
-                                    <input type="number" id="search-y" class="bg-transparent w-16 md:w-20 text-center text-white p-1.5 outline-none focus:bg-white/5" value="0">
-                                </div>
+                                <div class="flex items-center bg-black/50 border border-liminal-border rounded hover:border-white/20 transition-colors"><span class="text-liminal-muted px-2 border-r border-liminal-border">X</span><input type="number" id="search-x" class="bg-transparent w-16 md:w-20 text-center text-white p-1.5 outline-none focus:bg-white/5" value="0"></div>
+                                <div class="flex items-center bg-black/50 border border-liminal-border rounded hover:border-white/20 transition-colors"><span class="text-liminal-muted px-2 border-r border-liminal-border">Y</span><input type="number" id="search-y" class="bg-transparent w-16 md:w-20 text-center text-white p-1.5 outline-none focus:bg-white/5" value="0"></div>
                                 <button onclick="mapEngine.jumpToCoordinates()" class="bg-liminal-primary/10 text-liminal-primary hover:bg-liminal-primary hover:text-black border border-liminal-primary/30 transition-all px-3 py-1.5 rounded font-bold ml-1">GOTO</button>
                             </div>
                         </div>
-
                         <div id="map-container" class="flex-1 w-full relative outline-none bg-[#030303]" tabindex="0">
                             <canvas id="levelMap" class="absolute inset-0 block w-full h-full"></canvas>
                             <div class="absolute top-4 left-4 bg-black/80 p-3 rounded border border-white/5 backdrop-blur-md pointer-events-none shadow-2xl">
-                                <div class="text-[8px] font-mono text-liminal-muted mb-1 tracking-widest flex items-center gap-2">
-                                    <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
-                                    ABSOLUTE POSITION (1 Unit = 1m)
-                                </div>
+                                <div class="text-[8px] font-mono text-liminal-muted mb-1 tracking-widest flex items-center gap-2"><div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>ABSOLUTE POSITION</div>
                                 <div class="text-sm font-mono text-white tracking-wider font-bold" id="hud-coords">X: 0m | Y: 0m</div>
                             </div>
                             <div class="absolute right-4 bottom-4 flex flex-col gap-2 z-20">
                                 <button onclick="mapEngine.zoomIn()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center"><i class="ph ph-plus"></i></button>
                                 <button onclick="mapEngine.resetView()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center"><i class="ph ph-arrows-in-simple"></i></button>
                                 <button onclick="mapEngine.zoomOut()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center"><i class="ph ph-minus"></i></button>
+                                <button onclick="mapEngine.toggleFullscreen()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center mt-2 border-t-liminal-primary"><i class="ph ph-corners-out"></i></button>
                             </div>
                             <div class="absolute left-4 bottom-4 z-20">
                                 <div class="bg-black/80 border border-white/10 rounded p-2 flex flex-col items-center gap-1 backdrop-blur-md">
@@ -591,19 +371,9 @@
                                     <button onclick="mapEngine.changeZ(-1)" class="text-liminal-muted hover:text-white transition w-full py-1 hover:bg-white/5 rounded"><i class="ph ph-caret-down"></i></button>
                                 </div>
                             </div>
-                            <div class="absolute top-4 right-4 text-right pointer-events-none">
-                                <div class="text-[9px] font-mono text-liminal-muted uppercase bg-black/60 px-2 py-1 rounded backdrop-blur border border-white/5 inline-block">Double-click to drop pin</div>
-                            </div>
-
-                            <!-- Pin Modal -->
                             <div id="pin-modal" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-liminal-panel border border-liminal-border p-5 rounded-lg shadow-2xl z-50 w-72 backdrop-blur-xl">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <i class="ph-fill ph-map-pin text-liminal-primary text-lg"></i>
-                                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Deploy Pin</h4>
-                                </div>
-                                <div class="bg-black/50 p-2 rounded border border-white/5 mb-4 text-center">
-                                    <p class="text-[10px] text-liminal-primary font-mono" id="pin-modal-coords">Coords</p>
-                                </div>
+                                <div class="flex items-center gap-2 mb-3"><i class="ph-fill ph-map-pin text-liminal-primary text-lg"></i><h4 class="text-sm font-bold text-white uppercase tracking-wider">Deploy Pin</h4></div>
+                                <div class="bg-black/50 p-2 rounded border border-white/5 mb-4 text-center"><p class="text-[10px] text-liminal-primary font-mono" id="pin-modal-coords">Coords</p></div>
                                 <input type="text" id="pin-name" placeholder="Enter Label..." class="w-full bg-black border border-liminal-border rounded p-3 text-xs text-white font-mono mb-4 outline-none focus:border-liminal-primary transition-colors" maxlength="30">
                                 <div class="flex gap-3">
                                     <button onclick="mapEngine.cancelPin()" class="flex-1 py-2 bg-white/5 hover:bg-white/10 text-xs rounded transition text-white font-bold">Cancel</button>
@@ -612,79 +382,48 @@
                             </div>
                         </div>
                     `;
-                    // Wait for DOM to update then init map
                     setTimeout(() => { mapEngine.init(data.mapConfig); }, 50);
                 } else {
                     document.getElementById('metrics-panel-title').innerHTML = `<i class="ph ph-fingerprint text-purple-400"></i> Biological/Anomalous Telemetry`;
-                    // Entity Visual Graphic
+                    const tracker = data.tracker || { status: "NO REAL-TIME VISUAL AVAILABLE", color: "purple", icon: "ph-ghost", active: false };
+                    const spinClass = tracker.active ? "animate-spin-slow border-" + tracker.color + "-500" : "border-gray-500/30";
+                    const pulseClass = tracker.active ? "animate-pulse-fast border-" + tracker.color + "-500/30" : "border-gray-500/10";
+                    const iconColor = tracker.active ? "text-" + tracker.color + "-400" : "text-gray-600";
+                    
                     moduleContainer.innerHTML = `
                         <div class="flex-1 relative flex items-center justify-center bg-[#050505] overflow-hidden">
                             <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEg0VjRIMEoiIGZpbGw9IiMxYTFhMWEiIGZpbGwtb3BhY2l0eT0iMC41Ii8+Cjwvc3ZnPg==')] opacity-30"></div>
                             <div class="relative z-10 flex flex-col items-center">
-                                <div class="w-32 h-32 rounded-full border-2 border-purple-500/30 flex items-center justify-center relative mb-4 animate-pulse-fast">
-                                    <div class="absolute inset-0 rounded-full border-t-2 border-purple-500 animate-spin-slow"></div>
-                                    <i class="ph ph-ghost text-6xl text-purple-400 opacity-80"></i>
+                                <div class="w-32 h-32 rounded-full border-2 ${pulseClass} flex items-center justify-center relative mb-4">
+                                    <div class="absolute inset-0 rounded-full border-t-2 ${spinClass}"></div>
+                                    <i class="ph ${tracker.icon} text-6xl ${iconColor} opacity-80 ${tracker.active ? 'animate-pulse' : ''}"></i>
                                 </div>
                                 <h3 class="text-white font-mono font-bold tracking-widest">ENTITY SIGNATURE TRACKING</h3>
-                                <p class="text-xs text-purple-400 font-mono mt-2">NO REAL-TIME VISUAL AVAILABLE</p>
+                                <p class="text-xs ${iconColor} font-mono mt-2">${tracker.status}</p>
                             </div>
                         </div>
                     `;
-                    // Stop map drawing if it was running
                     if(mapEngine.animationFrame) cancelAnimationFrame(mapEngine.animationFrame);
                 }
             },
-
             buildMetricsUI(specificMetrics, globalDataModel) {
                 const container = document.getElementById('metrics-container');
                 let html = '';
-
-                // Insert Specific Metrics First if they exist
                 if (specificMetrics) {
-                    const specKey = Object.keys(specificMetrics)[0]; // e.g. "Level 0 Specific"
-                    html += `
-                        <div class="metric-group border-b border-liminal-primary/30">
-                            <div class="px-5 py-4 bg-liminal-primary/10 flex items-center gap-3 cursor-pointer hover:bg-liminal-primary/20 transition-colors" onclick="toggleMetricGroup('specific')">
-                                <i class="ph ph-star text-liminal-primary text-xl"></i>
-                                <h4 class="text-xs font-bold text-liminal-primary uppercase tracking-wider flex-1">${specKey}</h4>
-                                <i class="ph ph-caret-down text-liminal-primary transition-transform duration-300 text-sm" id="caret-specific"></i>
-                            </div>
-                            <div class="px-4 py-3 space-y-1.5 transition-all duration-300 block bg-black/40" id="group-specific">
-                    `;
+                    const specKey = Object.keys(specificMetrics)[0];
+                    html += `<div class="metric-group border-b border-liminal-primary/30"><div class="px-5 py-4 bg-liminal-primary/10 flex items-center gap-3 cursor-pointer hover:bg-liminal-primary/20 transition-colors" onclick="toggleMetricGroup('specific')"><i class="ph ph-star text-liminal-primary text-xl"></i><h4 class="text-xs font-bold text-liminal-primary uppercase tracking-wider flex-1">${specKey}</h4><i class="ph ph-caret-down text-liminal-primary transition-transform duration-300 text-sm" id="caret-specific"></i></div><div class="px-4 py-3 space-y-1.5 transition-all duration-300 block bg-black/40" id="group-specific">`;
                     for (const [label, value] of Object.entries(specificMetrics[specKey])) {
-                        html += `
-                            <div class="metric-item flex justify-between items-center py-2 hover:bg-white/5 rounded px-3 transition-colors group border-b border-white/5 last:border-0">
-                                <span class="metric-label text-[11px] font-mono text-liminal-muted max-w-[50%] truncate pr-2 group-hover:text-gray-300 transition-colors" title="${label}">${label}</span>
-                                <span class="text-[11px] font-mono font-bold text-liminal-primary text-right max-w-[50%] truncate" title="${value}">${value}</span>
-                            </div>
-                        `;
+                        html += `<div class="metric-item flex justify-between items-center py-2 hover:bg-white/5 rounded px-3 transition-colors group border-b border-white/5 last:border-0"><span class="metric-label text-[11px] font-mono text-liminal-muted max-w-[50%] truncate pr-2 group-hover:text-gray-300 transition-colors" title="${label}">${label}</span><span class="text-[11px] font-mono font-bold text-liminal-primary text-right max-w-[50%] truncate" title="${value}">${value}</span></div>`;
                     }
                     html += `</div></div>`;
                 }
-
                 globalDataModel.forEach((group, index) => {
-                    html += `
-                        <div class="metric-group border-b border-liminal-border/50">
-                            <div class="px-5 py-3.5 bg-white/5 flex items-center gap-3 cursor-pointer hover:bg-white/10 transition-colors" onclick="toggleMetricGroup(${index})">
-                                <i class="ph ${group.icon} ${group.color} text-lg"></i>
-                                <h4 class="text-[11px] font-bold text-white uppercase tracking-wider flex-1">${group.category}</h4>
-                                <i class="ph ph-caret-down text-liminal-muted transition-transform duration-300 text-sm" id="caret-${index}"></i>
-                            </div>
-                            <div class="px-4 py-2 space-y-1 transition-all duration-300 block bg-[#030303]" id="group-${index}">
-                    `;
-                    
+                    html += `<div class="metric-group border-b border-liminal-border/50"><div class="px-5 py-3.5 bg-white/5 flex items-center gap-3 cursor-pointer hover:bg-white/10 transition-colors" onclick="toggleMetricGroup(${index})"><i class="ph ${group.icon} ${group.color} text-lg"></i><h4 class="text-[11px] font-bold text-white uppercase tracking-wider flex-1">${group.category}</h4><i class="ph ph-caret-down text-liminal-muted transition-transform duration-300 text-sm" id="caret-${index}"></i></div><div class="px-4 py-2 space-y-1 transition-all duration-300 block bg-[#030303]" id="group-${index}">`;
                     const mergedData = { ...group.data, ...(specificMetrics && specificMetrics[group.category] ? specificMetrics[group.category] : {}) };
-                    
                     for (const [label, value] of Object.entries(mergedData)) {
                         const isSpecific = specificMetrics && specificMetrics[group.category] && specificMetrics[group.category][label];
                         const valColor = isSpecific ? 'text-liminal-primary' : 'text-gray-300';
-                        
-                        html += `
-                            <div class="metric-item flex justify-between items-center py-1.5 hover:bg-white/5 rounded px-3 transition-colors group">
-                                <span class="metric-label text-[10px] font-mono text-liminal-muted max-w-[50%] truncate pr-2 group-hover:text-gray-400 transition-colors" title="${label}">${label}</span>
-                                <span class="text-[10px] font-mono font-bold ${valColor} text-right max-w-[50%] truncate" title="${value}">${value}</span>
-                            </div>
-                        `;
+                        html += `<div class="metric-item flex justify-between items-center py-1.5 hover:bg-white/5 rounded px-3 transition-colors group"><span class="metric-label text-[10px] font-mono text-liminal-muted max-w-[50%] truncate pr-2 group-hover:text-gray-400 transition-colors" title="${label}">${label}</span><span class="text-[10px] font-mono font-bold ${valColor} text-right max-w-[50%] truncate" title="${value}">${value}</span></div>`;
                     }
                     html += `</div></div>`;
                 });
@@ -692,563 +431,196 @@
             }
         };
 
-        // UI Helpers
         function switchTab(tabId) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active', 'text-liminal-primary', 'border-liminal-primary');
-                btn.classList.add('text-liminal-muted', 'border-transparent');
-                
-                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`switchTab('${tabId}')`)) {
-                    btn.classList.add('active', 'text-liminal-primary', 'border-liminal-primary');
-                    btn.classList.remove('text-liminal-muted', 'border-transparent');
-                }
+                btn.classList.remove('active', 'text-liminal-primary', 'border-liminal-primary'); btn.classList.add('text-liminal-muted', 'border-transparent');
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`switchTab('${tabId}')`)) { btn.classList.add('active', 'text-liminal-primary', 'border-liminal-primary'); btn.classList.remove('text-liminal-muted', 'border-transparent'); }
             });
-
-            document.querySelectorAll('.tab-content').forEach(c => {
-                c.classList.remove('block');
-                c.classList.add('hidden');
-            });
+            document.querySelectorAll('.tab-content').forEach(c => { c.classList.remove('block'); c.classList.add('hidden'); });
             const tabContent = document.getElementById(`tab-${tabId}`);
-            if (tabContent) {
-                tabContent.classList.remove('hidden');
-                tabContent.classList.add('block');
-            }
+            if (tabContent) { tabContent.classList.remove('hidden'); tabContent.classList.add('block'); }
         }
 
         function toggleMetricGroup(index) {
-            const group = document.getElementById(`group-${index}`);
-            const caret = document.getElementById(`caret-${index}`);
-            if (group.style.display === 'none') {
-                group.style.display = 'block';
-                caret.style.transform = 'rotate(0deg)';
-            } else {
-                group.style.display = 'none';
-                caret.style.transform = 'rotate(-90deg)';
-            }
+            const group = document.getElementById(`group-${index}`); const caret = document.getElementById(`caret-${index}`);
+            if (group.style.display === 'none') { group.style.display = 'block'; caret.style.transform = 'rotate(0deg)'; } 
+            else { group.style.display = 'none'; caret.style.transform = 'rotate(-90deg)'; }
         }
-
         function filterMetrics() {
             const term = document.getElementById('metrics-search').value.toLowerCase();
-            document.querySelectorAll('.metric-item').forEach(item => {
-                const label = item.querySelector('.metric-label').innerText.toLowerCase();
-                item.style.display = label.includes(term) ? 'flex' : 'none';
-            });
+            document.querySelectorAll('.metric-item').forEach(item => { item.style.display = item.querySelector('.metric-label').innerText.toLowerCase().includes(term) ? 'flex' : 'none'; });
         }
 
         async function runResonanceScan() {
-            const btn = document.getElementById('btn-run-scan');
-            const term = document.getElementById('scan-terminal');
-            const content = document.getElementById('scan-terminal-content');
-            
-            btn.classList.add('pointer-events-none', 'opacity-50');
-            term.classList.remove('hidden');
-            content.innerHTML = '';
-            
-            const logs = [
-                "> INITIALIZING QUANTUM PING...",
-                "> TARGET: LOCAL TOPOLOGY [Z: 0]",
-                "> CALIBRATING HUME SENSORS... [OK]",
-                "> BYPASSING M.E.G. INTERFERENCE... [OK]",
-                "<br>> <span class='text-liminal-primary'>ANALYZING MOISTURE CONTENT:</span>",
-                "  - H2O: 98.01%",
-                "  - UNKNOWN BIOLOGICAL FLUID: 1.99%",
-                "  - ALMOND WATER TRACES: < 0.001%",
-                "<br>> <span class='text-yellow-400'>CHECKING STRUCTURAL INTEGRITY:</span>",
-                "  - WALL PERMEABILITY: 0.0001% (NOCLIP RESISTANCE HIGH)",
-                "  - EUCLIDEAN CONSISTENCY: 14.2% (WARNING: NON-LINEAR)",
-                "<br>> <span class='text-red-400'>ENTITY PROXIMITY SWEEP:</span>",
-                "  - SCANNING RADIUS: 1000m",
-                "  - RESULT: 0 ENTITIES DETECTED.",
-                "  - NOTE: IGNORE AUDITORY HALLUCINATIONS.",
-                "<br>> SCAN COMPLETE. UPLOADING TO LIMINOS DATABASE."
-            ];
-
-            for(let i=0; i<logs.length; i++) {
-                await new Promise(r => setTimeout(r, 400 + Math.random() * 600));
-                content.innerHTML += `<div class="terminal-text animate-fade-in">${logs[i]}</div>`;
-                term.scrollTop = term.scrollHeight;
-            }
+            const btn = document.getElementById('btn-run-scan'); const term = document.getElementById('scan-terminal'); const content = document.getElementById('scan-terminal-content');
+            btn.classList.add('pointer-events-none', 'opacity-50'); term.classList.remove('hidden'); content.innerHTML = '';
+            const logs = [ "> INITIALIZING QUANTUM PING...", "> TARGET: LOCAL TOPOLOGY", "> CALIBRATING HUME SENSORS... [OK]", "> BYPASSING M.E.G. INTERFERENCE... [OK]", "<br>> <span class='text-liminal-primary'>ANALYZING TOPOLOGICAL HASH:</span>", "  - Z-LAYER OFFSET: " + mapEngine.camZ, "  - EUCLIDEAN CONSISTENCY VERIFIED", "<br>> <span class='text-red-400'>ENTITY PROXIMITY SWEEP:</span>", "  - SCANNING RADIUS: 1000m", "  - ISOLATION PROTOCOLS ACTIVE.", "<br>> SCAN COMPLETE. UPLOADING TO LIMINOS DATABASE." ];
+            for(let i=0; i<logs.length; i++) { await new Promise(r => setTimeout(r, 300 + Math.random() * 400)); content.innerHTML += `<div class="terminal-text animate-fade-in">${logs[i]}</div>`; term.scrollTop = term.scrollHeight; }
             btn.classList.remove('pointer-events-none', 'opacity-50');
         }
 
         function deterministicHash(x, y, z, seed, modifierStr) {
-            let modHash = 0;
-            for (let i = 0; i < modifierStr.length; i++) {
-                modHash = (modHash << 5) - modHash + modifierStr.charCodeAt(i);
-                modHash |= 0; 
-            }
-            let h = Math.imul(x ^ seed, 3432918353);
-            h = Math.imul(h ^ y, 461845907);
-            h = Math.imul(h ^ z, 1566083941);
-            h = Math.imul(h ^ modHash, 2870177450);
-            h ^= h >>> 15;
-            return (h >>> 0) / 4294967296.0; 
+            let modHash = 0; for (let i = 0; i < modifierStr.length; i++) { modHash = (modHash << 5) - modHash + modifierStr.charCodeAt(i); modHash |= 0; }
+            let h = Math.imul(x ^ seed, 3432918353); h = Math.imul(h ^ y, 461845907); h = Math.imul(h ^ z, 1566083941); h = Math.imul(h ^ modHash, 2870177450); h ^= h >>> 15; return (h >>> 0) / 4294967296.0; 
         }
 
         const mapEngine = {
-            canvas: null, ctx: null, config: null,
-            camX: 0, camY: 0, camZ: 0, zoom: 1, pixelsPerMeter: 12,
-            isDragging: false, lastMouseX: 0, lastMouseY: 0,
-            pins: [], pendingPin: null, animationFrame: null, eventsBound: false,
-
-            init(config) {
-                this.canvas = document.getElementById('levelMap');
-                if(!this.canvas) return;
-                
-                this.config = config;
-                this.ctx = this.canvas.getContext('2d');
-                this.camX = 0; this.camY = 0; this.camZ = 0; this.zoom = 1;
-                
-                this.resize();
-                window.addEventListener('resize', () => this.resize());
-                
-                if (!this.eventsBound) {
-                    this.setupEvents();
-                    this.eventsBound = true;
-                }
-                
-                this.updateHUD();
-                this.drawLoop();
-            },
-
-            resize() {
-                const container = document.getElementById('map-container');
-                if(!container || !this.canvas) return;
-                this.canvas.width = container.clientWidth;
-                this.canvas.height = container.clientHeight;
-                this.draw();
-            },
-
-            setupEvents() {
-                // To support both touch and mouse transparently, bind standard mouse events
-                this.canvas.addEventListener('mousedown', (e) => {
-                    this.isDragging = true;
-                    this.lastMouseX = e.clientX;
-                    this.lastMouseY = e.clientY;
-                    document.getElementById('map-container').classList.add('dragging');
-                });
-
-                window.addEventListener('mouseup', () => {
-                    this.isDragging = false;
-                    const mc = document.getElementById('map-container');
-                    if(mc) mc.classList.remove('dragging');
-                });
-
-                this.canvas.addEventListener('mousemove', (e) => {
-                    if (this.isDragging) {
-                        const dx = e.clientX - this.lastMouseX;
-                        const dy = e.clientY - this.lastMouseY;
-                        this.camX -= dx / (this.zoom * this.pixelsPerMeter);
-                        this.camY -= dy / (this.zoom * this.pixelsPerMeter);
-                        this.lastMouseX = e.clientX;
-                        this.lastMouseY = e.clientY;
-                        this.updateHUD();
-                    }
-                });
-
-                this.canvas.addEventListener('wheel', (e) => {
-                    e.preventDefault();
-                    const zoomFactor = e.deltaY > 0 ? 0.9 : 1.1;
-                    const rect = this.canvas.getBoundingClientRect();
-                    const mx = e.clientX - rect.left;
-                    const my = e.clientY - rect.top;
-                    const wxBefore = this.camX + (mx - this.canvas.width/2) / (this.zoom * this.pixelsPerMeter);
-                    const wyBefore = this.camY + (my - this.canvas.height/2) / (this.zoom * this.pixelsPerMeter);
-                    
-                    this.zoom = Math.max(0.1, Math.min(this.zoom * zoomFactor, 10));
-                    
-                    const wxAfter = this.camX + (mx - this.canvas.width/2) / (this.zoom * this.pixelsPerMeter);
-                    const wyAfter = this.camY + (my - this.canvas.height/2) / (this.zoom * this.pixelsPerMeter);
-                    
-                    this.camX += (wxBefore - wxAfter);
-                    this.camY += (wyBefore - wyAfter);
-                }, {passive: false});
-
-                this.canvas.addEventListener('dblclick', (e) => {
-                    const rect = this.canvas.getBoundingClientRect();
-                    const mx = e.clientX - rect.left;
-                    const my = e.clientY - rect.top;
-                    const wx = Math.round(this.camX + (mx - this.canvas.width/2) / (this.zoom * this.pixelsPerMeter));
-                    const wy = Math.round(this.camY + (my - this.canvas.height/2) / (this.zoom * this.pixelsPerMeter));
-                    this.openPinModal(wx, wy);
-                });
-            },
-
-            zoomIn() { this.zoom = Math.min(10, this.zoom * 1.5); },
-            zoomOut() { this.zoom = Math.max(0.1, this.zoom * 0.7); },
-            resetView() { this.camX = 0; this.camY = 0; this.zoom = 1; this.updateHUD(); },
-            changeZ(delta) { this.camZ += delta; document.getElementById('hud-z').innerText = this.camZ; },
+            canvas: null, ctx: null, config: null, camX: 0, camY: 0, camZ: 0, zoom: 1, pixelsPerMeter: 12,
+            isDragging: false, lastMouseX: 0, lastMouseY: 0, pins: [], pendingPin: null, animationFrame: null, eventsBound: false,
             
-            jumpToCoordinates() {
-                this.camX = parseFloat(document.getElementById('search-x').value) || 0;
-                this.camY = parseFloat(document.getElementById('search-y').value) || 0;
-                this.updateHUD();
+            init(config) {
+                this.canvas = document.getElementById('levelMap'); if(!this.canvas) return;
+                this.config = config; this.ctx = this.canvas.getContext('2d'); this.camX = 0; this.camY = 0; this.camZ = 0; this.zoom = 1;
+                this.resize(); window.addEventListener('resize', () => this.resize());
+                if (!this.eventsBound) { this.setupEvents(); this.eventsBound = true; }
+                this.updateHUD(); this.drawLoop();
             },
-
-            updateHUD() {
-                const hud = document.getElementById('hud-coords');
-                if(hud) {
-                    hud.innerText = `X: ${Math.round(this.camX)}m | Y: ${Math.round(this.camY)}m`;
-                    document.getElementById('search-x').value = Math.round(this.camX);
-                    document.getElementById('search-y').value = Math.round(this.camY);
-                }
+            resize() { const container = document.getElementById('map-container'); if(container && this.canvas) { this.canvas.width = container.clientWidth; this.canvas.height = container.clientHeight; this.draw(); } },
+            toggleFullscreen() {
+                const container = document.getElementById('map-container');
+                if (!document.fullscreenElement) { container.requestFullscreen().catch(err => { console.log(err); }); } 
+                else { document.exitFullscreen(); }
             },
-
-            openPinModal(x, y) {
-                this.pendingPin = {x, y, z: this.camZ};
-                document.getElementById('pin-modal-coords').innerText = `X: ${x}, Y: ${y}, Z: ${this.camZ}`;
-                document.getElementById('pin-modal').classList.remove('hidden');
-                document.getElementById('pin-name').focus();
+            setupEvents() {
+                this.canvas.addEventListener('mousedown', (e) => { this.isDragging = true; this.lastMouseX = e.clientX; this.lastMouseY = e.clientY; document.getElementById('map-container').classList.add('dragging'); });
+                window.addEventListener('mouseup', () => { this.isDragging = false; const mc = document.getElementById('map-container'); if(mc) mc.classList.remove('dragging'); });
+                this.canvas.addEventListener('mousemove', (e) => {
+                    if (this.isDragging) { this.camX -= (e.clientX - this.lastMouseX) / (this.zoom * this.pixelsPerMeter); this.camY -= (e.clientY - this.lastMouseY) / (this.zoom * this.pixelsPerMeter); this.lastMouseX = e.clientX; this.lastMouseY = e.clientY; this.updateHUD(); }
+                });
+                this.canvas.addEventListener('wheel', (e) => {
+                    e.preventDefault(); const zoomFactor = e.deltaY > 0 ? 0.9 : 1.1; const rect = this.canvas.getBoundingClientRect(); const mx = e.clientX - rect.left; const my = e.clientY - rect.top;
+                    const wxBefore = this.camX + (mx - this.canvas.width/2) / (this.zoom * this.pixelsPerMeter); const wyBefore = this.camY + (my - this.canvas.height/2) / (this.zoom * this.pixelsPerMeter);
+                    this.zoom = Math.max(0.1, Math.min(this.zoom * zoomFactor, 10));
+                    const wxAfter = this.camX + (mx - this.canvas.width/2) / (this.zoom * this.pixelsPerMeter); const wyAfter = this.camY + (my - this.canvas.height/2) / (this.zoom * this.pixelsPerMeter);
+                    this.camX += (wxBefore - wxAfter); this.camY += (wyBefore - wyAfter);
+                }, {passive: false});
+                this.canvas.addEventListener('dblclick', (e) => {
+                    const rect = this.canvas.getBoundingClientRect(); const mx = e.clientX - rect.left; const my = e.clientY - rect.top;
+                    this.openPinModal(Math.round(this.camX + (mx - this.canvas.width/2) / (this.zoom * this.pixelsPerMeter)), Math.round(this.camY + (my - this.canvas.height/2) / (this.zoom * this.pixelsPerMeter)));
+                });
             },
-            cancelPin() {
-                document.getElementById('pin-modal').classList.add('hidden');
-                document.getElementById('pin-name').value = '';
-                this.pendingPin = null;
-            },
-            confirmPin() {
-                const name = document.getElementById('pin-name').value || "Unknown Marker";
-                if(this.pendingPin) this.pins.push({...this.pendingPin, name, level: Router.currentDataId});
-                this.cancelPin();
-            },
-
-            drawLoop() {
-                if (document.getElementById('view-data').classList.contains('active') && Router.currentDataType === 'level') {
-                    this.draw();
-                }
-                this.animationFrame = requestAnimationFrame(() => this.drawLoop());
-            },
-
+            zoomIn() { this.zoom = Math.min(10, this.zoom * 1.5); }, zoomOut() { this.zoom = Math.max(0.1, this.zoom * 0.7); }, resetView() { this.camX = 0; this.camY = 0; this.zoom = 1; this.updateHUD(); },
+            changeZ(delta) { this.camZ += delta; document.getElementById('hud-z').innerText = this.camZ; },
+            jumpToCoordinates() { this.camX = parseFloat(document.getElementById('search-x').value) || 0; this.camY = parseFloat(document.getElementById('search-y').value) || 0; this.updateHUD(); },
+            updateHUD() { const hud = document.getElementById('hud-coords'); if(hud) { hud.innerText = `X: ${Math.round(this.camX)}m | Y: ${Math.round(this.camY)}m`; document.getElementById('search-x').value = Math.round(this.camX); document.getElementById('search-y').value = Math.round(this.camY); } },
+            openPinModal(x, y) { this.pendingPin = {x, y, z: this.camZ}; document.getElementById('pin-modal-coords').innerText = `X: ${x}, Y: ${y}, Z: ${this.camZ}`; document.getElementById('pin-modal').classList.remove('hidden'); document.getElementById('pin-name').focus(); },
+            cancelPin() { document.getElementById('pin-modal').classList.add('hidden'); document.getElementById('pin-name').value = ''; this.pendingPin = null; },
+            confirmPin() { const name = document.getElementById('pin-name').value || "Unknown Marker"; if(this.pendingPin) this.pins.push({...this.pendingPin, name, level: Router.currentDataId}); this.cancelPin(); },
+            drawLoop() { if (document.getElementById('view-data').classList.contains('active') && Router.currentDataType === 'level') this.draw(); this.animationFrame = requestAnimationFrame(() => this.drawLoop()); },
             draw() {
                 if(!this.ctx || !this.config) return;
                 const w = this.canvas.width; const h = this.canvas.height; const ctx = this.ctx;
                 
-                ctx.fillStyle = '#030303';
-                ctx.fillRect(0, 0, w, h);
+                // Configurable Background
+                ctx.fillStyle = this.config.bgColor || '#030303'; ctx.fillRect(0, 0, w, h);
+                const scale = this.zoom * this.pixelsPerMeter; const gs = this.config.gridSize;
+                const viewDistX = (w / 2) / scale; const viewDistY = (h / 2) / scale;
+                const startX = Math.floor((this.camX - viewDistX) / gs) * gs; const endX = Math.ceil((this.camX + viewDistX) / gs) * gs;
+                const startY = Math.floor((this.camY - viewDistY) / gs) * gs; const endY = Math.ceil((this.camY + viewDistY) / gs) * gs;
+                ctx.save(); ctx.translate(w/2, h/2);
                 
-                const scale = this.zoom * this.pixelsPerMeter;
-                const gs = this.config.gridSize;
-                
-                const viewDistX = (w / 2) / scale;
-                const viewDistY = (h / 2) / scale;
-                const startX = Math.floor((this.camX - viewDistX) / gs) * gs;
-                const endX = Math.ceil((this.camX + viewDistX) / gs) * gs;
-                const startY = Math.floor((this.camY - viewDistY) / gs) * gs;
-                const endY = Math.ceil((this.camY + viewDistY) / gs) * gs;
-
-                ctx.save();
-                ctx.translate(w/2, h/2);
-                
-                // Grid Background
-                ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                for (let x = Math.floor(this.camX - viewDistX); x <= Math.ceil(this.camX + viewDistX); x++) {
-                    let sx = (x - this.camX) * scale;
-                    ctx.moveTo(sx, -h/2); ctx.lineTo(sx, h/2);
+                // Draw Custom 2D Zones
+                if (this.config.zones) {
+                    this.config.zones.forEach(zone => {
+                        if(zone.z !== this.camZ) return;
+                        ctx.fillStyle = zone.color;
+                        const px = (zone.x - this.camX) * scale; const py = (zone.y - this.camY) * scale; const pw = zone.w * scale; const ph = zone.h * scale;
+                        ctx.fillRect(px, py, pw, ph);
+                        if(zone.label && this.zoom > 0.5) {
+                            ctx.fillStyle = 'rgba(255,255,255,0.7)'; ctx.font = `bold ${Math.max(12, scale)}px "JetBrains Mono"`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+                            ctx.fillText(zone.label, px + pw/2, py + ph/2);
+                        }
+                    });
                 }
-                for (let y = Math.floor(this.camY - viewDistY); y <= Math.ceil(this.camY + viewDistY); y++) {
-                    let sy = (y - this.camY) * scale;
-                    ctx.moveTo(-w/2, sy); ctx.lineTo(w/2, sy);
-                }
-                ctx.stroke();
+                
+                // Grid
+                ctx.strokeStyle = `rgba(255, 255, 255, ${this.config.gridOpacity || 0.03})`; ctx.lineWidth = 1; ctx.beginPath();
+                for (let x = Math.floor(this.camX - viewDistX); x <= Math.ceil(this.camX + viewDistX); x++) { let sx = (x - this.camX) * scale; ctx.moveTo(sx, -h/2); ctx.lineTo(sx, h/2); }
+                for (let y = Math.floor(this.camY - viewDistY); y <= Math.ceil(this.camY + viewDistY); y++) { let sy = (y - this.camY) * scale; ctx.moveTo(-w/2, sy); ctx.lineTo(w/2, sy); } ctx.stroke();
 
                 // Walls
-                ctx.strokeStyle = '#eab308';
-                ctx.lineWidth = Math.max(1.5, scale * 0.15);
-                ctx.lineCap = 'square';
-                ctx.beginPath();
-
+                ctx.strokeStyle = this.config.wallColor || '#eab308'; ctx.lineWidth = Math.max(1.5, scale * 0.15); ctx.lineCap = 'square'; ctx.beginPath();
                 for (let x = startX; x <= endX; x += gs) {
                     for (let y = startY; y <= endY; y += gs) {
-                        const sx = (x - this.camX) * scale;
-                        const sy = (y - this.camY) * scale;
-                        const nextSx = (x + gs - this.camX) * scale;
-                        const nextSy = (y + gs - this.camY) * scale;
-
-                        const hWallH = deterministicHash(x, y, this.camZ, this.config.seed, 'wall_h');
-                        const hWallV = deterministicHash(x, y, this.camZ, this.config.seed, 'wall_v');
-
-                        if (hWallH < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.lineTo(nextSx, sy); }
-                        if (hWallV < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.lineTo(sx, nextSy); }
+                        const sx = (x - this.camX) * scale; const sy = (y - this.camY) * scale;
+                        const hWallH = deterministicHash(x, y, this.camZ, this.config.seed, 'wall_h'); const hWallV = deterministicHash(x, y, this.camZ, this.config.seed, 'wall_v');
+                        if (hWallH < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.lineTo((x + gs - this.camX) * scale, sy); }
+                        if (hWallV < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.lineTo(sx, (y + gs - this.camY) * scale); }
                     }
-                }
-                ctx.stroke();
+                } ctx.stroke();
 
                 // POIs
                 ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-                for (let x = startX; x < endX; x += gs) {
-                    for (let y = startY; y < endY; y += gs) {
-                        const poiHash = deterministicHash(x, y, this.camZ, this.config.seed, 'is_poi');
-                        if (poiHash < this.config.poiChance) {
-                            const poiTypeHash = deterministicHash(x, y, this.camZ, this.config.seed, 'poi_type');
-                            const poi = this.config.pois[Math.floor(poiTypeHash * this.config.pois.length)];
-                            
-                            const px = (x + gs/2 - this.camX) * scale;
-                            const py = (y + gs/2 - this.camY) * scale;
-
-                            ctx.beginPath();
-                            ctx.arc(px, py, scale * 0.8, 0, Math.PI * 2);
-                            ctx.fillStyle = poi.color + '22'; ctx.fill();
-                            ctx.lineWidth = 1; ctx.strokeStyle = poi.color; ctx.stroke();
-                            
-                            ctx.font = `${Math.max(10, scale)}px sans-serif`;
-                            ctx.fillStyle = '#fff'; ctx.fillText(poi.icon, px, py + 1);
-
-                            if (this.zoom > 1.2) {
-                                ctx.font = `10px "JetBrains Mono"`;
-                                ctx.fillStyle = poi.color;
-                                ctx.fillText(poi.name, px, py + scale * 1.5);
+                if(this.config.pois && this.config.pois.length > 0) {
+                    for (let x = startX; x < endX; x += gs) {
+                        for (let y = startY; y < endY; y += gs) {
+                            if (deterministicHash(x, y, this.camZ, this.config.seed, 'is_poi') < this.config.poiChance) {
+                                const poi = this.config.pois[Math.floor(deterministicHash(x, y, this.camZ, this.config.seed, 'poi_type') * this.config.pois.length)];
+                                const px = (x + gs/2 - this.camX) * scale; const py = (y + gs/2 - this.camY) * scale;
+                                ctx.beginPath(); ctx.arc(px, py, scale * 0.8, 0, Math.PI * 2); ctx.fillStyle = poi.color + '22'; ctx.fill(); ctx.lineWidth = 1; ctx.strokeStyle = poi.color; ctx.stroke();
+                                ctx.font = `${Math.max(10, scale)}px sans-serif`; ctx.fillStyle = '#fff'; ctx.fillText(poi.icon, px, py + 1);
+                                if (this.zoom > 1.2) { ctx.font = `10px "JetBrains Mono"`; ctx.fillStyle = poi.color; ctx.fillText(poi.name, px, py + scale * 1.5); }
                             }
                         }
                     }
                 }
-
-                // User Pins
                 this.pins.forEach(pin => {
                     if (pin.z === this.camZ && pin.level === Router.currentDataId) {
-                        const px = (pin.x - this.camX) * scale;
-                        const py = (pin.y - this.camY) * scale;
-                        
-                        ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(px - 6, py - 14); ctx.lineTo(px + 6, py - 14);
-                        ctx.closePath(); ctx.fillStyle = '#22c55e'; ctx.fill();
+                        const px = (pin.x - this.camX) * scale; const py = (pin.y - this.camY) * scale;
+                        ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(px - 6, py - 14); ctx.lineTo(px + 6, py - 14); ctx.closePath(); ctx.fillStyle = '#22c55e'; ctx.fill();
                         ctx.beginPath(); ctx.arc(px, py - 14, 6, 0, Math.PI*2); ctx.fill();
-                        
-                        ctx.font = 'bold 10px "JetBrains Mono"'; ctx.fillStyle = '#22c55e';
-                        ctx.fillText(pin.name, px, py - 26);
+                        ctx.font = 'bold 10px "JetBrains Mono"'; ctx.fillStyle = '#22c55e'; ctx.fillText(pin.name, px, py - 26);
                     }
                 });
-
-                // Center Crosshair
-                ctx.beginPath(); ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)'; ctx.lineWidth = 1;
-                ctx.moveTo(-10, 0); ctx.lineTo(10, 0); ctx.moveTo(0, -10); ctx.lineTo(0, 10); ctx.stroke();
-
-                ctx.restore();
+                ctx.beginPath(); ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)'; ctx.lineWidth = 1; ctx.moveTo(-10, 0); ctx.lineTo(10, 0); ctx.moveTo(0, -10); ctx.lineTo(0, 10); ctx.stroke(); ctx.restore();
             }
         };
 
         const LiveEngine = {
             isRunning: false, animationFrame: null, lastTick: 0, radarAngle: 0, matrixOffset: 0,
-            
             fixedMetricsData: [
-                { name: "Global Hume Field", min: 98.0, max: 102.5, unit: " H", color: "text-blue-400" },
-                { name: "Kant Counter Avg", min: 0.8, max: 1.2, unit: " K", color: "text-blue-400" },
-                { name: "Quantum Entanglement", min: 99.1, max: 99.9, unit: "%", color: "text-green-400" },
-                { name: "Noclip Spikes/Hr", min: 140, max: 320, unit: " evt", color: "text-yellow-400" },
-                { name: "Arch-Node Latency", min: 0.1, max: 4.5, unit: " ms", color: "text-green-400" },
-                { name: "Sub-space Packet Loss", min: 0.01, max: 0.05, unit: "%", color: "text-green-400" },
-                { name: "Temporal Anchor Flux", min: -0.05, max: 0.05, unit: " Δt", color: "text-purple-400" },
-                { name: "DB Write Velocity", min: 450, max: 850, unit: " TB/s", color: "text-white" },
-                { name: "Agent Biometric Syncs", min: 800, max: 804, unit: " OK", color: "text-green-400" },
-                { name: "Ecto-plasmic Density", min: 0.0, max: 0.2, unit: " mg/L", color: "text-white" },
-                { name: "Server Core Temp", min: -270, max: -268, unit: " °C", color: "text-blue-400" },
-                { name: "Non-Euclidean Load", min: 88, max: 96, unit: "%", color: "text-yellow-400" },
-                { name: "Tesseract Folds/Sec", min: 1200, max: 1400, unit: " f/s", color: "text-purple-400" },
-                { name: "Cognitohazard Blocks", min: 14, max: 55, unit: " b/s", color: "text-green-400" },
-                { name: "Level 0 Saturation", min: 92, max: 99, unit: "%", color: "text-yellow-400" },
-                { name: "Corridor Gen Rate", min: 4000, max: 4500, unit: " m/s", color: "text-white" },
-                { name: "Entity Path Intercepts", min: 0, max: 5, unit: " /m", color: "text-red-400" },
-                { name: "Almond Water Purity", min: 98.9, max: 99.9, unit: "%", color: "text-green-400" },
-                { name: "Reality Bleed Output", min: 0.001, max: 0.005, unit: " mSv", color: "text-white" },
-                { name: "Void Pressure Diff", min: -14, max: -12, unit: " kPa", color: "text-purple-400" },
-                { name: "Liminal Expansion", min: 2.4, max: 2.8, unit: " c", color: "text-blue-400" },
-                { name: "Protocol Encryption", min: 4096, max: 4096, unit: " bit", color: "text-green-400" },
-                { name: "Sub-level Mapping", min: 12, max: 18, unit: " TB/m", color: "text-white" },
-                { name: "Memory Wipe Diagnostics", min: 100, max: 100, unit: "%", color: "text-green-400" },
-                { name: "Sanity Drain Predictor", min: 0.5, max: 2.5, unit: " %/h", color: "text-yellow-400" },
-                { name: "Soundwave Damping", min: 40, max: 95, unit: " dB", color: "text-white" },
-                { name: "Atmospheric Toxicity", min: 0.0, max: 0.1, unit: " ppm", color: "text-green-400" },
-                { name: "Z-Axis Instability", min: 0.001, max: 0.009, unit: " rad", color: "text-purple-400" },
-                { name: "Proprietary Handshake", min: 1, max: 1, unit: " SECURE", color: "text-green-400" },
-                { name: "Global Threat Assess.", min: 0.01, max: 0.05, unit: " MIN", color: "text-white" }
+                { name: "Global Hume Field", min: 98.0, max: 102.5, unit: " H", color: "text-blue-400" }, { name: "Kant Counter Avg", min: 0.8, max: 1.2, unit: " K", color: "text-blue-400" },
+                { name: "Quantum Entanglement", min: 99.1, max: 99.9, unit: "%", color: "text-green-400" }, { name: "Noclip Spikes/Hr", min: 140, max: 320, unit: " evt", color: "text-yellow-400" },
+                { name: "Arch-Node Latency", min: 0.1, max: 4.5, unit: " ms", color: "text-green-400" }, { name: "Sub-space Packet Loss", min: 0.01, max: 0.05, unit: "%", color: "text-green-400" },
+                { name: "Temporal Anchor Flux", min: -0.05, max: 0.05, unit: " Δt", color: "text-purple-400" }, { name: "DB Write Velocity", min: 450, max: 850, unit: " TB/s", color: "text-white" },
+                { name: "Agent Biometric Syncs", min: 800, max: 804, unit: " OK", color: "text-green-400" }, { name: "Ecto-plasmic Density", min: 0.0, max: 0.2, unit: " mg/L", color: "text-white" },
+                { name: "Server Core Temp", min: -270, max: -268, unit: " °C", color: "text-blue-400" }, { name: "Non-Euclidean Load", min: 88, max: 96, unit: "%", color: "text-yellow-400" },
+                { name: "Tesseract Folds/Sec", min: 1200, max: 1400, unit: " f/s", color: "text-purple-400" }, { name: "Cognitohazard Blocks", min: 14, max: 55, unit: " b/s", color: "text-green-400" },
+                { name: "Level 0 Saturation", min: 92, max: 99, unit: "%", color: "text-yellow-400" }, { name: "Corridor Gen Rate", min: 4000, max: 4500, unit: " m/s", color: "text-white" },
+                { name: "Entity Path Intercepts", min: 0, max: 5, unit: " /m", color: "text-red-400" }, { name: "Almond Water Purity", min: 98.9, max: 99.9, unit: "%", color: "text-green-400" },
+                { name: "Reality Bleed Output", min: 0.001, max: 0.005, unit: " mSv", color: "text-white" }, { name: "Void Pressure Diff", min: -14, max: -12, unit: " kPa", color: "text-purple-400" },
+                { name: "Liminal Expansion", min: 2.4, max: 2.8, unit: " c", color: "text-blue-400" }, { name: "Protocol Encryption", min: 4096, max: 4096, unit: " bit", color: "text-green-400" },
+                { name: "Sub-level Mapping", min: 12, max: 18, unit: " TB/m", color: "text-white" }, { name: "Memory Wipe Diagnostics", min: 100, max: 100, unit: "%", color: "text-green-400" },
+                { name: "Sanity Drain Predictor", min: 0.5, max: 2.5, unit: " %/h", color: "text-yellow-400" }, { name: "Soundwave Damping", min: 40, max: 95, unit: " dB", color: "text-white" },
+                { name: "Atmospheric Toxicity", min: 0.0, max: 0.1, unit: " ppm", color: "text-green-400" }, { name: "Z-Axis Instability", min: 0.001, max: 0.009, unit: " rad", color: "text-purple-400" },
+                { name: "Proprietary Handshake", min: 1, max: 1, unit: " SECURE", color: "text-green-400" }, { name: "Global Threat Assess.", min: 0.01, max: 0.05, unit: " MIN", color: "text-white" }
             ],
-            
-            logMessages: [
-                "Probe L-093 connection lost.", "Re-routing processing to Sector 4.", "Anomalous sound detected Level 2.",
-                "Syncing database block 8940A.", "Noclip event localized (Frontrooms).", "Reality anchor reset successful.",
-                "Compiling non-Euclidean mesh...", "Warning: Hume drop in Sector 7.", "Entity signature dissipated.",
-                "Arch-Node 12 reporting full stability.", "Extracting Almond Water samples remotely.", "Mapping loop detected, bypassing..."
-            ],
-
-            start() {
-                if(!this.isRunning) {
-                    this.isRunning = true;
-                    this.initGrid();
-                    this.animationFrame = requestAnimationFrame((t) => this.loop(t));
-                }
-            },
-            
-            stop() {
-                this.isRunning = false;
-                if(this.animationFrame) cancelAnimationFrame(this.animationFrame);
-            },
-
-            initGrid() {
-                const grid = document.getElementById('fixed-metrics-grid');
-                if(!grid) return;
-                grid.innerHTML = '';
-                this.fixedMetricsData.forEach((metric, index) => {
-                    grid.innerHTML += `
-                        <div class="bg-black/40 border border-white/5 p-3 rounded flex flex-col justify-between">
-                            <span class="text-[9px] font-mono text-liminal-muted uppercase truncate" title="${metric.name}">${metric.name}</span>
-                            <div class="text-sm font-mono font-bold ${metric.color} mt-1 tracking-wider" id="fm-${index}">0.00${metric.unit}</div>
-                        </div>
-                    `;
-                });
-            },
-
-            loop(timestamp) {
-                if(!this.isRunning || !document.getElementById('view-live').classList.contains('active')) {
-                    this.stop(); return;
-                }
-                
-                if (timestamp - this.lastTick > 100) {
-                    this.updateDOM();
-                    this.lastTick = timestamp;
-                }
-                
-                this.drawRadar();
-                this.drawMatrix();
-                
-                this.animationFrame = requestAnimationFrame((t) => this.loop(t));
-            },
-
+            logMessages: [ "Probe L-093 connection lost.", "Re-routing processing to Sector 4.", "Anomalous sound detected Level 2.", "Syncing database block 8940A.", "Noclip event localized (Frontrooms).", "Reality anchor reset successful.", "Compiling non-Euclidean mesh...", "Warning: Hume drop in Sector 7.", "Entity signature dissipated.", "Arch-Node 12 reporting full stability.", "Extracting Almond Water samples remotely.", "Mapping loop detected, bypassing..." ],
+            start() { if(!this.isRunning) { this.isRunning = true; this.initGrid(); this.animationFrame = requestAnimationFrame((t) => this.loop(t)); } }, stop() { this.isRunning = false; if(this.animationFrame) cancelAnimationFrame(this.animationFrame); },
+            initGrid() { const grid = document.getElementById('fixed-metrics-grid'); if(!grid) return; grid.innerHTML = ''; this.fixedMetricsData.forEach((metric, index) => { grid.innerHTML += `<div class="bg-black/40 border border-white/5 p-3 rounded flex flex-col justify-between"><span class="text-[9px] font-mono text-liminal-muted uppercase truncate" title="${metric.name}">${metric.name}</span><div class="text-sm font-mono font-bold ${metric.color} mt-1 tracking-wider" id="fm-${index}">0.00${metric.unit}</div></div>`; }); },
+            loop(timestamp) { if(!this.isRunning || !document.getElementById('view-live').classList.contains('active')) { this.stop(); return; } if (timestamp - this.lastTick > 100) { this.updateDOM(); this.lastTick = timestamp; } this.drawRadar(); this.drawMatrix(); this.animationFrame = requestAnimationFrame((t) => this.loop(t)); },
             updateDOM() {
-                const d = new Date();
-                const timeStr = `${d.getHours().toString().padStart(2,'0')}:${d.getMinutes().toString().padStart(2,'0')}:${d.getSeconds().toString().padStart(2,'0')}:${d.getMilliseconds().toString().padStart(3,'0')}`;
-                document.getElementById('live-big-time').innerText = timeStr;
-                document.getElementById('live-big-date').innerText = d.toISOString().split('T')[0];
-                document.getElementById('nav-sync').innerText = (120 + Math.random() * 8).toFixed(2) + ' TB/s';
-
-                this.fixedMetricsData.forEach((metric, index) => {
-                    if (Math.random() > 0.6) {
-                        const val = metric.min + Math.random() * (metric.max - metric.min);
-                        let displayVal = val;
-                        if(typeof metric.min === 'number' && metric.min % 1 !== 0) displayVal = val.toFixed(2);
-                        else if(metric.name.includes("Handshake") || metric.name.includes("Syncs")) displayVal = Math.floor(val);
-                        else displayVal = val.toFixed(1);
-                        
-                        document.getElementById(`fm-${index}`).innerText = `${displayVal}${metric.unit}`;
-                    }
-                });
-
-                if(Math.random() > 0.8) {
-                    const list = document.getElementById('live-metrics-list');
-                    const msg = this.logMessages[Math.floor(Math.random() * this.logMessages.length)];
-                    const status = Math.random() > 0.9 ? '<span class="text-red-400">[WARN]</span>' : '<span class="text-green-400">[OK]</span>';
-                    
-                    const el = document.createElement('div');
-                    el.className = 'flex justify-between border-b border-white/5 py-1.5 animate-fade-in';
-                    el.innerHTML = `<span class="truncate pr-2">> ${msg}</span> <span>${status}</span>`;
-                    
-                    list.prepend(el);
-                    if(list.children.length > 15) list.removeChild(list.lastChild);
-                }
+                const d = new Date(); document.getElementById('live-big-time').innerText = `${d.getHours().toString().padStart(2,'0')}:${d.getMinutes().toString().padStart(2,'0')}:${d.getSeconds().toString().padStart(2,'0')}:${d.getMilliseconds().toString().padStart(3,'0')}`; document.getElementById('live-big-date').innerText = d.toISOString().split('T')[0]; document.getElementById('nav-sync').innerText = (120 + Math.random() * 8).toFixed(2) + ' TB/s';
+                this.fixedMetricsData.forEach((metric, index) => { if (Math.random() > 0.6) { const val = metric.min + Math.random() * (metric.max - metric.min); let displayVal = val; if(typeof metric.min === 'number' && metric.min % 1 !== 0) displayVal = val.toFixed(2); else if(metric.name.includes("Handshake") || metric.name.includes("Syncs")) displayVal = Math.floor(val); else displayVal = val.toFixed(1); document.getElementById(`fm-${index}`).innerText = `${displayVal}${metric.unit}`; } });
+                if(Math.random() > 0.8) { const list = document.getElementById('live-metrics-list'); const msg = this.logMessages[Math.floor(Math.random() * this.logMessages.length)]; const status = Math.random() > 0.9 ? '<span class="text-red-400">[WARN]</span>' : '<span class="text-green-400">[OK]</span>'; const el = document.createElement('div'); el.className = 'flex justify-between border-b border-white/5 py-1.5 animate-fade-in'; el.innerHTML = `<span class="truncate pr-2">> ${msg}</span> <span>${status}</span>`; list.prepend(el); if(list.children.length > 15) list.removeChild(list.lastChild); }
             },
-
             drawRadar() {
-                const canvas = document.getElementById('live-radar-canvas');
-                if(!canvas) return;
-                
-                const parent = canvas.parentElement;
-                if(canvas.width !== parent.clientWidth) canvas.width = parent.clientWidth;
-                if(canvas.height !== parent.clientHeight) canvas.height = parent.clientHeight;
-                
-                const ctx = canvas.getContext('2d');
-                const w = canvas.width; const h = canvas.height;
-                const cx = w/2; const cy = h/2;
-                const r = Math.min(w, h) / 2 - 10;
-
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-                ctx.fillRect(0, 0, w, h);
-
-                ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)';
-                ctx.lineWidth = 1;
-                [0.25, 0.5, 0.75, 1].forEach(scale => {
-                    ctx.beginPath(); ctx.arc(cx, cy, r * scale, 0, Math.PI*2); ctx.stroke();
-                });
-                
-                ctx.beginPath(); ctx.moveTo(cx, cy - r); ctx.lineTo(cx, cy + r); ctx.stroke();
-                ctx.beginPath(); ctx.moveTo(cx - r, cy); ctx.lineTo(cx + r, cy); ctx.stroke();
-
-                this.radarAngle += 0.05;
-                ctx.save();
-                ctx.translate(cx, cy);
-                ctx.rotate(this.radarAngle);
-                
-                const gradient = ctx.createConicGradient(0, 0, 0);
-                gradient.addColorStop(0, 'rgba(59, 130, 246, 0.8)');
-                gradient.addColorStop(0.1, 'rgba(59, 130, 246, 0)');
-                gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
-                
-                ctx.beginPath();
-                ctx.moveTo(0,0);
-                ctx.arc(0, 0, r, 0, Math.PI/2);
-                ctx.lineTo(0,0);
-                ctx.fillStyle = gradient;
-                ctx.fill();
-                
-                ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(r, 0);
-                ctx.strokeStyle = '#3b82f6'; ctx.lineWidth = 2; ctx.stroke();
-                ctx.restore();
-
-                if(Math.random() > 0.95) {
-                    const dist = Math.random() * r;
-                    const ang = Math.random() * Math.PI * 2;
-                    const bx = cx + Math.cos(ang) * dist;
-                    const by = cy + Math.sin(ang) * dist;
-                    
-                    ctx.beginPath(); ctx.arc(bx, by, 3, 0, Math.PI*2);
-                    ctx.fillStyle = '#eab308'; ctx.fill();
-                }
+                const canvas = document.getElementById('live-radar-canvas'); if(!canvas) return; const parent = canvas.parentElement; if(canvas.width !== parent.clientWidth) canvas.width = parent.clientWidth; if(canvas.height !== parent.clientHeight) canvas.height = parent.clientHeight;
+                const ctx = canvas.getContext('2d'); const w = canvas.width; const h = canvas.height; const cx = w/2; const cy = h/2; const r = Math.min(w, h) / 2 - 10;
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; ctx.fillRect(0, 0, w, h); ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)'; ctx.lineWidth = 1; [0.25, 0.5, 0.75, 1].forEach(scale => { ctx.beginPath(); ctx.arc(cx, cy, r * scale, 0, Math.PI*2); ctx.stroke(); });
+                ctx.beginPath(); ctx.moveTo(cx, cy - r); ctx.lineTo(cx, cy + r); ctx.stroke(); ctx.beginPath(); ctx.moveTo(cx - r, cy); ctx.lineTo(cx + r, cy); ctx.stroke();
+                this.radarAngle += 0.05; ctx.save(); ctx.translate(cx, cy); ctx.rotate(this.radarAngle); const gradient = ctx.createConicGradient(0, 0, 0); gradient.addColorStop(0, 'rgba(59, 130, 246, 0.8)'); gradient.addColorStop(0.1, 'rgba(59, 130, 246, 0)'); gradient.addColorStop(1, 'rgba(59, 130, 246, 0)'); ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0, 0, r, 0, Math.PI/2); ctx.lineTo(0,0); ctx.fillStyle = gradient; ctx.fill(); ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(r, 0); ctx.strokeStyle = '#3b82f6'; ctx.lineWidth = 2; ctx.stroke(); ctx.restore();
+                if(Math.random() > 0.95) { const dist = Math.random() * r; const ang = Math.random() * Math.PI * 2; const bx = cx + Math.cos(ang) * dist; const by = cy + Math.sin(ang) * dist; ctx.beginPath(); ctx.arc(bx, by, 3, 0, Math.PI*2); ctx.fillStyle = '#eab308'; ctx.fill(); }
             },
-
             drawMatrix() {
-                const canvas = document.getElementById('live-matrix-canvas');
-                if(!canvas) return;
-                
-                const parent = canvas.parentElement;
-                if(canvas.width !== parent.clientWidth) canvas.width = parent.clientWidth;
-                if(canvas.height !== parent.clientHeight) canvas.height = parent.clientHeight;
-                
-                const ctx = canvas.getContext('2d');
-                const w = canvas.width; const h = canvas.height;
-                
-                ctx.fillStyle = '#050505';
-                ctx.fillRect(0, 0, w, h);
-                
-                this.matrixOffset += 0.5;
-                const gridSize = 20;
-                
-                for(let x = 0; x < w; x += gridSize) {
-                    for(let y = 0; y < h; y += gridSize) {
-                        const noise = Math.sin((x + this.matrixOffset) * 0.05) * Math.cos((y + this.matrixOffset) * 0.05);
-                        
-                        let color = 'rgba(255,255,255,0.05)';
-                        let size = 2;
-                        
-                        if(noise > 0.5) { color = '#eab308'; size = 4; } 
-                        else if (noise > 0.3) { color = '#ca8a04'; size = 3; } 
-                        else if (noise < -0.6) { color = '#ef4444'; size = 3; }
-
-                        ctx.fillStyle = color;
-                        ctx.beginPath();
-                        ctx.arc(x + gridSize/2, y + gridSize/2, size, 0, Math.PI*2);
-                        ctx.fill();
-                    }
-                }
+                const canvas = document.getElementById('live-matrix-canvas'); if(!canvas) return; const parent = canvas.parentElement; if(canvas.width !== parent.clientWidth) canvas.width = parent.clientWidth; if(canvas.height !== parent.clientHeight) canvas.height = parent.clientHeight;
+                const ctx = canvas.getContext('2d'); const w = canvas.width; const h = canvas.height; ctx.fillStyle = '#050505'; ctx.fillRect(0, 0, w, h); this.matrixOffset += 0.5; const gridSize = 20;
+                for(let x = 0; x < w; x += gridSize) { for(let y = 0; y < h; y += gridSize) { const noise = Math.sin((x + this.matrixOffset) * 0.05) * Math.cos((y + this.matrixOffset) * 0.05); let color = 'rgba(255,255,255,0.05)'; let size = 2; if(noise > 0.5) { color = '#eab308'; size = 4; } else if (noise > 0.3) { color = '#ca8a04'; size = 3; } else if (noise < -0.6) { color = '#ef4444'; size = 3; } ctx.fillStyle = color; ctx.beginPath(); ctx.arc(x + gridSize/2, y + gridSize/2, size, 0, Math.PI*2); ctx.fill(); } }
             }
         };
 
-        // Initialize Global Navigation Clock
-        setInterval(() => {
-            const date = new Date();
-            document.getElementById('nav-uptime').innerText = `${date.getHours().toString().padStart(2,'0')}:${date.getMinutes().toString().padStart(2,'0')}:${date.getSeconds().toString().padStart(2,'0')}`;
-            document.getElementById('nav-date').innerText = date.toISOString().split('T')[0];
-        }, 1000);
-
-        // Boot the System
+        setInterval(() => { const date = new Date(); document.getElementById('nav-uptime').innerText = `${date.getHours().toString().padStart(2,'0')}:${date.getMinutes().toString().padStart(2,'0')}:${date.getSeconds().toString().padStart(2,'0')}`; document.getElementById('nav-date').innerText = date.toISOString().split('T')[0]; }, 1000);
         Router.init();
-
     </script>
 </body>
 </html>
