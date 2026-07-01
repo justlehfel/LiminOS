@@ -303,7 +303,10 @@
         <section id="view-data" class="page-view flex-col min-h-full">
             <!-- Hero Banner -->
             <div class="relative w-full h-64 md:h-80 overflow-hidden border-b border-liminal-border flex-shrink-0" id="data-hero">
-                <img id="data-hero-img" src="" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity transform scale-105 transition-transform duration-[10s]" alt="Hero Image">
+                <div class="absolute inset-0 bg-[#0a0a07]"></div>
+                <!-- Swapped out static image style to properly tile the injected procedural textures -->
+                <div id="data-hero-bg-tile" class="absolute inset-0 opacity-40 mix-blend-luminosity transform scale-105 transition-transform duration-[10s]" style="background-repeat: repeat; background-size: auto;"></div>
+                
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a07] via-[#0a0a07]/80 to-transparent"></div>
                 <div class="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
                 
@@ -482,7 +485,7 @@
                     html += `
                         <a href="#/${prefix}/${key}" class="glass-panel p-5 rounded-xl border border-white/5 bg-black/40 hover:bg-white/10 hover:border-liminal-primary/50 transition-all cursor-pointer group flex flex-col h-full relative overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                            <img src="${item.heroImage}" class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity group-hover:scale-105 duration-700">
+                            <div class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-50 transition-opacity group-hover:scale-105 duration-700" style="background-image: url('${item.heroImage}'); background-repeat: repeat; background-size: auto;"></div>
                             
                             <div class="relative z-20 flex-1 flex flex-col justify-end">
                                 <div class="w-10 h-10 rounded bg-liminal-primary/10 border border-liminal-primary/30 flex items-center justify-center text-liminal-primary mb-3 shadow-[0_0_15px_rgba(234,179,8,0.1)]">
@@ -506,7 +509,9 @@
 
                 document.getElementById('data-title-id').innerText = data.title;
                 document.getElementById('data-title-name').innerText = `"${data.name}"`;
-                document.getElementById('data-hero-img').src = data.heroImage;
+                
+                // Adjusted to handle procedural tile backgrounds
+                document.getElementById('data-hero-bg-tile').style.backgroundImage = `url('${data.heroImage}')`;
                 
                 const tagsContainer = document.getElementById('data-tags');
                 tagsContainer.innerHTML = data.tags.map(tag => 

@@ -210,7 +210,7 @@ const LiminOSDatabase = {
                 { label: "UNSTABLE", class: "bg-yellow-500/10 text-yellow-400 border-yellow-500/30" },
                 { label: "DEVOID OF ENTITIES", class: "bg-blue-500/10 text-blue-400 border-blue-500/30" }
             ],
-            heroImage: "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1600&q=80",
+            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNjY2FhMDAiLz48cGF0aCBkPSJNMCAwTDggOE04IDBMMCA4IiBzdHJva2U9IiNhYTg4MDAiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==",
             
             mapConfig: {
                 seed: 7492110, wallDensity: 0.65, gridSize: 5, poiChance: 0.015,
@@ -321,8 +321,7 @@ const LiminOSDatabase = {
                 </div>
                 
                 <div class="mb-8 overflow-hidden rounded-lg border border-liminal-border">
-                    <img src="https://images.unsplash.com/photo-1572945281561-125dd78dce5b?auto=format&fit=crop&w=1000&q=80" class="w-full opacity-80 mix-blend-screen" alt="Level 0 Original">
-                    <p class="text-[10px] font-mono text-liminal-muted p-2 bg-black/50 text-center">The first known image of Level 0, posted to 4chan in May of 2019.</p>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNjY2FhMDAiLz48cGF0aCBkPSJNMCAwTDggOE04IDBMMCA4IiBzdHJva2U9IiNhYTg4MDAiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==" class="w-full h-64 object-cover opacity-80 mix-blend-screen" alt="Level 0 Pattern">
                 </div>
 
                 <h3>Description</h3>
@@ -333,12 +332,10 @@ const LiminOSDatabase = {
 
                 <div class="grid grid-cols-2 gap-4 my-8">
                     <div class="border border-white/10 rounded-lg p-2 bg-black/40">
-                        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80" class="w-full rounded opacity-70" alt="Tattered Photo">
-                        <p class="text-[10px] font-mono text-liminal-muted mt-2 text-center">A tattered photograph of Level 0. An indecipherable signature was found scribbled on the back.</p>
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNjY2FhMDAiLz48cGF0aCBkPSJNMCAwTDggOE04IDBMMCA4IiBzdHJva2U9IiNhYTg4MDAiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==" class="w-full h-32 object-cover rounded opacity-70" alt="Level 0 Pattern">
                     </div>
                     <div class="border border-white/10 rounded-lg p-2 bg-black/40">
-                        <img src="https://images.unsplash.com/photo-1622737133809-d95047b9e673?auto=format&fit=crop&w=400&q=80" class="w-full rounded opacity-70" alt="Unique Layout">
-                        <p class="text-[10px] font-mono text-liminal-muted mt-2 text-center">Another image of Level 0 depicting a layout that is unique in appearance.</p>
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNjY2FhMDAiLz48cGF0aCBkPSJNMCAwTDggOE04IDBMMCA4IiBzdHJva2U9IiNhYTg4MDAiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==" class="w-full h-32 object-cover rounded opacity-70" alt="Level 0 Pattern">
                     </div>
                 </div>
 
@@ -477,7 +474,7 @@ const LiminOSDatabase = {
                             "How long have I been walking? Where did I begin walking?<br>
                             I recall joining my lover on the floor. I don't think I was dancing well. I stepped in the same space a second time, and when I decided to move out of the clumsy two-step, the floor ate me up. Her grip was nowhere near strong enough to stop my sudden fall. I awoke to this space, a pain in my ankle, buzzing lights. My eyes were struck by a stinging sensation unlike anything else.<br><br>
                             With no better options, I had to get up, start moving, search for a way out. I was always told to "move forward, no matter the cost", but what is forward when everything looks the same? Whatever direction you choose, it would seem. It really isn't forward then, right? I lost direction an unknown time ago, for all I've seen is the same yellow walls. The same wallpaper too, always the same wallpaper. Whoever made this place had a strange love for arrows and vertical lines.<br><br>
-                            I've tried blinking, over and over, to make it stop. To wake up. There are no clocks to check the time, only a smattering of power outlets and empty mounts. They add a little more character to the mundane rooms. The last one I stepped on, however, crumbled immediately. I still feel the trickle of something warm going down my face, a red hue reminding me that I'm still alive.<br><br>
+                            I've tried blinking, over and over, to make it stop. To wake up. There are no clocks to check the time, only a smattering of power outlets and empty mounts. They add a little more character to the mundane rooms. The last one I stepped on, however, crumbled immediately. I still feel the trickle of something warm going down my face, a red hue reminding me that Im still alive.<br><br>
                             I only hope I can return home."
                         </div>
                         <p class="text-sm text-liminal-muted leading-relaxed mt-3">This log profoundly validates Liminality Corp's psychological degradation models, leading to the strict implementation of mechanical watches in Agent Loadouts.</p>
@@ -523,17 +520,17 @@ const LiminOSDatabase = {
         }
     },
     entities: {
-        "entity49": {
+        "entity1": {
             type: "entity",
-            id: "49",
-            title: "Entity 49",
+            id: "1",
+            title: "Entity 1",
             name: "The Cameraman",
             tags: [
                 { label: "UNALIGNED", class: "bg-gray-500/10 text-gray-400 border-gray-500/30" },
                 { label: "NON-HOSTILE", class: "bg-blue-500/10 text-blue-400 border-blue-500/30" },
                 { label: "THEORETICAL", class: "bg-purple-500/10 text-purple-400 border-purple-500/30" }
             ],
-            heroImage: "https://images.unsplash.com/photo-1516961642265-531546e84af2?auto=format&fit=crop&w=1600&q=80",
+            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMTExIi8+PGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjMiIGZpbGw9IiMzMzMiLz48L3N2Zz4=",
             
             specificMetrics: {
                 "Entity Specific (Proprietary)": {
@@ -556,8 +553,7 @@ const LiminOSDatabase = {
                 </div>
                 
                 <div class="mb-8 overflow-hidden rounded-lg border border-liminal-border">
-                    <img src="https://images.unsplash.com/photo-1605335198944-1296c6bd00fb?auto=format&fit=crop&w=1000&q=80" class="w-full opacity-80 mix-blend-screen" alt="Dark Room">
-                    <p class="text-[10px] font-mono text-liminal-muted p-2 bg-black/50 text-center">Unverified undeveloped film strip allegedly recovered near a Level 2 pipe fixture.</p>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMTExIi8+PGNpcmNsZSBjeD0iNSIgY3k9IjUiIHI9IjMiIGZpbGw9IiMzMzMiLz48L3N2Zz4=" class="w-full h-64 object-cover opacity-80 mix-blend-screen" alt="Entity Pattern">
                 </div>
 
                 <h3>Description</h3>
