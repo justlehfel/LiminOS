@@ -384,6 +384,7 @@
                 let tabsHtml = `<button class="tab-btn active px-4 py-2 text-xs md:text-sm font-bold text-liminal-primary border-b-2 border-liminal-primary transition-colors uppercase tracking-wide" onclick="switchTab('lore')">Documentation</button>`;
                 if(data.survivalGuide) tabsHtml += `<button class="tab-btn px-4 py-2 text-xs md:text-sm font-bold text-liminal-muted border-b-2 border-transparent hover:text-white transition-colors uppercase tracking-wide" onclick="switchTab('survival')">Survival / Interaction</button>`;
                 if(data.history) tabsHtml += `<button class="tab-btn px-4 py-2 text-xs md:text-sm font-bold text-liminal-muted border-b-2 border-transparent hover:text-white transition-colors uppercase tracking-wide" onclick="switchTab('history')">Historical Logs</button>`;
+                if(data.globalValues) tabsHtml += `<button class="tab-btn px-4 py-2 text-xs md:text-sm font-bold text-liminal-muted border-b-2 border-transparent hover:text-white transition-colors uppercase tracking-wide" onclick="switchTab('globals')">Global Metrics</button>`;
                 if(data.resonanceLogs) tabsHtml += `<button class="tab-btn px-4 py-2 text-xs md:text-sm font-bold text-liminal-muted border-b-2 border-transparent hover:text-white transition-colors uppercase tracking-wide" onclick="switchTab('resonance')">Resonance Scan</button>`;
                 tabsContainer.innerHTML = tabsHtml;
 
@@ -391,6 +392,7 @@
                 let contentHtml = `<div id="tab-lore" class="tab-content animate-fade-in lore-content block">${data.lore}</div>`;
                 if(data.survivalGuide) contentHtml += `<div id="tab-survival" class="tab-content hidden animate-fade-in lore-content">${data.survivalGuide}</div>`;
                 if(data.history) contentHtml += `<div id="tab-history" class="tab-content hidden animate-fade-in lore-content">${data.history}</div>`;
+                if(data.globalValues) contentHtml += `<div id="tab-globals" class="tab-content hidden animate-fade-in lore-content">${data.globalValues}</div>`;
                 if(data.resonanceLogs) {
                     contentHtml += `<div id="tab-resonance" class="tab-content hidden animate-fade-in"><div class="flex flex-col gap-4"><h3 class="text-xl font-bold text-white mb-2">Deep Resonance Protocol</h3><button onclick="runResonanceScan()" id="btn-run-scan" class="bg-liminal-primary/20 border border-liminal-primary text-liminal-primary hover:bg-liminal-primary hover:text-black font-mono font-bold py-3 px-6 rounded transition-all flex items-center justify-center gap-3 shadow-[0_0_15px_var(--theme-glow)] hover:shadow-[0_0_25px_var(--theme-glow)]"><i class="ph ph-scan text-xl"></i> INITIATE DEEP SCAN</button><div id="scan-terminal" class="hidden mt-4 bg-[#050505] border border-white/10 rounded p-4 font-mono text-[10px] md:text-xs h-64 overflow-y-auto shadow-inner"><div id="scan-terminal-content" class="space-y-1"></div></div></div></div>`;
                 }
