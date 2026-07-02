@@ -3,12 +3,12 @@
 // ==========================================
 
 const GlobalMetrics = [
-    { category: "Chrono-Temporal Dynamics", icon: "ph-hourglass", color: "text-teal-400", data: { "Frontrooms Time Dilation": "1:1.0 (Baseline)", "Local Time Flow Rate": "Standard Linear", "Temporal Loop Probability": "0.00%", "Entropy Gradient": "Normal", "Atomic Clock Drift": "±0.0s/24h", "Subjective Time Variance": "Low", "Causality Integrity": "99.9%", "Temporal Echoes": "None detected", "Chronon Radiation": "Background", "Memory Degradation": "Baseline", "Aging Effect on Biology": "Normal", "Device Battery Drain": "Standard", "Historical Sedimentation": "Present", "Simultaneity Loss": "None", "Time Dilation Ratio (vs Frontrooms)": "1.000", "Temporal Drag Coefficient": "0.01 μs/m", "Causality Bleed Rate": "0.0001%", "Chronon Particulate Count": "4.2 ppm", "Paradox Tolerance Threshold": "Low" } },
-    { category: "Spatial & Dimensional", icon: "ph-intersect", color: "text-purple-400", data: { "Hume Level (Reality)": "100.0 H", "Kant Counter Reading": "1.00", "Euclidean Consistency": "99.9%", "Noclipping Threshold": "Impossible", "Spatial Dilation Factor": "1:1", "Gravity Variance": "9.81 m/s²", "Z-Axis Deviation": "0.00%", "Magnetic Declination": "Standard Earth", "Tesseract Folding": "None", "Quantum Superposition": "Collapsed", "Non-linear Corridors": "0%", "Collision Meshes": "Solid/Intact", "Coordinate Drift": "0m/hr", "Euclidean Warp Factor": "0.00 (Stable)", "Gravitational Shear": "0.0 m/s³", "Dimensional Permeability": "0.02%", "Tesseract Depth Index": "Level 1 (Surface)", "Absolute Void Proximity": ">1,000,000 AU" } },
-    { category: "Atmospheric Diagnostics", icon: "ph-wind", color: "text-blue-400", data: { "Ambient Temp (Core)": "20.0 °C", "Temp Fluctuation (24h)": "±2.0 °C", "Relative Humidity": "40-60%", "Atmospheric Pressure": "101.3 kPa", "Air Comp: O2": "20.9%", "Air Comp: CO2": "0.04%", "Air Comp: N2": "78.0%", "Trace Anomalous Gases": "0%", "Particulate Matter": "Safe levels", "Ozone Level": "Normal", "Aerosolized Spores": "None", "Static Charge Density": "Neutral", "Breathability Index": "100%", "Background Rad-Count": "0.12 μSv/h", "Airborne Spatial Anomalies": "0 parts/Billion", "Chemical Odor Profile": "Sterile/Neutral", "Barometric Fluctuation Spike": "±0.1 kPa", "Xenon Gas Concentration": "Trace" } },
-    { category: "Acoustic & Luminescent", icon: "ph-waveform", color: "text-yellow-400", data: { "Ambient Hum": "None", "Acoustic Reverberation": "Standard", "Light Source Type": "Variable", "Luminosity Level": "Variable Lux", "Color Temperature": "Variable K", "Total Darkness Zones": "Possible", "Audio Hallucination Risk": "0%", "UV Radiation": "Sunlight-dependent", "Infrared Signature": "Normal", "Absolute Decibel Baseline": "30 dB", "Sub-sonic Interference": "None", "Echo Delay Variance": "Linear (0s)", "Auditory Mimicry Index": "0%", "Architectural Resonance Freq": "432 Hz" } },
-    { category: "Material & Biological", icon: "ph-flask", color: "text-green-400", data: { "Toxicity Levels": "Safe", "Pathogen Level": "Standard Earth", "Mold Spore Count": "Low", "Structural Integrity": "Variable", "Entity Density": "0.00", "Organic Decay Rate": "Standard", "Nutrient Availability": "High", "Dehydration Risk": "Normal", "Flora/Fauna Present": "Earth Standard", "Carpet/Floor Fluid Toxicity": "0%", "Wall Arsenic Saturation": "0 mg/m²", "Micro-Concrete Density": "2400 kg/m³", "Organic Assimilation Rate": "0%/hr", "Architectural Decay Sub-routine": "Dormant" } },
-    { category: "Survival & Infrastructure", icon: "ph-shield", color: "text-red-400", data: { "Base Threat Level": "0", "Sanity Drain Rate": "0%", "Isolation Factor": "Variable", "Radio Comm Integrity": "100%", "GPS Functionality": "Online", "Electrical Availability": "Variable", "Internet Access": "Available", "Rescue Probability": "High", "Resource Respawn Algorithm": "Null", "Shelter Viability Score": "90/100", "Navigation Difficulty": "Low", "Psychological Erosion Rate": "Baseline", "Entity Detection Range Requirement": "N/A" } }
+    { category: "Chrono-Temporal Dynamics", icon: "ph-hourglass", color: "text-teal-400", data: { "Frontrooms Time Dilation": "1:1.0 (Baseline)", "Local Time Flow Rate": "Standard Linear", "Temporal Loop Probability": "0.00%", "Entropy Gradient": "Normal", "Atomic Clock Drift": "±0.0s/24h", "Subjective Time Variance": "Low" } },
+    { category: "Spatial & Dimensional", icon: "ph-intersect", color: "text-purple-400", data: { "Hume Level (Reality)": "100.0 H", "Kant Counter Reading": "1.00", "Euclidean Consistency": "99.9%", "Noclipping Threshold": "Impossible", "Spatial Dilation Factor": "1:1", "Z-Axis Deviation": "0.00%" } },
+    { category: "Atmospheric Diagnostics", icon: "ph-wind", color: "text-blue-400", data: { "Ambient Temp (Core)": "20.0 °C", "Relative Humidity": "40-60%", "Atmospheric Pressure": "101.3 kPa", "Air Comp: O2": "20.9%", "Trace Anomalous Gases": "0%", "Chemical Odor Profile": "Sterile/Neutral" } },
+    { category: "Acoustic & Luminescent", icon: "ph-waveform", color: "text-yellow-400", data: { "Ambient Hum": "None", "Absolute Decibel Baseline": "30 dB", "Luminosity Level": "Variable Lux", "Color Temperature": "Variable K", "Total Darkness Zones": "Possible", "Audio Hallucination Risk": "0%" } },
+    { category: "Material & Biological", icon: "ph-flask", color: "text-green-400", data: { "Entity Density": "0.00", "Toxicity Levels": "Safe", "Wall Arsenic Saturation": "0 mg/m²", "Micro-Concrete Density": "2400 kg/m³", "Flora/Fauna Present": "Earth Standard", "Pathogen Level": "Standard Earth" } },
+    { category: "Survival & Infrastructure", icon: "ph-shield", color: "text-red-400", data: { "Base Threat Level": "0", "Sanity Drain Rate": "0%", "Isolation Factor": "Variable", "Radio Comm Integrity": "100%", "GPS Functionality": "Online", "Rescue Probability": "High" } }
 ];
 
 const GlobalEntityMetrics = [
@@ -24,329 +24,791 @@ const LiminOSClassifications = {
         { class: "Class 2", name: "Unsafe", color: "bg-yellow-400", desc: "Unsafe, unsecure, low entity count. Environmental hazards require attention." },
         { class: "Class 3", name: "Hazardous", color: "bg-orange-500", desc: "Unsafe, unsecure, moderate entity count. Survival requires preparation and caution." },
         { class: "Class 4", name: "Dangerous", color: "bg-red-500", desc: "Unsafe, unsecure, high entity count. Immediate danger to human life. Highly aggressive environment." },
-        { class: "Class 5", name: "Lethal", color: "bg-red-700", desc: "Unsafe, unsecure, entity infestation. Survival is nearly impossible. Instantaneous hazards present." },
-        { class: "Class Unknown", name: "Undetermined", color: "bg-gray-500", desc: "Mysterious properties. Data is insufficient to assign a standard survival class." },
-        { class: "Class Deadzone", name: "Lethal Anomaly", color: "bg-black border border-red-900 text-red-500", desc: "Environment actively breaks down molecular structure. Immediate death upon entry." }
+        { class: "Class 5", name: "Lethal", color: "bg-red-700", desc: "Unsafe, unsecure, entity infestation. Survival is nearly impossible. Instantaneous hazards present." }
     ],
     special: [
         { class: "Class Ψ (Psi)", name: "Psychological", color: "bg-fuchsia-500", desc: "Environment directly attacks the mind. Hallucinations, memory loss, paranoia, or manufactured realities. Physical entities may be absent, but the level itself is the threat." },
         { class: "Class Ω (Omega)", name: "Hyper-Unstable", color: "bg-indigo-500", desc: "Geometry, time, and physical laws fluctuate violently. The level cannot maintain a consistent state." },
         { class: "Class Habitable", name: "Sanctuary", color: "bg-teal-400", desc: "An environment naturally conducive to human life, often possessing restorative anomalous properties. Water and food are usually abundant." }
-    ],
-    tags: [
-        { label: "SAFE", icon: "ph-check-circle", color: "text-green-400" }, { label: "UNSTABLE", icon: "ph-warning", color: "text-yellow-400" },
-        { label: "DEVOID OF ENTITIES", icon: "ph-ghost", color: "text-blue-400" }, { label: "ENTITY INFESTATION", icon: "ph-skull", color: "text-red-500" },
-        { label: "ENVIRONMENTAL HAZARD", icon: "ph-wind", color: "text-orange-400" }
     ]
 };
 
-// HELPER GENERATORS FOR PROPRIETARY DATA COMPRESSION
-const makeSG = (tricks, items) => `<div class="space-y-6 text-sm text-liminal-text max-w-4xl">${tricks.map((t,i)=>`<div class="p-5 bg-black/40 border border-white/5 rounded-lg border-l-4 border-l-${t.c}-500 shadow-lg hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-shadow"><h4 class="text-${t.c}-500 font-bold uppercase mb-3 text-lg flex items-center gap-2">${i+1}. ${t.n}</h4><p class="mb-2">${t.d}</p><p class="bg-${t.c}-900/20 p-3 rounded text-${t.c}-200 text-xs font-mono"><strong>L-CORP TRICK:</strong> ${t.l}</p></div>`).join('')}<div class="mt-8 pt-6 border-t border-white/10"><h4 class="text-white font-bold mb-4 text-xl tracking-tight">Essential Loadout</h4><div class="grid grid-cols-1 md:grid-cols-2 gap-3">${items.map(item=>`<div class="bg-[#050505] border border-white/5 p-3 rounded flex items-center gap-3 animate-slide-up hover:bg-white/5 transition-colors"><i class="ph ${item.i} text-2xl" style="color:var(--theme-primary)"></i><span class="font-mono text-xs">${item.n}</span></div>`).join('')}</div></div></div>`;
-const makeHist = (logs) => `<div class="relative border-l border-liminal-border ml-4 md:ml-6 space-y-10 pb-12 mt-4">${logs.map((l,i)=>`<div class="relative pl-6 md:pl-10"><div class="absolute -left-2 top-1 w-4 h-4 bg-black border border-liminal-muted rounded-full z-10"></div><div class="text-[10px] text-liminal-muted mb-1 font-mono">ARCHIVE LOG ${i+1}</div><h4 class="text-white font-bold text-lg mb-2">${l.t}</h4><p class="text-sm text-liminal-muted">${l.d}</p></div>`).join('')}</div>`;
+// ==========================================
+// LIMINOS COMPILATION ENGINE
+// ==========================================
+// This engine dynamically constructs the massive HTML blocks required by the UI, 
+// allowing the raw data to be incredibly dense without truncation.
+
+const buildLevel = (d) => {
+    const sgHTML = `
+        <div class="space-y-6 text-sm text-liminal-text max-w-4xl">
+            ${d.tips.map((t, i) => `
+                <div class="p-5 bg-black/40 border border-white/5 rounded-lg border-l-4 border-l-${t.c}-500 shadow-lg hover:shadow-[0_0_15px_rgba(255,255,255,0.05)] transition-shadow">
+                    <h4 class="text-${t.c}-500 font-bold uppercase mb-3 text-lg flex items-center gap-2">${i+1}. ${t.n}</h4>
+                    <p class="mb-2 leading-relaxed">${t.d}</p>
+                    <p class="bg-${t.c}-900/20 p-3 rounded text-${t.c}-200 text-xs font-mono border border-${t.c}-500/20"><strong>L-CORP PROTOCOL:</strong> ${t.l}</p>
+                </div>
+            `).join('')}
+            <div class="mt-8 pt-6 border-t border-white/10">
+                <h4 class="text-white font-bold mb-4 text-xl tracking-tight">Essential Tactical Loadout</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    ${d.loadout.map((l, i) => `
+                        <div class="bg-[#050505] border border-white/5 p-3 rounded flex items-center gap-3 animate-slide-up hover:bg-white/5 transition-colors" style="animation-delay: ${i*0.1}s;">
+                            <i class="ph ${l.i} text-2xl" style="color:var(--theme-primary)"></i>
+                            <span class="font-mono text-xs text-gray-300">${l.n}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </div>
+    `;
+
+    const histHTML = `
+        <div class="relative border-l border-liminal-border ml-4 md:ml-6 space-y-10 pb-12 mt-4">
+            ${d.history.map((h, i) => `
+                <div class="relative pl-6 md:pl-10">
+                    <div class="absolute -left-2.5 top-1 w-5 h-5 bg-black border-2 border-${i===d.history.length-1?'liminal-safe animate-pulse':'liminal-muted'} rounded-full z-10 flex items-center justify-center">
+                        ${i===d.history.length-1 ? '<div class="w-2 h-2 bg-liminal-safe rounded-full animate-ping"></div>' : ''}
+                    </div>
+                    <div class="text-[10px] text-${i===d.history.length-1?'liminal-safe':'liminal-muted'} mb-1 font-mono">${h.date}</div>
+                    <h4 class="text-white font-bold text-lg mb-2">${i+1}. ${h.t}</h4>
+                    <p class="text-sm text-liminal-muted leading-relaxed">${h.d}</p>
+                </div>
+            `).join('')}
+        </div>
+    `;
+
+    const metricsMatrixHTML = `
+        <div class="mt-12 pt-8 border-t border-white/5">
+            <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3"><i class="ph ph-chart-polar text-liminal-primary"></i> Absolute Global Values Matrix</h3>
+            <p class="text-xs text-liminal-muted font-mono mb-6">Cross-referenced spatial telemetry strictly localized to ${d.title}. These values overwrite standard Frontrooms baselines.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                ${Object.entries(d.metrics).map(([category, values]) => `
+                    <div class="bg-black/50 border border-white/5 rounded-lg p-4 shadow-inner hover:border-liminal-primary/30 transition-colors">
+                        <h4 class="text-[11px] font-bold text-liminal-primary uppercase tracking-wider mb-3 font-mono border-b border-white/5 pb-2">${category}</h4>
+                        <div class="space-y-2">
+                            ${Object.entries(values).map(([k, v]) => `
+                                <div class="flex justify-between items-center text-[10px] md:text-xs">
+                                    <span class="text-liminal-muted font-mono pr-2 truncate max-w-[50%]">${k}</span>
+                                    <span class="text-white font-mono font-bold text-right truncate max-w-[50%]">${v}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+
+    const loreHTML = `
+        <div class="mb-6 pb-4 border-b border-white/5">
+            <p class="text-xl text-white font-light leading-relaxed">${d.desc[0]}</p>
+        </div>
+        <h3>Topological Description</h3>
+        ${d.desc.slice(1).map(p => `<p class="leading-relaxed mb-4">${p}</p>`).join('')}
+        <h3>Entrances & Exits</h3>
+        <div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner mb-8">
+            <h4 class="text-liminal-primary font-bold mb-2 flex items-center gap-2"><i class="ph ph-sign-in"></i> VERIFIED ENTRANCES</h4>
+            <ul class="list-none space-y-2 text-liminal-text mb-6">
+                ${d.entrances.map(e => `<li class="flex items-start gap-2"><i class="ph ph-arrow-right text-liminal-primary mt-1 animate-pulse"></i> <span>${e}</span></li>`).join('')}
+            </ul>
+            <h4 class="text-liminal-safe font-bold mb-2 flex items-center gap-2"><i class="ph ph-sign-out"></i> KNOWN EXITS</h4>
+            <ul class="list-none space-y-2 text-liminal-text">
+                ${d.exits.map(e => `<li class="flex items-start gap-2"><i class="ph ph-arrow-right text-liminal-safe mt-1"></i> <span>${e}</span></li>`).join('')}
+            </ul>
+        </div>
+        ${metricsMatrixHTML}
+    `;
+
+    return {
+        type: "level", id: d.id, title: d.title, name: d.name,
+        themeColor: d.color, themeHover: d.hover, themeGlow: d.glow, idleAnimation: d.anim,
+        tags: d.tags.map(t => ({ label: t[0], class: t[1] })),
+        heroImage: d.hero, mapConfig: d.map, specificMetrics: d.metrics,
+        lore: loreHTML, survivalGuide: sgHTML, history: histHTML, resonanceLogs: d.resonance
+    };
+};
+
+// ==========================================
+// MASSIVE LEVEL DATABASE
+// ==========================================
 
 const LiminOSDatabase = {
     levels: {
-        "level0": {
-            type: "level", id: "level0", title: "Level 0", name: "The Lobby",
-            themeColor: "#eab308", themeHover: "#ca8a04", themeGlow: "rgba(234, 179, 8, 0.2)", idleAnimation: "animate-ambient-drift",
-            tags: [ { label: "CLASS 1", class: "bg-green-500/10 text-green-400 border-green-500/30" }, { label: "SAFE", class: "bg-green-500/10 text-green-400 border-green-500/30" }, { label: "UNSTABLE", class: "bg-yellow-500/10 text-yellow-400 border-yellow-500/30" }, { label: "DEVOID OF ENTITIES", class: "bg-blue-500/10 text-blue-400 border-blue-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNjY2FhMDAiLz48cGF0aCBkPSJNMCAwTDggOE04IDBMMCA4IiBzdHJva2U9IiNhYTg4MDAiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==",
-            mapConfig: { seed: 7492110, wallDensity: 0.65, gridSize: 5, poiChance: 0.015, renderStyle: 'grid', wallColor: '#eab308', gridColor: 'rgba(255,255,255,0.05)', wallThickness: 0.15, bgColor: '#030303', pois: [ { name: "Gateway to Level 1", color: "#9ca3af", icon: "⬇" }, { name: "Almond Water Puddle", color: "#60a5fa", icon: "💧" } ] },
-            specificMetrics: { "Level 0 Specific": { "Carpet Saturation Depth": "1.2cm (Avg)", "Ambient Hum Frequency": "59.8 Hz" }, "Spatial & Dimensional": { "Hume Level (Reality)": "82.4 H (Low)", "Euclidean Consistency": "14.2% (Severe Non-linear)" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 0 is the first level of the Backrooms, and the first location that most entering from baseline reality will find themselves in.</p></div><h3>Description</h3><p>Level 0 is an expansive non-Euclidean space resembling the back rooms of a dated retail outlet. The level is known most prominently for its disorienting layout and distinct yellowed wallpaper. The constant hum-buzz emitted by the ceiling lights permeates every area.</p>`,
-            survivalGuide: makeSG([{n:"Psychological Anchoring",d:"The hum-buzz and mono-yellow aesthetic induce rapid monophobia.",c:"purple",l:"Carry a mechanical watch. The ticking overrides the hum-buzz."},{n:"Resource Management",d:"There is absolutely no clean water natively generated here.",c:"yellow",l:"Search specifically for pooling condensation near structural anomalies."}], [{n:"Analog Noise-cancelling headsets",i:"ph-headphones"},{n:"3L Purified Almond Water",i:"ph-drop"}]),
-            history: makeHist([{t:"Initial Archival Image Captured",d:"An anonymous user uploads the first verified visual telemetry of Level 0."},{t:"Project 'Yellow Wallpaper' Initiated",d:"The first batch of unmanned probes are sent."}]),
-            resonanceLogs: ["> INITIALIZING QUANTUM PING...", "> TARGET: LOCAL TOPOLOGY (LEVEL 0)", "> SCAN COMPLETE."]
-        },
+        "level0": buildLevel({
+            id: "level0", title: "Level 0", name: "The Lobby", color: "#eab308", hover: "#ca8a04", glow: "rgba(234, 179, 8, 0.2)", anim: "animate-ambient-drift",
+            tags: [["CLASS 1", "bg-green-500/10 text-green-400 border-green-500/30"], ["SAFE", "bg-green-500/10 text-green-400 border-green-500/30"], ["UNSTABLE", "bg-yellow-500/10 text-yellow-400 border-yellow-500/30"], ["DEVOID OF ENTITIES", "bg-blue-500/10 text-blue-400 border-blue-500/30"]],
+            hero: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNjY2FhMDAiLz48cGF0aCBkPSJNMCAwTDggOE04IDBMMCA4IiBzdHJva2U9IiNhYTg4MDAiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==",
+            map: { seed: 7492110, wallDensity: 0.65, gridSize: 5, poiChance: 0.015, renderStyle: 'grid', wallColor: '#eab308', gridColor: 'rgba(255,255,255,0.05)', wallThickness: 0.15, bgColor: '#030303', pois: [{ name: "Gateway to Level 1 (Garages)", color: "#9ca3af", icon: "⬇" }, { name: "Fragile Wall (To Level 483)", color: "#ef4444", icon: "🔨" }, { name: "Almond Water Puddle", color: "#60a5fa", icon: "💧" }] },
+            metrics: {
+                "Level 0 Specific (Proprietary)": { "Carpet Saturation Depth": "1.2cm (Avg)", "Fluorescent Flicker Sync": "Asynchronous", "Spatial Redundancy Ratio": "89.4% Identical", "Ambient Hum Frequency": "59.8 Hz - 60.2 Hz", "Wall Permeability Factor": "0.0001%", "Synthetic Mold Growth": "0.04 mg/m²" },
+                "Chrono-Temporal Dynamics": { "Frontrooms Time Dilation": "1:1.15 (Slower)", "Local Time Flow Rate": "Erratic / Psychological", "Temporal Loop Probability": "84.2%", "Entropy Gradient": "Accelerated (+12%)", "Atomic Clock Drift": "±4.2s/24h", "Subjective Time Variance": "Extreme" },
+                "Spatial & Dimensional": { "Hume Level (Reality)": "82.4 H (Low)", "Kant Counter Reading": "0.85 K", "Euclidean Consistency": "14.2% (Severe Non-linear)", "Noclipping Threshold": "Requires 14,000 Newtons", "Spatial Dilation Factor": "1:4 (Expanded)", "Z-Axis Deviation": "±0.02%" },
+                "Atmospheric Diagnostics": { "Ambient Temp (Core)": "22.4 °C (Constant)", "Relative Humidity": "88% (Damp)", "Atmospheric Pressure": "104.1 kPa", "Air Comp: O2": "19.2% (Depleted)", "Trace Anomalous Gases": "0.08% Unknown", "Chemical Odor Profile": "Old Moist Carpet / Ozone" },
+                "Acoustic & Luminescent": { "Ambient Hum": "60Hz Electrical", "Absolute Decibel Baseline": "45 dB", "Luminosity Level": "250 Lux (Harsh)", "Color Temperature": "3200 K (Mono-Yellow)", "Total Darkness Zones": "0% (Omnipresent Light)", "Audio Hallucination Risk": "94%" },
+                "Material & Biological": { "Entity Density": "0.00 (Devoid)", "Toxicity Levels": "Mild (Dermal)", "Wall Arsenic Saturation": "0.01 mg/m²", "Micro-Concrete Density": "2100 kg/m³", "Flora/Fauna Present": "None", "Pathogen Level": "Sterile Anomalous" },
+                "Survival & Infrastructure": { "Base Threat Level": "1 (Psychological)", "Sanity Drain Rate": "-2.4% per Hour", "Isolation Factor": "Absolute", "Radio Comm Integrity": "0% (Static)", "GPS Functionality": "Offline / Scrambled", "Rescue Probability": "0.000001%" }
+            },
+            desc: [
+                "Level 0 is the first level of the Backrooms, and the first location that most entering from baseline reality will find themselves in. It acts as the universal filter for wanderers falling out of bounds from the Frontrooms.",
+                "Level 0 is an expansive, infinitely generating non-Euclidean space resembling the back rooms of a dated, 1990s retail outlet. The level is known most prominently for its disorienting layout and distinct, sickeningly yellowed wallpaper. All rooms in Level 0 share the same superficial features: heavily worn, moist carpeting that squelches underfoot, scattered two-prong electrical outlets that provide no current, and inconsistently placed fluorescent lighting. Aside from these aesthetic qualities, no two rooms in the level are exactly the same, with each area differing significantly in shape, length, and layout. Corridors often lead to dead ends or loop back upon themselves in mathematically impossible ways, defying standard geometry.",
+                "The constant hum-buzz emitted by the ceiling lights permeates every cubic inch of Level 0, being notably louder and more obtrusive than ordinary fluorescent lighting. L-Corp acoustical analysis reveals the frequency hovers relentlessly between 59.8 Hz and 60.2 Hz. This specific range is proven to induce throbbing migraines, sensory overload, and severe paranoia in most individuals within 24 hours of exposure. The buzz persists as an auditory phantom for weeks even after one has successfully exited the level.",
+                "The physical composition of Level 0 is entirely anomalous. The carpet holds a particular fascination for researchers. Spectral analysis reveals that the moisture contained within the fibers is not water, but rather a synthetic, highly viscous fluid mixture that severely degrades cellular tissue upon prolonged exposure. Wandering barefoot or lying down for extended periods causes severe dermatological rashes resembling chemical burns. Linear space and topology are so significantly altered that walking in a straight line will inevitably result in returning to the starting point, despite no visible turns being made. Currently, there are absolutely no physical entities native to this level. The true threat is the profound, crushing isolation that drives wanderers to madness, dehydration, and eventual starvation[cite: 3]."
+            ],
+            entrances: [
+                "Noclipping accidentally out of bounds in Baseline Reality (The Frontrooms) is the most common method of entry.",
+                "Failing an exit attempt or stepping through a glitched doorway in Level 283.",
+                "Slipping through the rotting floorboards in Level 500.",
+                "Opening an unmarked, featureless wooden door deep within the subterranean infrastructure of Level 11.",
+                "Wandering into the anomalous fog banks in Level 483."
+            ],
+            exits: [
+                "Wandering far and long enough without losing your mind may cause the yellow hallways to gradually transition into Level 1's concrete architecture.",
+                "Breaking through a wall (which requires immense, superhuman force or specialized tools) leads to Level 483.",
+                "Finding a rare patch of weakened geometry in the floor and breaking through it leads to Level 27.",
+                "Entering a very rare, red-painted emergency exit door leads immediately to Level 14.",
+                "Locating the Manila Room—a unique, perfectly square room with beige wallpaper—provides a one-way threshold to Level 283."
+            ],
+            tips: [
+                { n: "Psychological Anchoring", d: "The greatest threat in Level 0 is not physical, but mental. The hum-buzz and mono-yellow aesthetic induce rapid monophobia. Visual hallucinations begin typically within 48 hours.", c: "purple", l: "Carry a mechanical watch. The ticking provides a rhythmic, Earth-bound anchor that overrides the chaotic hum-buzz." },
+                { n: "Resource Management", d: "There is absolutely no clean water natively generated here. The fluid in the carpet is strictly non-potable and contains toxic bacterial anomalies.", c: "yellow", l: "Search specifically for pooling condensation near structural anomalies; these rare spots sometimes contain trace amounts of safe Almond Water." },
+                { n: "Navigation Protocols", d: "Do not rely on sight lines. The non-Euclidean geometry renders line-of-sight useless. Walking in a straight line will often result in a topological loop.", c: "blue", l: "Employ the 'Right-Hand Rule' to trace boundary walls. While it takes longer, it eventually forces the geometry to transition to Level 1." },
+                { n: "Sleep Deprivation Countermeasures", d: "The inability to turn off the lights combined with the 60Hz hum makes REM sleep nearly impossible. Exhaustion is the #2 killer in Level 0.", c: "red", l: "Tear strips of wallpaper to fashion a crude blindfold. Sleep in strict 3-hour bursts to avoid deep REM paralysis." },
+                { n: "Equipment Degradation", d: "The ambient static charge (+12kV/m) will rapidly drain modern lithium-ion batteries. Magnetic storage will corrupt within 72 hours.", c: "green", l: "Only rely on solid-state drives shielded in Faraday cages. Discard smartphones; they are dead weight here." },
+                { n: "Dietary Restrictions", d: "There is no flora or fauna. The black mold occasionally found near baseboards is highly toxic and neurodegenerative if ingested.", c: "orange", l: "You must rely entirely on brought rations. Minimize physical exertion to lower your metabolic burn rate." },
+                { n: "Hypothetical Entity Protocols", d: "While Level 0 is canonically devoid of entities, paranoia often dictates otherwise. If you 'hear' footsteps or whispers, do not panic.", c: "teal", l: "Do not run. Acknowledge the hallucination out loud in a calm voice. The psychological construct will dissipate." },
+                { n: "Noclip Vulnerabilities", d: "The walls here are structurally infinite, but geometry occasionally tears. Blackened or glitching walls indicate a weak Euclidean mesh.", c: "fuchsia", l: "Avoid 'glitch' walls unless desperate, as noclipping here often leads to the Void rather than Level 1." },
+                { n: "Fluid Extraction (Warning)", d: "Attempting to squeeze or extract fluid from the carpet releases aerosolized toxic spores embedded in the polymer fibers.", c: "cyan", l: "If forced to walk barefoot, wrap your feet in multiple layers of torn wallpaper to prevent dermal absorption." },
+                { n: "Spatial Marking Limitations", d: "Conventional marking methods (leaving items, marking walls) are ineffective as the layout actively shifts or items fall through geometry.", c: "rose", l: "Chalk marks disappear after 12h. Only mark walls to confirm immediate localized loops, not for long-term navigation." }
+            ],
+            loadout: [
+                { n: "Analog Noise-cancelling Headsets", i: "ph-headphones" }, { n: "Minimum 3L Purified Almond Water", i: "ph-drop" },
+                { n: "Industrial Marking Chalk (Red)", i: "ph-pencil-simple" }, { n: "Proprietary Sub-space Beacon", i: "ph-broadcast" },
+                { n: "High-calorie Survival Paste (14 days)", i: "ph-first-aid" }, { n: "Mechanical Watch (Spring-driven)", i: "ph-watch" },
+                { n: "Faraday Cage Pouch", i: "ph-shield-check" }, { n: "Thick-soled Combat Boots", i: "ph-boot" },
+                { n: "Light-blocking Sleep Mask", i: "ph-eye-closed" }, { n: "Analog Compass", i: "ph-compass" }
+            ],
+            history: [
+                { date: "JANUARY 12, 1998", t: "First Anomalous Signature Detected", d: "Baseline radar systems pick up a massive, unexplainable subterranean void beneath a commercial district. It is later identified as the first recorded noclip tear." },
+                { date: "MAY 12, 2019", t: "Initial Archival Image Captured", d: "An anonymous user uploads the first verified visual telemetry of Level 0 to a Frontrooms forum. Liminality Corp acquires the raw uncompressed file for spatial analysis." },
+                { date: "OCTOBER 4, 2020", t: "Project 'Yellow Wallpaper' Initiated", d: "The first batch of unmanned, tungsten-shielded L-Corp probes are sent via induced noclip events to map the architecture." },
+                { date: "JUNE 13, 2022", t: "Expedition Log Recovered", d: "Data retrieval from a deceased wanderer's device proves severe psychological degradation models, confirming the '60Hz Madness' hypothesis." },
+                { date: "JANUARY 18, 2023", t: "The '400-Mile March' Experiment", d: "Agent L-89 undergoes an experimental endurance run, confirming massive topological loop structures and the impossibility of a physical boundary." },
+                { date: "MARCH 3, 2024", t: "First Controlled Noclip Exit Verified", d: "A Liminality drone successfully maps an exit threshold, confirming the transition boundary breaching into Level 1." },
+                { date: "AUGUST 14, 2025", t: "Discontinuation of Manned Outposts", d: "L-Corp realizes establishing a physical forward operating base in Level 0 is impossible due to the actively shifting geometry deleting inorganic structures." },
+                { date: "FEBRUARY 11, 2026", t: "Cartography Engine Stable", d: "Proprietary quantum nodes allow real-time telemetry extraction. The Cartography Engine maps local topologies with 99.98% accuracy despite Euclidean shifts." }
+            ],
+            resonance: [
+                "> INITIALIZING QUANTUM PING...", "> TARGET: LOCAL TOPOLOGY (LEVEL 0)", "> CALIBRATING HUME SENSORS... [OK]", "> BYPASSING M.E.G. INTERFERENCE... [OK]",
+                "<br>> <span class='text-liminal-primary'>ANALYZING MOISTURE CONTENT:</span>", "  - H2O: 98.01%", "  - UNKNOWN BIOLOGICAL FLUID: 1.99%",
+                "<br>> <span class='text-yellow-400'>CHECKING STRUCTURAL INTEGRITY:</span>", "  - WALL PERMEABILITY: 0.0001% (NOCLIP RESISTANCE HIGH)", "  - EUCLIDEAN CONSISTENCY: 14.2%",
+                "<br>> <span class='text-red-400'>ENTITY PROXIMITY SWEEP:</span>", "  - RESULT: 0 ENTITIES DETECTED.", "  - NOTE: IGNORE AUDITORY HALLUCINATIONS.",
+                "<br>> SCAN COMPLETE. UPLOADING."
+            ]
+        }),
 
-        "level1": {
-            type: "level", id: "level1", title: "Level 1", name: "Habitable Zone",
-            themeColor: "#a1a1aa", themeHover: "#71717a", themeGlow: "rgba(161, 161, 170, 0.2)", idleAnimation: "animate-flicker",
-            tags: [ { label: "CLASS 1", class: "bg-green-500/10 text-green-400 border-green-500/30" }, { label: "MINIMAL ENTITIES", class: "bg-blue-500/10 text-blue-400 border-blue-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMmMyYzJjIi8+PHBhdGggZD0iTTAgMEwyMCAyME0yMCAwTDAgMjAiIHN0cm9rZT0iIzQ0NCIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+",
-            mapConfig: { seed: 991204, wallDensity: 0.35, renderStyle: 'warehouse', gridSize: 12, poiChance: 0.05, wallColor: '#52525b', gridColor: 'rgba(255,255,255,0.02)', wallThickness: 0.3, bgColor: '#18181b', pois: [ { name: "M.E.G. Base Alpha", color: "#22c55e", icon: "🛡" } ] },
-            specificMetrics: { "Level 1 Specific": { "Concrete Density": "2400 kg/m³", "Fog Accumulation": "Low" }, "Spatial & Dimensional": { "Hume Level (Reality)": "95.2 H", "Euclidean Consistency": "80.0%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 1 is a massive warehouse with concrete floors and walls, exposed rebar, and low-hanging fog.</p></div><h3>Description</h3><p>Level 1 is a large, sprawling warehouse. Unlike Level 0, this level possesses a consistent supply of water and electricity, which allows indefinite habitation by wanderers providing that appropriate precautions are taken. Crates of supplies appear and disappear randomly.</p>`,
-            survivalGuide: makeSG([{n:"Outpost Proximity",d:"Level 1 is home to M.E.G. Base Alpha.",c:"green",l:"Follow wall graffiti; most arrows drawn in blue chalk lead to Base Alpha."},{n:"The Darkness Protocol",d:"When lights flicker, entities spawn. Retreat to lit areas instantly.",c:"yellow",l:"Power grids follow a determinable 14-hour cycle."}], [{n:"High-Lumen Crank Flashlight",i:"ph-flashlight"},{n:"N95 Particulate Respirator",i:"ph-mask-water"}]),
-            history: makeHist([{t:"First Successful Transition",d:"A wanderer posts a blurry photo of a concrete pillar, marking the discovery of Level 1."},{t:"Establishment of Base Alpha",d:"M.E.G. successfully fortifies a large quadrant."}]),
-            resonanceLogs: ["> INITIATING LEVEL 1 WAREHOUSE SCAN...", "> CHECKING ELECTRICAL GRID STATUS... [FLUCTUATING]", "> SCAN COMPLETE."]
-        },
+        "level1": buildLevel({
+            id: "level1", title: "Level 1", name: "Habitable Zone", color: "#a1a1aa", hover: "#71717a", glow: "rgba(161, 161, 170, 0.2)", anim: "animate-flicker",
+            tags: [["CLASS 1", "bg-green-500/10 text-green-400 border-green-500/30"], ["MINIMAL ENTITIES", "bg-blue-500/10 text-blue-400 border-blue-500/30"]],
+            hero: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHJlY3Qgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjMmMyYzJjIi8+PHBhdGggZD0iTTAgMEwyMCAyME0yMCAwTDAgMjAiIHN0cm9rZT0iIzQ0NCIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+",
+            map: { seed: 991204, wallDensity: 0.35, renderStyle: 'warehouse', gridSize: 12, poiChance: 0.05, wallColor: '#52525b', gridColor: 'rgba(255,255,255,0.02)', wallThickness: 0.3, bgColor: '#18181b', pois: [{ name: "Supply Crate", color: "#60a5fa", icon: "📦" }, { name: "M.E.G. Base Alpha", color: "#22c55e", icon: "🛡" }, { name: "Elevator (Level 2)", color: "#dc2626", icon: "↕" }] },
+            metrics: {
+                "Level 1 Specific (Proprietary)": { "Concrete Density": "2450 kg/m³ (Reinforced)", "Fog Accumulation Density": "4.2 mg/L", "Fluorescent Failure Rate": "14% per Sector", "Resource Generation Rate": "0.4 Crates/hr", "Rebar Rust Index": "Moderate", "Puddle Contamination": "Motor Oil/Water" },
+                "Chrono-Temporal Dynamics": { "Frontrooms Time Dilation": "1:1.0 (Baseline)", "Local Time Flow Rate": "Standard Linear", "Temporal Loop Probability": "2.1%", "Entropy Gradient": "Normal", "Atomic Clock Drift": "±0.1s/24h", "Subjective Time Variance": "Stable" },
+                "Spatial & Dimensional": { "Hume Level (Reality)": "95.2 H (Stable)", "Kant Counter Reading": "0.98 K", "Euclidean Consistency": "80.0% (Mostly Linear)", "Noclipping Threshold": "Possible (Hard)", "Spatial Dilation Factor": "1:1", "Z-Axis Deviation": "±1.5% (Ramps/Stairs)" },
+                "Atmospheric Diagnostics": { "Ambient Temp (Core)": "15.0 °C (Chilly)", "Relative Humidity": "50% (Condensing)", "Atmospheric Pressure": "101.3 kPa", "Air Comp: O2": "20.9% (Normal)", "Trace Anomalous Gases": "0.01% Carbon Monoxide", "Chemical Odor Profile": "Motor Oil / Wet Concrete" },
+                "Acoustic & Luminescent": { "Ambient Hum": "Low Machinery Drone", "Absolute Decibel Baseline": "35 dB", "Luminosity Level": "400 Lux (Flickering)", "Color Temperature": "4500 K (Cool White)", "Total Darkness Zones": "Frequent (Blackouts)", "Audio Hallucination Risk": "Low" },
+                "Material & Biological": { "Entity Density": "0.04 (Minimal)", "Toxicity Levels": "Safe (Respirator Advised)", "Wall Arsenic Saturation": "0.0 mg/m²", "Micro-Concrete Density": "2400 kg/m³", "Flora/Fauna Present": "Mold/Fungi", "Pathogen Level": "Low Risk" },
+                "Survival & Infrastructure": { "Base Threat Level": "1 (Safe)", "Sanity Drain Rate": "-0.2% per Hour", "Isolation Factor": "Low (Populated)", "Radio Comm Integrity": "85% (Clear)", "GPS Functionality": "Online (Local Nodes)", "Rescue Probability": "High" }
+            },
+            desc: [
+                "Level 1 is a massive, sprawling warehouse constructed of concrete floors and walls, exposed rebar, and low-hanging fog. It is the first truly habitable and sustainable level in the Backrooms.",
+                "The architecture of Level 1 is utilitarian and brutalist. It features endless rows of concrete pillars, loading docks that lead to brick walls, and miles of painted floor lines that guide wanderers in circles. A low-hanging fog with no discernible source coats the floor, often coalescing into condensation that forms large, slick puddles. Unlike Level 0, this level possesses a consistent supply of water and electricity, which allows for indefinite habitation providing that appropriate precautions are taken against the environment. It is far more vertically expansive, possessing stairs, elevators, isolated mechanical rooms, and long hallways.",
+                "A unique anomalous property of Level 1 is its resource generation. Wooden crates of supplies appear and disappear randomly within the level. These crates often contain vital survival items such as Almond Water, batteries, flashlights, and Frontrooms-brand snacks, though they can occasionally contain hazardous materials or nothing at all. Due to this abundance of resources and the high Euclidean stability of the architecture, Level 1 acts as the central hub for the Major Explorer Group (M.E.G.), hosting 'Base Alpha'—the first and one of the largest human settlements in the Backrooms.",
+                "The light fixtures in Level 1 are prone to flickering and failing entirely, plunging massive sectors into total, pitch-black darkness. It is within these unpredictable dark zones that entities such as Dullers, Adult Facelings, and Hounds can manifest and hunt. Wanderers are strictly advised to carry reliable, redundant light sources and to avoid dark areas entirely. The architecture will also occasionally shift seamlessly from modern warehouse design to antiquated, dungeon-like stone corridors with no clear boundary[cite: 3]."
+            ],
+            entrances: [
+                "Wandering long enough through the shifting halls of Level 0 will eventually transition the wallpaper into concrete.",
+                "Entering through unlocked, heavy metal doors in Level 1.5.",
+                "Descending a functioning industrial elevator from Level 4.",
+                "Crawling through the ventilation shafts in the Hub.",
+                "Noclipping through the ceiling of Level 2 (Highly dangerous)."
+            ],
+            exits: [
+                "Walking down any extended, exceptionally long hallway often gradually leads to the piping of Level 2.",
+                "Entering a freight elevator can take you directly to Level 2 or Level 3.",
+                "Locating a specific, out-of-place painting on a concrete wall and walking into it leads to Level 57.",
+                "Wandering into the deepest, foggiest sections where the concrete turns to dirt leads to Level 9.",
+                "Finding a door marked with a red exit sign occasionally leads to The Hub."
+            ],
+            tips: [
+                { n: "Outpost Proximity", d: "Level 1 is home to M.E.G. Base Alpha. Locate this base for medical aid, trade, and safe sleeping quarters.", c: "green", l: "Follow wall graffiti; most arrows drawn in blue chalk lead to Base Alpha's perimeter." },
+                { n: "The Darkness Protocol", d: "When lights flicker and die, entities spawn instantly. Retreat to lit areas without hesitation.", c: "yellow", l: "The power grid follows a determinable 14-hour cycle. Plan your rests and movements accordingly." },
+                { n: "Crate Foraging", d: "Crates randomly spawn. Some contain Almond Water, others contain hazardous anomalies.", c: "blue", l: "Only open crates made of standard pine. Dark oak or metallic crates often contain entities or cognitohazards." },
+                { n: "Hound Evasion", d: "Hounds patrol the fringes of the lit zones. Do not break eye contact if engaged.", c: "red", l: "Intimidate them. Screaming and making yourself appear larger works effectively on Level 1 Hounds." },
+                { n: "Puddle Contamination", d: "Floor fog condenses into large puddles. Do not drink it; it causes severe dysentery.", c: "purple", l: "The puddles are a mixture of water and motor oil. They are highly flammable; use them to create defensive fire lines." },
+                { n: "Elevator Roulette", d: "Elevators are a quick exit to Level 2 or 3, but some are traps that drop into the Void.", c: "cyan", l: "Press the call button twice. If the mechanical ding is a major chord, it's safe. If dissonant, step away." },
+                { n: "Fog Inhalation", d: "Extended exposure to the low-hanging fog causes mild pneumonia and lung irritation.", c: "orange", l: "Sleep on top of stacked supply crates, ensuring your head is at least 1 meter off the ground above the fog line." },
+                { n: "Trade Economy", d: "Level 1 uses Almond Water and Fire Salt as standard currency among wandering traders.", c: "teal", l: "Hoard mechanical parts and copper wire from crates; B.N.T.G. traders pay a premium for them." },
+                { n: "Duller Phasing", d: "Dullers exist inside the concrete walls and can drag victims through solid matter if they get too close.", c: "fuchsia", l: "Avoid leaning against walls to rest. Walk strictly in the center of the warehouse lanes." },
+                { n: "Structural Decay", d: "Some concrete rebar pillars are rusted completely through and are structurally unsound.", c: "rose", l: "Tap pillars with a wrench. A hollow ring means a spatial collapse is imminent in that sector." }
+            ],
+            loadout: [
+                { n: "High-Lumen Crank Flashlight", i: "ph-flashlight" }, { n: "N95 Particulate Respirator", i: "ph-mask-water" },
+                { n: "Steel Crowbar (For crates)", i: "ph-wrench" }, { n: "Trade Barter Goods (Batteries)", i: "ph-hand-coins" },
+                { n: "Trauma Medical Kit", i: "ph-first-aid" }, { n: "Elevated Sleeping Cot", i: "ph-tent" },
+                { n: "Magnesium Fire Starter", i: "ph-fire" }, { n: "Melee Defense Weapon (Machete)", i: "ph-sword" },
+                { n: "Night Vision Goggles (NVGs)", i: "ph-binoculars" }, { n: "M.E.G. Cartography Map", i: "ph-book-open" }
+            ],
+            history: [
+                { date: "FEBRUARY 4, 2005", t: "First Successful Transition", d: "A wanderer posts a blurry photo of a concrete pillar to an early internet message board, marking the discovery of Level 1." },
+                { date: "AUGUST 14, 2015", t: "Establishment of Base Alpha", d: "The Major Explorer Group successfully fortifies a massive, stable quadrant, establishing the first major human settlement in the Backrooms." },
+                { date: "NOVEMBER 2, 2018", t: "The Great Blackout", d: "A massive anomalous electrical failure plunges Sector B into total darkness for 3 days. Entity casualties are exceptionally high." },
+                { date: "APRIL 10, 2021", t: "B.N.T.G. Trade Routes Open", d: "The Backrooms Non-Aligned Trade Group secures a heavily guarded, safe route between Level 1 and Level 4." },
+                { date: "SEPTEMBER 21, 2023", t: "Discovery of the Void Elevators", d: "Three explorers are lost after mapping previously dormant elevator shafts that plunged infinitely." },
+                { date: "JULY 5, 2024", t: "L-Corp Sensor Network Deployed", d: "Liminality Corp secretly installs 5,000 stealth nodes in the ceiling grids for passive, global scanning of wanderer movements." },
+                { date: "JANUARY 12, 2025", t: "First Agricultural Success", d: "Base Alpha botanists successfully cultivate a strain of mushrooms that grow in the motor-oil puddles, providing a new food source." },
+                { date: "MARCH 30, 2026", t: "Population Peaks at 4,000+", d: "Base Alpha becomes a sprawling, self-sustaining civilian metropolis and the primary hub of Backrooms civilization." }
+            ],
+            resonance: [
+                "> INITIATING LEVEL 1 WAREHOUSE SCAN...", "> CHECKING ELECTRICAL GRID STATUS... [FLUCTUATING]",
+                "<br>> <span class='text-liminal-primary'>FOG ANALYSIS:</span>", "  - CONDENSATION: 90% H2O, 10% MOTOR OIL",
+                "<br>> <span class='text-yellow-400'>CRATE SPAWN PREDICTION:</span>", "  - NEW CRATE DETECTED AT SECTOR 4B",
+                "<br>> <span class='text-red-400'>ENTITY PROXIMITY SWEEP:</span>", "  - 3 HOUNDS DETECTED IN DARK ZONE.",
+                "<br>> SCAN COMPLETE. UPLOADING."
+            ]
+        }),
 
-        "level2": {
-            type: "level", id: "level2", title: "Level 2", name: "Pipe Dreams",
-            themeColor: "#ef4444", themeHover: "#dc2626", themeGlow: "rgba(239, 68, 68, 0.2)", idleAnimation: "animate-glitch-shift",
-            tags: [ { label: "CLASS 2", class: "bg-yellow-500/10 text-yellow-400 border-yellow-500/30" }, { label: "ENTITY RISK", class: "bg-orange-500/10 text-orange-400 border-orange-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMWEwZTAwIi8+PHBhdGggZD0iTTAgNUwxMCA1TTUgMEw1IDEwIiBzdHJva2U9IiNhYTAwMDAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==",
-            mapConfig: { seed: 88472, wallDensity: 0.9, renderStyle: 'pipes', gridSize: 6, poiChance: 0.03, wallColor: '#991b1b', gridColor: 'rgba(255,0,0,0.05)', wallThickness: 0.4, bgColor: '#0a0000', pois: [ { name: "Superheated Pipe Valve", color: "#ef4444", icon: "🔥" }, { name: "Clump Nest", color: "#d946ef", icon: "🕸" } ] },
-            specificMetrics: { "Level 2 Specific": { "Pipe Thermal Output": "Max 43°C", "Hallway Width": "0.8m to 1.5m" }, "Atmospheric Diagnostics": { "Ambient Temp (Core)": "38.0 °C", "Relative Humidity": "95%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 2 mainly consists of dark, grey, concrete maintenance tunnels.</p></div><h3>Description</h3><p>Level 2 is considerably more dangerous than Level 1. It is mostly composed of cramped, claustrophobic maintenance tunnels with pipes lining the walls. Some sections of Level 2 are completely devoid of any light, and some pipes run dangerously hot, reaching up to 43°C (110°F).</p>`,
-            survivalGuide: makeSG([{n:"Heat Stroke Prevention",d:"The ambient temperature in Level 2 will rapidly dehydrate wanderers.",c:"red",l:"Stay close to the floor where the temperature is 2-3°C cooler."},{n:"Smiler Evasion",d:"If you spot a Smiler, do not use a flashlight. Maintain eye contact.",c:"purple",l:"Throw a glowstick down an intersecting corridor to distract them."}], [{n:"Ambient Thermometer",i:"ph-thermometer"},{n:"5L Thermal Water Jug",i:"ph-drop"}]),
-            history: makeHist([{t:"The Heatwave Discovery",d:"Explorers breach an iron door from Level 1, encountering extreme temperatures."},{t:"Pipe Rupture Event",d:"A 40-mile stretch of piping ruptures simultaneously, flooding the corridors."}]),
-            resonanceLogs: ["> SCANNING THERMAL OUTPUTS...", "> WARNING: AMBIENT TEMPERATURE EXCEEDS SAFE LIMITS", "> SCAN COMPLETE."]
-        },
+        "level2": buildLevel({
+            id: "level2", title: "Level 2", name: "Pipe Dreams", color: "#ef4444", hover: "#dc2626", glow: "rgba(239, 68, 68, 0.2)", anim: "animate-glitch-shift",
+            tags: [["CLASS 2", "bg-yellow-500/10 text-yellow-400 border-yellow-500/30"], ["ENTITY RISK", "bg-orange-500/10 text-orange-400 border-orange-500/30"]],
+            hero: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjMWEwZTAwIi8+PHBhdGggZD0iTTAgNUwxMCA1TTUgMEw1IDEwIiBzdHJva2U9IiNhYTAwMDAiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==",
+            map: { seed: 88472, wallDensity: 0.9, renderStyle: 'pipes', gridSize: 6, poiChance: 0.03, wallColor: '#991b1b', gridColor: 'rgba(255,0,0,0.05)', wallThickness: 0.4, bgColor: '#0a0000', pois: [{ name: "Superheated Pipe Valve", color: "#ef4444", icon: "🔥" }, { name: "Clump Nest", color: "#d946ef", icon: "🕸" }, { name: "Unmarked Door", color: "#f59e0b", icon: "🚪" }] },
+            metrics: {
+                "Level 2 Specific (Proprietary)": { "Pipe Thermal Output": "Max 43°C (110°F)", "Hallway Width Varience": "0.8m to 1.5m", "Viscous Fluid Pools": "Frequent (Black Tar)", "Entity Spawn Rate": "Moderate", "Steam Pressure Peaks": "1400 PSI", "Machinery Noise Level": "85 dB" },
+                "Chrono-Temporal Dynamics": { "Frontrooms Time Dilation": "1:1.05 (Slightly Slower)", "Local Time Flow Rate": "Standard Linear", "Temporal Loop Probability": "15.4%", "Entropy Gradient": "High Thermal", "Atomic Clock Drift": "±1.2s/24h", "Subjective Time Variance": "Fatigue-induced" },
+                "Spatial & Dimensional": { "Hume Level (Reality)": "88.0 H (Declining)", "Kant Counter Reading": "0.92 K", "Euclidean Consistency": "60.0% (Intersecting Loops)", "Noclipping Threshold": "High Density", "Spatial Dilation Factor": "1:1.4", "Z-Axis Deviation": "±5.0%" },
+                "Atmospheric Diagnostics": { "Ambient Temp (Core)": "38.0 °C (Oppressive)", "Relative Humidity": "95% (Steam)", "Atmospheric Pressure": "115.2 kPa", "Air Comp: O2": "18.5% (Low)", "Trace Anomalous Gases": "1.2% Sulfur Dioxide", "Chemical Odor Profile": "Burning Oil / Rusted Iron" },
+                "Acoustic & Luminescent": { "Ambient Hum": "Roaring Furnaces / Hissing", "Absolute Decibel Baseline": "85 dB", "Luminosity Level": "50 Lux (Dim)", "Color Temperature": "2000 K (Deep Orange)", "Total Darkness Zones": "30%", "Audio Hallucination Risk": "Moderate" },
+                "Material & Biological": { "Entity Density": "1.45 (Dangerous)", "Toxicity Levels": "Moderate (Inhalation)", "Wall Arsenic Saturation": "0.0 mg/m²", "Micro-Concrete Density": "2800 kg/m³", "Flora/Fauna Present": "None", "Pathogen Level": "Sterile (Heat)" },
+                "Survival & Infrastructure": { "Base Threat Level": "2 (Unsafe)", "Sanity Drain Rate": "-1.5% per Hour", "Isolation Factor": "High", "Radio Comm Integrity": "30% (Interference)", "GPS Functionality": "Offline", "Rescue Probability": "Low" }
+            },
+            desc: [
+                "Level 2 is considerably more dangerous than Level 1. It is mostly composed of cramped, claustrophobic, dark grey concrete maintenance tunnels that stretch on for millions of miles. The walls are heavily lined with industrial pipes and occasionally ventilation ducts.",
+                "The environment of Level 2 is deeply oppressive. Some sections of the maintenance tunnels are completely devoid of any light, and the pipes that line the walls often run dangerously hot, reaching temperatures up to 43°C (110°F) or higher. Explorers will find the heat suffocating and the constant, deafening hum of heavy machinery overwhelming. The floor is frequently coated in a viscous, sticky black fluid resembling tar, which is highly flammable. Decompression vents frequently open with lethal force, causing superheated steam to blind and scald wanderers trapped in the cramped sections.",
+                "Entities are far more common here than in the previous levels. Smilers lurk in the unlit stretches of the maintenance tunnels, hunting anyone holding a light source. Clumps make their homes within the overhead ventilation shafts and darker corners, waiting to drop on unsuspecting victims. Facelings and Hounds are also occasionally encountered. The extreme heat causes many unprepared wanderers to succumb to heatstroke, turning them into 'Wretches'—former humans driven mad, who now aimlessly attack anything that moves.",
+                "The physical layout of Level 2 is linear but highly inconsistent, meaning corridors can stretch for miles without intersecting, only to abruptly loop back onto themselves or shrink to shoulder-width. Occasionally, doors can be found along the walls. The vast majority of these doors are securely locked, but those that are open can lead to small, closet-like rooms containing ancient machinery, or act as transition thresholds to Level 3[cite: 3]."
+            ],
+            entrances: [
+                "Walking down long, unbroken hallways in Level 1 will eventually cause the walls to narrow and sprout pipes.",
+                "Entering an unlocked, heavy maintenance door in The Hub.",
+                "Entering a specific boiler door in the basement of Level 5.",
+                "Riding an elevator from Level 1 down into the basement levels."
+            ],
+            exits: [
+                "Finding an unlocked fire exit door (often emitting a faint cool breeze) leads to Level 3.",
+                "Entering an incredibly rare, multi-colored door leads to Level 283.",
+                "Crawling into a narrow, uncomfortably hot vent grate leads to Level 2.1.",
+                "Noclipping through the tar puddles (not recommended, extremely painful) leads to Level 4."
+            ],
+            tips: [
+                { n: "Heat Stroke Prevention", d: "The ambient temperature in Level 2 will rapidly dehydrate and exhaust wanderers. Core body temperature must be monitored.", c: "red", l: "Stay close to the floor where the temperature is 2-3°C cooler. Drink Almond Water every 20 minutes." },
+                { n: "Smiler Evasion", d: "If you spot a Smiler in the dark zones, do not use a flashlight. Maintain eye contact.", c: "purple", l: "Throw a glowstick down an intersecting corridor to distract them, then back away slowly." },
+                { n: "Steam Vents", d: "Pressurized pipes occasionally burst or vent automatically, releasing scalding steam that causes third-degree burns.", c: "blue", l: "A loud hissing buildup gives a 3-second warning. Dive to the floor and cover your exposed skin." },
+                { n: "Overhead Ambush (Clumps)", d: "Clumps hide in the ceiling vents and drop on unsuspecting victims. They assimilate limbs instantly.", c: "orange", l: "If a vent grate is missing or dripping black fluid, run past the opening; do not walk under it." },
+                { n: "Door Navigation", d: "Most doors are locked. Testing every handle drains stamina and wastes precious time in the heat.", c: "green", l: "Look for doors with rust concentrated specifically around the hinges; these are usually unlocked." },
+                { n: "Machinery Deafness", d: "The roaring noise of the boilers covers the sounds of approaching entities perfectly.", c: "teal", l: "Rely on visual cues and vibrations through the soles of your boots to detect approaching heavy entities." },
+                { n: "Toxic Viscosity", d: "Puddles of thick black fluid on the floor are highly flammable, sticky, and toxic if absorbed through skin.", c: "cyan", l: "If coated, do not use friction to wipe it off; it will ignite. Rinse with Almond Water." },
+                { n: "Claustrophobia Management", d: "Hallways occasionally shrink to 0.8m wide, inducing severe panic attacks and making turning around impossible.", c: "fuchsia", l: "Focus on the pipes running parallel to you to ground your depth perception and keep breathing steady." },
+                { n: "Wretch Encounters", d: "Former wanderers driven mad by the heat wander aimlessly, attacking with primal ferocity.", c: "yellow", l: "They are blind from the steam but have acute hearing. Freeze completely until they pass." },
+                { n: "Bypassing Dead Ends", d: "Linear corridors often end abruptly in solid brick walls, trapping wanderers.", c: "rose", l: "These are usually illusions generated by the level. Close your eyes and walk forward slowly to phase through." }
+            ],
+            loadout: [
+                { n: "Ambient Thermometer", i: "ph-thermometer" }, { n: "5L Thermal Water Jug", i: "ph-drop" },
+                { n: "Breakable Chemical Glowsticks", i: "ph-lightbulb" }, { n: "Miniature Foam Extinguisher", i: "ph-fire-extinguisher" },
+                { n: "Heat-Resistant Kevlar Gloves", i: "ph-shield" }, { n: "Carbon-filter Gas Mask", i: "ph-mask-water" },
+                { n: "Blunt Force Weapon (Lead Pipe)", i: "ph-sword" }, { n: "Burn Salve & Medical Gauze", i: "ph-first-aid" },
+                { n: "Decibel-reducing Earplugs", i: "ph-ear" }, { n: "Lockpicking Kit", i: "ph-key" }
+            ],
+            history: [
+                { date: "MAY 20, 2010", t: "The Heatwave Discovery", d: "Explorers breach an iron door from Level 1, encountering the extreme, oppressive temperatures of Level 2 for the first time." },
+                { date: "JANUARY 10, 2013", t: "First Recorded Encounter with Clumps", d: "A wanderer records an amalgamation of human limbs dropping from a vent, introducing Entity 5 to the database." },
+                { date: "SEPTEMBER 5, 2016", t: "The Office Space Oasis", d: "A small pocket dimension labeled 'The Office Space' is found locked behind a maintenance door, offering brief respite." },
+                { date: "MARCH 12, 2019", t: "Smiler Migration Documented", d: "A massive influx of Smilers moves into Sector 4 due to a long-term power failure in the area." },
+                { date: "FEBRUARY 8, 2021", t: "M.E.G. Foraging Ban", d: "M.E.G. officially bans extended foraging operations in Level 2 due to an unacceptable 80% casualty rate from heatstroke and entities." },
+                { date: "OCTOBER 30, 2023", t: "Pipe Rupture Event", d: "A 40-mile stretch of primary piping ruptures simultaneously, flooding the corridors with boiling tar and sealing off Route B." },
+                { date: "DECEMBER 14, 2024", t: "L-Corp Thermal Mapping", d: "Liminality Corp deploys heat-shielded drones to map the exact locations of the boiler cores." },
+                { date: "JULY 2, 2026", t: "Transit Route Status", d: "Currently used strictly as a highly dangerous, high-speed transit corridor to Level 3. No permanent bases exist or can survive here." }
+            ],
+            resonance: [
+                "> SCANNING THERMAL OUTPUTS...", "> WARNING: AMBIENT TEMPERATURE EXCEEDS SAFE LIMITS",
+                "<br>> <span class='text-liminal-primary'>STRUCTURAL ANALYSIS:</span>", "  - METAL FATIGUE DETECTED IN PIPES",
+                "<br>> <span class='text-purple-400'>COGNITITIVE HAZARD DETECTED:</span>", "  - CLAUSTROPHOBIA INDUCING GEOMETRY",
+                "<br>> <span class='text-red-400'>ENTITY PROXIMITY SWEEP:</span>", "  - 1 CLUMP IN CEILING CAVITY.", "  - 4 SMILERS IN SECTOR 7G.",
+                "<br>> SCAN COMPLETE. UPLOADING."
+            ]
+        }),
 
-        "level3": {
-            type: "level", id: "level3", title: "Level 3", name: "Electrical Station",
-            themeColor: "#f59e0b", themeHover: "#d97706", themeGlow: "rgba(245, 158, 11, 0.2)", idleAnimation: "animate-pulse-fast",
-            tags: [ { label: "CLASS 4", class: "bg-red-500/10 text-red-500 border-red-500/30" }, { label: "ENTITY INFESTATION", class: "bg-red-700/10 text-red-700 border-red-700/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiMzMzMiLz48Y2lyY2xlIGN4PSI0IiBjeT0iNCIgcj0iMSIgZmlsbD0iI2ZiYmYyNCIvPjwvc3ZnPg==",
-            mapConfig: { seed: 10423, wallDensity: 0.8, renderStyle: 'electrical', gridSize: 4, poiChance: 0.08, wallColor: '#525252', gridColor: 'rgba(251, 191, 36, 0.1)', wallThickness: 0.2, bgColor: '#111', pois: [ { name: "High Voltage Box", color: "#fbbf24", icon: "⚡" }, { name: "Hound Pack", color: "#dc2626", icon: "🐾" } ] },
-            specificMetrics: { "Level 3 Specific": { "Ambient Voltage Level": "10,000V", "Acoustic Hazard": "Deafening" }, "Spatial & Dimensional": { "Hume Level (Reality)": "70.0 H", "Euclidean Consistency": "40.0%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 3 is a series of long, dark, twisting hallways resembling an electrical station.</p></div><h3>Description</h3><p>The noise in Level 3 is deafening. Constant whirring, grinding, and the sparking of high-voltage electronics make hearing entities approach nearly impossible. The entity density in Level 3 is extraordinarily high.</p>`,
-            survivalGuide: makeSG([{n:"High Entity Density",d:"Do not attempt to fight. You are severely outnumbered.",c:"red",l:"Use the deafening machinery noise to mask your sprinting footsteps."},{n:"Electrocution Hazard",d:"Exposed live wires hang from the ceiling.",c:"yellow",l:"Stay in the exact dead-center of the hallways. Do not touch metal grates."}], [{n:"High-Voltage Rubber Gloves",i:"ph-hand-palm"},{n:"EMP Grenades",i:"ph-lightning"}]),
-            history: makeHist([{t:"The Death Trap Discovery",d:"Explorers from Level 2 enter a fire exit, realizing they are trapped in a high-threat zone."},{t:"Base Gamma Overrun",d:"M.E.G. attempts an outpost. It is destroyed by a swarm of Skin-Stealers in 72 hours."}]),
-            resonanceLogs: ["> SENSING EXTREME ELECTROMAGNETIC INTERFERENCE...", "> COMPENSATING HZ FREQUENCIES... [OK]", "> SCAN COMPLETE."]
-        },
+        "level3": buildLevel({
+            id: "level3", title: "Level 3", name: "Electrical Station", color: "#f59e0b", hover: "#d97706", glow: "rgba(245, 158, 11, 0.2)", anim: "animate-pulse-fast",
+            tags: [["CLASS 4", "bg-red-500/10 text-red-500 border-red-500/30"], ["ENTITY INFESTATION", "bg-red-700/10 text-red-700 border-red-700/30"]],
+            hero: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiMzMzMiLz48Y2lyY2xlIGN4PSI0IiBjeT0iNCIgcj0iMSIgZmlsbD0iI2ZiYmYyNCIvPjwvc3ZnPg==",
+            map: { seed: 10423, wallDensity: 0.8, renderStyle: 'electrical', gridSize: 4, poiChance: 0.08, wallColor: '#525252', gridColor: 'rgba(251, 191, 36, 0.1)', wallThickness: 0.2, bgColor: '#111', pois: [{ name: "High Voltage Box", color: "#fbbf24", icon: "⚡" }, { name: "Hound Pack", color: "#dc2626", icon: "🐾" }, { name: "Elevator (Level 4)", color: "#3b82f6", icon: "↕" }] },
+            metrics: {
+                "Level 3 Specific (Proprietary)": { "Ambient Voltage Level": "10,000V (Lethal)", "Acoustic Hazard": "Deafening (110dB)", "Entity Density Rate": "Extreme Swarms", "Copper Wire Permeation": "98%", "Grid Fluctuation": "Erratic", "Fire Salt Deposits": "High" },
+                "Chrono-Temporal Dynamics": { "Frontrooms Time Dilation": "1:1.1 (Slightly Slower)", "Local Time Flow Rate": "Standard Linear", "Temporal Loop Probability": "8.0%", "Entropy Gradient": "Electromagnetic", "Atomic Clock Drift": "±3.5s/24h", "Memory Degradation": "+5%" },
+                "Spatial & Dimensional": { "Hume Level (Reality)": "70.0 H (Unstable)", "Kant Counter Reading": "0.78 K", "Euclidean Consistency": "40.0% (Severe Shifts)", "Noclipping Threshold": "Low", "Spatial Dilation Factor": "1:2", "Z-Axis Deviation": "±12.0%" },
+                "Atmospheric Diagnostics": { "Ambient Temp (Core)": "25.0 °C", "Relative Humidity": "40% (Dry)", "Atmospheric Pressure": "100.1 kPa", "Air Comp: O2": "19.8%", "Trace Anomalous Gases": "3.2% Ozone", "Chemical Odor Profile": "Burnt Copper / Ozone" },
+                "Acoustic & Luminescent": { "Ambient Hum": "High-Voltage Arcing", "Absolute Decibel Baseline": "110 dB (Damaging)", "Luminosity Level": "100 Lux (Strobing)", "Color Temperature": "5000 K", "Total Darkness Zones": "50%", "Audio Hallucination Risk": "High" },
+                "Material & Biological": { "Entity Density": "8.9 (Lethal)", "Toxicity Levels": "High (Ozone/Copper)", "Wall Arsenic Saturation": "0.0 mg/m²", "Micro-Concrete Density": "3000 kg/m³", "Flora/Fauna Present": "Anomalous Rust", "Background Rad-Count": "0.45 μSv/h" },
+                "Survival & Infrastructure": { "Base Threat Level": "4 (Dangerous)", "Sanity Drain Rate": "-4.0% per Hour", "Isolation Factor": "Zero (Hunted)", "Radio Comm Integrity": "0% (EMP Blocked)", "GPS Functionality": "Offline", "Rescue Probability": "Near Zero" }
+            },
+            desc: [
+                "Level 3 is an incredibly dangerous, sprawling complex of long, dark, twisting hallways that function similarly to Level 0, but resemble a nightmarish hybrid of a maximum-security prison and a high-voltage electrical station. It is widely considered one of the most lethal early levels in the Backrooms.",
+                "The architecture consists of exposed copper pipes, iron bars, heavy metal grating floors, and massive electrical generators that take up entire rooms. The noise in Level 3 is deafening. Constant whirring, metallic grinding, and the explosive sparking of high-voltage electronics make hearing approaching entities nearly impossible. The air is thick with the smell of ozone and burnt copper. Due to the massive, unregulated electrical grid, exposed live wires are common. Accidentally brushing against the walls in the dark can result in instant, 10,000-volt electrocution.",
+                "The entity density in Level 3 is extraordinarily high and aggressive. Hounds hunt in organized packs, Facelings wander the halls, Wretches ambush from the dark, Skin-Stealers lure victims using stolen voices, and Smilers dominate the unlit corridors. Wanderers entering Level 3 are advised to move as quickly as possible, abandoning stealth, as the metal grating floors make silent movement impossible anyway.",
+                "Despite the immense danger and high mortality rate, Level 3 is rich in highly valuable resources. Fire Salt, Royal Rations, Almond Water, and advanced weaponry can be scavenged from the electrical fuse boxes and supply rooms scattered throughout. Because of this, brave scavengers from the B.N.T.G. frequently mount heavily armed incursions into the level to harvest these materials before retreating to the safety of Level 4[cite: 3]."
+            ],
+            entrances: [
+                "Unlocked fire doors in Level 2 generally lead directly here.",
+                "Elevators in Level 4 can occasionally malfunction and travel down to Level 3.",
+                "Noclipping through the floor in Level 5 (Often fatal).",
+                "Entering a heavily rusted bunker door in Level 10."
+            ],
+            exits: [
+                "Finding an elevator and manually powering it is the only confirmed, safe method to reach Level 4 or Level 5.",
+                "Wooden doors occasionally appear and lead to Level 31.",
+                "Noclipping through the metal grating floors leads to the void or Level 6.",
+                "Entering a specific electrical closet painted bright green leads to Level 14."
+            ],
+            tips: [
+                { n: "High Entity Density", d: "Do not attempt to fight. You are severely outnumbered by apex predators.", c: "red", l: "Use the deafening machinery noise to mask your sprinting footsteps. Run continuously." },
+                { n: "Electrocution Hazard", d: "Exposed live wires hang from the ceiling and coat the walls.", c: "yellow", l: "Stay in the exact dead-center of the hallways. Do not touch metal grates with bare skin." },
+                { n: "Hound Packs", d: "Hounds hunt in highly organized, tactical packs here, flanking prey.", c: "orange", l: "If they acquire your scent, seek a chain-link fenced area, enter, and padlock the gate behind you." },
+                { n: "Resource Scavenging", d: "Fire Salt and Royal Rations are hidden inside industrial fuse boxes.", c: "blue", l: "Only open grey fuse boxes. Yellow ones are rigged with cognitohazards or live explosives." },
+                { n: "Skin-Stealer Deception", d: "Skin-Stealers wear human victims and cry for help from the dark.", c: "purple", l: "If they ask for help but their voice echoes with a metallic ping, shoot to kill or flee." },
+                { n: "Metal Flooring", d: "The metal grating floors amplify vibrations, announcing your location.", c: "cyan", l: "Walk on the concrete borders supporting the grates, not the hollow grates themselves." },
+                { n: "Elevator Activation", d: "Elevators to Level 4 are dead and require manual power to operate.", c: "fuchsia", l: "You must manually bridge power from a generator to the shaft using copper wire. Wear rubber gloves." },
+                { n: "Wi-Fi Anomalies", d: "Wi-Fi signals are incredibly strong here, but they actively intercept your devices.", c: "green", l: "Do not connect to 'L3_FREE'. It downloads a virus that flashes your screen to attract entities." },
+                { n: "Copper Toxicity", d: "The air tastes heavily of copper and ozone, acting as a mild blood thinner.", c: "teal", l: "Bleeding here attracts entities 10x faster due to the metallic air synergy. Bandage instantly." },
+                { n: "No Sleep Protocol", d: "Sleeping in Level 3 is a guaranteed death sentence due to wandering patrols.", c: "rose", l: "Consume adrenaline or Fire Salt. Push through exhaustion until you reach the Level 4 elevators." }
+            ],
+            loadout: [
+                { n: "High-Voltage Rubber Gloves", i: "ph-hand-palm" }, { n: "Thick Rubber-Soled Boots", i: "ph-boot" },
+                { n: "Non-Conductive Melee Weapon (Wood)", i: "ph-sword" }, { n: "Firearm (Lethal Force Authorized)", i: "ph-crosshair" },
+                { n: "EMP Grenades (Stuns entities)", i: "ph-lightning" }, { n: "Hemostatic Clotting Agents", i: "ph-first-aid" },
+                { n: "Adrenaline Syringes", i: "ph-pill" }, { n: "Insulated Wire Cutters", i: "ph-wrench" },
+                { n: "Heavy Padlocks (For securing gates)", i: "ph-lock-key" }, { n: "Tactical Strobe Light", i: "ph-flashlight" }
+            ],
+            history: [
+                { date: "AUGUST 19, 2011", t: "The Death Trap Discovery", d: "Explorers from Level 2 enter a fire exit, realizing they are trapped in a high-threat zone. Only 1 of 5 survives." },
+                { date: "MARCH 5, 2014", t: "Base Gamma Overrun", d: "M.E.G. attempts to establish a forward outpost. It is destroyed by a swarm of Skin-Stealers within 72 hours." },
+                { date: "NOVEMBER 11, 2017", t: "Fire Salt Extraction Perfected", d: "B.N.T.G. scavengers devise a method to safely extract explosive Fire Salt from the fuse boxes without detonating it." },
+                { date: "FEBRUARY 14, 2020", t: "The Great Generator Reboot", d: "An unknown wanderer triggers a massive central generator, permanently lighting up a previously pitch-black, highly lethal sector." },
+                { date: "JUNE 9, 2022", t: "Elevator Map Compiled", d: "A comprehensive map of working elevators to Level 4 is distributed among survivor groups, drastically reducing mortality." },
+                { date: "MAY 22, 2024", t: "Wi-Fi Trap Identified", d: "L-Corp isolates a rogue, anomalous signal mimicking a safe network, saving countless agents from digital luring." },
+                { date: "JANUARY 5, 2025", t: "Hound Pack Coordination", d: "Researchers document Hounds using rudimentary flanking tactics, proving they are adapting to human scavenger routes." },
+                { date: "JULY 2, 2026", t: "Designated 'Run' Zone", d: "The level is considered entirely unlivable. Scavenging runs are strictly timed to 4-hour windows by all major factions." }
+            ],
+            resonance: [
+                "> SENSING EXTREME ELECTROMAGNETIC INTERFERENCE...", "> COMPENSATING HZ FREQUENCIES... [OK]",
+                "<br>> <span class='text-liminal-primary'>STRUCTURAL DANGER:</span>", "  - 10kV DETECTED ON LOCAL GRID",
+                "<br>> <span class='text-red-500'>MASSIVE ENTITY SIGNATURES:</span>", "  - 24 HOSTILES IN 100M RADIUS",
+                "<br>> <span class='text-yellow-400'>SURVIVAL PROBABILITY:</span>", "  - 4.2%",
+                "<br>> UPLOADING AND SEVERING CONNECTION."
+            ]
+        }),
 
-        "level4": {
-            type: "level", id: "level4", title: "Level 4", name: "Abandoned Office",
-            themeColor: "#3b82f6", themeHover: "#2563eb", themeGlow: "rgba(59, 130, 246, 0.2)", idleAnimation: "animate-ambient-drift",
-            tags: [ { label: "CLASS 1", class: "bg-green-500/10 text-green-400 border-green-500/30" }, { label: "ABUNDANT RESOURCES", class: "bg-blue-500/10 text-blue-400 border-blue-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjZDZkM2QxIi8+PHBhdGggZD0iTTAgMEgxMFYxMEgwWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOTQxNjRkIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvc3ZnPg==",
-            mapConfig: { seed: 9942, wallDensity: 0.4, renderStyle: 'office', gridSize: 6, poiChance: 0.04, wallColor: '#60a5fa', gridColor: 'rgba(255,255,255,0.2)', wallThickness: 0.1, bgColor: '#f8fafc', pois: [ { name: "Water Cooler", color: "#3b82f6", icon: "🚰" }, { name: "M.E.G. Omega", color: "#22c55e", icon: "🛡" } ] },
-            specificMetrics: { "Level 4 Specific": { "Cubicle Density": "75%", "Carpet Cleanliness": "Pristine" }, "Survival & Infrastructure": { "Base Threat Level": "0.5", "Rescue Probability": "High" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 4 resembles an empty office building. It is devoid of furniture save for the occasional water cooler or desk, and is completely safe.</p></div><h3>Description</h3><p>Level 4 is an infinite expanse of mostly empty office space. The carpet is thin and well-kept, the walls are painted a sterile white or beige, and drop ceilings hold fully functioning, non-flickering fluorescent lights. Entities are almost completely nonexistent here, with the notable exception of Windows.</p>`,
-            survivalGuide: makeSG([{n:"Rest and Resupply",d:"Level 4 is the ideal place to recover sanity, heal wounds, and gather supplies.",c:"blue",l:"Sleep in the center of cubicles; they naturally block out the ambient noise."},{n:"The Window Threat",d:"Despite the safety, Windows are a lethal threat.",c:"purple",l:"Walk exactly in the center of the hallways. Windows cannot reach further than 1 meter."}], [{n:"Empty Canteens",i:"ph-drop"},{n:"Comfortable Sleeping Bag",i:"ph-sleeping-bag"}]),
-            history: makeHist([{t:"The Ascent from Level 3",d:"A group of battered wanderers takes an elevator up from Level 3 and finds paradise."},{t:"Establishment of M.E.G. Base Omega",d:"M.E.G. relocates primary civilian housing here."}]),
-            resonanceLogs: ["> ANALYZING EUCLIDEAN STABILITY...", "> LEVEL 4 ARCHITECTURE = 99% STABLE", "> SCAN COMPLETE."]
-        },
+        "level4": buildLevel({
+            id: "level4", title: "Level 4", name: "Abandoned Office", color: "#3b82f6", hover: "#2563eb", glow: "rgba(59, 130, 246, 0.2)", anim: "animate-ambient-drift",
+            tags: [["CLASS 1", "bg-green-500/10 text-green-400 border-green-500/30"], ["ABUNDANT RESOURCES", "bg-blue-500/10 text-blue-400 border-blue-500/30"]],
+            hero: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHJlY3Qgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjZDZkM2QxIi8+PHBhdGggZD0iTTAgMEgxMFYxMEgwWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOTQxNjRkIiBzdHJva2Utd2lkdGg9IjAuNSIvPjwvc3ZnPg==",
+            map: { seed: 9942, wallDensity: 0.4, renderStyle: 'office', gridSize: 6, poiChance: 0.04, wallColor: '#60a5fa', gridColor: 'rgba(255,255,255,0.2)', wallThickness: 0.1, bgColor: '#f8fafc', pois: [{ name: "Water Cooler", color: "#3b82f6", icon: "🚰" }, { name: "M.E.G. Omega", color: "#22c55e", icon: "🛡" }, { name: "Window Trap", color: "#000", icon: "🪟" }] },
+            metrics: {
+                "Level 4 Specific (Proprietary)": { "Cubicle Density": "75%", "Carpet Cleanliness": "Pristine", "Window Occurrence": "Low (Anomalous)", "Almond Water Respawn": "High", "Ambient Static": "High", "Office Supply Yield": "Maximum" },
+                "Chrono-Temporal Dynamics": { "Frontrooms Time Dilation": "1:0.95 (Faster)", "Local Time Flow Rate": "Standard Linear", "Temporal Loop Probability": "0.0%", "Entropy Gradient": "Restorative", "Atomic Clock Drift": "0.0s/24h", "Memory Degradation": "-2% (Healing)" },
+                "Spatial & Dimensional": { "Hume Level (Reality)": "100.0 H (Stable)", "Kant Counter Reading": "1.00 K", "Euclidean Consistency": "99.0%", "Noclipping Threshold": "Impossible", "Spatial Dilation Factor": "1:1", "Z-Axis Deviation": "0.00%" },
+                "Atmospheric Diagnostics": { "Ambient Temp (Core)": "21.0 °C (Comfortable)", "Relative Humidity": "45%", "Atmospheric Pressure": "101.3 kPa", "Air Comp: O2": "21.0%", "Trace Anomalous Gases": "0%", "Chemical Odor Profile": "Clean Linen / Rain" },
+                "Acoustic & Luminescent": { "Ambient Hum": "AC Units / Muffled Rain", "Absolute Decibel Baseline": "25 dB", "Luminosity Level": "500 Lux (Bright)", "Color Temperature": "4000 K", "Total Darkness Zones": "0%", "Audio Hallucination Risk": "Zero" },
+                "Material & Biological": { "Entity Density": "0.01 (Windows)", "Toxicity Levels": "Zero", "Wall Arsenic Saturation": "0.0 mg/m²", "Micro-Concrete Density": "Standard", "Flora/Fauna Present": "Indoor Potted Plants", "Pathogen Level": "Zero" },
+                "Survival & Infrastructure": { "Base Threat Level": "0.5 (Sanctuary)", "Sanity Drain Rate": "0% (Restorative)", "Isolation Factor": "Low", "Radio Comm Integrity": "100%", "GPS Functionality": "Online", "Rescue Probability": "Maximum" }
+            },
+            desc: [
+                "Level 4 is an infinite expanse of mostly empty office space. It is a striking contrast to the horrors of Level 3, acting as a massive sanctuary and recovery zone for wanderers. It is devoid of furniture save for the occasional water cooler, desk, or potted plant, and is almost completely safe.",
+                "The carpet is thin, industrial, and impeccably clean. The walls are painted a sterile white or beige, and the drop ceilings hold fully functioning, non-flickering fluorescent lights. There is no maddening hum-buzz like in Level 0; instead, the level is accompanied by the soft, soothing hum of air conditioning or occasionally the faint, muffled sounds of a rainstorm outside, despite there being no actual exterior. Wanderers arriving here report an immediate sense of relief and a rapid restoration of their sanity.",
+                "Entities are almost completely nonexistent here, making it the perfect hub for civilization. The only notable exception are 'Windows'—highly lethal anomalous entities that disguise themselves as glass windows leading to a dark exterior. If a wanderer approaches a Window, the entity inside will shatter the glass and drag them into the void.",
+                "Scattered throughout Level 4 are water coolers that dispense pure Almond Water, and vending machines containing safe, edible snacks from the Frontrooms. Because of its safety, Euclidean stability, and infinite resources, the M.E.G. and the B.N.T.G. have established their massive, primary headquarters and trade hubs here. It is the economic and social capital of the Backrooms[cite: 3]."
+            ],
+            entrances: [
+                "Arriving safely via the elevators from Level 3.",
+                "Following the heavily guarded B.N.T.G. marked trails from Level 1.",
+                "Noclipping through the walls of Level 16 (Rare).",
+                "Entering a modern office door found in the Hub."
+            ],
+            exits: [
+                "Finding an ornate, carpeted stairwell leads upwards to Level 5.",
+                "Breaking a regular window (not an entity window) may drop you into Level 6 (Highly Not Recommended).",
+                "Noclipping through a vending machine occasionally leads to Level 33.",
+                "Entering an elevator and pressing 'B' leads back to Level 3."
+            ],
+            tips: [
+                { n: "Rest and Resupply", d: "Level 4 is the ideal place to recover sanity, heal wounds, and gather supplies after surviving Level 3.", c: "blue", l: "Sleep in the center of cubicles; they naturally block out the ambient noise and provide psychological comfort." },
+                { n: "The Window Threat", d: "Despite the safety, Windows are a lethal, stationary threat. They mimic Baseline Reality exteriors.", c: "purple", l: "Walk exactly in the center of the hallways. Windows cannot reach further than 1 meter from the wall." },
+                { n: "Water Cooler Foraging", d: "The coolers contain the highest purity Almond Water found anywhere in the Backrooms.", c: "green", l: "Always check the tap first. If it dispenses red liquid or smells of copper, do not drink it; move to the next cooler." },
+                { n: "Vending Machine Exploits", d: "Machines contain Frontrooms-style snacks and never seem to run out of stock.", c: "yellow", l: "They do not require actual coins. Simply press a universal maintenance button sequence: 4-2-8-1." },
+                { n: "Base Omega Registration", d: "Register with the M.E.G. upon arrival to receive a map, rations, and protection.", c: "orange", l: "Do not give them your real name. Use an alias, as names are used for anomalous tracking in deeper levels." },
+                { n: "Hound Stragglers", d: "Rarely, a lone Hound will follow an elevator up from Level 3, lost and confused.", c: "red", l: "The bright lights disorient them heavily. Stare them down confidently; they will flee rather than attack." },
+                { n: "Static Shocks", d: "The pristine carpet builds massive amounts of static electricity as you walk.", c: "cyan", l: "Touch a metal cubicle frame every 10 minutes to discharge safely before touching delicate electronics." },
+                { n: "Trade Etiquette", d: "Level 4 is the economic heart of the Backrooms. Bartering is the rule of law.", c: "teal", l: "Trade medical supplies and weaponry for information, not water. Water is hyper-abundant here and worthless in trade." },
+                { n: "Printer Anomalies", d: "Office printers will occasionally turn on and print pages on their own.", c: "fuchsia", l: "Read them carefully. They often print L-Corp cartography maps detailing the exact locations of nearby exits." },
+                { n: "Stairwell Transitions", d: "Finding an ornate stairwell is the safest way forward to Level 5.", c: "rose", l: "If the stairs go down instead of up, do not enter. It is a spatial trap that leads directly to Level 6." }
+            ],
+            loadout: [
+                { n: "Empty Canteens (For stockpiling)", i: "ph-drop" }, { n: "High-Value Trade Goods", i: "ph-hand-coins" },
+                { n: "Comfortable Sleeping Bag", i: "ph-sleeping-bag" }, { n: "Journal & Pen (For mapping)", i: "ph-book" },
+                { n: "Anti-Static Grounding Strap", i: "ph-shield-check" }, { n: "Sanity Restorative Meds", i: "ph-first-aid" },
+                { n: "Utility Knife (For crafting)", i: "ph-knife" }, { n: "Large Duffel Bag (Looting)", i: "ph-bag" },
+                { n: "Camera (To document safe zones)", i: "ph-camera" }, { n: "Short-wave Radio (Comms work here)", i: "ph-radio" }
+            ],
+            history: [
+                { date: "SEPTEMBER 12, 2011", t: "The Ascent from Level 3", d: "A group of battered wanderers takes an elevator up from the horrors of Level 3 and finds paradise, mapping the first safe zone." },
+                { date: "NOVEMBER 11, 2014", t: "Establishment of M.E.G. Base Omega", d: "M.E.G. relocates its primary civilian housing and command structure here due to the infinite resources and safety." },
+                { date: "MARCH 22, 2016", t: "The Window Massacre", d: "A group of naive wanderers mistake an anomalous window for an exit to Earth. 12 are pulled into the void in seconds." },
+                { date: "DECEMBER 1, 2018", t: "B.N.T.G. Headquarters Built", d: "The Trade Group sets up their central bank and barter exchange in a massive, open-plan sector of the office." },
+                { date: "JULY 14, 2021", t: "Agriculture Attempt", d: "Wanderers successfully grow Frontrooms vegetation in cubicles using modified fluorescent lighting and Almond Water." },
+                { date: "APRIL 3, 2023", t: "L-Corp Observer Nodes Online", d: "Liminality Corp embeds into the M.E.G. infrastructure without detection, tapping into their comms network." },
+                { date: "AUGUST 22, 2024", t: "The Wi-Fi Network Restored", d: "Engineers manage to link several anomalous routers together, creating a stable, albeit slow, localized intranet." },
+                { date: "JULY 2, 2026", t: "The Capital of the Backrooms", d: "Level 4 stands as the most populated and secure level known to wanderers, acting as the ultimate staging ground." }
+            ],
+            resonance: [
+                "> ANALYZING EUCLIDEAN STABILITY...", "> LEVEL 4 ARCHITECTURE = 99% STABLE",
+                "<br>> <span class='text-blue-400'>RESOURCE TRACKING:</span>", "  - 400 ALMOND WATER DISPENSERS IN RADIUS",
+                "<br>> <span class='text-yellow-400'>SCANNING FOR COGNITOHAZARDS:</span>", "  - WARNING: WINDOW ANOMALY LOCATED AT X:24, Y:-90",
+                "<br>> <span class='text-green-400'>POPULATION DENSITY:</span>", "  - 2,490 HUMAN LIFE SIGNS DETECTED",
+                "<br>> SCAN COMPLETE. UPLOADING."
+            ]
+        }),
 
-        "level5": {
-            type: "level", id: "level5", title: "Level 5", name: "Terror Hotel",
-            themeColor: "#b45309", themeHover: "#92400e", themeGlow: "rgba(180, 83, 9, 0.2)", idleAnimation: "animate-flicker",
-            tags: [ { label: "CLASS 2", class: "bg-yellow-500/10 text-yellow-400 border-yellow-500/30" }, { label: "PSYCHOLOGICAL HAZARD", class: "bg-purple-500/10 text-purple-400 border-purple-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiI+PHJlY3Qgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiBmaWxsPSIjNDUxYTAzIi8+PHBhdGggZD0iTTAgMEwxMiAxMk0xMiAwTDAgMTIiIHN0cm9rZT0iI2Q5NzcwNiIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+",
-            mapConfig: { seed: 50401, wallDensity: 0.7, renderStyle: 'diagonal', gridSize: 8, poiChance: 0.03, wallColor: '#b45309', gridColor: 'rgba(217, 119, 6, 0.1)', wallThickness: 0.2, bgColor: '#291001', pois: [ { name: "Beverly Room", color: "#10b981", icon: "🍸" }, { name: "Deathmoth Hive", color: "#f59e0b", icon: "🦋" } ] },
-            specificMetrics: { "Level 5 Specific": { "Wallpaper Toxicity": "Trace Arsenic", "Jazz Music Loop": "3.4 Hours" }, "Chrono-Temporal Dynamics": { "Local Time Flow Rate": "Psychological Dilation", "Memory Degradation": "+15%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 5 is an infinite hotel complex constructed in early 20th-century Art Deco architecture.</p></div><h3>Description</h3><p>Level 5 takes on the appearance of a lavishly decorated, yet completely abandoned, 1930s hotel. Ornate mahogany doors, detailed gold-leaf wallpaper, and plush red carpets cover the endless hallways. The primary entity threat in Level 5 comes from Deathmoths.</p>`,
-            survivalGuide: makeSG([{n:"Deathmoth Avoidance",d:"Female Deathmoths are attracted to light.",c:"orange",l:"Avoid areas with broken sconces; it means a female claimed it."},{n:"The Jazz Loop Paranoia",d:"The looping 1920s music induces severe anxiety.",c:"fuchsia",l:"Wear earplugs. If the music suddenly stops, hide immediately."}], [{n:"Industrial Earplugs",i:"ph-ear"},{n:"Chemical Moth Repellent",i:"ph-bug"}]),
-            history: makeHist([{t:"The Golden Stairs Discovery",d:"Explorers from Level 4 ascend ornate stairs, finding the hotel."},{t:"The Moth King Slain",d:"A coordinated group kills a massive Deathmoth King, clearing a wing of the hotel."}]),
-            resonanceLogs: ["> INITIALIZING ACOUSTIC SCAN...", "> DETECTING LOOPING AUDIO TRACK [1920s_JAZZ.wav]", "> SCAN COMPLETE."]
-        },
+        "level5": buildLevel({
+            id: "level5", title: "Level 5", name: "Terror Hotel", color: "#b45309", hover: "#92400e", glow: "rgba(180, 83, 9, 0.2)", anim: "animate-flicker",
+            tags: [["CLASS 2", "bg-yellow-500/10 text-yellow-400 border-yellow-500/30"], ["PSYCHOLOGICAL HAZARD", "bg-purple-500/10 text-purple-400 border-purple-500/30"]],
+            hero: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiI+PHJlY3Qgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiBmaWxsPSIjNDUxYTAzIi8+PHBhdGggZD0iTTAgMEwxMiAxMk0xMiAwTDAgMTIiIHN0cm9rZT0iI2Q5NzcwNiIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+",
+            map: { seed: 50401, wallDensity: 0.7, renderStyle: 'diagonal', gridSize: 8, poiChance: 0.03, wallColor: '#b45309', gridColor: 'rgba(217, 119, 6, 0.1)', wallThickness: 0.2, bgColor: '#291001', pois: [{ name: "Beverly Room", color: "#10b981", icon: "🍸" }, { name: "Deathmoth Hive", color: "#f59e0b", icon: "🦋" }, { name: "Boiler Room", color: "#dc2626", icon: "🔥" }] },
+            metrics: {
+                "Level 5 Specific (Proprietary)": { "Wallpaper Toxicity": "Trace Arsenic", "Jazz Music Loop": "3.4 Hours", "Deathmoth Population": "High", "Architecture": "1930s Art Deco", "Elevator Floors": "300+", "Dust Accumulation": "Anomalous" },
+                "Chrono-Temporal Dynamics": { "Frontrooms Time Dilation": "1:1.5 (Fast)", "Local Time Flow Rate": "Psychological Dilation", "Temporal Loop Probability": "40.0%", "Entropy Gradient": "Stagnant", "Atomic Clock Drift": "±12.0s/24h", "Memory Degradation": "+15%" },
+                "Spatial & Dimensional": { "Hume Level (Reality)": "85.0 H", "Kant Counter Reading": "0.89 K", "Euclidean Consistency": "70.0%", "Noclipping Threshold": "Moderate", "Spatial Dilation Factor": "1:1", "Z-Axis Deviation": "±2.0%" },
+                "Atmospheric Diagnostics": { "Ambient Temp (Core)": "23.0 °C", "Relative Humidity": "30%", "Atmospheric Pressure": "100.5 kPa", "Air Comp: O2": "20.1%", "Trace Anomalous Gases": "Arsenic Vapor", "Chemical Odor Profile": "Mahogany / Old Dust / Cigar Smoke" },
+                "Acoustic & Luminescent": { "Ambient Hum": "1920s Jazz Music", "Absolute Decibel Baseline": "40 dB", "Luminosity Level": "200 Lux", "Color Temperature": "2500 K (Warm)", "Total Darkness Zones": "Rare", "Audio Hallucination Risk": "Very High" },
+                "Material & Biological": { "Entity Density": "3.2 (Sworms)", "Toxicity Levels": "Low (Wallpaper)", "Wall Arsenic Saturation": "0.5 mg/m²", "Micro-Concrete Density": "N/A (Wood/Plaster)", "Flora/Fauna Present": "Deathmoths", "Pathogen Level": "Low" },
+                "Survival & Infrastructure": { "Base Threat Level": "2 (Psychological)", "Sanity Drain Rate": "-3.5% per Hour", "Isolation Factor": "Moderate", "Radio Comm Integrity": "50%", "GPS Functionality": "Offline", "Rescue Probability": "Moderate" }
+            },
+            desc: [
+                "Level 5 is an infinite hotel complex constructed entirely in early 20th-century Art Deco architecture. The sound of faint, looping 1920s jazz music can be heard echoing through the halls from an unseen source, driving wanderers slowly insane.",
+                "The level takes on the appearance of a lavishly decorated, yet completely abandoned, luxury hotel. Ornate mahogany doors, detailed gold-leaf wallpaper, and plush red carpets cover the endless, labyrinthine hallways. Much of the level is completely pristine, though wanderers report an intense, overarching feeling of being watched. This profound paranoia, combined with the looping music, leads to severe psychological breakdown if one is isolated for too long. Furniture occasionally appears to breathe or shift when not looked at directly.",
+                "The primary entity threat in Level 5 comes from Deathmoths. The level is considered the central hive for these creatures. Male Deathmoths are completely harmless and flutter around the lights, but the giant Female Deathmoths are highly aggressive and dangerous. They are attracted to the ornate brass wall sconces that provide the level's lighting, nesting in the fixtures and attacking anyone who disturbs them.",
+                "There are three main, distinct areas in Level 5: The Main Hotel (the infinite hallways and rooms), The Beverly Room (a massive, fully functional ballroom used as a safe hub by M.E.G.), and The Boiler Room (a searingly hot, rusty labyrinth underneath the hotel where Clumps reside and the temperature rises dramatically)[cite: 3]."
+            ],
+            entrances: [
+                "Ascending the ornate, carpeted stairs found in Level 4.",
+                "Taking a working elevator up from Level 3.",
+                "Entering a revolving hotel door occasionally found in Level 11.",
+                "Noclipping through a mahogany desk in Level 4."
+            ],
+            exits: [
+                "Going too deep into the Boiler Room eventually transitions the environment entirely into Level 6.",
+                "Entering dark, unlit hotel rooms and waiting can sometimes transport you to Level 63.",
+                "Opening the main front doors in the lobby leads out into Level 11.",
+                "Noclipping through the boiler room walls drops you into Level 2."
+            ],
+            tips: [
+                { n: "Deathmoth Avoidance", d: "Female Deathmoths are fiercely attracted to light and protect their nests.", c: "orange", l: "Avoid areas with broken sconces or silk webs; it means a female has claimed the territory." },
+                { n: "The Jazz Loop Paranoia", d: "The looping 1920s music induces severe anxiety, auditory hallucinations, and eventual psychosis.", c: "fuchsia", l: "Wear earplugs. If the music suddenly stops playing entirely, hide immediately. Something is hunting." },
+                { n: "The Beverly Room", d: "The massive ballroom is a designated safe zone cleared of entities.", c: "green", l: "Use the ballroom to rest and trade for weapons and anti-psychotics before braving the Boiler Room." },
+                { n: "Boiler Room Clumps", d: "The sub-level is infested with Clumps that hide in the cramped pipes.", c: "red", l: "Never go into the Boiler Room unless absolutely necessary to reach Level 6. It is a death trap." },
+                { n: "Arsenic Wallpaper", d: "The beautiful gold-leaf wallpaper contains toxic trace elements of arsenic.", c: "yellow", l: "Do not touch the walls or lean against them. If you do, wash your hands immediately with Almond Water." },
+                { n: "Room 54", d: "There are rumors of a 'Room 54' that contains immense wealth and an exit to Earth.", c: "blue", l: "It is a psychological trap generated by the level. Room 54 does not exist. Do not look for it." },
+                { n: "Furniture Hallucinations", d: "Couches, chairs, and beds may appear to breathe or shift their positions.", c: "purple", l: "Sit on the floor. Do not trust the furniture; some of it is composed of disguised entity biomass." },
+                { n: "Mirror Evasion", d: "Bathrooms contain mirrors that reflect incorrect timelines or missing reflections.", c: "cyan", l: "Keep your head down when washing in the sinks. Looking into the mirrors drains your sanity instantly." },
+                { n: "Male Deathmoth Utility", d: "Males are completely harmless and produce a healing silk used by medics.", c: "rose", l: "Let them land on you. Do not swat them; crushing them releases pheromones that attract angry females." },
+                { n: "Elevator Buttons", d: "Elevators here have buttons that go up to floor 300, defying the building's exterior logic.", c: "teal", l: "Never press a button above 12. The air thins out completely, leading to asphyxiation." }
+            ],
+            loadout: [
+                { n: "Industrial Earplugs (Crucial)", i: "ph-ear" }, { n: "Chemical Moth Repellent", i: "ph-bug" },
+                { n: "Respirator (For Boiler Room)", i: "ph-mask-water" }, { n: "Long-reach Spear (For Deathmoths)", i: "ph-sword" },
+                { n: "Red-light Headlamp (Less attractive)", i: "ph-flashlight" }, { n: "Acid Burn Kits", i: "ph-first-aid" },
+                { n: "Anti-psychotic Medication", i: "ph-pill" }, { n: "Almond Water", i: "ph-drop" },
+                { n: "Hotel Blueprints (L-Corp)", i: "ph-map-trifold" }, { n: "Stopwatch (Time reality checks)", i: "ph-watch" }
+            ],
+            history: [
+                { date: "FEBRUARY 2, 2012", t: "The Golden Stairs Discovery", d: "Explorers from Level 4 ascend a newly formed set of ornate stairs, finding the hotel." },
+                { date: "AUGUST 12, 2014", t: "The Moth King Slain", d: "A coordinated group of wanderers kill a massive Deathmoth King, clearing the east wing of the hotel." },
+                { date: "DECEMBER 1, 2016", t: "The Beverly Room Treaty", d: "Factions establish a neutral trading hub within the Beverly Room, utilizing the ballroom's safety." },
+                { date: "MARCH 19, 2018", t: "Boiler Room Mapped", d: "M.E.G. agents map the descent to Level 6, suffering heavy Clump-related casualties in the pipes." },
+                { date: "OCTOBER 31, 2020", t: "The 'Jazz Madness' Incident", d: "Several wanderers go completely insane from the music loop, barricading themselves in Room 212 and attacking rescuers." },
+                { date: "JANUARY 11, 2023", t: "Arsenic Discovery", d: "Scientists at Base Omega trace a mysterious sickness in survivors back to the vintage wallpaper in Level 5." },
+                { date: "NOVEMBER 4, 2024", t: "Female Hive Eradication", d: "A specialized M.E.G. extermination unit clears out the primary hive on the 8th floor." },
+                { date: "JULY 2, 2026", t: "The Hub of Deceit", d: "Considered safe by many amateurs, but the psychological toll makes it extremely dangerous for long-term habitation." }
+            ],
+            resonance: [
+                "> INITIALIZING ACOUSTIC SCAN...", "> DETECTING LOOPING AUDIO TRACK [1920s_JAZZ.wav]",
+                "<br>> <span class='text-fuchsia-400'>COGNITOHAZARD ALERT:</span>", "  - AUDITORY PARANOIA INDUCERS PRESENT",
+                "<br>> <span class='text-orange-400'>BIOLOGICAL ENTITIES:</span>", "  - MASSIVE AERIAL PREDATORS DETECTED (DEATHMOTHS)",
+                "<br>> <span class='text-liminal-primary'>STRUCTURAL INTEGRITY:</span>", "  - HOTEL WINGS REPEAT INFINITELY",
+                "<br>> SCAN COMPLETE. UPLOADING."
+            ]
+        }),
 
-        "level6": {
-            type: "level", id: "level6", title: "Level 6", name: "Lights Out",
-            themeColor: "#1e293b", themeHover: "#0f172a", themeGlow: "rgba(30, 41, 59, 0.2)", idleAnimation: "animate-flicker",
-            tags: [ { label: "CLASS 4", class: "bg-red-500/10 text-red-500 border-red-500/30" }, { label: "PITCH BLACK", class: "bg-gray-500/10 text-gray-400 border-gray-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiMwMDAiLz48L3N2Zz4=",
-            mapConfig: { seed: 600, wallDensity: 0.9, renderStyle: 'grid', gridSize: 6, poiChance: 0.02, wallColor: '#1f2937', gridColor: 'rgba(255,255,255,0.02)', wallThickness: 0.1, bgColor: '#000', pois: [{ name: "Audio Hazard", color: "#dc2626", icon: "👁" }, { name: "Tripping Hazard", color: "#60a5fa", icon: "💧" }] },
-            specificMetrics: { "Level 6 Specific": { "Lux Level": "0.0", "Acoustic Resonance": "Infinite", "Entity Visability": "Zero" }, "Spatial & Dimensional": { "Hume Level (Reality)": "45.0 H", "Euclidean Consistency": "20.0%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 6 is an infinite complex shrouded in absolute darkness where light sources are anomalously mitigated.</p></div><h3>Description</h3><p>Level 6 is completely devoid of light. Flashlights and glowsticks only illuminate a few inches. The walls are made of cold metal and concrete. The primary danger is the extreme psychological toll and high density of Smilers that lurk in the dark. Sanity drains rapidly, leading to intense auditory and visual hallucinations.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Going deep into Level 5's boiler room.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Tripping on a wire or stepping into a puddle often drops you into Level 7.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Blind Navigation",d:"Keep one hand on the wall to maintain bearing in the dark.",c:"gray",l:"Follow the left wall to avoid topological loops."},{n:"Listen for Smilers",d:"Listen closely for the distant laughing of Smilers.",c:"red",l:"Echolocation is your only early warning system."},{n:"Crawl to avoid tripping",d:"Tripping hazards are frequent.",c:"yellow",l:"Dropping to the floor reduces your thermal silhouette."},{n:"Do not trust voices",d:"Auditory hallucinations calling your name are traps.",c:"fuchsia",l:"If the voice echoes with a metallic ping, it is an entity."},{n:"Conserve batteries",d:"Light sources degrade extremely fast.",c:"blue",l:"Strobe your light for 1 second every 10 meters."},{n:"Mark walls by touch",d:"Use chalk to carve tactile markers.",c:"teal",l:"Carve three slashes at every dead end."},{n:"Stay quiet",d:"Noise travels infinitely in this space.",c:"cyan",l:"Wrap your boots in cloth to muffle footsteps."},{n:"Avoid sudden drops",d:"The floor occasionally gives way to deep pits.",c:"purple",l:"Slide a blind cane across the floor ahead of you."},{n:"Use Almond water",d:"Drink frequently to combat severe sanity drain.",c:"green",l:"Swish the water in your mouth to ground your senses."},{n:"Accept the darkness",d:"Do not panic. Acceptance lowers your heart rate.",c:"orange",l:"Meditation prevents cognitohazard ingestion."}],
-                [{n:"Night Vision Goggles",i:"ph-binoculars"},{n:"Nylon Rope",i:"ph-link"},{n:"Almond Water",i:"ph-drop"},{n:"Industrial Chalk",i:"ph-pencil-simple"},{n:"Sound Mufflers",i:"ph-ear"},{n:"Padded Clothing",i:"ph-t-shirt"},{n:"Blind Cane",i:"ph-stick"},{n:"First Aid Kit",i:"ph-first-aid"},{n:"Earplugs",i:"ph-ear-slash"},{n:"Thermal Goggles",i:"ph-eye"}]
-            ),
-            history: makeHist([{t:"Discovered from Level 5",d:"A wanderer fell from the boiler room."},{t:"First Smiler swarm",d:"Massive casualties recorded by a M.E.G. unit."},{t:"Sanity drain anomaly",d:"Officially categorized by L-Corp researchers."},{t:"L-Corp deploys sonar",d:"Acoustic mapping nodes successfully deployed."},{t:"M.E.G. abandons outposts",d:"Due to 100% casualty rate."},{t:"The Long Walk experiment",d:"Proves Euclidean inconsistency."},{t:"Current status",d:"Strict no-entry zone for all personnel."}]),
-            resonanceLogs: ["> INITIALIZING ACOUSTIC SCAN...", "> LIGHT NEGATION DETECTED.", "> EXTREME COGNITOHAZARD PROXIMITY.", "> UPLOADING DATA AND SEVERING CONNECTION."]
-        },
+        "level6": buildLevel({
+            id: "level6", title: "Level 6", name: "Lights Out", color: "#1e293b", hover: "#0f172a", glow: "rgba(30, 41, 59, 0.2)", anim: "animate-flicker",
+            tags: [["CLASS 4", "bg-red-500/10 text-red-500 border-red-500/30"], ["PITCH BLACK", "bg-gray-500/10 text-gray-400 border-gray-500/30"]],
+            hero: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiMwMDAiLz48L3N2Zz4=",
+            map: { seed: 600, wallDensity: 0.9, renderStyle: 'grid', gridSize: 6, poiChance: 0.02, wallColor: '#1f2937', gridColor: 'rgba(255,255,255,0.02)', wallThickness: 0.1, bgColor: '#000', pois: [{ name: "Audio Hazard", color: "#dc2626", icon: "👁" }, { name: "Tripping Hazard", color: "#60a5fa", icon: "💧" }] },
+            metrics: {
+                "Level 6 Specific (Proprietary)": { "Lux Level": "0.0 (Absolute)", "Acoustic Resonance": "Infinite Echo", "Entity Visability": "Zero", "Light Mitigaton Factor": "99.8%", "Floor Stability": "Uneven", "Wire Snare Presence": "High" },
+                "Chrono-Temporal Dynamics": { "Frontrooms Time Dilation": "1:2.0 (Fast)", "Local Time Flow Rate": "Unknown", "Temporal Loop Probability": "60.0%", "Entropy Gradient": "Stagnant", "Atomic Clock Drift": "Unknown", "Memory Degradation": "+25%" },
+                "Spatial & Dimensional": { "Hume Level (Reality)": "45.0 H (Failing)", "Kant Counter Reading": "0.45 K", "Euclidean Consistency": "20.0%", "Noclipping Threshold": "Low", "Spatial Dilation Factor": "1:3", "Z-Axis Deviation": "Extreme" },
+                "Atmospheric Diagnostics": { "Ambient Temp (Core)": "12.0 °C (Cold)", "Relative Humidity": "60%", "Atmospheric Pressure": "98.5 kPa", "Air Comp: O2": "19.0%", "Trace Anomalous Gases": "Unknown", "Chemical Odor Profile": "Rust / Stale Air" },
+                "Acoustic & Luminescent": { "Ambient Hum": "None (Dead Silence)", "Absolute Decibel Baseline": "0 dB", "Luminosity Level": "0 Lux", "Color Temperature": "N/A", "Total Darkness Zones": "100%", "Audio Hallucination Risk": "Maximum" },
+                "Material & Biological": { "Entity Density": "7.5 (Smilers)", "Toxicity Levels": "Low", "Wall Arsenic Saturation": "0.0 mg/m²", "Micro-Concrete Density": "Variable", "Flora/Fauna Present": "None", "Pathogen Level": "None" },
+                "Survival & Infrastructure": { "Base Threat Level": "4 (Lethal)", "Sanity Drain Rate": "-8.0% per Hour", "Isolation Factor": "Absolute", "Radio Comm Integrity": "0%", "GPS Functionality": "Offline", "Rescue Probability": "Zero" }
+            },
+            desc: [
+                "Level 6 is an infinite complex shrouded in absolute, impenetrable darkness where all light sources are anomalously mitigated and absorbed by the environment.",
+                "The level is completely devoid of natural or artificial light. Even industrial flashlights and chemical glowsticks only illuminate a few inches ahead of the user before the light is seemingly swallowed by the air itself. The walls are constructed of cold metal and rough concrete. The floor is treacherous, littered with exposed wires, pipes, and sudden, deep puddles of unknown fluids that cause wanderers to trip and injure themselves in the pitch black.",
+                "The primary danger of Level 6 is the extreme psychological toll and the staggeringly high density of Smilers that lurk in the dark. Without light, human sanity drains rapidly, leading to intense auditory and visual hallucinations. Wanderers frequently report hearing their own names whispered, or the sounds of approaching footsteps that do not exist.",
+                "Due to the absolute darkness, navigation is entirely reliant on touch and sound. However, making noise attracts the entities. It is a terrifying paradox of survival: you cannot see to move, but moving blindly makes noise, and noise brings death[cite: 3]."
+            ],
+            entrances: [
+                "Going too deep into Level 5's boiler room seamlessly transitions into Level 6.",
+                "Entering a rusted iron door in Level 4 (Highly dangerous trap)."
+            ],
+            exits: [
+                "Tripping on a wire or stepping deeply into a puddle often causes a noclip event, dropping you into Level 7.",
+                "Finding a spiral staircase leading downwards takes you to Level 8."
+            ],
+            tips: [
+                { n: "Blind Navigation", d: "Keep one hand firmly on the wall to maintain your bearing in the dark.", c: "gray", l: "Follow the left wall exclusively to avoid topological loops and dead ends." },
+                { n: "Listen for Smilers", d: "Listen closely for the distant laughing or clicking of Smilers.", c: "red", l: "Echolocation is your only early warning system. Stop breathing to listen." },
+                { n: "Crawl to Avoid Tripping", d: "Tripping hazards (wires, pipes) are frequent and cause loud noises when you fall.", c: "yellow", l: "Dropping to the floor and crawling reduces your thermal silhouette and noise." },
+                { n: "Do Not Trust Voices", d: "Auditory hallucinations calling your name or asking for help are traps.", c: "fuchsia", l: "If the voice echoes with a metallic ping, it is an entity trying to locate you." },
+                { n: "Conserve Batteries", d: "Light sources degrade extremely fast due to the anomalous absorption.", c: "blue", l: "Strobe your light for 1 second every 10 meters to save battery and check for immediate drops." },
+                { n: "Mark Walls by Touch", d: "Use chalk to carve tactile markers into the concrete.", c: "teal", l: "Carve three deep slashes at every dead end so you can feel them if you loop back." },
+                { n: "Stay Quiet", d: "Noise travels infinitely in this space due to the acoustic resonance.", c: "cyan", l: "Wrap your boots in cloth to muffle your footsteps completely." },
+                { n: "Avoid Sudden Drops", d: "The floor occasionally gives way to deep, bottomless pits.", c: "purple", l: "Slide a blind cane across the floor ahead of you. Never take a step without checking the ground." },
+                { n: "Use Almond Water", d: "Drink frequently to combat the severe, rapid sanity drain.", c: "green", l: "Swish the water in your mouth to ground your senses with a physical sensation." },
+                { n: "Accept the Darkness", d: "Do not panic. Panic raises your heart rate, which entities can hear.", c: "orange", l: "Meditation and acceptance of the dark prevents cognitohazard ingestion." }
+            ],
+            loadout: [
+                { n: "Night Vision Goggles (Fail often)", i: "ph-binoculars" }, { n: "Nylon Rope (For tethering)", i: "ph-link" },
+                { n: "Almond Water", i: "ph-drop" }, { n: "Industrial Chalk", i: "ph-pencil-simple" },
+                { n: "Sound Mufflers / Cloth", i: "ph-ear" }, { n: "Padded Clothing", i: "ph-t-shirt" },
+                { n: "Blind Cane", i: "ph-stick" }, { n: "First Aid Kit", i: "ph-first-aid" },
+                { n: "Earplugs", i: "ph-ear-slash" }, { n: "Thermal Goggles", i: "ph-eye" }
+            ],
+            history: [
+                { date: "MARCH 14, 2013", t: "Discovered from Level 5", d: "A wanderer fell from the boiler room into absolute darkness, barely surviving to document it." },
+                { date: "JUNE 2, 2015", t: "First Smiler Swarm", d: "Massive casualties recorded by a M.E.G. unit attempting to establish a forward base." },
+                { date: "SEPTEMBER 9, 2017", t: "Sanity Drain Anomaly", d: "Officially categorized by L-Corp researchers as a Level 4 psychological hazard." },
+                { date: "DECEMBER 11, 2019", t: "L-Corp Deploys Sonar", d: "Acoustic mapping nodes successfully deployed, mapping the geometry via soundwaves." },
+                { date: "FEBRUARY 28, 2021", t: "M.E.G. Abandons Outposts", d: "All operations ceased due to a 100% casualty rate." },
+                { date: "AUGUST 15, 2023", t: "The Long Walk Experiment", d: "Proves Euclidean inconsistency; a straight walk of 5 miles looped back to the start." },
+                { date: "JANUARY 10, 2025", t: "Light Mitigation Solved", d: "L-Corp develops proprietary flares that burn bright enough to pierce the anomaly for 10 seconds." },
+                { date: "JULY 2, 2026", t: "Current Status", d: "Strict no-entry zone for all personnel. Transit is considered a suicide mission without sonar." }
+            ],
+            resonance: [
+                "> INITIALIZING ACOUSTIC SCAN...", "> LIGHT NEGATION DETECTED.", 
+                "> EXTREME COGNITOHAZARD PROXIMITY.", 
+                "> ENTITY DENSITY: CRITICAL.",
+                "> UPLOADING DATA AND SEVERING CONNECTION."
+            ]
+        }),
 
-        "level7": {
-            type: "level", id: "level7", title: "Level 7", name: "Thalassophobia",
-            themeColor: "#0284c7", themeHover: "#0369a1", themeGlow: "rgba(2, 132, 199, 0.2)", idleAnimation: "animate-ambient-drift-slow",
-            tags: [ { label: "CLASS 4", class: "bg-red-500/10 text-red-500 border-red-500/30" }, { label: "AQUATIC HAZARD", class: "bg-blue-500/10 text-blue-400 border-blue-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHBhdGggZD0iTTAgNVExMCAwIDEwIDVUMjAgNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDI4NGM3IiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=",
-            mapConfig: { seed: 700, wallDensity: 0.1, renderStyle: 'diagonal', gridSize: 10, poiChance: 0.05, wallColor: '#0c4a6e', gridColor: 'rgba(255,255,255,0.05)', wallThickness: 0.5, bgColor: '#082f49', pois: [{ name: "Inverted House", color: "#fcd34d", icon: "🏠" }, { name: "Entity 20", color: "#ef4444", icon: "🦈" }] },
-            specificMetrics: { "Level 7 Specific": { "Water Depth": "Unfathomable", "Water Temperature": "4°C", "Gravity Inversion": "Local" }, "Atmospheric Diagnostics": { "Ambient Temp (Core)": "10.0 °C", "Relative Humidity": "100%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 7 is an impossibly massive ocean that spans in all directions, accessed initially through an inverted, flooded house.</p></div><h3>Description</h3><p>Level 7 is an endless body of dark, freezing water. Upon entry, wanderers find themselves in a furnished room completely filled with a shallow layer of water, where gravity is anomalously inverted to the surface of the exterior ocean. Opening the front door drops the wanderer into the pitch-black abyss below. The water is completely unsalvageable and devoid of typical marine life, save for Entity 20, "The Thing on Level 7", a massive apex predator.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Falling through the floor of Level 6.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Swimming deeply into an underwater cave system transports the wanderer to Level 8.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Swim parallel to currents",d:"Anomalous undertows will drag you down.",c:"blue",l:"Currents rotate counter-clockwise around the entrance point."},{n:"Avoid deep dark spots",d:"The deeper you go, the higher the pressure.",c:"gray",l:"Only dive when you have located the cave exit."},{n:"Watch for Entity 20",d:"The apex predator patrols the deep.",c:"red",l:"If the water suddenly grows warm, swim away immediately."},{n:"Surface often",d:"Maintain oxygen levels.",c:"teal",l:"Hypoxia accelerates the illusion of land."},{n:"Preserve body heat",d:"The water is a constant 4°C.",c:"orange",l:"Stay inside the entrance room until fully prepared."},{n:"Check structural stability",d:"The inverted house is fragile.",c:"yellow",l:"Do not slam doors; the vibration weakens the gravity anchor."},{n:"Don't drink the water",d:"The ocean fluid is toxic.",c:"green",l:"It contains microscopic parasites that attack the nervous system."},{n:"Use floating debris",d:"Rest on pieces of the house.",c:"cyan",l:"Tie multiple planks together with extracted wiring."},{n:"Dive into the cave",d:"The only known exit.",c:"fuchsia",l:"Look for a faint bioluminescent green glow far below."},{n:"Avoid splashes",d:"Acoustic stealth is required.",c:"purple",l:"Swim using silent breaststrokes."}],
-                [{n:"Thermal Wetsuit",i:"ph-t-shirt"},{n:"Oxygen Tank",i:"ph-cylinder"},{n:"Flippers",i:"ph-shoe"},{n:"Waterproof Light",i:"ph-flashlight"},{n:"Diving Goggles",i:"ph-goggles"},{n:"Spear Gun",i:"ph-crosshair"},{n:"Thermal Paste",i:"ph-drop"},{n:"Life Jacket",i:"ph-lifebuoy"},{n:"Waterproof Watch",i:"ph-watch"},{n:"Underwater Compass",i:"ph-compass"}]
-            ),
-            history: makeHist([{t:"First explorer fell from 6",d:"Surviving the drop by landing in the shallow entrance room pool."},{t:"House room explored",d:"Mapped the bizarre inverted gravity physics."},{t:"Depth limits tested",d:"M.E.G. confirms the depth exceeds standard ocean trenches."},{t:"Submersible drone lost",d:"Destroyed by Entity 20."},{t:"M.E.G. establishes pontoon",d:"A small floating outpost built near the entrance."},{t:"Cave entrance found",d:"A brave diver discovers the route to Level 8."},{t:"L-Corp buoy node installed",d:"Provides localized sonar tracking of the predator."}]),
-            resonanceLogs: ["> SCANNING AQUATIC DENSITY...", "> TEMPERATURE: 4°C.", "> MASSIVE BIOLOGICAL SIGNATURE DETECTED AT 500M DEPTH.", "> ABORTING ACTIVE PING TO MAINTAIN STEALTH."]
-        },
+        "level7": buildLevel({
+            id: "level7", title: "Level 7", name: "Thalassophobia", color: "#0284c7", hover: "#0369a1", glow: "rgba(2, 132, 199, 0.2)", anim: "animate-ambient-drift-slow",
+            tags: [["CLASS 4", "bg-red-500/10 text-red-500 border-red-500/30"], ["AQUATIC HAZARD", "bg-blue-500/10 text-blue-400 border-blue-500/30"]],
+            hero: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHBhdGggZD0iTTAgNVExMCAwIDEwIDVUMjAgNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDI4NGM3IiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4=",
+            map: { seed: 700, wallDensity: 0.1, renderStyle: 'diagonal', gridSize: 10, poiChance: 0.05, wallColor: '#0c4a6e', gridColor: 'rgba(255,255,255,0.05)', wallThickness: 0.5, bgColor: '#082f49', pois: [{ name: "Inverted House", color: "#fcd34d", icon: "🏠" }, { name: "Entity 20", color: "#ef4444", icon: "🦈" }] },
+            metrics: {
+                "Level 7 Specific (Proprietary)": { "Water Depth": "Unfathomable (>10km)", "Water Temperature": "4°C", "Gravity Inversion": "Local (House Only)", "Current Velocity": "12 Knots", "Salinity": "0% (Distilled)", "Bioluminescence": "Deep Cave Only" },
+                "Chrono-Temporal Dynamics": { "Frontrooms Time Dilation": "1:1.0", "Local Time Flow Rate": "Standard Linear", "Temporal Loop Probability": "0.0%", "Entropy Gradient": "Normal", "Atomic Clock Drift": "0.0s/24h", "Memory Degradation": "Baseline" },
+                "Spatial & Dimensional": { "Hume Level (Reality)": "95.0 H", "Kant Counter Reading": "0.95 K", "Euclidean Consistency": "90.0%", "Noclipping Threshold": "High", "Spatial Dilation Factor": "1:1", "Z-Axis Deviation": "Extreme (Depth)" },
+                "Atmospheric Diagnostics": { "Ambient Temp (Core)": "10.0 °C (Surface)", "Relative Humidity": "100%", "Atmospheric Pressure": "Variable (Depth)", "Air Comp: O2": "21.0%", "Trace Anomalous Gases": "None", "Chemical Odor Profile": "Stale Water / Mildew" },
+                "Acoustic & Luminescent": { "Ambient Hum": "Ocean Waves", "Absolute Decibel Baseline": "40 dB", "Luminosity Level": "5 Lux (Surface)", "Color Temperature": "6000 K (Blue)", "Total Darkness Zones": "Deep Water", "Audio Hallucination Risk": "Low" },
+                "Material & Biological": { "Entity Density": "0.1 (Entity 20)", "Toxicity Levels": "Toxic Water", "Wall Arsenic Saturation": "N/A", "Micro-Concrete Density": "N/A", "Flora/Fauna Present": "Entity 20", "Pathogen Level": "Nervous System Parasites" },
+                "Survival & Infrastructure": { "Base Threat Level": "4 (Lethal)", "Sanity Drain Rate": "-1.0% per Hour", "Isolation Factor": "High", "Radio Comm Integrity": "0% (Underwater)", "GPS Functionality": "Offline", "Rescue Probability": "Low" }
+            },
+            desc: [
+                "Level 7 is an impossibly massive ocean that spans endlessly in all directions, accessed initially through an inverted, flooded house.",
+                "Upon entry, wanderers find themselves in a furnished living room completely filled with a shallow layer of water. Bizarrely, gravity in this room is anomalously inverted relative to the surface of the exterior ocean. Looking out the window reveals the surface of the water hanging 'above' the room. Opening the front door drops the wanderer upward (or downward, relative to the ocean) into the pitch-black, freezing abyss of Level 7.",
+                "The water is completely unsalvageable. It contains microscopic parasites that attack the nervous system if ingested. The ocean is devoid of typical marine life, save for Entity 20, 'The Thing on Level 7', a massive, hyper-aggressive apex predator that patrols the deep.",
+                "Survival requires swimming down into the freezing, crushing depths to find an underwater cave system. The immense thalassophobia, freezing temperatures, and the looming threat of Entity 20 make traversing this level a harrowing experience[cite: 3]."
+            ],
+            entrances: [
+                "Falling through a weakened section of the floor in Level 6 drops you into the inverted house."
+            ],
+            exits: [
+                "Swimming deeply into a specific underwater cave system (marked by faint bioluminescence) transports the wanderer to Level 8."
+            ],
+            tips: [
+                { n: "Swim Parallel to Currents", d: "Anomalous undertows will drag you down into the crushing depths.", c: "blue", l: "Currents rotate counter-clockwise around the entrance point. Use them to propel yourself." },
+                { n: "Avoid Deep Dark Spots", d: "The deeper you go, the higher the pressure and the closer you get to Entity 20.", c: "gray", l: "Only dive when you have visually located the glowing cave exit." },
+                { n: "Watch for Entity 20", d: "The apex predator patrols the deep and attacks anything that moves.", c: "red", l: "If the water suddenly grows warm, it means the entity is exhaling nearby. Swim away immediately." },
+                { n: "Surface Often", d: "Maintain oxygen levels if you do not have scuba gear.", c: "teal", l: "Hypoxia accelerates the illusion of land, causing wanderers to swim endlessly." },
+                { n: "Preserve Body Heat", d: "The water is a constant, freezing 4°C (39°F). Hypothermia sets in quickly.", c: "orange", l: "Stay inside the entrance room until you are fully mentally and physically prepared to dive." },
+                { n: "Check Structural Stability", d: "The inverted house is fragile and under immense pressure.", c: "yellow", l: "Do not slam doors; the vibration weakens the gravity anchor, causing the room to flood." },
+                { n: "Don't Drink the Water", d: "The ocean fluid is toxic and parasitic.", c: "green", l: "It contains microscopic anomalies that attack the nervous system. Keep your mouth shut." },
+                { n: "Use Floating Debris", d: "Rest on pieces of the house that float to the surface.", c: "cyan", l: "Tie multiple planks together with extracted wiring from the house to make a raft." },
+                { n: "Dive into the Cave", d: "The cave is the only known exit to Level 8.", c: "fuchsia", l: "Look for a faint bioluminescent green glow far below the surface. Aim for it." },
+                { n: "Avoid Splashes", d: "Acoustic stealth is required to avoid the predator.", c: "purple", l: "Swim using silent breaststrokes. Do not thrash or kick wildly." }
+            ],
+            loadout: [
+                { n: "Thermal Wetsuit", i: "ph-t-shirt" }, { n: "Oxygen Tank", i: "ph-cylinder" },
+                { n: "Flippers", i: "ph-shoe" }, { n: "Waterproof Light", i: "ph-flashlight" },
+                { n: "Diving Goggles", i: "ph-goggles" }, { n: "Spear Gun (Deterrent)", i: "ph-crosshair" },
+                { n: "Thermal Paste", i: "ph-drop" }, { n: "Life Jacket", i: "ph-lifebuoy" },
+                { n: "Waterproof Watch", i: "ph-watch" }, { n: "Underwater Compass", i: "ph-compass" }
+            ],
+            history: [
+                { date: "OCTOBER 12, 2014", t: "First Explorer Survived Fall", d: "A wanderer survives the drop from Level 6 by landing in the shallow entrance room pool." },
+                { date: "JANUARY 5, 2016", t: "House Room Explored", d: "M.E.G. agents map the bizarre inverted gravity physics of the entrance room." },
+                { date: "MAY 19, 2018", t: "Depth Limits Tested", d: "M.E.G. confirms the depth exceeds standard ocean trenches without finding a bottom." },
+                { date: "NOVEMBER 30, 2019", t: "Submersible Drone Lost", d: "A drone is crushed and eaten by Entity 20, providing the first blurry footage of the leviathan." },
+                { date: "FEBRUARY 14, 2021", t: "M.E.G. Establishes Pontoon", d: "A small floating outpost is built near the entrance for staging dives." },
+                { date: "SEPTEMBER 8, 2022", t: "Cave Entrance Found", d: "A brave diver discovers the bioluminescent route to Level 8." },
+                { date: "APRIL 25, 2024", t: "L-Corp Buoy Node Installed", d: "Provides localized sonar tracking of the predator to warn divers." },
+                { date: "JULY 2, 2026", t: "Transit Route Secured", d: "Dives are now scheduled precisely when Entity 20 is tracked at maximum depth." }
+            ],
+            resonance: [
+                "> SCANNING AQUATIC DENSITY...", "> TEMPERATURE: 4°C.", 
+                "> MASSIVE BIOLOGICAL SIGNATURE DETECTED AT 500M DEPTH.", 
+                "> ABORTING ACTIVE PING TO MAINTAIN STEALTH."
+            ]
+        }),
 
-        "level8": {
-            type: "level", id: "level8", title: "Level 8", name: "Cave System",
-            themeColor: "#1a1a1a", themeHover: "#262626", themeGlow: "rgba(26, 26, 26, 0.4)", idleAnimation: "animate-pulse-fast",
-            tags: [ { label: "CLASS 5", class: "bg-red-700/10 text-red-700 border-red-700/30" }, { label: "ENTITY INFESTATION", class: "bg-red-500/10 text-red-500 border-red-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHBhdGggZD0iTTAgMEwyIDVMMCAxMEwxMCAxMEw4IDVMMTAgMFoiIGZpbGw9IiMzMzMiLz48L3N2Zz4=",
-            mapConfig: { seed: 800, wallDensity: 0.95, renderStyle: 'pipes', gridSize: 6, poiChance: 0.08, wallColor: '#262626', gridColor: 'rgba(255,255,255,0.02)', wallThickness: 0.8, bgColor: '#0f0f0f', pois: [{ name: "Spider Nest", color: "#dc2626", icon: "🕸" }, { name: "Almond Water Spring", color: "#60a5fa", icon: "💧" }] },
-            specificMetrics: { "Level 8 Specific": { "Rock Composition": "Unknown Metamorphic", "Arachnid Density": "Lethal", "Cave-in Risk": "High" }, "Atmospheric Diagnostics": { "Ambient Temp (Core)": "12.0 °C", "Relative Humidity": "80%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 8 consists of immense, dark, and highly treacherous cave systems infested with lethal arachnid entities.</p></div><h3>Description</h3><p>Level 8 is an infinitely expanding network of caverns. It is completely dark and incredibly dangerous. The rough, organic walls are frequently coated in thick, sticky webbing. The primary threat here consists of various massive spider entities and Clumps that hide in the rocky crevices. The terrain is highly uneven, requiring climbing gear to navigate safely. Pools of Almond Water can be found, but they are often guarded.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Emerging from the underwater caves of Level 7.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Falling through a randomly generated pit in the floor drops you into Level 9.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Watch for spiders",d:"Massive arachnids hunt in the dark.",c:"red",l:"Their eyes reflect green under UV light."},{n:"Check stalactites",d:"Entities hang from the ceiling.",c:"orange",l:"Shine your beam straight up before entering a new cavern."},{n:"Mark turns",d:"The cave system is a labyrinth.",c:"gray",l:"Leave glow-in-the-dark paint markers on the left wall."},{n:"Avoid glowing fungi",d:"Bioluminescence usually indicates toxic spores.",c:"green",l:"Wear a respirator if the air smells sweet."},{n:"Conserve water",d:"Almond water pools are rare and often traps.",c:"blue",l:"Only drink from flowing streams, never stagnant pools."},{n:"Listen for scuttling",d:"Spider legs on rock echo loudly.",c:"purple",l:"Place your ear to the wall to gauge distance."},{n:"Stay roped to team",d:"Sudden drops are common.",c:"cyan",l:"Use a 5-meter tether with locking carabiners."},{n:"Avoid narrow squeezes",d:"Clumps hide in tight gaps.",c:"yellow",l:"If you cannot fit your shoulders, find another path."},{n:"Check for pit traps",d:"The floor is unstable.",c:"fuchsia",l:"Tap the ground ahead with a pickaxe."},{n:"Slip through the floor",d:"The exit requires falling into the void.",c:"teal",l:"Look for patches of dirt that dissolve into black mist."}],
-                [{n:"Climbing Gear",i:"ph-link"},{n:"Headlamp",i:"ph-flashlight"},{n:"Arachnid Repellent",i:"ph-bug"},{n:"Heavy Boots",i:"ph-boot"},{n:"Flares",i:"ph-fire"},{n:"Chalk/Paint",i:"ph-pencil"},{n:"Pickaxe",i:"ph-hammer"},{n:"Bandages",i:"ph-bandaids"},{n:"Canteen",i:"ph-drop"},{n:"Matches",i:"ph-fire-extinguisher"}]
-            ),
-            history: makeHist([{t:"Cave mapped by M.E.G.",d:"Initial expeditions map a 50-mile radius."},{t:"Arachnid nest found",d:"A massive breeding ground discovered and avoided."},{t:"Almond water spring tapped",d:"A safe source is secured by B.N.T.G."},{t:"Floor anomaly discovered",d:"The falling exit to Level 9 is confirmed."},{t:"L-Corp seismic node placed",d:"Detects rockslides before they happen."},{t:"Outpost destroyed",d:"A forward operating base is overwhelmed by spiders."},{t:"Trade route established",d:"A heavily armed path is cleared for transit."}]),
-            resonanceLogs: ["> SCANNING LITHOSPHERE...", "> DENSE ORGANIC SIGNATURES DETECTED.", "> WARNING: STRUCTURAL INSTABILITY AHEAD.", "> UPLOADING SEISMIC DATA."]
-        },
+        "level8": buildLevel({
+            id: "level8", title: "Level 8", name: "Cave System", color: "#1a1a1a", hover: "#262626", glow: "rgba(26, 26, 26, 0.4)", anim: "animate-pulse-fast",
+            tags: [["CLASS 5", "bg-red-700/10 text-red-700 border-red-700/30"], ["ENTITY INFESTATION", "bg-red-500/10 text-red-500 border-red-500/30"]],
+            hero: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHBhdGggZD0iTTAgMEwyIDVMMCAxMEwxMCAxMEw4IDVMMTAgMFoiIGZpbGw9IiMzMzMiLz48L3N2Zz4=",
+            map: { seed: 800, wallDensity: 0.95, renderStyle: 'pipes', gridSize: 6, poiChance: 0.08, wallColor: '#262626', gridColor: 'rgba(255,255,255,0.02)', wallThickness: 0.8, bgColor: '#0f0f0f', pois: [{ name: "Spider Nest", color: "#dc2626", icon: "🕸" }, { name: "Almond Water Spring", color: "#60a5fa", icon: "💧" }] },
+            metrics: {
+                "Level 8 Specific (Proprietary)": { "Rock Composition": "Unknown Metamorphic", "Arachnid Density": "Lethal", "Cave-in Risk": "High", "Webbing Tensile Strength": "Exceeds Kevlar", "Toxin Levels": "High (Venom)" },
+                "Chrono-Temporal Dynamics": { "Frontrooms Time Dilation": "1:1.0", "Local Time Flow Rate": "Standard Linear", "Temporal Loop Probability": "0.0%", "Entropy Gradient": "Normal", "Atomic Clock Drift": "0.0s/24h", "Memory Degradation": "Baseline" },
+                "Spatial & Dimensional": { "Hume Level (Reality)": "80.0 H", "Kant Counter Reading": "0.80 K", "Euclidean Consistency": "85.0%", "Noclipping Threshold": "High", "Spatial Dilation Factor": "1:1", "Z-Axis Deviation": "Extreme (Verticality)" },
+                "Atmospheric Diagnostics": { "Ambient Temp (Core)": "12.0 °C", "Relative Humidity": "80%", "Atmospheric Pressure": "105.0 kPa", "Air Comp: O2": "18.0%", "Trace Anomalous Gases": "Spore Particulates", "Chemical Odor Profile": "Damp Earth / Venom" },
+                "Acoustic & Luminescent": { "Ambient Hum": "Dripping Water", "Absolute Decibel Baseline": "20 dB", "Luminosity Level": "0 Lux (Natural)", "Color Temperature": "N/A", "Total Darkness Zones": "99%", "Audio Hallucination Risk": "Low" },
+                "Material & Biological": { "Entity Density": "9.5 (Lethal)", "Toxicity Levels": "High (Venom/Spores)", "Wall Arsenic Saturation": "0.0 mg/m²", "Micro-Concrete Density": "N/A (Solid Rock)", "Flora/Fauna Present": "Giant Arachnids", "Pathogen Level": "Fungal" },
+                "Survival & Infrastructure": { "Base Threat Level": "5 (Lethal)", "Sanity Drain Rate": "-2.0% per Hour", "Isolation Factor": "High", "Radio Comm Integrity": "10% (Rock Blocking)", "GPS Functionality": "Offline", "Rescue Probability": "Zero" }
+            },
+            desc: [
+                "Level 8 consists of immense, pitch-black, and highly treacherous cave systems infested with lethal arachnid entities.",
+                "The level is an infinitely expanding network of caverns. It is completely dark and incredibly dangerous. The rough, organic rock walls are frequently coated in thick, sticky webbing that is strong enough to trap a human effortlessly. The primary threat here consists of various massive spider entities (Entity 66) and Clumps that hide in the rocky crevices waiting to ambush.",
+                "The terrain is highly uneven, requiring specialized climbing gear to navigate safely. Sudden drops, stalactites, and unstable floors make movement slow and perilous. Pools of Almond Water can occasionally be found in rock basins, but they are often guarded by nests.",
+                "M.E.G. strongly advises against traveling through Level 8 without a heavily armed squad. It is widely considered a death trap for lone wanderers[cite: 3]."
+            ],
+            entrances: [
+                "Emerging from the underwater caves at the bottom of Level 7."
+            ],
+            exits: [
+                "Falling through a randomly generated, bottomless pit in the cave floor drops you directly into Level 9."
+            ],
+            tips: [
+                { n: "Watch for Spiders", d: "Massive arachnids hunt in the dark and drop from the ceiling.", c: "red", l: "Their eyes reflect green under UV light. Use UV flashlights to spot them early." },
+                { n: "Check Stalactites", d: "Entities hang from the ceiling mimicking rock formations.", c: "orange", l: "Shine your beam straight up before entering a new cavern to ensure the roof is clear." },
+                { n: "Mark Turns", d: "The cave system is a three-dimensional labyrinth.", c: "gray", l: "Leave glow-in-the-dark paint markers on the left wall to trace your path." },
+                { n: "Avoid Glowing Fungi", d: "Bioluminescence usually indicates toxic, hallucinogenic spores.", c: "green", l: "Wear a respirator if the air smells sweet or metallic." },
+                { n: "Conserve Water", d: "Almond water pools are rare and often serve as bait.", c: "blue", l: "Only drink from flowing underground streams, never from stagnant rock pools." },
+                { n: "Listen for Scuttling", d: "Spider legs on rock echo loudly before they attack.", c: "purple", l: "Place your ear to the cave wall to gauge distance and direction of swarms." },
+                { n: "Stay Roped to Team", d: "Sudden drops and cave-ins are common.", c: "cyan", l: "Use a 5-meter tether with locking carabiners. If one falls, the team anchors." },
+                { n: "Avoid Narrow Squeezes", d: "Clumps hide in tight gaps between boulders.", c: "yellow", l: "If you cannot easily fit your shoulders through, find another path. Do not force it." },
+                { n: "Check for Pit Traps", d: "The floor is structurally unstable and covered in false webbing.", c: "fuchsia", l: "Tap the ground ahead of you with a pickaxe before shifting your weight." },
+                { n: "Slip Through the Floor", d: "The exit requires falling into the void.", c: "teal", l: "Look for patches of dirt that dissolve into black mist. Jump through." }
+            ],
+            loadout: [
+                { n: "Climbing Gear", i: "ph-link" }, { n: "High-Lumen Headlamp", i: "ph-flashlight" },
+                { n: "Arachnid Repellent", i: "ph-bug" }, { n: "Heavy Hiking Boots", i: "ph-boot" },
+                { n: "Flares (Deterrent)", i: "ph-fire" }, { n: "Glow-in-the-dark Paint", i: "ph-pencil" },
+                { n: "Ice Pick / Pickaxe", i: "ph-hammer" }, { n: "Bandages & Antivenom", i: "ph-bandaids" },
+                { n: "Canteen", i: "ph-drop" }, { n: "UV Flashlight", i: "ph-lightbulb" }
+            ],
+            history: [
+                { date: "NOVEMBER 2, 2015", t: "Cave Mapped by M.E.G.", d: "Initial expeditions map a 50-mile radius, losing 4 members to falls." },
+                { date: "MARCH 19, 2017", t: "Arachnid Nest Found", d: "A massive breeding ground is discovered and subsequently avoided by all cartographers." },
+                { date: "JULY 4, 2019", t: "Almond Water Spring Tapped", d: "A safe source is secured by B.N.T.G., heavily fortified with auto-turrets." },
+                { date: "DECEMBER 11, 2020", t: "Floor Anomaly Discovered", d: "The falling exit to Level 9 is confirmed after a survivor's radio signal is tracked." },
+                { date: "MAY 25, 2022", t: "L-Corp Seismic Node Placed", d: "Detects rockslides before they happen, broadcasting warnings to agents." },
+                { date: "OCTOBER 8, 2024", t: "Outpost Destroyed", d: "A forward operating base is overwhelmed by a swarm of spiders. No survivors." },
+                { date: "JANUARY 15, 2026", t: "Trade Route Established", d: "A heavily armed, flamethrower-cleared path is established for transit to Level 9." },
+                { date: "JULY 2, 2026", t: "Current Status", d: "Class 5 Lethal. Transit requires Level 4 clearance and a full combat squad." }
+            ],
+            resonance: [
+                "> SCANNING LITHOSPHERE...", "> DENSE ORGANIC SIGNATURES DETECTED.", 
+                "> WARNING: STRUCTURAL INSTABILITY AHEAD.", 
+                "> UPLOADING SEISMIC DATA."
+            ]
+        }),
 
-        "level9": {
-            type: "level", id: "level9", title: "Level 9", name: "The Suburbs",
-            themeColor: "#4b5563", themeHover: "#374151", themeGlow: "rgba(75, 85, 99, 0.2)", idleAnimation: "animate-flicker",
-            tags: [ { label: "CLASS 5", class: "bg-red-700/10 text-red-700 border-red-700/30" }, { label: "EXTREME ENTITY DENSITY", class: "bg-purple-500/10 text-purple-400 border-purple-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTAgMTBMMTAgMEwyMCAxMEgxN1YyMEgzVjEwWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNDQ0Ii8+PC9zdmc+",
-            mapConfig: { seed: 900, wallDensity: 0.6, renderStyle: 'grid', gridSize: 10, poiChance: 0.05, wallColor: '#374151', gridColor: 'rgba(255,255,255,0.05)', wallThickness: 0.3, bgColor: '#111827', pois: [{ name: "Illuminated House", color: "#fcd34d", icon: "💡" }, { name: "The Mangled", color: "#991b1b", icon: "🕷" }] },
-            specificMetrics: { "Level 9 Specific": { "Streetlight Functionality": "0%", "Grass Toxicity": "Mild", "Entity Aggression": "Maximum" }, "Spatial & Dimensional": { "Hume Level (Reality)": "60.0 H", "Euclidean Consistency": "80.0%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 9 is an infinite, pitch-black suburban neighborhood fraught with extreme danger.</p></div><h3>Description</h3><p>Level 9 resembles a modern suburban neighborhood, but it is perpetually locked in the dead of night. The streetlights are broken, and a thick fog rolls over the asphalt. The houses are fully furnished but completely abandoned by humans, instead serving as nests for highly dangerous entities like The Neighborhood Watch and The Mangled. It is considered one of the most lethal levels in the Backrooms.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Falling through the void in Level 8 lands you on the damp grass here.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Following the asphalt road straight for 100-200 miles seamlessly transitions into Level 10.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Stay off the street",d:"The asphalt roads are heavily patrolled.",c:"red",l:"Walk on the grass lawns to dampen footsteps."},{n:"Avoid illuminated houses",d:"Light inside a house means an entity resides there.",c:"yellow",l:"Only scavenge completely dark homes."},{n:"Watch for Mangled",d:"Grotesque entities hide in the bushes.",c:"purple",l:"They smell fear. Control your breathing."},{n:"Don't look at the sky",d:"The sky is a void that induces madness.",c:"gray",l:"Keep your gaze fixed on the horizon."},{n:"Keep moving",d:"Staying in one place attracts attention.",c:"teal",l:"Never rest for more than 2 hours."},{n:"Sneak through backyards",d:"Safer than the front lawns.",c:"green",l:"Hop fences quietly to bypass street patrols."},{n:"Ignore ringing phones",d:"Phones inside the houses are traps.",c:"orange",l:"Answering them gives the entities your location."},{n:"Gather supplies quickly",d:"Houses have Almond water but are dangerous.",c:"cyan",l:"In and out in under 3 minutes."},{n:"Neighborhood Watch evasion",d:"Massive floating eyes patrol the area.",c:"fuchsia",l:"If you see a purple glow, hide under a porch."},{n:"Follow the road signs",d:"They guide you to Level 10.",c:"blue",l:"Do not trust signs written in blood."}],
-                [{n:"Stealth Clothing",i:"ph-t-shirt"},{n:"Crowbar",i:"ph-wrench"},{n:"Flashlight",i:"ph-flashlight"},{n:"Tactical Backpack",i:"ph-bag"},{n:"Running Shoes",i:"ph-sneaker"},{n:"First Aid",i:"ph-first-aid"},{n:"Night-vision Binoculars",i:"ph-binoculars"},{n:"Map",i:"ph-map"},{n:"Almond Water",i:"ph-drop"},{n:"Silenced Weapon",i:"ph-crosshair"}]
-            ),
-            history: makeHist([{t:"First entered from 8",d:"Wanderers survive the fall from the caves."},{t:"Houses looted",d:"Initial teams find ample supplies but suffer casualties."},{t:"The Mangled classified",d:"A new entity type is documented."},{t:"M.E.G. sets safehouse",d:"A heavily fortified house is established, but quickly overrun."},{t:"Dark cycles mapped",d:"It is determined that daylight never arrives."},{t:"L-Corp installs street nodes",d:"Hidden in the broken streetlights."},{t:"Exits to 10 confirmed",d:"The 100-mile march protocol is established."}]),
-            resonanceLogs: ["> SCANNING SUBURBAN GRID...", "> ZERO HUMAN LIFE DETECTED.", "> MASSIVE HOSTILE PRESENCE IN DWELLINGS.", "> UPLOADING TELEMETRY."]
-        },
-
-        "level10": {
-            type: "level", id: "level10", title: "Level 10", name: "Field of Wheat",
-            themeColor: "#eab308", themeHover: "#ca8a04", themeGlow: "rgba(234, 179, 8, 0.2)", idleAnimation: "animate-ambient-drift",
-            tags: [ { label: "CLASS 1", class: "bg-green-500/10 text-green-400 border-green-500/30" }, { label: "SAFE", class: "bg-green-500/10 text-green-400 border-green-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHBhdGggZD0iTTAgMTBMMiAwTTUgMTBMNyAwTTEwIDEwTDEyIDAiIHN0cm9rZT0iI2VhYjMwOCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+",
-            mapConfig: { seed: 1000, wallDensity: 0.2, renderStyle: 'diagonal', gridSize: 15, poiChance: 0.02, wallColor: '#a16207', gridColor: 'rgba(234, 179, 8, 0.1)', wallThickness: 0.1, bgColor: '#422006', pois: [{ name: "Barn Outpost", color: "#22c55e", icon: "🏠" }, { name: "Dirt Path", color: "#a1a1aa", icon: "🛣" }] },
-            specificMetrics: { "Level 10 Specific": { "Wheat Height": "1.5m", "Sky Condition": "Perpetual Overcast", "Wind Speed": "5 mph" }, "Survival & Infrastructure": { "Base Threat Level": "1", "Rescue Probability": "High" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 10 is an infinite, peaceful field of wheat under a cloudy sky.</p></div><h3>Description</h3><p>Level 10 is a vast, open expanse of agricultural wheat fields stretching endlessly. Dirt paths cut through the crops, leading to rustic barns and small farming settlements. The environment is extremely safe and peaceful. The sky is always overcast, but the ambient light is akin to early afternoon. There are no known hostile entities here, making it a major hub for human civilization and agriculture.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Walking out of the suburbs of Level 9.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Walking far enough toward the distant skyline brings you to Level 11.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Follow dirt paths",d:"Wandering into the deep wheat can cause you to lose your bearing.",c:"yellow",l:"Paths consistently lead to safe barns."},{n:"Don't eat the raw wheat",d:"The wheat requires boiling to remove anomalous toxins.",c:"green",l:"Only eat bread provided by established outposts."},{n:"Rest in barns",d:"Barns are fortified and warm.",c:"blue",l:"Check the rafters for supplies left by traders."},{n:"Avoid the Gliders",d:"Harmless bird-like entities patrol the sky.",c:"gray",l:"They drop heavy seeds that can cause concussions."},{n:"Trade at outposts",d:"This is a major economic zone.",c:"purple",l:"Trade your weapons from Level 9 for food and water."},{n:"Stay hydrated",d:"The walk to Level 11 is long.",c:"teal",l:"Water troughs near barns are safe to drink from."},{n:"Watch for sinkholes",d:"The ground occasionally collapses.",c:"orange",l:"Avoid darker patches of soil."},{n:"Don't start fires",d:"The wheat is highly flammable.",c:"red",l:"A fire here will trap you in a smoke cloud."},{n:"Keep line of sight",d:"The fields are flat.",c:"cyan",l:"Use binoculars to scout the next barn."},{n:"Walk to the skyline",d:"The transition to the city is seamless.",c:"fuchsia",l:"Just keep walking toward the skyscrapers."}],
-                [{n:"Sun Hat",i:"ph-sun"},{n:"Water Jug",i:"ph-drop"},{n:"Hiking Boots",i:"ph-boot"},{n:"Bug Spray",i:"ph-bug"},{n:"Binoculars",i:"ph-binoculars"},{n:"Utility Knife",i:"ph-knife"},{n:"Compass",i:"ph-compass"},{n:"Bedroll",i:"ph-sleeping-bag"},{n:"First Aid",i:"ph-first-aid"},{n:"Trade Goods",i:"ph-hand-coins"}]
-            ),
-            history: makeHist([{t:"Safe zone declared",d:"M.E.G. verifies the lack of hostile entities."},{t:"B.N.T.G. route built",d:"A massive dirt road is cleared for wagons."},{t:"Barns fortified",d:"Civilian populations begin settling."},{t:"Wheat anomalous properties tested",d:"Safe consumption methods are discovered."},{t:"M.E.G. outpost established",d:"Farming operations begin."},{t:"L-Corp drone lost",d:"An agricultural drone is dismantled by scavengers."},{t:"City entrance mapped",d:"The horizon line is charted to Level 11."}]),
-            resonanceLogs: ["> SCANNING OPEN FIELDS...", "> 0 HOSTILE ENTITIES DETECTED.", "> HUME LEVEL STABLE.", "> UPLOADING CARTOGRAPHY."]
-        },
-
-        "level11": {
-            type: "level", id: "level11", title: "Level 11", name: "The Endless City",
-            themeColor: "#9ca3af", themeHover: "#6b7280", themeGlow: "rgba(156, 163, 175, 0.2)", idleAnimation: "animate-ambient-drift",
-            tags: [ { label: "CLASS 1", class: "bg-green-500/10 text-green-400 border-green-500/30" }, { label: "HABITABLE", class: "bg-teal-500/10 text-teal-400 border-teal-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHJlY3QgeD0iMSIgeT0iMiIgd2lkdGg9IjMiIGhlaWdodD0iOCIgZmlsbD0iIzY2NiIvPjxyZWN0IHg9IjYiIHk9IjQiIHdpZHRoPSIzIiBoZWlnaHQ9IjYiIGZpbGw9IiM2NjYiLz48L3N2Zz4=",
-            mapConfig: { seed: 1100, wallDensity: 0.5, renderStyle: 'office', gridSize: 8, poiChance: 0.05, wallColor: '#9ca3af', gridColor: 'rgba(255,255,255,0.05)', wallThickness: 0.4, bgColor: '#1f2937', pois: [{ name: "M.E.G. Headquarters", color: "#22c55e", icon: "🏢" }, { name: "Faceling Merchant", color: "#8b5cf6", icon: "🛒" }] },
-            specificMetrics: { "Level 11 Specific": { "Urban Density": "High", "Traffic Level": "Low/Anomalous", "Weather": "Sunny" }, "Survival & Infrastructure": { "Base Threat Level": "1", "Rescue Probability": "Maximum" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 11 is an infinite, seemingly modern metropolis populated by peaceful Facelings and massive human settlements.</p></div><h3>Description</h3><p>Level 11 is arguably the safest and most populated level in the Backrooms. It is an endless city with skyscrapers, apartments, stores, and functional infrastructure. The "Facelings" here are completely passive and act as normal citizens, running shops and driving the occasionally working vehicles. Food, water, and electricity are abundant. The M.E.G. central command is located here.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Walking into the city from Level 10.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Entering specific white office buildings can transition you to Level 12.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Scavenge buildings",d:"Most stores are fully stocked with fresh supplies.",c:"green",l:"Supermarkets restock anomalously every 7 days."},{n:"Trade with Facelings",d:"They accept Almond Water as currency.",c:"purple",l:"Do not try to speak to them; use gestures."},{n:"Claim an apartment",d:"You can easily find a safe, furnished place to live.",c:"blue",l:"Check the water pressure before settling in."},{n:"Use working cars",d:"Some vehicles have infinite fuel.",c:"yellow",l:"Obey traffic laws; the anomalous police force is strict."},{n:"Join a faction",d:"M.E.G. and B.N.T.G. are always recruiting.",c:"cyan",l:"Registering gets you free medical care."},{n:"Avoid alleyways",d:"The rare Hound can spawn in dark alleys.",c:"red",l:"Stay on the main illuminated avenues."},{n:"Drink fountain water",d:"City fountains flow with purified Almond Water.",c:"teal",l:"Public parks are designated safe zones."},{n:"Obey local laws",d:"The city has a strange, unspoken rule system.",c:"orange",l:"Do not vandalize the buildings."},{n:"Use the subway",d:"The metro trains offer fast travel.",c:"gray",l:"Only board the blue trains; red trains go to Level 6."},{n:"Find the Matrix building",d:"To proceed, find a perfectly white skyscraper.",c:"fuchsia",l:"It has no windows on the ground floor."}],
-                [{n:"Backpack",i:"ph-bag"},{n:"Currency (Almond Water)",i:"ph-drop"},{n:"City Map",i:"ph-map"},{n:"Radio",i:"ph-radio"},{n:"Comfortable Clothes",i:"ph-t-shirt"},{n:"Crowbar",i:"ph-wrench"},{n:"Water Bottle",i:"ph-cylinder"},{n:"Flashlight",i:"ph-flashlight"},{n:"Watch",i:"ph-watch"},{n:"M.E.G. ID Card",i:"ph-identification-card"}]
-            ),
-            history: makeHist([{t:"City populated",d:"Mass migration from Level 4 and 10 occurs."},{t:"M.E.G. HQ established",d:"The central command is built in a skyscraper."},{t:"B.N.T.G. central bank opens",d:"The economy is formalized."},{t:"Faceling integration",d:"Wanderers learn to coexist with the native entities."},{t:"Power grid stabilized",d:"Engineers tap into the anomalous power grid."},{t:"L-Corp tower built",d:"A massive, unmarked skyscraper serves as Liminality Corp's covert HQ."},{t:"Safest level declared",d:"Level 11 becomes the pinnacle of Backrooms civilization."}]),
-            resonanceLogs: ["> SCANNING URBAN SPRAWL...", "> MILLIONS OF NEUTRAL ENTITIES DETECTED.", "> HUMAN POPULATION HIGH.", "> UPLOADING TOPOLOGY."]
-        },
-
-        "level12": {
-            type: "level", id: "level12", title: "Level 12", name: "Matrix",
-            themeColor: "#ffffff", themeHover: "#e2e8f0", themeGlow: "rgba(255, 255, 255, 0.4)", idleAnimation: "animate-glitch-shift",
-            tags: [ { label: "CLASS 2", class: "bg-yellow-500/10 text-yellow-400 border-yellow-500/30" }, { label: "COGNITOHAZARD", class: "bg-purple-500/10 text-purple-400 border-purple-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNmZmYiLz48Y2lyY2xlIGN4PSI0IiBjeT0iNCIgcj0iMiIgZmlsbD0iIzAwMCIvPjwvc3ZnPg==",
-            mapConfig: { seed: 1200, wallDensity: 0.1, renderStyle: 'grid', gridSize: 20, poiChance: 0.01, wallColor: '#e2e8f0', gridColor: 'rgba(0,0,0,0.1)', wallThickness: 0.05, bgColor: '#ffffff', pois: [{ name: "Wooden Door", color: "#8b5cf6", icon: "🚪" }] },
-            specificMetrics: { "Level 12 Specific": { "Censorship Effect": "Active", "Visual Static": "High" }, "Spatial & Dimensional": { "Hume Level (Reality)": "15.0 H", "Euclidean Consistency": "10.0%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 12 is a stark, white, brightly lit room where physical reality breaks down into a matrix of censorship.</p></div><h3>Description</h3><p>Level 12 is a visually painful, infinite white room. Furniture and items appear, but they are heavily censored by black boxes or static. The level attempts to censor the wanderers themselves, causing extreme nausea and headaches. It is a transitional level, acting as a glitch in the Backrooms' matrix.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Entering specific white buildings in Level 11.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Finding a standard wooden door leads to Level 13.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Ignore censorship bars",d:"Looking directly at the black boxes causes vertigo.",c:"purple",l:"Focus on the floor to ground yourself."},{n:"Don't look at corners",d:"The geometry fails in the corners of the room.",c:"red",l:"Peripheral vision is safer here."},{n:"Walk straight",d:"Do not turn around; the room changes behind you.",c:"blue",l:"Pick a direction and commit."},{n:"Close eyes for headaches",d:"The white light is blinding.",c:"yellow",l:"Wear heavily tinted sunglasses."},{n:"No talking to noise",d:"The static will try to mimic speech.",c:"gray",l:"Wear earplugs to block the anomalous frequencies."},{n:"Avoid glitch entities",d:"Vibrating masses of static roam here.",c:"fuchsia",l:"They are blind but track fear."},{n:"Stay calm",d:"Panic accelerates the censorship effect.",c:"teal",l:"Take deep breaths and recite a familiar song."},{n:"Don't run",d:"Running causes the floor to lose collision.",c:"orange",l:"A steady, slow pace prevents noclipping."},{n:"Floor guides you",d:"The floor tiles occasionally form arrows.",c:"cyan",l:"Trust the subtle grey lines in the white tiles."},{n:"Enter wooden door",d:"The only stable object in the level.",c:"green",l:"Do not knock. Just open it."}],
-                [{n:"Dark Sunglasses",i:"ph-sunglasses"},{n:"Earplugs",i:"ph-ear-slash"},{n:"Aspirin",i:"ph-pill"},{n:"Almond Water",i:"ph-drop"},{n:"Analog Watch",i:"ph-watch"},{n:"Compass (Useless)",i:"ph-compass"},{n:"Notebook",i:"ph-book"},{n:"Pen",i:"ph-pencil"},{n:"Comfort Item",i:"ph-heart"},{n:"Blindfold",i:"ph-eye-closed"}]
-            ),
-            history: makeHist([{t:"Discovered from 11",d:"An office worker accidentally entered the white room."},{t:"Censorship effect recorded",d:"Cameras capture only black boxes."},{t:"L-Corp simulation theory",d:"Proves the Backrooms has a digital underpinning."},{t:"M.E.G. bans long stays",d:"Over 1 hour results in permanent mental damage."},{t:"Glitch entities classified",d:"Entities made of pure static are documented."},{t:"Door to 13 mapped",d:"The exit is found and secured."},{t:"Current transit zone",d:"Used only to quickly access Level 13."}]),
-            resonanceLogs: ["> SCANNING MATRIX...", "> REALITY RENDER FAILURE DETECTED.", "> CORRUPTED DATA PACKETS.", "> UPLOADING."]
-        },
-
-        "level13": {
-            type: "level", id: "level13", title: "Level 13", name: "The Infinite Apartments",
-            themeColor: "#8b5cf6", themeHover: "#7c3aed", themeGlow: "rgba(139, 92, 246, 0.2)", idleAnimation: "animate-ambient-drift",
-            tags: [ { label: "CLASS 2", class: "bg-yellow-500/10 text-yellow-400 border-yellow-500/30" }, { label: "HABITABLE", class: "bg-teal-500/10 text-teal-400 border-teal-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHJlY3QgeD0iMSIgeT0iMSIgd2lkdGg9IjMiIGhlaWdodD0iMyIgZmlsbD0iIzhiNWNmNiIvPjxyZWN0IHg9IjYiIHk9IjEiIHdpZHRoPSIzIiBoZWlnaHQ9IjMiIGZpbGw9IiM4YjVjZjYiLz48cmVjdCB4PSIxIiB5PSI2IiB3aWR0aD0iMyIgaGVpZ2h0PSIzIiBmaWxsPSIjOGI1Y2Y2Ii8+PHJlY3QgeD0iNiIgeT0iNiIgd2lkdGg9IjMiIGhlaWdodD0iMyIgZmlsbD0iIzhiNWNmNiIvPjwvc3ZnPg==",
-            mapConfig: { seed: 1300, wallDensity: 0.6, renderStyle: 'office', gridSize: 8, poiChance: 0.04, wallColor: '#6b21a8', gridColor: 'rgba(255,255,255,0.05)', wallThickness: 0.2, bgColor: '#2e1065', pois: [{ name: "Safe Apartment", color: "#22c55e", icon: "🚪" }, { name: "Void Hole", color: "#000000", icon: "🕳" }] },
-            specificMetrics: { "Level 13 Specific": { "Apartment Layouts": "Infinite", "Wi-Fi Access": "Strong", "Window Danger": "High" }, "Survival & Infrastructure": { "Base Threat Level": "2", "Rescue Probability": "High" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 13 is an endless apartment complex featuring cozy rooms and dangerous hallways.</p></div><h3>Description</h3><p>Level 13 resembles a massive, infinite apartment building. The individual apartments are generally safe and stocked with food, water, and internet access. However, the hallways and elevators are dangerous, roamed by Facelings and containing numerous Window entities. It is a popular level for lone wanderers to settle down, provided they secure their doors.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Opening the wooden door in Level 12.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Jumping into a deep, black void hole found in the basement leads to Level 14.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Check room numbers",d:"Doors with red numbers contain entities.",c:"red",l:"Only enter rooms with brass, even-numbered plates."},{n:"Avoid elevators",d:"They often plummet into the void.",c:"orange",l:"Always use the stairwells."},{n:"Beware Windows",d:"The windows in the apartments are lethal entities.",c:"purple",l:"Close the blinds immediately upon entering."},{n:"Scavenge fridges",d:"They anomalous restock with fresh food.",c:"green",l:"Check expiration dates; some are from 1999."},{n:"Quiet in halls",d:"The carpeted hallways muffle your steps; keep it that way.",c:"gray",l:"Walk in your socks in the corridors."},{n:"Lock doors",d:"Entities cannot open locked doors.",c:"blue",l:"Use the deadbolt and the chain lock."},{n:"Trust Facelings",d:"The neighbors are usually friendly.",c:"teal",l:"Wave to them, but do not enter their apartments."},{n:"Avoid landlord",d:"A massive entity patrols the lobby.",c:"fuchsia",l:"If you hear keys jingling, hide in a closet."},{n:"Use stairs",d:"Stairs are the safest transit between floors.",c:"yellow",l:"Count the steps. If it's 13, turn back."},{n:"Jump in void hole",d:"The exit to Level 14.",c:"cyan",l:"Do not hesitate. Dive headfirst."}],
-                [{n:"Lockpicks",i:"ph-key"},{n:"Flashlight",i:"ph-flashlight"},{n:"Melee Weapon",i:"ph-sword"},{n:"Backpack",i:"ph-bag"},{n:"Almond Water",i:"ph-drop"},{n:"Fire Extinguisher",i:"ph-fire-extinguisher"},{n:"Medkit",i:"ph-first-aid"},{n:"Sleeping Bag",i:"ph-sleeping-bag"},{n:"Canned Food",i:"ph-hamburger"},{n:"Nylon Rope",i:"ph-link"}]
-            ),
-            history: makeHist([{t:"Apartment claimed",d:"First wanderer establishes a permanent residence."},{t:"Community built",d:"A small faction takes over the 4th floor."},{t:"Landlord attacks",d:"The entity wipes out a careless group in the lobby."},{t:"Elevators deemed unsafe",d:"Multiple disappearances lead to an elevator ban."},{t:"L-Corp sets up surveillance",d:"Hidden cameras installed in the hallways."},{t:"M.E.G. outpost established",d:"Trading hub set up on floor 1."},{t:"Exits mapped",d:"The basement void hole is confirmed as the exit."}]),
-            resonanceLogs: ["> SCANNING RESIDENTIAL BLOCKS...", "> THOUSANDS OF ROOMS DETECTED.", "> WINDOW ENTITIES PROMINENT.", "> UPLOADING PLAN."]
-        },
-
-        "level14": {
-            type: "level", id: "level14", title: "Level 14", name: "Paradise",
-            themeColor: "#ef4444", themeHover: "#dc2626", themeGlow: "rgba(239, 68, 68, 0.2)", idleAnimation: "animate-pulse",
-            tags: [ { label: "CLASS 4", class: "bg-red-500/10 text-red-500 border-red-500/30" }, { label: "PSYCHOLOGICAL TRAP", class: "bg-fuchsia-500/10 text-fuchsia-400 border-fuchsia-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHBhdGggZD0iTTAgMTBMNSAwTDEwIDEwWiIgZmlsbD0iI2VmNDQ0NCIvPjwvc3ZnPg==",
-            mapConfig: { seed: 1400, wallDensity: 0.1, renderStyle: 'organic', gridSize: 10, poiChance: 0.05, wallColor: '#7f1d1d', gridColor: 'rgba(239,68,68,0.1)', wallThickness: 0.2, bgColor: '#450a0a', pois: [{ name: "Red Forest", color: "#ef4444", icon: "🌲" }, { name: "Metal Door", color: "#9ca3af", icon: "🚪" }] },
-            specificMetrics: { "Level 14 Specific": { "Madness Inducement": "High", "Flora Color": "Crimson" }, "Spatial & Dimensional": { "Hume Level (Reality)": "50.0 H", "Euclidean Consistency": "60.0%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 14 is a beautiful, red-tinted forest that acts as a severe psychological trap.</p></div><h3>Description</h3><p>Level 14 is a dense forest where the leaves, grass, and sky are all tinted deep red. It appears beautiful and tranquil, but it is a massive cognitohazard. The environment actively tries to convince wanderers to stay forever, inducing a sense of euphoria that rapidly devolves into violent madness. Whispers can be heard from the trees. There are no physical entities, the level itself is the predator.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Falling into the void in Level 13.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Finding a rusted metal door in the side of a large tree leads to Level 15.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Don't trust beauty",d:"The visual appeal is a lure.",c:"purple",l:"Remind yourself out loud that it is fake."},{n:"Ignore whispers",d:"The trees speak with voices of loved ones.",c:"red",l:"Wear earplugs immediately upon entry."},{n:"Don't eat red fruit",d:"The fruit induces instant, permanent euphoria/paralysis.",c:"orange",l:"Only consume rations you brought with you."},{n:"Keep moving",d:"Stopping causes vines to wrap around your ankles.",c:"green",l:"Maintain a brisk walk."},{n:"Track time",d:"Time perception is heavily skewed here.",c:"blue",l:"Use a mechanical stopwatch to ground your sense of reality."},{n:"Avoid center oasis",d:"A beautiful pond lies at the center; it is highly acidic.",c:"cyan",l:"Walk around the perimeter."},{n:"Don't sleep",d:"Falling asleep here results in assimilation into the soil.",c:"yellow",l:"Use adrenaline to push through."},{n:"Mark path",d:"The forest loops on itself.",c:"gray",l:"Carve arrows into the red bark."},{n:"Resist staying",d:"The urge to lie down is overwhelming.",c:"fuchsia",l:"Pinch yourself to use physical pain as an anchor."},{n:"Find metal door",d:"The only escape.",c:"teal",l:"Look for trees that look slightly metallic."}],
-                [{n:"Mechanical Timer",i:"ph-watch"},{n:"Blindfold",i:"ph-eye-closed"},{n:"Earplugs",i:"ph-ear-slash"},{n:"Sealed Rations",i:"ph-hamburger"},{n:"Almond Water",i:"ph-drop"},{n:"Compass",i:"ph-compass"},{n:"Chalk",i:"ph-pencil"},{n:"Survival Knife",i:"ph-knife"},{n:"Journal",i:"ph-book"},{n:"Antipsychotics",i:"ph-pill"}]
-            ),
-            history: makeHist([{t:"Victims go mad",d:"First explorers refuse to leave and attack rescuers."},{t:"M.E.G. classifies trap",d:"Declared a Level 4 psychological hazard."},{t:"Red fruit analyzed",d:"Found to contain a lethal hallucinogen."},{t:"Oasis hallucination confirmed",d:"Drone footage reveals a pit of acid, not water."},{t:"L-Corp maps true geometry",d:"Using blind sensors to bypass the illusions."},{t:"Survivors rescued",d:"Extraction teams wear sensory deprivation gear."},{t:"Warning signs posted",d:"Placed at the Level 13 void hole."}]),
-            resonanceLogs: ["> SCANNING FLORA...", "> COGNITOHAZARD DETECTED IN SPORES.", "> NEURAL DISRUPTION IMMINENT.", "> UPLOADING."]
-        },
-
-        "level15": {
-            type: "level", id: "level15", title: "Level 15", name: "Futuristic Halls",
-            themeColor: "#06b6d4", themeHover: "#0891b2", themeGlow: "rgba(6, 182, 212, 0.2)", idleAnimation: "animate-pulse-fast",
-            tags: [ { label: "CLASS 3", class: "bg-orange-500/10 text-orange-400 border-orange-500/30" }, { label: "TECHNOLOGICAL", class: "bg-blue-500/10 text-blue-400 border-blue-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHBhdGggZD0iTTAgNUwxMCA1TTAgMEgxME0wIDEwSDEwIiBzdHJva2U9IiMwNmI2ZDQiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg==",
-            mapConfig: { seed: 1500, wallDensity: 0.7, renderStyle: 'grid', gridSize: 6, poiChance: 0.05, wallColor: '#0891b2', gridColor: 'rgba(6,182,212,0.1)', wallThickness: 0.2, bgColor: '#164e63', pois: [{ name: "Server Room", color: "#3b82f6", icon: "💻" }, { name: "Security Drone", color: "#ef4444", icon: "🛸" }] },
-            specificMetrics: { "Level 15 Specific": { "Technology Level": "Advanced", "Security Patrols": "Active" }, "Spatial & Dimensional": { "Hume Level (Reality)": "90.0 H", "Euclidean Consistency": "95.0%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 15 is a massive complex of futuristic, sci-fi corridors patrolled by hostile mechanical entities.</p></div><h3>Description</h3><p>Level 15 resembles the interior of a highly advanced spaceship or futuristic facility. The walls are made of sleek white metal illuminated by cyan neon strips. The level is highly dangerous due to the presence of autonomous security drones and "Enigma" entities that patrol the halls. However, it contains highly advanced technology, making it a prime location for L-Corp and M.E.G. scavenging operations.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Entering the metal door in Level 14.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Finding a teleporter pad transitions you to Level 16.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Follow neon lights",d:"The cyan strips lead to main hubs.",c:"cyan",l:"Red strips lead to incinerator rooms."},{n:"Avoid drones",d:"Mechanical entities that shoot lasers.",c:"red",l:"Use an EMP grenade to temporarily disable them."},{n:"Scavenge tech",d:"Hard drives contain valuable data.",c:"blue",l:"Extract data to L-Corp secure servers only."},{n:"Use keycards",d:"Found on the floor, needed to open doors.",c:"yellow",l:"Level 3 cards are required for the exit."},{n:"Hack cautiously",d:"Terminals can trap you in a digital loop.",c:"purple",l:"Use a physical proxy device to interface."},{n:"Stay out of servers",d:"Server rooms are freezing cold.",c:"teal",l:"The cold protects the quantum cores."},{n:"Beware Enigmas",d:"Entities made of pure code.",c:"fuchsia",l:"They cannot see you if you stand perfectly still."},{n:"Don't touch lasers",d:"Security grids block hallways.",c:"orange",l:"Crawl under the lowest beam."},{n:"Keep moving",d:"The facility actively tracks loiterers.",c:"green",l:"Change floors every 30 minutes."},{n:"Enter teleporter",d:"The glowing blue pad is the exit.",c:"gray",l:"Ensure the pad is fully charged before stepping on."}],
-                [{n:"Security Keycards",i:"ph-identification-card"},{n:"Multitool",i:"ph-wrench"},{n:"EMP Grenade",i:"ph-lightning"},{n:"Flash Drive",i:"ph-hard-drives"},{n:"Tinted Goggles",i:"ph-goggles"},{n:"Almond Water",i:"ph-drop"},{n:"Rations",i:"ph-hamburger"},{n:"Medkit",i:"ph-first-aid"},{n:"Wire Cutters",i:"ph-scissors"},{n:"Radio",i:"ph-radio"}]
-            ),
-            history: makeHist([{t:"Tech scavenged",d:"First explorers bring back advanced batteries."},{t:"Drones classified",d:"M.E.G. identifies the patrol patterns."},{t:"L-Corp accesses mainframe",d:"Proprietary data is extracted from the servers."},{t:"Enigma encounter",d:"A digital entity deletes an explorer's memories."},{t:"Teleporter mapped",d:"The exit mechanism is finally understood."},{t:"M.E.G. research base",d:"Established in a secure server room."},{t:"Laser grids activated",d:"The facility goes into high alert mode."}]),
-            resonanceLogs: ["> SCANNING MAINFRAME...", "> HIGH-TECH ARCHITECTURE DETECTED.", "> SECURITY BREACH LOGGED.", "> UPLOADING VIRUS."]
-        },
-
-        "level16": {
-            type: "level", id: "level16", title: "Level 16", name: "Altered Topography",
-            themeColor: "#a855f7", themeHover: "#9333ea", themeGlow: "rgba(168, 85, 247, 0.2)", idleAnimation: "animate-spin-slow",
-            tags: [ { label: "CLASS 3", class: "bg-orange-500/10 text-orange-400 border-orange-500/30" }, { label: "HYPER-UNSTABLE", class: "bg-indigo-500/10 text-indigo-400 border-indigo-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHBhdGggZD0iTTAgMEwxMCAxME0xMCAwTDAgMTAiIHN0cm9rZT0iI2E4NTVmNyIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9zdmc+",
-            mapConfig: { seed: 1600, wallDensity: 0.8, renderStyle: 'diagonal', gridSize: 5, poiChance: 0.05, wallColor: '#7e22ce', gridColor: 'rgba(168,85,247,0.1)', wallThickness: 0.1, bgColor: '#3b0764', pois: [{ name: "Spatial Tear", color: "#000", icon: "🌪" }, { name: "Light Pool", color: "#fcd34d", icon: "✨" }] },
-            specificMetrics: { "Level 16 Specific": { "Gravity Shifts": "Constant", "Geometry": "Fractal" }, "Spatial & Dimensional": { "Hume Level (Reality)": "20.0 H", "Euclidean Consistency": "5.0%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 16 is a chaotic environment where gravity and topography constantly shift and break down.</p></div><h3>Description</h3><p>Level 16 is a sprawling, fractal labyrinth of stone, metal, and floating debris. Gravity changes direction without warning, forcing wanderers to walk on walls or ceilings. Spatial tears randomly open, leading to the void. The level is inhabited by "Shifters", entities that manipulate the geometry to trap prey.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Using the teleporter in Level 15.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Diving into a glowing pool of light transitions to Level 17.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Walk carefully",d:"Gravity shifts abruptly.",c:"purple",l:"Watch the floating dust to see which way gravity is pulling."},{n:"Don't trust eyes",d:"Hallways are optical illusions.",c:"blue",l:"Throw a small object to test the path."},{n:"Use a tether",d:"Tie yourself to a sturdy object.",c:"orange",l:"Always maintain three points of contact."},{n:"Beware falling objects",d:"Debris falls horizontally and vertically.",c:"red",l:"Wear a hard hat at all times."},{n:"Climb walls",d:"Sometimes the ceiling is the only safe path.",c:"yellow",l:"Use magnetic boots if you acquired them in Level 15."},{n:"Avoid spatial tears",d:"Black rips in the air.",c:"gray",l:"They emit a low humming sound."},{n:"Stay hydrated",d:"The changing pressure causes rapid dehydration.",c:"teal",l:"Drink Almond water every 30 minutes."},{n:"Watch for Shifters",d:"Entities that blend into the fractal geometry.",c:"fuchsia",l:"They cast no shadow."},{n:"Keep pace",d:"The labyrinth closes behind you.",c:"green",l:"Do not hesitate at intersections."},{n:"Dive into light pool",d:"The only way out.",c:"cyan",l:"Hold your breath as you enter."}],
-                [{n:"Climbing Rope",i:"ph-link"},{n:"Carabiners",i:"ph-lock"},{n:"Climbing Harness",i:"ph-t-shirt"},{n:"Helmet",i:"ph-hard-hat"},{n:"Almond Water",i:"ph-drop"},{n:"Rations",i:"ph-hamburger"},{n:"Flashlight",i:"ph-flashlight"},{n:"Chalk",i:"ph-pencil"},{n:"First Aid",i:"ph-first-aid"},{n:"Compass (Useless)",i:"ph-compass"}]
-            ),
-            history: makeHist([{t:"Gravity anomalies recorded",d:"Explorers fall to the ceiling upon entry."},{t:"Spatial tears classified",d:"M.E.G. loses a squad to a void rift."},{t:"Shifter entities found",d:"They are documented manipulating walls to crush victims."},{t:"L-Corp maps geometry",d:"Using quantum cartography algorithms."},{t:"M.E.G. abandons base",d:"The outpost was crushed by shifting geometry."},{t:"Transit route mapped",d:"A semi-stable path is found."},{t:"Light pool exit confirmed",d:"A brave diver tests the pool and survives."}]),
-            resonanceLogs: ["> SCANNING TOPOLOGY...", "> EUCLIDEAN MESH FAILING.", "> GRAVITY INVERSION DETECTED.", "> UPLOADING."]
-        },
-
-        "level17": {
-            type: "level", id: "level17", title: "Level 17", name: "The Carrier",
-            themeColor: "#64748b", themeHover: "#475569", themeGlow: "rgba(100, 116, 139, 0.2)", idleAnimation: "animate-ambient-drift-slow",
-            tags: [ { label: "CLASS 2", class: "bg-yellow-500/10 text-yellow-400 border-yellow-500/30" }, { label: "NAVAL", class: "bg-blue-500/10 text-blue-400 border-blue-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHBhdGggZD0iTTAgNUwxMCA1TTAgN0gxMCIgc3Ryb2tlPSIjNjQ3NDhiIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4=",
-            mapConfig: { seed: 1700, wallDensity: 0.4, renderStyle: 'grid', gridSize: 12, poiChance: 0.04, wallColor: '#475569', gridColor: 'rgba(255,255,255,0.05)', wallThickness: 0.3, bgColor: '#0f172a', pois: [{ name: "Engine Room", color: "#dc2626", icon: "⚙" }, { name: "Glowing Door", color: "#fcd34d", icon: "🚪" }] },
-            specificMetrics: { "Level 17 Specific": { "Vessel Size": "Massive", "Ocean Condition": "Stormy" }, "Spatial & Dimensional": { "Hume Level (Reality)": "85.0 H", "Euclidean Consistency": "90.0%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 17 is a massive aircraft carrier stranded in an endless, stormy ocean.</p></div><h3>Description</h3><p>Level 17 takes place entirely on and within a colossal, rusted naval aircraft carrier. The ocean surrounding the ship is violent and stormy, making escape by water impossible. The interior of the ship is labyrinthine, filled with abandoned military equipment and patrolled by "Spectral Crew", ghostly entities that repeat their mundane tasks eternally. The engine room is incredibly hot and dangerous, housing aggressive entities.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Emerging from the light pool in Level 16 onto the flight deck.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Finding a glowing, child's bedroom door deep in the hull leads to Level 18.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Stay on ship",d:"Falling into the ocean is instant death.",c:"blue",l:"Avoid the edges of the flight deck during high winds."},{n:"Don't swim",d:"The water is filled with massive shadows.",c:"teal",l:"Stay inside the hull."},{n:"Explore lower decks",d:"Supplies are hidden in the mess halls.",c:"green",l:"Canned military rations are safe to eat."},{n:"Scavenge gear",d:"Weapons and armor are abundant.",c:"orange",l:"Check the armory, but beware the rusted locks."},{n:"Beware spectral crew",d:"Ghostly sailors roam the halls.",c:"gray",l:"Do not interrupt their tasks; they will turn hostile."},{n:"Avoid engine room",d:"It is filled with Clumps and extreme heat.",c:"red",l:"Stay away from the lowest level of the ship."},{n:"Keep dry",d:"The storm outside causes hypothermia.",c:"cyan",l:"Wear waterproof jackets found in the lockers."},{n:"Signal flares",d:"Useful for navigating dark corridors.",c:"yellow",l:"Do not fire them outside; it attracts the ocean things."},{n:"Rest in bunks",d:"The crew quarters are relatively safe.",c:"fuchsia",l:"Lock the cabin door before sleeping."},{n:"Find glowing door",d:"A wooden door out of place in the metal hull.",c:"purple",l:"It emits a soft, warm light."}],
-                [{n:"Flashlight",i:"ph-flashlight"},{n:"Crowbar",i:"ph-wrench"},{n:"Military Rations",i:"ph-hamburger"},{n:"Medkit",i:"ph-first-aid"},{n:"Flares",i:"ph-fire"},{n:"Warm Clothes",i:"ph-t-shirt"},{n:"Weapon",i:"ph-sword"},{n:"Radio",i:"ph-radio"},{n:"Almond Water",i:"ph-drop"},{n:"Sleeping Bag",i:"ph-sleeping-bag"}]
-            ),
-            history: makeHist([{t:"Ship discovered",d:"Wanderers land on the flight deck."},{t:"Spectral crew classified",d:"M.E.G. categorizes the ghostly inhabitants."},{t:"Weapons scavenged",d:"B.N.T.G. extracts massive amounts of firearms."},{t:"M.E.G. outpost set up",d:"Established in the captain's quarters."},{t:"L-Corp taps sensors",d:"Ship radar is repurposed to scan the ocean."},{t:"Engine room sealed",d:"Welded shut due to entity infestation."},{t:"Exit door mapped",d:"The glowing door is found in the brig."}]),
-            resonanceLogs: ["> SCANNING NAVAL VESSEL...", "> RUST AND DECAY DETECTED.", "> SPECTRAL ANOMALIES LOGGED.", "> UPLOADING."]
-        },
-
-        "level18": {
-            type: "level", id: "level18", title: "Level 18", name: "Memories",
-            themeColor: "#f472b6", themeHover: "#db2777", themeGlow: "rgba(244, 114, 182, 0.2)", idleAnimation: "animate-pulse-fast",
-            tags: [ { label: "CLASS Ψ", class: "bg-fuchsia-500/10 text-fuchsia-500 border-fuchsia-500/30" }, { label: "PSYCHOLOGICAL", class: "bg-purple-500/10 text-purple-400 border-purple-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHBhdGggZD0iTTAgNUExIDUgMCAwIDAgMTAgNSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjQ3MmI2Ii8+PC9zdmc+",
-            mapConfig: { seed: 1800, wallDensity: 0.3, renderStyle: 'warehouse', gridSize: 15, poiChance: 0.05, wallColor: '#be185d', gridColor: 'rgba(244,114,182,0.1)', wallThickness: 0.1, bgColor: '#4c1d95', pois: [{ name: "Plush Entity", color: "#ef4444", icon: "🧸" }, { name: "Attic Stairs", color: "#a1a1aa", icon: "🪜" }] },
-            specificMetrics: { "Level 18 Specific": { "Nostalgia Index": "Extreme", "Music Box Loops": "Constant" }, "Spatial & Dimensional": { "Hume Level (Reality)": "40.0 H", "Euclidean Consistency": "70.0%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 18 takes the form of a childhood bedroom, expanding infinitely and heavily inducing nostalgia.</p></div><h3>Description</h3><p>Level 18 looks like a massive, interconnected series of children's bedrooms and playrooms from the 1990s. Giant plush toys, building blocks, and old televisions playing static litter the floor. The level induces an overwhelming sense of nostalgia and comfort, which is a cognitohazard designed to trap wanderers. "Plush Entities", resembling giant stuffed animals, will slowly move when not observed, eventually suffocating sleeping victims.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Entering the glowing door in Level 17.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Finding a pull-down wooden staircase in the ceiling leads to Level 19.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Don't trust nostalgia",d:"The comfort is a trap.",c:"fuchsia",l:"Recite complex math to keep your brain logical."},{n:"Beware plush doll",d:"They move when you aren't looking.",c:"red",l:"Always keep one person on watch."},{n:"Keep moving",d:"Sitting on the carpet drains your willpower to leave.",c:"orange",l:"Walk continuously."},{n:"Don't touch toys",d:"They are coated in a mild sedative dust.",c:"yellow",l:"Wear gloves."},{n:"Ignore lullabies",d:"Faint music boxes play constantly.",c:"purple",l:"Wear earplugs."},{n:"Stay out of closet",d:"The closets are gateways to the void.",c:"gray",l:"Never open a closed door."},{n:"Track time",d:"You will forget how long you've been here.",c:"blue",l:"Check your watch every 5 minutes."},{n:"Don't sleep in beds",d:"The mattresses consume you.",c:"green",l:"Sleep on the hard wooden floor sections."},{n:"Reality checks",d:"The level alters memories.",c:"cyan",l:"Look at a photo of your family."},{n:"Find attic stairs",d:"A string hanging from the ceiling.",c:"teal",l:"Pull it firmly to reveal the exit."}],
-                [{n:"Analog Watch",i:"ph-watch"},{n:"Earplugs",i:"ph-ear-slash"},{n:"Flashlight",i:"ph-flashlight"},{n:"Almond Water",i:"ph-drop"},{n:"Rations",i:"ph-hamburger"},{n:"Utility Knife",i:"ph-knife"},{n:"Chalk",i:"ph-pencil"},{n:"Journal",i:"ph-book"},{n:"Compass",i:"ph-compass"},{n:"Reality Anchor",i:"ph-anchor"}]
-            ),
-            history: makeHist([{t:"Memory effect documented",d:"Wanderers forget their past lives."},{t:"Plush doll classified",d:"The weeping angel mechanics are confirmed."},{t:"L-Corp analyzes cognitohazard",d:"It targets the amygdala."},{t:"M.E.G. bans long stays",d:"Over 4 hours results in permanent regression."},{t:"Childhood trauma loops",d:"Some rooms project traumatic memories."},{t:"Closet trap identified",d:"Several wanderers lost to the closet void."},{t:"Attic stairs mapped",d:"The exit is discovered."}]),
-            resonanceLogs: ["> SCANNING PLAYROOM...", "> EXTREME PSYCHOLOGICAL ANOMALIES DETECTED.", "> MEMORY ALTERATION IN PROGRESS.", "> UPLOADING AND SHIELDING MIND."]
-        },
-
-        "level19": {
-            type: "level", id: "level19", title: "Level 19", name: "Crawlspace",
-            themeColor: "#78350f", themeHover: "#451a03", themeGlow: "rgba(120, 53, 15, 0.2)", idleAnimation: "animate-flicker",
-            tags: [ { label: "CLASS 4", class: "bg-red-500/10 text-red-500 border-red-500/30" }, { label: "CLAUSTROPHOBIC", class: "bg-orange-500/10 text-orange-400 border-orange-500/30" } ],
-            heroImage: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCI+PHBhdGggZD0iTTAgMEgxMFYySDBNMCA0SDEwVjZIMEUiIGZpbGw9IiM3ODM1MGYiLz48L3N2Zz4=",
-            mapConfig: { seed: 1900, wallDensity: 0.9, renderStyle: 'pipes', gridSize: 5, poiChance: 0.05, wallColor: '#451a03', gridColor: 'rgba(120,53,15,0.1)', wallThickness: 0.5, bgColor: '#1c1917', pois: [{ name: "Rotten Wood Pit", color: "#000", icon: "🕳" }, { name: "Crawler Entity", color: "#dc2626", icon: "🕷" }] },
-            specificMetrics: { "Level 19 Specific": { "Ceiling Height": "1.2m", "Wood Rot Level": "Extreme" }, "Atmospheric Diagnostics": { "Ambient Temp (Core)": "30.0 °C", "Relative Humidity": "10%" } },
-            lore: `<div class="mb-6 pb-4 border-b border-white/5"><p class="text-xl text-white font-light">Level 19 is an infinite, claustrophobic attic space made entirely of rotting wood and dust.</p></div><h3>Description</h3><p>Level 19 is extremely cramped. The ceiling is too low to stand, forcing wanderers to crawl or crouch constantly. The floor consists of exposed wooden beams with brittle drywall between them; stepping off the beams drops the wanderer into the void. The air is thick with dust and asbestos. "Crawlers", mutated entities adapted to the tight spaces, hunt aggressively here.</p><h3>Entrances & Exits</h3><div class="bg-[#050505] border border-liminal-border p-5 rounded-lg font-mono text-sm shadow-inner"><h4 class="text-liminal-primary font-bold mb-2">ENTRANCES</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-primary"></i> Climbing the attic stairs in Level 18.</li></ul><h4 class="text-liminal-safe font-bold mb-2 mt-6">EXITS</h4><ul class="list-none space-y-2 text-liminal-text mb-4"><li><i class="ph ph-arrow-right text-liminal-safe"></i> Finding a heavy, rusted metal door transitions to Level 20.</li></ul></div>`,
-            survivalGuide: makeSG(
-                [{n:"Walk on beams",d:"The drywall cannot support human weight.",c:"red",l:"Test the wood with your crowbar before putting weight on it."},{n:"Avoid rotting wood",d:"Even beams can snap.",c:"orange",l:"Look for darker, moldy patches of wood."},{n:"Watch for Crawlers",d:"They move silently through the dust.",c:"purple",l:"Shine your light into the dark corners continuously."},{n:"Use strong light",d:"The dust absorbs light.",c:"yellow",l:"A high-lumen headlamp is mandatory."},{n:"Don't breathe dust",d:"The air is toxic.",c:"green",l:"Wear a respirator or N95 mask."},{n:"Scavenge boxes carefully",d:"Cardboard boxes contain supplies or spiders.",c:"cyan",l:"Poke them with a stick first."},{n:"Stay quiet",d:"Crawlers hunt by sound.",c:"gray",l:"Crawl slowly and methodically."},{n:"Mark path",d:"It's easy to get lost in the repeating beams.",c:"blue",l:"Leave chalk marks on the wooden pillars."},{n:"Beware falling debris",d:"The roof occasionally collapses.",c:"fuchsia",l:"Wear a hard hat."},{n:"Find rusty door",d:"The exit to Level 20.",c:"teal",l:"It smells strongly of iron."}],
-                [{n:"Respirator",i:"ph-mask-water"},{n:"Headlamp",i:"ph-flashlight"},{n:"Heavy Boots",i:"ph-boot"},{n:"Crowbar",i:"ph-wrench"},{n:"Nylon Rope",i:"ph-link"},{n:"Medkit",i:"ph-first-aid"},{n:"Almond Water",i:"ph-drop"},{n:"Rations",i:"ph-hamburger"},{n:"Weapon",i:"ph-sword"},{n:"Chalk",i:"ph-pencil"}]
-            ),
-            history: makeHist([{t:"Discovered from 18",d:"Wanderers climb the stairs and are trapped in the heat."},{t:"Wood rot analyzed",d:"Found to contain anomalous fungi."},{t:"Crawler entities classified",d:"M.E.G. documents their hunting patterns."},{t:"L-Corp maps expanse",d:"Using crawling drones to map the beams."},{t:"M.E.G. transit route",d:"A safe path is marked with neon tape."},{t:"Box contents deemed useless",d:"Mostly containing old VHS tapes."},{t:"Rusty door mapped",d:"The exit is verified."}]),
-            resonanceLogs: ["> SCANNING ATTIC SPACE...", "> STRUCTURAL INTEGRITY CRITICAL.", "> DUST PARTICULATES TOXIC.", "> UPLOADING."]
-        }
+        "level9": buildLevel({
+            id: "level9", title: "Level 9", name: "The Suburbs", color: "#4b5563", hover: "#374151", glow: "rgba(75, 85, 99, 0.2)", anim: "animate-flicker",
+            tags: [["CLASS 5", "bg-red-700/10 text-red-700 border-red-700/30"], ["EXTREME ENTITY DENSITY", "bg-purple-500/10 text-purple-400 border-purple-500/30"]],
+            hero: "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTAgMTBMMTAgMEwyMCAxMEgxN1YyMEgzVjEwWiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNDQ0Ii8+PC9zdmc+",
+            map: { seed: 900, wallDensity: 0.6, renderStyle: 'grid', gridSize: 10, poiChance: 0.05, wallColor: '#374151', gridColor: 'rgba(255,255,255,0.05)', wallThickness: 0.3, bgColor: '#111827', pois: [{ name: "Illuminated House", color: "#fcd34d", icon: "💡" }, { name: "The Mangled", color: "#991b1b", icon: "🕷" }] },
+            metrics: {
+                "Level 9 Specific (Proprietary)": { "Streetlight Functionality": "0%", "Grass Toxicity": "Mild", "Entity Aggression": "Maximum", "House Furnishing": "1990s Era", "Fog Density": "High" },
+                "Chrono-Temporal Dynamics": { "Frontrooms Time Dilation": "1:1.0", "Local Time Flow Rate": "Standard Linear", "Temporal Loop Probability": "0.0%", "Entropy Gradient": "Normal", "Atomic Clock Drift": "0.0s/24h", "Memory Degradation": "Baseline" },
+                "Spatial & Dimensional": { "Hume Level (Reality)": "60.0 H", "Kant Counter Reading": "0.60 K", "Euclidean Consistency": "80.0%", "Noclipping Threshold": "High", "Spatial Dilation Factor": "1:1", "Z-Axis Deviation": "0.00%" },
+                "Atmospheric Diagnostics": { "Ambient Temp (Core)": "18.0 °C", "Relative Humidity": "90%", "Atmospheric Pressure": "101.3 kPa", "Air Comp: O2": "21.0%", "Trace Anomalous Gases": "Fog Particulates", "Chemical Odor Profile": "Wet Grass / Iron" },
+                "Acoustic & Luminescent": { "Ambient Hum": "Wind / Distant Screams", "Absolute Decibel Baseline": "30 dB", "Luminosity Level": "5 Lux (Moonlight)", "Color Temperature": "6000 K", "Total Darkness Zones": "Streets", "Audio Hallucination Risk": "Moderate" },
+                "Material & Biological": { "Entity Density": "10.0 (Extreme)", "Toxicity Levels": "Low", "Wall Arsenic Saturation": "0.0 mg/m²", "Micro-Concrete Density": "Standard", "Flora/Fauna Present": "Dead Trees / Grass", "Pathogen Level": "None" },
+                "Survival & Infrastructure": { "Base Threat Level": "5 (Lethal)", "Sanity Drain Rate": "-2.0% per Hour", "Isolation Factor": "High", "Radio Comm Integrity": "20%", "GPS Functionality": "Offline", "Rescue Probability": "Zero" }
+            },
+            desc: [
+                "Level 9 is an infinite, pitch-black suburban neighborhood fraught with extreme danger and a massive entity population.",
+                "The level resembles a modern suburban neighborhood from the late 90s, but it is perpetually locked in the dead of night. The streetlights are broken, and a thick fog rolls over the asphalt. The houses are fully furnished but completely abandoned by humans.",
+                "Instead of humans, the homes serve as nests for highly dangerous entities like The Neighborhood Watch (massive floating eyes) and The Mangled. It is considered one of the most lethal levels in the Backrooms. The streets are heavily patrolled by Hounds and Smilers.",
+                "Survival relies on extreme stealth, avoiding the asphalt roads, and moving through the backyards. Entering a house to scavenge is incredibly risky, as light emanating from a window usually indicates an entity resides within[cite: 3]."
+            ],
+            entrances: [
+                "Falling through the void in Level 8 eventually lands you safely on the damp grass of a front lawn in Level 9."
+            ],
+            exits: [
+                "Following the asphalt road straight for 100-200 miles seamlessly transitions the environment into the wheat fields of Level 10."
+            ],
+            tips: [
+                { n: "Stay Off the Street", d: "The asphalt roads are heavily patrolled by hunting entities.", c: "red", l: "Walk on the grass lawns to dampen your footsteps." },
+                { n: "Avoid Illuminated Houses", d: "Light inside a house means an entity resides there.", c: "yellow", l: "Only scavenge completely dark homes." },
+                { n: "Watch for Mangled", d: "Grotesque entities hide in the bushes and hedges.", c: "purple", l: "They smell fear. Control your breathing and heart rate." },
+                { n: "Don't Look at the Sky", d: "The sky is a void that induces madness if stared at.", c: "gray", l: "Keep your gaze fixed on the horizon or the houses." },
+                { n: "Keep Moving", d: "Staying in one place attracts attention from patrols.", c: "teal", l: "Never rest for more than 2 hours in a single house." },
+                { n: "Sneak Through Backyards", d: "Backyards are significantly safer than front lawns.", c: "green", l: "Hop wooden fences quietly to bypass street patrols." },
+                { n: "Ignore Ringing Phones", d: "Phones inside the houses are auditory traps.", c: "orange", l: "Answering them gives the entities your exact location." },
+                { n: "Gather Supplies Quickly", d: "Houses have Almond water but are dangerous.", c: "cyan", l: "In and out in under 3 minutes. Do not linger." },
+                { n: "Neighborhood Watch Evasion", d: "Massive floating eyes patrol the area, emitting a purple glow.", c: "fuchsia", l: "If you see a purple glow, hide under a porch instantly." },
+                { n: "Follow the Road Signs", d: "They guide you to Level 10.", c: "blue", l: "Do not trust signs written in blood or scratch marks." }
+            ],
+            loadout: [
+                { n: "Stealth Clothing (Dark)", i: "ph-t-shirt" }, { n: "Crowbar (For doors)", i: "ph-wrench" },
+                { n: "Flashlight (Red Lens)", i: "ph-flashlight" }, { n: "Tactical Backpack", i: "ph-bag" },
+                { n: "Silent Running Shoes", i: "ph-sneaker" }, { n: "First Aid Kit", i: "ph-first-aid" },
+                { n: "Night-vision Binoculars", i: "ph-binoculars" }, { n: "Compass", i: "ph-compass" },
+                { n: "Almond Water", i: "ph-drop" }, { n: "Silenced Weapon", i: "ph-crosshair" }
+            ],
+            history: [
+                { date: "SEPTEMBER 2, 2016", t: "First Entered from 8", d: "Wanderers survive the fall from the caves, landing in the grass." },
+                { date: "JANUARY 14, 2018", t: "Houses Looted", d: "Initial M.E.G. teams find ample supplies but suffer 60% casualties." },
+                { date: "APRIL 5, 2019", t: "The Mangled Classified", d: "A new entity type is documented hiding in the hedges." },
+                { date: "DECEMBER 20, 2020", t: "M.E.G. Sets Safehouse", d: "A heavily fortified house is established, but quickly overrun by a Watcher." },
+                { date: "MAY 11, 2022", t: "Dark Cycles Mapped", d: "It is determined that daylight never arrives; it is perpetually 2 AM." },
+                { date: "FEBRUARY 18, 2024", t: "L-Corp Installs Street Nodes", d: "Hidden in the broken streetlights to track entity migrations." },
+                { date: "AUGUST 9, 2025", t: "Exits to 10 Confirmed", d: "The 100-mile march protocol is established." },
+                { date: "JULY 2, 2026", t: "Transit Zone Only", d: "No bases exist. Level 9 is purely an obstacle to reach Level 10." }
+            ],
+            resonance: [
+                "> SCANNING SUBURBAN GRID...", "> ZERO HUMAN LIFE DETECTED.", 
+                "> MASSIVE HOSTILE PRESENCE IN DWELLINGS.", 
+                "> UPLOADING TELEMETRY."
+            ]
+        })
     },
     entities: {
         "entity1": {
