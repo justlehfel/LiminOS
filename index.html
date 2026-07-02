@@ -70,6 +70,8 @@
         
         #map-container { cursor: crosshair; overflow: hidden; position: relative; outline: none; }
         #map-container.dragging { cursor: grabbing; }
+        #map-container:-webkit-full-screen { width: 100vw; height: 100vh; }
+        #map-container:fullscreen { width: 100vw; height: 100vh; background-color: #030303; }
         
         /* SPA View Logic */
         .page-view { display: none; opacity: 0; transition: opacity 0.3s ease; }
@@ -83,6 +85,8 @@
         .lore-content p { margin-bottom: 1.2rem; line-height: 1.8; color: #a3a3a3; font-size: 0.95rem; }
         .lore-content h3 { font-size: 1.5rem; font-weight: 800; color: #fff; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid #1a1a1a; padding-bottom: 0.5rem; }
         .lore-content h4 { font-size: 1.1rem; font-weight: 600; color: #eab308; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .lore-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.2rem; color: #a3a3a3; }
+        .lore-content li { margin-bottom: 0.5rem; }
         
         @keyframes radar-ping { 0% { transform: scale(0.5); opacity: 0.8; } 100% { transform: scale(2); opacity: 0; } }
         .radar-ping::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #eab308; animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
@@ -267,7 +271,7 @@
                 </h2>
                 <p class="text-liminal-muted font-mono text-sm mt-3">Full proprietary topological and spatial database.</p>
             </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="levels-grid">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="levels-grid">
                 </div>
         </section>
 
@@ -278,7 +282,7 @@
                 </h2>
                 <p class="text-liminal-muted font-mono text-sm mt-3">Categorization of anomalous flora, fauna, and conceptual beings.</p>
             </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="entities-grid">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="entities-grid">
                 </div>
         </section>
 
@@ -344,17 +348,6 @@
     <script src="data.js"></script>
 
     <script>
-        function toggleFullscreen(elemId) {
-            const elem = document.getElementById(elemId);
-            if (!document.fullscreenElement) {
-                elem.requestFullscreen().catch(err => {
-                    console.warn(`Fullscreen error: ${err.message}`);
-                });
-            } else {
-                document.exitFullscreen();
-            }
-        }
-
         const Router = {
             currentDataId: null,
             currentDataType: null,
@@ -374,7 +367,6 @@
                 // Reset Nav
                 document.querySelectorAll('.nav-btn').forEach(btn => {
                     const target = btn.dataset.target;
-                    // Highlight if exactly matches, OR if we are in a sub-page of that category
                     if (target === hash || (target === 'levels' && hash.startsWith('level/')) || (target === 'entities' && hash.startsWith('entity/'))) {
                         btn.classList.add('bg-white/10', 'text-white', 'border-liminal-primary');
                         btn.classList.remove('text-liminal-muted', 'border-transparent');
@@ -488,7 +480,6 @@
                 document.getElementById('data-title-id').innerText = data.title;
                 document.getElementById('data-title-name').innerText = `"${data.name}"`;
                 
-                // Adjusted to handle procedural tile backgrounds
                 document.getElementById('data-hero-bg-tile').style.backgroundImage = `url('${data.heroImage}')`;
                 
                 const tagsContainer = document.getElementById('data-tags');
@@ -496,7 +487,6 @@
                     `<span class="px-2 py-1 ${tag.class} border text-[10px] font-bold rounded tracking-widest uppercase shadow-sm">${tag.label}</span>`
                 ).join('');
 
-                // Build Tabs based on what data exists
                 const tabsContainer = document.getElementById('data-tabs-container');
                 let tabsHtml = `<button class="tab-btn active px-4 py-2 text-xs md:text-sm font-bold text-liminal-primary border-b-2 border-liminal-primary transition-colors uppercase tracking-wide" onclick="switchTab('lore')">Documentation</button>`;
                 
@@ -505,7 +495,6 @@
                 if(data.resonanceScan) tabsHtml += `<button class="tab-btn px-4 py-2 text-xs md:text-sm font-bold text-liminal-muted border-b-2 border-transparent hover:text-white transition-colors uppercase tracking-wide" onclick="switchTab('resonance')">Resonance Scan</button>`;
                 tabsContainer.innerHTML = tabsHtml;
 
-                // Build Content Area
                 const contentArea = document.getElementById('data-content-area');
                 let contentHtml = `<div id="tab-lore" class="tab-content animate-fade-in lore-content block">${data.lore}</div>`;
                 if(data.survivalGuide) contentHtml += `<div id="tab-survival" class="tab-content hidden animate-fade-in lore-content">${data.survivalGuide}</div>`;
@@ -513,14 +502,12 @@
                 if(data.resonanceScan) contentHtml += `<div id="tab-resonance" class="tab-content hidden animate-fade-in">${data.resonanceScan}</div>`;
                 contentArea.innerHTML = contentHtml;
 
-                // Determine Metrics & Interactive Module
                 const globalDataToUse = type === 'level' ? GlobalMetrics : GlobalEntityMetrics;
                 this.buildMetricsUI(data.specificMetrics, globalDataToUse);
                 
                 const moduleContainer = document.getElementById('data-interactive-module');
                 if (type === 'level') {
                     document.getElementById('metrics-panel-title').innerHTML = `<i class="ph ph-chart-polar text-liminal-primary"></i> Spatial Telemetry`;
-                    // Inject Map HTML
                     moduleContainer.innerHTML = `
                         <div class="h-14 border-b border-liminal-border bg-black/90 backdrop-blur-xl flex items-center justify-between px-4 z-20 flex-shrink-0">
                             <div class="flex items-center gap-3">
@@ -549,10 +536,7 @@
 
                         <div id="map-container" class="flex-1 w-full relative outline-none bg-[#030303]" tabindex="0">
                             <canvas id="levelMap" class="absolute inset-0 block w-full h-full"></canvas>
-                            <button onclick="toggleFullscreen('map-container')" class="absolute top-4 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center shadow-2xl z-30">
-                                <i class="ph ph-corners-out"></i>
-                            </button>
-                            <div class="absolute top-4 left-4 bg-black/80 p-3 rounded border border-white/5 backdrop-blur-md pointer-events-none shadow-2xl">
+                            <div class="absolute top-4 left-4 bg-black/80 p-3 rounded border border-white/5 backdrop-blur-md pointer-events-none shadow-2xl z-20">
                                 <div class="text-[8px] font-mono text-liminal-muted mb-1 tracking-widest flex items-center gap-2">
                                     <div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>
                                     ABSOLUTE POSITION (1 Unit = 1m)
@@ -560,9 +544,10 @@
                                 <div class="text-sm font-mono text-white tracking-wider font-bold" id="hud-coords">X: 0m | Y: 0m</div>
                             </div>
                             <div class="absolute right-4 bottom-4 flex flex-col gap-2 z-20">
-                                <button onclick="mapEngine.zoomIn()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center"><i class="ph ph-plus"></i></button>
-                                <button onclick="mapEngine.resetView()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center"><i class="ph ph-arrows-in-simple"></i></button>
-                                <button onclick="mapEngine.zoomOut()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center"><i class="ph ph-minus"></i></button>
+                                <button onclick="mapEngine.toggleFullscreen()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center" title="Toggle Fullscreen"><i class="ph ph-corners-out"></i></button>
+                                <button onclick="mapEngine.zoomIn()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center" title="Zoom In"><i class="ph ph-plus"></i></button>
+                                <button onclick="mapEngine.resetView()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center" title="Reset View"><i class="ph ph-arrows-in-simple"></i></button>
+                                <button onclick="mapEngine.zoomOut()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center" title="Zoom Out"><i class="ph ph-minus"></i></button>
                             </div>
                             <div class="absolute left-4 bottom-4 z-20">
                                 <div class="bg-black/80 border border-white/10 rounded p-2 flex flex-col items-center gap-1 backdrop-blur-md">
@@ -592,44 +577,29 @@
                             </div>
                         </div>
                     `;
-                    // Wait for DOM to update then init map
                     setTimeout(() => { mapEngine.init(data.mapConfig); }, 50);
                 } else {
                     document.getElementById('metrics-panel-title').innerHTML = `<i class="ph ph-fingerprint text-purple-400"></i> Biological/Anomalous Telemetry`;
                     
-                    const isTraceable = data.traceable !== false;
-                    
-                    if (isTraceable) {
-                        moduleContainer.innerHTML = `
-                            <div class="flex-1 relative flex items-center justify-center bg-[#050505] overflow-hidden">
-                                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEg0VjRIMEoiIGZpbGw9IiMxYTFhMWEiIGZpbGwtb3BhY2l0eT0iMC41Ii8+Cjwvc3ZnPg==')] opacity-30"></div>
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="w-64 h-64 border border-purple-500/20 rounded-full absolute animate-[ping_3s_linear_infinite]"></div>
-                                    <div class="w-48 h-48 border border-purple-500/30 rounded-full absolute"></div>
-                                    <div class="w-32 h-32 border border-purple-500/50 rounded-full absolute"></div>
+                    const visualStatus = data.visualStatus || "NO REAL-TIME VISUAL AVAILABLE";
+                    const colorHex = data.visualColorHex || "#c084fc";
+                    const icon = data.icon || "ph-ghost";
+                    const pulseClass = data.isTraceable ? "animate-pulse" : "animate-pulse-fast";
+                    const spinClass = data.isTraceable ? "animate-spin" : "animate-spin-slow";
+
+                    moduleContainer.innerHTML = `
+                        <div class="flex-1 relative flex items-center justify-center bg-[#050505] overflow-hidden">
+                            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEg0VjRIMEoiIGZpbGw9IiMxYTFhMWEiIGZpbGwtb3BhY2l0eT0iMC41Ii8+Cjwvc3ZnPg==')] opacity-30"></div>
+                            <div class="relative z-10 flex flex-col items-center">
+                                <div class="w-32 h-32 rounded-full border-2 flex items-center justify-center relative mb-4 ${pulseClass}" style="border-color: ${colorHex}4d;">
+                                    <div class="absolute inset-0 rounded-full border-t-2 ${spinClass}" style="border-color: ${colorHex};"></div>
+                                    <i class="ph ${icon} text-6xl opacity-80" style="color: ${colorHex};"></i>
                                 </div>
-                                <div class="relative z-10 flex flex-col items-center">
-                                    <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse shadow-[0_0_15px_#ef4444] mb-4"></div>
-                                    <h3 class="text-white font-mono font-bold tracking-widest text-center">BIOMETRIC SIGNATURE LOCKED</h3>
-                                    <p class="text-[10px] text-red-400 font-mono mt-1 text-center">TRACKING ACTIVE</p>
-                                </div>
+                                <h3 class="text-white font-mono font-bold tracking-widest">ENTITY SIGNATURE TRACKING</h3>
+                                <p class="text-xs font-mono mt-2" style="color: ${colorHex}; text-shadow: 0 0 10px ${colorHex}4d;">${visualStatus}</p>
                             </div>
-                        `;
-                    } else {
-                        moduleContainer.innerHTML = `
-                            <div class="flex-1 relative flex items-center justify-center bg-[#050505] overflow-hidden">
-                                <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAiLz4KPHBhdGggZD0iTTAgMEg0VjRIMEoiIGZpbGw9IiMxYTFhMWEiIGZpbGwtb3BhY2l0eT0iMC41Ii8+Cjwvc3ZnPg==')] opacity-30"></div>
-                                <div class="relative z-10 flex flex-col items-center">
-                                    <div class="w-32 h-32 rounded-full border-2 border-purple-500/30 flex items-center justify-center relative mb-4 animate-pulse-fast">
-                                        <div class="absolute inset-0 rounded-full border-t-2 border-purple-500 animate-spin-slow"></div>
-                                        <i class="ph ph-ghost text-6xl text-purple-400 opacity-80"></i>
-                                    </div>
-                                    <h3 class="text-white font-mono font-bold tracking-widest">ENTITY SIGNATURE TRACKING</h3>
-                                    <p class="text-xs text-purple-400 font-mono mt-2">NO REAL-TIME VISUAL AVAILABLE</p>
-                                </div>
-                            </div>
-                        `;
-                    }
+                        </div>
+                    `;
                     if(mapEngine.animationFrame) cancelAnimationFrame(mapEngine.animationFrame);
                 }
             },
@@ -638,9 +608,8 @@
                 const container = document.getElementById('metrics-container');
                 let html = '';
 
-                // Insert Specific Metrics First if they exist
                 if (specificMetrics) {
-                    const specKey = Object.keys(specificMetrics)[0]; // e.g. "Level 0 Specific"
+                    const specKey = Object.keys(specificMetrics)[0]; 
                     html += `
                         <div class="metric-group border-b border-liminal-primary/30">
                             <div class="px-5 py-4 bg-liminal-primary/10 flex items-center gap-3 cursor-pointer hover:bg-liminal-primary/20 transition-colors" onclick="toggleMetricGroup('specific')">
@@ -691,7 +660,6 @@
             }
         };
 
-        // UI Helpers
         function switchTab(tabId) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
                 btn.classList.remove('active', 'text-liminal-primary', 'border-liminal-primary');
@@ -745,25 +713,20 @@
             
             const logs = [
                 "> INITIALIZING QUANTUM PING...",
-                "> TARGET: LOCAL TOPOLOGY [Z: 0]",
+                "> TARGET: LOCAL TOPOLOGY [Z: " + mapEngine.camZ + "]",
                 "> CALIBRATING HUME SENSORS... [OK]",
                 "> BYPASSING M.E.G. INTERFERENCE... [OK]",
-                "<br>> <span class='text-liminal-primary'>ANALYZING MOISTURE CONTENT:</span>",
-                "  - H2O: 98.01%",
-                "  - UNKNOWN BIOLOGICAL FLUID: 1.99%",
-                "  - ALMOND WATER TRACES: < 0.001%",
-                "<br>> <span class='text-yellow-400'>CHECKING STRUCTURAL INTEGRITY:</span>",
-                "  - WALL PERMEABILITY: 0.0001% (NOCLIP RESISTANCE HIGH)",
-                "  - EUCLIDEAN CONSISTENCY: 14.2% (WARNING: NON-LINEAR)",
-                "<br>> <span class='text-red-400'>ENTITY PROXIMITY SWEEP:</span>",
-                "  - SCANNING RADIUS: 1000m",
-                "  - RESULT: 0 ENTITIES DETECTED.",
-                "  - NOTE: IGNORE AUDITORY HALLUCINATIONS.",
-                "<br>> SCAN COMPLETE. UPLOADING TO LIMINOS DATABASE."
+                "<br>> <span class='text-liminal-primary'>ANALYZING TOPOLOGICAL SIGNATURE:</span>",
+                "  - STRUCTURAL INTEGRITY VALIDATED",
+                "  - EUCLIDEAN MESH SCANNED",
+                "<br>> <span class='text-yellow-400'>CHECKING FOR ANOMALIES:</span>",
+                "  - FILTERING OUT LOCAL NOISE...",
+                "<br>> <span class='text-red-400'>UPLOADING TO LIMINOS...</span>",
+                "> SCAN COMPLETE."
             ];
 
             for(let i=0; i<logs.length; i++) {
-                await new Promise(r => setTimeout(r, 400 + Math.random() * 600));
+                await new Promise(r => setTimeout(r, 300 + Math.random() * 500));
                 content.innerHTML += `<div class="terminal-text animate-fade-in">${logs[i]}</div>`;
                 term.scrollTop = term.scrollHeight;
             }
@@ -819,7 +782,6 @@
             },
 
             setupEvents() {
-                // To support both touch and mouse transparently, bind standard mouse events
                 this.canvas.addEventListener('mousedown', (e) => {
                     this.isDragging = true;
                     this.lastMouseX = e.clientX;
@@ -876,14 +838,19 @@
             zoomIn() { this.zoom = Math.min(10, this.zoom * 1.5); },
             zoomOut() { this.zoom = Math.max(0.1, this.zoom * 0.7); },
             resetView() { this.camX = 0; this.camY = 0; this.zoom = 1; this.updateHUD(); },
-            changeZ(delta) { 
-                let newZ = this.camZ + delta;
-                if (this.config.minZ !== undefined && newZ < this.config.minZ) return;
-                if (this.config.maxZ !== undefined && newZ > this.config.maxZ) return;
-                this.camZ = newZ; 
-                document.getElementById('hud-z').innerText = this.camZ; 
-            },
+            changeZ(delta) { this.camZ += delta; document.getElementById('hud-z').innerText = this.camZ; },
             
+            toggleFullscreen() {
+                const mc = document.getElementById('map-container');
+                if (!document.fullscreenElement) {
+                    mc.requestFullscreen().catch(err => {
+                        console.log(`Error attempting to enable fullscreen: ${err.message}`);
+                    });
+                } else {
+                    document.exitFullscreen();
+                }
+            },
+
             jumpToCoordinates() {
                 this.camX = parseFloat(document.getElementById('search-x').value) || 0;
                 this.camY = parseFloat(document.getElementById('search-y').value) || 0;
@@ -927,7 +894,8 @@
                 if(!this.ctx || !this.config) return;
                 const w = this.canvas.width; const h = this.canvas.height; const ctx = this.ctx;
                 
-                ctx.fillStyle = '#030303';
+                // Allow dynamic background color
+                ctx.fillStyle = this.config.backgroundColor || '#030303';
                 ctx.fillRect(0, 0, w, h);
                 
                 const scale = this.zoom * this.pixelsPerMeter;
@@ -943,8 +911,26 @@
                 ctx.save();
                 ctx.translate(w/2, h/2);
                 
+                // 2D Area Surfaces (Zones)
+                if (this.config.zones) {
+                    for (let x = startX; x < endX; x += gs) {
+                        for (let y = startY; y < endY; y += gs) {
+                            const zoneHash = deterministicHash(x, y, this.camZ, this.config.seed, 'zone');
+                            for(let z = 0; z < this.config.zones.length; z++) {
+                                const zone = this.config.zones[z];
+                                if (zoneHash >= zone.min && zoneHash < zone.max) {
+                                    const px = (x - this.camX) * scale;
+                                    const py = (y - this.camY) * scale;
+                                    ctx.fillStyle = zone.color;
+                                    ctx.fillRect(px, py, gs * scale + 1, gs * scale + 1); // +1 prevents subpixel gaps
+                                }
+                            }
+                        }
+                    }
+                }
+
                 // Grid Background
-                ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+                ctx.strokeStyle = this.config.gridColor || 'rgba(255, 255, 255, 0.03)';
                 ctx.lineWidth = 1;
                 ctx.beginPath();
                 for (let x = Math.floor(this.camX - viewDistX); x <= Math.ceil(this.camX + viewDistX); x++) {
@@ -957,48 +943,33 @@
                 }
                 ctx.stroke();
 
-                // Surface Areas (Custom 2D shapes for levels)
-                if (this.config.surfaceAreas) {
-                    this.config.surfaceAreas.forEach(area => {
-                        if (area.z === undefined || area.z === this.camZ) {
-                            const sx = (area.x - this.camX) * scale;
-                            const sy = (area.y - this.camY) * scale;
-                            ctx.fillStyle = area.color;
-                            ctx.fillRect(sx, sy, area.w * scale, area.h * scale);
-                            if (area.tag && this.zoom > 0.6) {
-                                ctx.fillStyle = area.textColor || '#ffffff';
-                                ctx.font = 'bold 10px "JetBrains Mono"';
-                                ctx.fillText(area.tag, sx + (area.w * scale)/2, sy + (area.h * scale)/2);
-                            }
-                        }
-                    });
-                }
-
                 // Walls
-                ctx.strokeStyle = '#eab308';
-                ctx.lineWidth = Math.max(1.5, scale * 0.15);
-                ctx.lineCap = 'square';
-                ctx.beginPath();
+                if (this.config.wallDensity > 0) {
+                    ctx.strokeStyle = this.config.wallColor || '#eab308';
+                    ctx.lineWidth = Math.max(1.5, scale * 0.15);
+                    ctx.lineCap = 'square';
+                    ctx.beginPath();
 
-                for (let x = startX; x <= endX; x += gs) {
-                    for (let y = startY; y <= endY; y += gs) {
-                        const sx = (x - this.camX) * scale;
-                        const sy = (y - this.camY) * scale;
-                        const nextSx = (x + gs - this.camX) * scale;
-                        const nextSy = (y + gs - this.camY) * scale;
+                    for (let x = startX; x <= endX; x += gs) {
+                        for (let y = startY; y <= endY; y += gs) {
+                            const sx = (x - this.camX) * scale;
+                            const sy = (y - this.camY) * scale;
+                            const nextSx = (x + gs - this.camX) * scale;
+                            const nextSy = (y + gs - this.camY) * scale;
 
-                        const hWallH = deterministicHash(x, y, this.camZ, this.config.seed, 'wall_h');
-                        const hWallV = deterministicHash(x, y, this.camZ, this.config.seed, 'wall_v');
+                            const hWallH = deterministicHash(x, y, this.camZ, this.config.seed, 'wall_h');
+                            const hWallV = deterministicHash(x, y, this.camZ, this.config.seed, 'wall_v');
 
-                        if (hWallH < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.lineTo(nextSx, sy); }
-                        if (hWallV < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.lineTo(sx, nextSy); }
+                            if (hWallH < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.lineTo(nextSx, sy); }
+                            if (hWallV < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.lineTo(sx, nextSy); }
+                        }
                     }
+                    ctx.stroke();
                 }
-                ctx.stroke();
 
                 // POIs
                 ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-                if (this.config.pois) {
+                if (this.config.pois && this.config.pois.length > 0) {
                     for (let x = startX; x < endX; x += gs) {
                         for (let y = startY; y < endY; y += gs) {
                             const poiHash = deterministicHash(x, y, this.camZ, this.config.seed, 'is_poi');
