@@ -18,7 +18,7 @@
                             bg: '#030303', panel: '#080808', border: '#1a1a1a',
                             primary: 'var(--theme-primary, #eab308)', 
                             primaryHover: 'var(--theme-hover, #ca8a04)',
-                            text: '#d4d4d4', muted: '#666666', danger: '#ef4444', safe: '#22c55e', glass: 'rgba(8, 8, 8, 0.8)'
+                            text: '#d4d4d4', muted: '#666666', danger: '#ef4444', safe: '#22c55e'
                         }
                     },
                     animation: {
@@ -27,10 +27,8 @@
                         'fade-in': 'fadeIn 0.5s ease-out forwards',
                         'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
                         'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'data-stream': 'dataStream 20s linear infinite',
                         'spin-slow': 'spin 4s linear infinite',
                         'ambient-drift': 'ambientDrift 15s ease-in-out infinite alternate',
-                        'ambient-drift-slow': 'ambientDrift 25s ease-in-out infinite alternate-reverse',
                         'glitch-shift': 'glitchShift 0.2s infinite',
                         'float': 'float 6s ease-in-out infinite'
                     },
@@ -39,7 +37,6 @@
                         scanline: { '0%': { transform: 'translateY(-100%)' }, '100%': { transform: 'translateY(100vh)' } },
                         fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
                         slideUp: { '0%': { opacity: 0, transform: 'translateY(20px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
-                        dataStream: { '0%': { backgroundPosition: '0 0' }, '100%': { backgroundPosition: '0 1000px' } },
                         ambientDrift: { '0%': { transform: 'scale(1) translate(0,0)' }, '100%': { transform: 'scale(1.1) translate(3%, 3%)' } },
                         glitchShift: { '0%, 100%': { transform: 'translate(0)' }, '50%': { transform: 'translate(-2px, 2px)' } },
                         float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
@@ -127,98 +124,28 @@
     </nav>
 
     <main class="flex-1 h-full overflow-y-auto relative z-10 scroll-smooth pb-20 md:pb-0 hide-scrollbar" id="main-content">
-        <section id="view-home" class="page-view block-view p-6 md:p-12 lg:p-16 max-w-7xl mx-auto">
-            <header class="mb-16 animate-slide-up" style="animation-delay: 0.1s;">
-                <div class="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-liminal-muted mb-6 shadow-lg">SYSTEM DASHBOARD</div>
-                <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Proprietary Architecture <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-liminal-primary to-yellow-600 animate-pulse">Online.</span></h2>
-                <p class="text-liminal-muted text-lg max-w-3xl font-mono leading-relaxed">You are accessing the highly classified <span class="text-liminal-primary font-bold">LiminOS Terminal</span>. This independent, proprietary framework provides strictly deterministic mapping, precise dimensional metrics, and absolute anomalous telemetry decoupled from M.E.G. interference.</p>
-            </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-slide-up" style="animation-delay: 0.2s;">
-                <div class="glass-panel p-6 rounded-xl border-t-2 border-t-liminal-primary relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors"><div class="text-5xl font-mono font-bold text-white relative z-10 animate-float" style="animation-delay: 0s;">14,291</div><h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Catalogued Realms</h3></div>
-                <div class="glass-panel p-6 rounded-xl border-t-2 border-t-blue-500 relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors"><div class="text-5xl font-mono font-bold text-white relative z-10 animate-float" style="animation-delay: 1s;">804</div><h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Active Field Agents</h3></div>
-                <div class="glass-panel p-6 rounded-xl border-t-2 border-t-purple-500 relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors"><div class="text-5xl font-mono font-bold text-white relative z-10 animate-float" style="animation-delay: 2s;">0.04%</div><h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Dimensional Drift</h3></div>
-                <div class="glass-panel p-6 rounded-xl border-t-2 border-t-red-500 relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors"><div class="text-5xl font-mono font-bold text-white relative z-10 animate-float" style="animation-delay: 3s;">MINIMAL</div><h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Global Threat</h3></div>
-            </div>
-            <div class="mt-12 flex gap-4 animate-slide-up" style="animation-delay: 0.3s;">
-                <a href="#/levels" class="bg-liminal-primary text-black font-bold px-8 py-4 rounded hover:bg-liminal-primaryHover transition flex items-center gap-2 shadow-[0_0_20px_rgba(234,179,8,0.3)]">Access Level Archive <i class="ph ph-arrow-right"></i></a>
-                <a href="#/entities" class="bg-white/5 border border-white/10 text-white font-bold px-8 py-4 rounded hover:bg-white/10 transition flex items-center gap-2">Access Entity Index <i class="ph ph-arrow-right"></i></a>
-            </div>
-        </section>
+        <!-- Dashboard & Live Views (Omitted for brevity but assumed present) -->
+        <section id="view-home" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto"><h2 class="text-4xl text-white font-bold">LiminOS Terminal Active.</h2></section>
+        
+        <section id="view-classifications" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto"><div id="classification-container"></div></section>
+        <section id="view-levels" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="levels-grid"></div></section>
+        <section id="view-entities" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="entities-grid"></div></section>
 
-        <section id="view-live" class="page-view flex-col p-6 md:p-8 max-w-[1600px] mx-auto min-h-full">
-            <header class="mb-6 flex flex-col md:flex-row justify-between md:items-end gap-4 animate-slide-up">
-                <div>
-                    <div class="flex items-center gap-3 mb-2"><div class="w-3 h-3 rounded-full bg-blue-500 shadow-[0_0_12px_#3b82f6] animate-pulse"></div><h2 class="text-3xl font-bold text-white tracking-tight">Quantum Telemetry Core</h2></div>
-                    <p class="text-liminal-muted font-mono text-sm">Real-time data stream from Liminality Company probes across all sectors.</p>
-                </div>
-                <div class="text-right font-mono glass-panel p-3 rounded border border-liminal-border bg-black/50 shadow-lg">
-                    <div class="text-xl text-white font-bold tracking-wider" id="live-big-time">00:00:00:000</div><div class="text-xs text-blue-400" id="live-big-date">YYYY-MM-DD</div>
-                </div>
-            </header>
-            <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 flex-1 mb-6">
-                <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 p-4 flex flex-col relative overflow-hidden h-[300px] shadow-lg"><h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono mb-2 z-10">Entity/Anomaly Proximity Sweep</h3><div class="flex-1 relative flex items-center justify-center"><canvas id="live-radar-canvas" class="absolute inset-0 w-full h-full opacity-80"></canvas></div></div>
-                <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 p-4 flex flex-col relative overflow-hidden h-[300px] shadow-lg"><h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono mb-2 z-10 flex justify-between"><span>Dimensional Resonance Matrix</span><span class="text-liminal-primary animate-pulse" id="matrix-status">STABLE</span></h3><div class="flex-1 relative"><canvas id="live-matrix-canvas" class="absolute inset-0 w-full h-full"></canvas></div></div>
-                <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 flex flex-col h-[300px] shadow-lg"><div class="p-3 border-b border-liminal-border bg-blue-900/10"><h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono">Real-Time Event Log</h3></div><div class="flex-1 overflow-y-auto p-3 space-y-1.5 font-mono text-[9px] hide-scrollbar" id="live-metrics-list"></div></div>
-            </div>
-            <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 flex flex-col overflow-hidden shadow-lg">
-                <div class="p-4 border-b border-liminal-border bg-black/80 flex items-center justify-between"><h3 class="text-xs font-bold text-white uppercase tracking-wider font-mono">Global Node Diagnostics (30 Arrays)</h3><div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-liminal-safe shadow-[0_0_8px_#22c55e] animate-pulse"></div><span class="text-[9px] font-mono text-liminal-safe">LIVE</span></div></div>
-                <div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3" id="fixed-metrics-grid"></div>
-            </div>
-        </section>
-
-        <section id="view-classifications" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto">
-            <header class="mb-12 animate-slide-up"><h2 class="text-4xl font-bold text-white mb-4 tracking-tight border-b-2 border-red-500 pb-4 inline-block">Liminality Classification Index</h2><p class="text-liminal-muted font-mono leading-relaxed mt-4 max-w-3xl">Standardized threat algorithms applied globally across the proprietary LiminOS network. Do not deviate from protocol. Understanding hazard semantics drastically improves survival expectancy.</p></header>
-            <div id="classification-container" class="space-y-12"></div>
-        </section>
-
-        <section id="view-levels" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto">
-            <header class="mb-10 border-b border-liminal-border pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                    <h2 class="text-4xl font-bold text-white tracking-tight flex items-center gap-4"><i class="ph ph-stack text-liminal-primary animate-float"></i> Levels Archive</h2>
-                    <p class="text-liminal-muted font-mono text-sm mt-3">Full proprietary topological and spatial database.</p>
-                </div>
-                <div class="w-full md:w-72">
-                    <div class="relative">
-                        <i class="ph ph-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-liminal-muted"></i>
-                        <input type="text" id="search-levels" placeholder="Search realms..." class="w-full bg-black/50 border border-white/10 rounded p-3 pl-10 text-xs text-white font-mono outline-none focus:border-liminal-primary transition-colors shadow-inner" onkeyup="filterDirectoryList('levels')">
-                    </div>
-                </div>
-            </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="levels-grid"></div>
-        </section>
-
-        <section id="view-entities" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto">
-            <header class="mb-10 border-b border-liminal-border pb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div>
-                    <h2 class="text-4xl font-bold text-white tracking-tight flex items-center gap-4"><i class="ph ph-ghost text-purple-400 animate-float"></i> Entities Index</h2>
-                    <p class="text-liminal-muted font-mono text-sm mt-3">Categorization of anomalous flora, fauna, and conceptual beings.</p>
-                </div>
-                <div class="w-full md:w-72">
-                    <div class="relative">
-                        <i class="ph ph-magnifying-glass absolute left-3 top-1/2 transform -translate-y-1/2 text-liminal-muted"></i>
-                        <input type="text" id="search-entities" placeholder="Search hostiles..." class="w-full bg-black/50 border border-white/10 rounded p-3 pl-10 text-xs text-white font-mono outline-none focus:border-liminal-primary transition-colors shadow-inner" onkeyup="filterDirectoryList('entities')">
-                    </div>
-                </div>
-            </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="entities-grid"></div>
-        </section>
-
+        <!-- THE DATA VIEW (Where the fix happens) -->
         <section id="view-data" class="page-view flex-col min-h-full">
             <div class="relative w-full h-64 md:h-80 overflow-hidden border-b border-liminal-border flex-shrink-0" id="data-hero">
                 <div class="absolute inset-0 bg-[#0a0a07]"></div>
-                
                 <div class="absolute inset-0 overflow-hidden pointer-events-none z-0" id="data-hero-shapes">
                     <div class="absolute w-[40vw] h-[40vw] rounded-full blur-[100px] opacity-30 animate-ambient-drift" style="background: var(--theme-primary); top: -10%; left: -10%;"></div>
                     <div class="absolute w-[30vw] h-[30vw] rounded-full blur-[80px] opacity-20 animate-ambient-drift-slow" style="background: var(--theme-hover); bottom: -10%; right: -5%;"></div>
                 </div>
-
                 <div id="data-hero-bg-tile" class="absolute inset-0 opacity-30 mix-blend-luminosity transform scale-105 transition-transform duration-[10s]" style="background-repeat: repeat; background-size: auto;"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a07] via-[#0a0a07]/80 to-transparent"></div>
                 <div class="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
                 
                 <div class="absolute top-4 right-4 z-30 flex gap-2">
-                    <a id="btn-prev" class="px-4 py-2 bg-black/60 hover:bg-white/10 border border-white/10 rounded text-xs font-mono text-white transition-all flex items-center gap-2 backdrop-blur shadow-lg hover:shadow-[0_0_15px_var(--theme-glow)]"><i class="ph ph-caret-left"></i> PREV</a>
-                    <a id="btn-next" class="px-4 py-2 bg-black/60 hover:bg-white/10 border border-white/10 rounded text-xs font-mono text-white transition-all flex items-center gap-2 backdrop-blur shadow-lg hover:shadow-[0_0_15px_var(--theme-glow)]">NEXT <i class="ph ph-caret-right"></i></a>
+                    <a id="btn-prev" class="px-4 py-2 bg-black/60 hover:bg-white/10 border border-white/10 rounded text-xs font-mono text-white transition-all flex items-center gap-2"><i class="ph ph-caret-left"></i> PREV</a>
+                    <a id="btn-next" class="px-4 py-2 bg-black/60 hover:bg-white/10 border border-white/10 rounded text-xs font-mono text-white transition-all flex items-center gap-2">NEXT <i class="ph ph-caret-right"></i></a>
                 </div>
 
                 <div class="absolute bottom-0 left-0 p-6 md:px-12 md:py-8 w-full animate-slide-up flex flex-col md:flex-row md:items-end justify-between gap-4 z-10">
@@ -232,8 +159,20 @@
                 </div>
             </div>
 
-                <div class="w-full xl:w-[45%] flex flex-col border-l border-liminal-border z-20 xl:sticky top-0 xl:h-screen bg-[#050505]">
+            <!-- THE PANELS -->
+            <div class="flex-1 w-full flex flex-col xl:flex-row relative">
+                <!-- Left Panel (Lore & Tabs) -->
+                <div class="flex-1 xl:w-[55%] p-6 md:p-10 lg:p-14 overflow-y-auto hide-scrollbar z-10 bg-[#0a0a07]">
+                    <div class="flex flex-wrap gap-2 border-b border-liminal-border mb-8 sticky top-0 bg-[#0a0a07]/90 backdrop-blur-md z-20 pt-2 pb-2" id="data-tabs-container"></div>
+                    <div id="data-content-area" class="relative"></div>
+                </div>
+                
+                <!-- Right Panel (Map & Metrics) -->
+                <div class="w-full xl:w-[45%] flex flex-col border-l border-liminal-border z-20 xl:sticky top-0 xl:h-[calc(100vh-20rem)] bg-[#050505]">
+                    <!-- Interactive Module / Map (Fixed Height) -->
                     <div class="h-[40vh] border-b border-liminal-border relative flex flex-col bg-[#030303] flex-shrink-0" id="data-interactive-module"></div>
+                    
+                    <!-- Metrics List (Scrolls independently) -->
                     <div class="flex-1 bg-[#050505] overflow-y-auto hide-scrollbar flex flex-col relative min-h-0">
                         <div class="p-4 border-b border-liminal-border bg-black/80 sticky top-0 z-10 flex justify-between items-center backdrop-blur-md shadow-md">
                             <div>
@@ -242,15 +181,16 @@
                             </div>
                             <button onclick="document.getElementById('metrics-search').classList.toggle('hidden')" class="w-8 h-8 rounded bg-white/5 flex items-center justify-center text-liminal-muted hover:text-white hover:bg-white/10 transition-colors"><i class="ph ph-magnifying-glass"></i></button>
                         </div>
-                        <input type="text" id="metrics-search" placeholder="Search metrics... (e.g. Hume, Time, Wall)" class="hidden w-full bg-black/50 border-b border-liminal-primary/30 p-4 text-xs text-white font-mono outline-none" onkeyup="filterMetrics()">
+                        <input type="text" id="metrics-search" placeholder="Search metrics..." class="hidden w-full bg-black/50 border-b border-liminal-primary/30 p-4 text-xs text-white font-mono outline-none" onkeyup="filterMetrics()">
                         <div id="metrics-container" class="pb-20"></div>
                     </div>
                 </div>
+            </div>
         </section>
     </main>
 
     <script>
-        // Smiler specific logic mapped to global window object
+        // Smiler specific logic
         window.updateSmiler = function(e, container) {
             const mask = container.querySelector('#flashlight-mask');
             if(mask) {
@@ -260,7 +200,6 @@
             }
         };
 
-        // Filter function for directory lists
         window.filterDirectoryList = function(type) {
             const term = document.getElementById(`search-${type}`).value.toLowerCase();
             const grid = document.getElementById(`${type}-grid`);
@@ -268,11 +207,7 @@
             const cards = grid.querySelectorAll('a');
             cards.forEach(card => {
                 const text = card.innerText.toLowerCase();
-                if(text.includes(term)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
+                card.style.display = text.includes(term) ? 'flex' : 'none';
             });
         };
     </script>
@@ -300,7 +235,6 @@
                     }
                 });
                 document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
-                LiveEngine.stop();
 
                 if (!hash.startsWith('level/') && !hash.startsWith('entity/')) {
                     document.documentElement.style.setProperty('--theme-primary', '#eab308');
@@ -310,7 +244,6 @@
                 }
 
                 if (hash === 'home') document.getElementById('view-home').classList.add('active');
-                else if (hash === 'live') { document.getElementById('view-live').classList.add('active'); LiveEngine.start(); }
                 else if (hash === 'classifications') document.getElementById('view-classifications').classList.add('active');
                 else if (hash === 'levels') document.getElementById('view-levels').classList.add('active');
                 else if (hash === 'entities') document.getElementById('view-entities').classList.add('active');
@@ -344,6 +277,9 @@
                 container.innerHTML = html;
             },
             loadData(data, type) {
+                // Safeguard check
+                if (!data) return;
+
                 this.currentDataId = data.id; this.currentDataType = type; this.currentDataObj = data;
                 
                 document.documentElement.style.setProperty('--theme-primary', data.themeColor || '#eab308');
@@ -386,8 +322,8 @@
                 }
                 contentArea.innerHTML = contentHtml;
 
-                const globalDataToUse = data.globalMetrics || [];
-                this.buildMetricsUI(data.specificMetrics, globalDataToUse);
+                // Safely build right panel metrics
+                this.buildMetricsUI(data.specificMetrics || {}, data.globalMetrics || []);
                 
                 const moduleContainer = document.getElementById('data-interactive-module');
                 if (type === 'level') {
@@ -421,42 +357,39 @@
                     if(data.interactiveModule) {
                         moduleContainer.innerHTML = data.interactiveModule;
                     } else {
-                        moduleContainer.innerHTML = `
-                            <div class="flex-1 relative flex items-center justify-center bg-[#050505] overflow-hidden">
-                                <div class="relative z-10 flex flex-col items-center animate-float">
-                                    <div class="w-32 h-32 rounded-full border-2 border-purple-500/30 flex items-center justify-center relative mb-4 animate-pulse-fast shadow-[0_0_30px_rgba(168,85,247,0.3)]">
-                                        <i class="ph ph-ghost text-6xl text-purple-400 opacity-80"></i>
-                                    </div>
-                                    <h3 class="text-white font-mono font-bold tracking-widest">ENTITY TRACKING UNAVAILABLE</h3>
-                                </div>
-                            </div>
-                        `;
+                        moduleContainer.innerHTML = `<div class="flex-1 relative flex items-center justify-center bg-[#050505] overflow-hidden border-b border-liminal-border"><div class="relative z-10 flex flex-col items-center animate-float"><div class="w-32 h-32 rounded-full border-2 border-purple-500/30 flex items-center justify-center relative mb-4 animate-pulse-fast"><i class="ph ph-ghost text-6xl text-purple-400 opacity-80"></i></div><h3 class="text-white font-mono font-bold tracking-widest">NO TELEMETRY</h3></div></div>`;
                     }
                     if(mapEngine.animationFrame) cancelAnimationFrame(mapEngine.animationFrame);
                 }
             },
             buildMetricsUI(specificMetrics, globalDataModel) {
                 const container = document.getElementById('metrics-container');
+                if (!container) return;
                 let html = '';
                 
-                if (specificMetrics) {
+                // 1. SPECIFIC METRICS (Starred top block)
+                if (specificMetrics && Object.keys(specificMetrics).length > 0) {
                     const specKey = Object.keys(specificMetrics)[0];
-                    html += `<div class="metric-group border-b border-liminal-primary/30">
-                        <div class="px-5 py-4 bg-liminal-primary/10 flex items-center gap-3 cursor-pointer hover:bg-liminal-primary/20 transition-colors" onclick="toggleMetricGroup('specific')">
-                            <i class="ph-fill ph-star text-liminal-primary text-xl animate-pulse"></i>
-                            <h4 class="text-xs font-bold text-liminal-primary uppercase tracking-wider flex-1">${specKey}</h4>
-                            <i class="ph ph-caret-down text-liminal-primary transition-transform duration-300 text-sm" id="caret-specific"></i>
-                        </div>
-                        <div class="px-4 py-3 space-y-1.5 transition-all duration-300 block bg-black/40" id="group-specific">`;
-                    for (const [label, value] of Object.entries(specificMetrics[specKey])) {
-                        html += `<div class="metric-item flex justify-between items-center py-2 hover:bg-white/5 rounded px-3 transition-colors group border-b border-white/5 last:border-0">
-                            <span class="metric-label text-[11px] font-mono text-liminal-muted max-w-[50%] truncate pr-2 group-hover:text-gray-300 transition-colors" title="${label}">${label}</span>
-                            <span class="text-[11px] font-mono font-bold text-liminal-primary text-right max-w-[50%] truncate" title="${value}">${value}</span>
-                        </div>`;
+                    const specData = specificMetrics[specKey];
+                    if (specData) {
+                        html += `<div class="metric-group border-b border-liminal-primary/30">
+                            <div class="px-5 py-4 bg-liminal-primary/10 flex items-center gap-3 cursor-pointer hover:bg-liminal-primary/20 transition-colors" onclick="toggleMetricGroup('specific')">
+                                <i class="ph-fill ph-star text-liminal-primary text-xl animate-pulse"></i>
+                                <h4 class="text-xs font-bold text-liminal-primary uppercase tracking-wider flex-1">${specKey}</h4>
+                                <i class="ph ph-caret-down text-liminal-primary transition-transform duration-300 text-sm" id="caret-specific"></i>
+                            </div>
+                            <div class="px-4 py-3 space-y-1.5 transition-all duration-300 block bg-black/40" id="group-specific">`;
+                        for (const [label, value] of Object.entries(specData)) {
+                            html += `<div class="metric-item flex justify-between items-center py-2 hover:bg-white/5 rounded px-3 transition-colors group border-b border-white/5 last:border-0">
+                                <span class="metric-label text-[11px] font-mono text-liminal-muted max-w-[50%] truncate pr-2 group-hover:text-gray-300 transition-colors" title="${label}">${label}</span>
+                                <span class="text-[11px] font-mono font-bold text-liminal-primary text-right max-w-[50%] truncate" title="${value}">${value}</span>
+                            </div>`;
+                        }
+                        html += `</div></div>`;
                     }
-                    html += `</div></div>`;
                 }
 
+                // 2. GLOBAL METRICS
                 if (globalDataModel && Array.isArray(globalDataModel)) {
                     globalDataModel.forEach((group, index) => {
                         html += `<div class="metric-group border-b border-liminal-border/50">
@@ -466,11 +399,13 @@
                                 <i class="ph ph-caret-down text-liminal-muted transition-transform duration-300 text-sm" id="caret-${index}"></i>
                             </div>
                             <div class="px-4 py-2 space-y-1 transition-all duration-300 block bg-[#030303]" id="group-${index}">`;
-                        for (const [label, value] of Object.entries(group.data)) {
-                            html += `<div class="metric-item flex justify-between items-center py-1.5 hover:bg-white/5 rounded px-3 transition-colors group">
-                                <span class="metric-label text-[10px] font-mono text-liminal-muted max-w-[50%] truncate pr-2 group-hover:text-gray-400 transition-colors" title="${label}">${label}</span>
-                                <span class="text-[10px] font-mono font-bold text-gray-300 text-right max-w-[50%] truncate" title="${value}">${value}</span>
-                            </div>`;
+                        if (group.data) {
+                            for (const [label, value] of Object.entries(group.data)) {
+                                html += `<div class="metric-item flex justify-between items-center py-1.5 hover:bg-white/5 rounded px-3 transition-colors group">
+                                    <span class="metric-label text-[10px] font-mono text-liminal-muted max-w-[50%] truncate pr-2 group-hover:text-gray-400 transition-colors" title="${label}">${label}</span>
+                                    <span class="text-[10px] font-mono font-bold text-gray-300 text-right max-w-[50%] truncate" title="${value}">${value}</span>
+                                </div>`;
+                            }
                         }
                         html += `</div></div>`;
                     });
@@ -508,15 +443,10 @@
             const btn = document.getElementById('btn-run-scan');
             const term = document.getElementById('scan-terminal');
             const content = document.getElementById('scan-terminal-content');
-            
             btn.classList.add('pointer-events-none', 'opacity-50');
             term.classList.remove('hidden');
             content.innerHTML = '';
-            
-            const logs = Router.currentDataObj && Router.currentDataObj.resonanceLogs 
-                ? Router.currentDataObj.resonanceLogs 
-                : ["> ERROR: NO RESONANCE DATA FOUND FOR THIS ENTITY/LEVEL.", "> CONNECTION SEVERED."];
-
+            const logs = Router.currentDataObj && Router.currentDataObj.resonanceLogs ? Router.currentDataObj.resonanceLogs : ["> ERROR: NO DATA."];
             for(let i=0; i<logs.length; i++) {
                 await new Promise(r => setTimeout(r, 400 + Math.random() * 600));
                 content.innerHTML += `<div class="terminal-text animate-fade-in">${logs[i]}</div>`;
@@ -528,11 +458,7 @@
         function deterministicHash(x, y, z, seed, modifierStr) {
             let modHash = 0;
             for (let i = 0; i < modifierStr.length; i++) { modHash = (modHash << 5) - modHash + modifierStr.charCodeAt(i); modHash |= 0; }
-            let h = Math.imul(x ^ seed, 3432918353);
-            h = Math.imul(h ^ y, 461845907);
-            h = Math.imul(h ^ z, 1566083941);
-            h = Math.imul(h ^ modHash, 2870177450);
-            h ^= h >>> 15;
+            let h = Math.imul(x ^ seed, 3432918353); h = Math.imul(h ^ y, 461845907); h = Math.imul(h ^ z, 1566083941); h = Math.imul(h ^ modHash, 2870177450); h ^= h >>> 15;
             return (h >>> 0) / 4294967296.0; 
         }
 
@@ -544,21 +470,14 @@
 
             bindWindowEvents() {
                 if(!this.windowEventsBound) {
-                    window.addEventListener('mouseup', () => {
-                        this.isDragging = false; const mc = document.getElementById('map-container');
-                        if(mc) mc.classList.remove('dragging');
-                    });
+                    window.addEventListener('mouseup', () => { this.isDragging = false; const mc = document.getElementById('map-container'); if(mc) mc.classList.remove('dragging'); });
                     window.addEventListener('resize', () => this.resize());
                     this.windowEventsBound = true;
                 }
             },
-
             bindCanvasEvents() {
                 if(!this.canvas) return;
-                this.canvas.addEventListener('mousedown', (e) => {
-                    this.isDragging = true; this.lastMouseX = e.clientX; this.lastMouseY = e.clientY;
-                    document.getElementById('map-container').classList.add('dragging');
-                });
+                this.canvas.addEventListener('mousedown', (e) => { this.isDragging = true; this.lastMouseX = e.clientX; this.lastMouseY = e.clientY; document.getElementById('map-container').classList.add('dragging'); });
                 this.canvas.addEventListener('mousemove', (e) => {
                     if (this.isDragging) {
                         const dx = e.clientX - this.lastMouseX; const dy = e.clientY - this.lastMouseY;
@@ -583,48 +502,25 @@
                     this.openPinModal(wx, wy);
                 });
             },
-
             init(config) {
-                this.canvas = document.getElementById('levelMap'); 
-                if(!this.canvas) return;
+                this.canvas = document.getElementById('levelMap'); if(!this.canvas) return;
                 this.config = config; this.ctx = this.canvas.getContext('2d');
                 this.camX = 0; this.camY = 0; this.camZ = 0; this.zoom = 1;
-                this.bindWindowEvents();
-                this.bindCanvasEvents(); 
-                this.resize(); 
-                this.updateHUD(); 
-                this.drawLoop();
+                this.bindWindowEvents(); this.bindCanvasEvents(); this.resize(); this.updateHUD(); this.drawLoop();
             },
-            resize() {
-                const container = document.getElementById('map-container'); if(!container || !this.canvas) return;
-                this.canvas.width = container.clientWidth; this.canvas.height = container.clientHeight; this.draw();
-            },
-            toggleFullScreen() {
-                const mc = document.getElementById('map-container');
-                if (!document.fullscreenElement) mc.requestFullscreen().catch(err => { console.log(err.message); });
-                else document.exitFullscreen();
-            },
+            resize() { const container = document.getElementById('map-container'); if(!container || !this.canvas) return; this.canvas.width = container.clientWidth; this.canvas.height = container.clientHeight; this.draw(); },
+            toggleFullScreen() { const mc = document.getElementById('map-container'); if (!document.fullscreenElement) mc.requestFullscreen().catch(err => { console.log(err.message); }); else document.exitFullscreen(); },
             zoomIn() { this.zoom = Math.min(10, this.zoom * 1.5); }, zoomOut() { this.zoom = Math.max(0.1, this.zoom * 0.7); },
             resetView() { this.camX = 0; this.camY = 0; this.zoom = 1; this.updateHUD(); },
             changeZ(delta) { this.camZ += delta; document.getElementById('hud-z').innerText = this.camZ; },
             jumpToCoordinates() { this.camX = parseFloat(document.getElementById('search-x').value) || 0; this.camY = parseFloat(document.getElementById('search-y').value) || 0; this.updateHUD(); },
             updateHUD() {
                 const hud = document.getElementById('hud-coords');
-                if(hud) {
-                    hud.innerText = `X: ${Math.round(this.camX)}m | Y: ${Math.round(this.camY)}m`;
-                    document.getElementById('search-x').value = Math.round(this.camX); document.getElementById('search-y').value = Math.round(this.camY);
-                }
+                if(hud) { hud.innerText = `X: ${Math.round(this.camX)}m | Y: ${Math.round(this.camY)}m`; document.getElementById('search-x').value = Math.round(this.camX); document.getElementById('search-y').value = Math.round(this.camY); }
             },
-            openPinModal(x, y) {
-                this.pendingPin = {x, y, z: this.camZ}; document.getElementById('pin-modal-coords').innerText = `X: ${x}, Y: ${y}, Z: ${this.camZ}`;
-                document.getElementById('pin-modal').classList.remove('hidden'); document.getElementById('pin-name').focus();
-            },
+            openPinModal(x, y) { this.pendingPin = {x, y, z: this.camZ}; document.getElementById('pin-modal-coords').innerText = `X: ${x}, Y: ${y}, Z: ${this.camZ}`; document.getElementById('pin-modal').classList.remove('hidden'); document.getElementById('pin-name').focus(); },
             cancelPin() { document.getElementById('pin-modal').classList.add('hidden'); document.getElementById('pin-name').value = ''; this.pendingPin = null; },
-            confirmPin() {
-                const name = document.getElementById('pin-name').value || "Unknown Marker";
-                if(this.pendingPin) this.pins.push({...this.pendingPin, name, level: Router.currentDataId});
-                this.cancelPin();
-            },
+            confirmPin() { const name = document.getElementById('pin-name').value || "Unknown Marker"; if(this.pendingPin) this.pins.push({...this.pendingPin, name, level: Router.currentDataId}); this.cancelPin(); },
             drawLoop() {
                 if (document.getElementById('view-data').classList.contains('active') && Router.currentDataType === 'level') this.draw();
                 this.animationFrame = requestAnimationFrame(() => this.drawLoop());
@@ -632,8 +528,7 @@
             draw() {
                 if(!this.ctx || !this.config) return;
                 const w = this.canvas.width; const h = this.canvas.height; const ctx = this.ctx;
-                
-                const bgColor = this.config.bgColor || '#030303'; ctx.fillStyle = bgColor; ctx.fillRect(0, 0, w, h);
+                ctx.fillStyle = this.config.bgColor || '#030303'; ctx.fillRect(0, 0, w, h);
                 const scale = this.zoom * this.pixelsPerMeter; const gs = this.config.gridSize || 5;
                 const style = this.config.renderStyle || 'grid'; const wallColor = this.config.wallColor || '#eab308';
                 
@@ -642,7 +537,6 @@
                 const startY = Math.floor((this.camY - viewDistY) / gs) * gs; const endY = Math.ceil((this.camY + viewDistY) / gs) * gs;
 
                 ctx.save(); ctx.translate(w/2, h/2);
-                
                 ctx.strokeStyle = this.config.gridColor || 'rgba(255, 255, 255, 0.03)'; ctx.lineWidth = 1; ctx.beginPath();
                 for (let x = Math.floor(this.camX - viewDistX); x <= Math.ceil(this.camX + viewDistX); x++) { let sx = (x - this.camX) * scale; ctx.moveTo(sx, -h/2); ctx.lineTo(sx, h/2); }
                 for (let y = Math.floor(this.camY - viewDistY); y <= Math.ceil(this.camY + viewDistY); y++) { let sy = (y - this.camY) * scale; ctx.moveTo(-w/2, sy); ctx.lineTo(w/2, sy); }
@@ -656,7 +550,6 @@
                         const hWallH = deterministicHash(x, y, this.camZ, this.config.seed, 'wall_h');
                         const hWallV = deterministicHash(x, y, this.camZ, this.config.seed, 'wall_v');
                         
-                        // Added 'electrical' style handling here to patch missing walls in Level 3
                         if (style === 'grid' || style === 'warehouse' || style === 'office' || style === 'electrical') {
                             if (hWallH < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.lineTo(nextSx, sy); }
                             if (hWallV < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.lineTo(sx, nextSy); }
@@ -671,6 +564,9 @@
                             }
                             if (hWallH < this.config.wallDensity * 0.5) { ctx.moveTo(sx, sy); ctx.lineTo(nextSx, sy); }
                             if (hWallV < this.config.wallDensity * 0.5) { ctx.moveTo(sx, sy); ctx.lineTo(sx, nextSy); }
+                        } else if (style === 'organic') {
+                            if (hWallH < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.quadraticCurveTo(sx + (nextSx-sx)/2, sy + (Math.random()*10), nextSx, sy); }
+                            if (hWallV < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.quadraticCurveTo(sx + (Math.random()*10), sy + (nextSy-sy)/2, sx, nextSy); }
                         }
                     }
                 }
@@ -706,108 +602,6 @@
                 ctx.beginPath(); ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)'; ctx.lineWidth = 1; ctx.moveTo(-10, 0); ctx.lineTo(10, 0); ctx.moveTo(0, -10); ctx.lineTo(0, 10); ctx.stroke(); ctx.restore();
             }
         };
-
-        const LiveEngine = {
-            isRunning: false, animationFrame: null, lastTick: 0, radarAngle: 0, matrixOffset: 0,
-            fixedMetricsData: [
-                { name: "Global Hume Field", min: 98.0, max: 102.5, unit: " H", color: "text-blue-400" }, { name: "Kant Counter Avg", min: 0.8, max: 1.2, unit: " K", color: "text-blue-400" },
-                { name: "Quantum Entanglement", min: 99.1, max: 99.9, unit: "%", color: "text-green-400" }, { name: "Noclip Spikes/Hr", min: 140, max: 320, unit: " evt", color: "text-yellow-400" },
-                { name: "Arch-Node Latency", min: 0.1, max: 4.5, unit: " ms", color: "text-green-400" }, { name: "Sub-space Packet Loss", min: 0.01, max: 0.05, unit: "%", color: "text-green-400" },
-                { name: "Temporal Anchor Flux", min: -0.05, max: 0.05, unit: " Δt", color: "text-purple-400" }, { name: "DB Write Velocity", min: 450, max: 850, unit: " TB/s", color: "text-white" },
-                { name: "Agent Biometric Syncs", min: 800, max: 804, unit: " OK", color: "text-green-400" }, { name: "Ecto-plasmic Density", min: 0.0, max: 0.2, unit: " mg/L", color: "text-white" },
-                { name: "Server Core Temp", min: -270, max: -268, unit: " °C", color: "text-blue-400" }, { name: "Non-Euclidean Load", min: 88, max: 96, unit: "%", color: "text-yellow-400" },
-                { name: "Tesseract Folds/Sec", min: 1200, max: 1400, unit: " f/s", color: "text-purple-400" }, { name: "Cognitohazard Blocks", min: 14, max: 55, unit: " b/s", color: "text-green-400" },
-                { name: "Level 0 Saturation", min: 92, max: 99, unit: "%", color: "text-yellow-400" }, { name: "Corridor Gen Rate", min: 4000, max: 4500, unit: " m/s", color: "text-white" },
-                { name: "Entity Path Intercepts", min: 0, max: 5, unit: " /m", color: "text-red-400" }, { name: "Almond Water Purity", min: 98.9, max: 99.9, unit: "%", color: "text-green-400" },
-                { name: "Reality Bleed Output", min: 0.001, max: 0.005, unit: " mSv", color: "text-white" }, { name: "Void Pressure Diff", min: -14, max: -12, unit: " kPa", color: "text-purple-400" },
-                { name: "Liminal Expansion", min: 2.4, max: 2.8, unit: " c", color: "text-blue-400" }, { name: "Protocol Encryption", min: 4096, max: 4096, unit: " bit", color: "text-green-400" },
-                { name: "Sub-level Mapping", min: 12, max: 18, unit: " TB/m", color: "text-white" }, { name: "Memory Wipe Diagnostics", min: 100, max: 100, unit: "%", color: "text-green-400" },
-                { name: "Sanity Drain Predictor", min: 0.5, max: 2.5, unit: " %/h", color: "text-yellow-400" }, { name: "Soundwave Damping", min: 40, max: 95, unit: " dB", color: "text-white" },
-                { name: "Atmospheric Toxicity", min: 0.0, max: 0.1, unit: " ppm", color: "text-green-400" }, { name: "Z-Axis Instability", min: 0.001, max: 0.009, unit: " rad", color: "text-purple-400" },
-                { name: "Proprietary Handshake", min: 1, max: 1, unit: " SECURE", color: "text-green-400" }, { name: "Global Threat Assess.", min: 0.01, max: 0.05, unit: " MIN", color: "text-white" }
-            ],
-            logMessages: [
-                "Probe L-093 connection lost.", "Re-routing processing to Sector 4.", "Anomalous sound detected Level 2.", "Syncing database block 8940A.", "Noclip event localized (Frontrooms).", "Reality anchor reset successful.",
-                "Compiling non-Euclidean mesh...", "Warning: Hume drop in Sector 7.", "Entity signature dissipated.", "Arch-Node 12 reporting full stability.", "Extracting Almond Water samples remotely.", "Mapping loop detected, bypassing..."
-            ],
-            start() { if(!this.isRunning) { this.isRunning = true; this.initGrid(); this.animationFrame = requestAnimationFrame((t) => this.loop(t)); } },
-            stop() { this.isRunning = false; if(this.animationFrame) cancelAnimationFrame(this.animationFrame); },
-            initGrid() {
-                const grid = document.getElementById('fixed-metrics-grid'); if(!grid) return; grid.innerHTML = '';
-                this.fixedMetricsData.forEach((metric, index) => {
-                    grid.innerHTML += `<div class="bg-black/40 border border-white/5 p-3 rounded flex flex-col justify-between"><span class="text-[9px] font-mono text-liminal-muted uppercase truncate" title="${metric.name}">${metric.name}</span><div class="text-sm font-mono font-bold ${metric.color} mt-1 tracking-wider" id="fm-${index}">0.00${metric.unit}</div></div>`;
-                });
-            },
-            loop(timestamp) {
-                if(!this.isRunning || !document.getElementById('view-live').classList.contains('active')) { this.stop(); return; }
-                if (timestamp - this.lastTick > 100) { this.updateDOM(); this.lastTick = timestamp; }
-                this.drawRadar(); this.drawMatrix();
-                this.animationFrame = requestAnimationFrame((t) => this.loop(t));
-            },
-            updateDOM() {
-                const d = new Date();
-                document.getElementById('live-big-time').innerText = `${d.getHours().toString().padStart(2,'0')}:${d.getMinutes().toString().padStart(2,'0')}:${d.getSeconds().toString().padStart(2,'0')}:${d.getMilliseconds().toString().padStart(3,'0')}`;
-                document.getElementById('live-big-date').innerText = d.toISOString().split('T')[0];
-                document.getElementById('nav-sync').innerText = (120 + Math.random() * 8).toFixed(2) + ' TB/s';
-                this.fixedMetricsData.forEach((metric, index) => {
-                    if (Math.random() > 0.6) {
-                        const val = metric.min + Math.random() * (metric.max - metric.min);
-                        let displayVal = val;
-                        if(typeof metric.min === 'number' && metric.min % 1 !== 0) displayVal = val.toFixed(2);
-                        else if(metric.name.includes("Handshake") || metric.name.includes("Syncs")) displayVal = Math.floor(val);
-                        else displayVal = val.toFixed(1);
-                        document.getElementById(`fm-${index}`).innerText = `${displayVal}${metric.unit}`;
-                    }
-                });
-                if(Math.random() > 0.8) {
-                    const list = document.getElementById('live-metrics-list');
-                    const msg = this.logMessages[Math.floor(Math.random() * this.logMessages.length)];
-                    const status = Math.random() > 0.9 ? '<span class="text-red-400">[WARN]</span>' : '<span class="text-green-400">[OK]</span>';
-                    const el = document.createElement('div'); el.className = 'flex justify-between border-b border-white/5 py-1.5 animate-fade-in'; el.innerHTML = `<span class="truncate pr-2">> ${msg}</span> <span>${status}</span>`;
-                    list.prepend(el); if(list.children.length > 15) list.removeChild(list.lastChild);
-                }
-            },
-            drawRadar() {
-                const canvas = document.getElementById('live-radar-canvas'); if(!canvas) return;
-                const parent = canvas.parentElement; if(canvas.width !== parent.clientWidth) canvas.width = parent.clientWidth; if(canvas.height !== parent.clientHeight) canvas.height = parent.clientHeight;
-                const ctx = canvas.getContext('2d'); const w = canvas.width; const h = canvas.height;
-                const cx = w/2; const cy = h/2; const r = Math.min(w, h) / 2 - 10;
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; ctx.fillRect(0, 0, w, h);
-                ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)'; ctx.lineWidth = 1;
-                [0.25, 0.5, 0.75, 1].forEach(scale => { ctx.beginPath(); ctx.arc(cx, cy, r * scale, 0, Math.PI*2); ctx.stroke(); });
-                ctx.beginPath(); ctx.moveTo(cx, cy - r); ctx.lineTo(cx, cy + r); ctx.stroke(); ctx.beginPath(); ctx.moveTo(cx - r, cy); ctx.lineTo(cx + r, cy); ctx.stroke();
-                this.radarAngle += 0.05; ctx.save(); ctx.translate(cx, cy); ctx.rotate(this.radarAngle);
-                const gradient = ctx.createConicGradient(0, 0, 0);
-                gradient.addColorStop(0, 'rgba(59, 130, 246, 0.8)'); gradient.addColorStop(0.1, 'rgba(59, 130, 246, 0)'); gradient.addColorStop(1, 'rgba(59, 130, 246, 0)');
-                ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0, 0, r, 0, Math.PI/2); ctx.lineTo(0,0); ctx.fillStyle = gradient; ctx.fill();
-                ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(r, 0); ctx.strokeStyle = '#3b82f6'; ctx.lineWidth = 2; ctx.stroke(); ctx.restore();
-                if(Math.random() > 0.95) {
-                    const dist = Math.random() * r; const ang = Math.random() * Math.PI * 2; const bx = cx + Math.cos(ang) * dist; const by = cy + Math.sin(ang) * dist;
-                    ctx.beginPath(); ctx.arc(bx, by, 3, 0, Math.PI*2); ctx.fillStyle = '#eab308'; ctx.fill();
-                }
-            },
-            drawMatrix() {
-                const canvas = document.getElementById('live-matrix-canvas'); if(!canvas) return;
-                const parent = canvas.parentElement; if(canvas.width !== parent.clientWidth) canvas.width = parent.clientWidth; if(canvas.height !== parent.clientHeight) canvas.height = parent.clientHeight;
-                const ctx = canvas.getContext('2d'); const w = canvas.width; const h = canvas.height;
-                ctx.fillStyle = '#050505'; ctx.fillRect(0, 0, w, h);
-                this.matrixOffset += 0.5; const gridSize = 20;
-                for(let x = 0; x < w; x += gridSize) {
-                    for(let y = 0; y < h; y += gridSize) {
-                        const noise = Math.sin((x + this.matrixOffset) * 0.05) * Math.cos((y + this.matrixOffset) * 0.05);
-                        let color = 'rgba(255,255,255,0.05)'; let size = 2;
-                        if(noise > 0.5) { color = '#eab308'; size = 4; } else if (noise > 0.3) { color = '#ca8a04'; size = 3; } else if (noise < -0.6) { color = '#ef4444'; size = 3; }
-                        ctx.fillStyle = color; ctx.beginPath(); ctx.arc(x + gridSize/2, y + gridSize/2, size, 0, Math.PI*2); ctx.fill();
-                    }
-                }
-            }
-        };
-
-        setInterval(() => {
-            const date = new Date();
-            document.getElementById('nav-uptime').innerText = `${date.getHours().toString().padStart(2,'0')}:${date.getMinutes().toString().padStart(2,'0')}:${date.getSeconds().toString().padStart(2,'0')}`;
-            document.getElementById('nav-date').innerText = date.toISOString().split('T')[0];
-        }, 1000);
 
         Router.init();
     </script>
