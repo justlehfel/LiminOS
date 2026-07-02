@@ -4,33 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LiminOS | Proprietary Liminality Database</title>
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] },
                     colors: {
                         liminal: {
-                            bg: '#030303',
-                            panel: '#080808',
-                            border: '#1a1a1a',
-                            primary: '#eab308', 
-                            primaryHover: '#ca8a04',
-                            text: '#d4d4d4',
-                            muted: '#666666',
-                            danger: '#ef4444',
-                            safe: '#22c55e',
-                            glass: 'rgba(8, 8, 8, 0.8)'
+                            bg: '#030303', panel: '#080808', border: '#1a1a1a',
+                            primary: 'var(--theme-primary, #eab308)', 
+                            primaryHover: 'var(--theme-hover, #ca8a04)',
+                            text: '#d4d4d4', muted: '#666666', danger: '#ef4444', safe: '#22c55e', glass: 'rgba(8, 8, 8, 0.8)'
                         }
                     },
                     animation: {
@@ -41,25 +29,29 @@
                         'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'data-stream': 'dataStream 20s linear infinite',
                         'spin-slow': 'spin 4s linear infinite',
+                        'ambient-drift': 'ambientDrift 15s ease-in-out infinite alternate',
+                        'glitch-shift': 'glitchShift 0.2s infinite'
                     },
                     keyframes: {
                         flicker: { '0%, 100%': { opacity: 1 }, '50%': { opacity: 0.95 } },
                         scanline: { '0%': { transform: 'translateY(-100%)' }, '100%': { transform: 'translateY(100vh)' } },
                         fadeIn: { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
                         slideUp: { '0%': { opacity: 0, transform: 'translateY(20px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
-                        dataStream: { '0%': { backgroundPosition: '0 0' }, '100%': { backgroundPosition: '0 1000px' } }
+                        dataStream: { '0%': { backgroundPosition: '0 0' }, '100%': { backgroundPosition: '0 1000px' } },
+                        ambientDrift: { '0%': { transform: 'scale(1) translate(0,0)' }, '100%': { transform: 'scale(1.05) translate(1%, 1%)' } },
+                        glitchShift: { '0%, 100%': { transform: 'translate(0)' }, '50%': { transform: 'translate(-2px, 2px)' } }
                     }
                 }
             }
         }
     </script>
-
     <style>
-        body { background-color: #030303; color: #d4d4d4; overflow: hidden; }
+        :root { --theme-primary: #eab308; --theme-hover: #ca8a04; --theme-glow: rgba(234, 179, 8, 0.2); }
+        body { background-color: #030303; color: #d4d4d4; overflow: hidden; transition: --theme-primary 0.5s ease; }
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: #080808; }
         ::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: #eab308; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--theme-primary); }
 
         .crt::before {
             content: " "; display: block; position: absolute; top: 0; left: 0; bottom: 0; right: 0;
@@ -74,18 +66,17 @@
         .page-view { display: none; opacity: 0; transition: opacity 0.3s ease; }
         .page-view.active { display: flex; opacity: 1; }
         .page-view.active.block-view { display: block; }
-        
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
         .lore-content p { margin-bottom: 1.2rem; line-height: 1.8; color: #a3a3a3; font-size: 0.95rem; }
         .lore-content h3 { font-size: 1.5rem; font-weight: 800; color: #fff; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid #1a1a1a; padding-bottom: 0.5rem; }
-        .lore-content h4 { font-size: 1.1rem; font-weight: 600; color: #eab308; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .lore-content h4 { font-size: 1.1rem; font-weight: 600; color: var(--theme-primary); margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .lore-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.2rem; color: #a3a3a3; }
+        .lore-content li { margin-bottom: 0.5rem; }
         
-        @keyframes radar-ping { 0% { transform: scale(0.5); opacity: 0.8; } 100% { transform: scale(2); opacity: 0; } }
-        .radar-ping::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid #eab308; animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite; }
-
-        .terminal-text { font-family: 'JetBrains Mono', monospace; color: #22c55e; text-shadow: 0 0 5px rgba(34, 197, 94, 0.5); }
+        .terminal-text { font-family: 'JetBrains Mono', monospace; color: var(--theme-primary); text-shadow: 0 0 5px var(--theme-glow); }
+        .dynamic-glow { box-shadow: 0 0 20px var(--theme-glow); }
     </style>
 </head>
 <body class="font-sans antialiased crt h-screen w-screen flex flex-col md:flex-row overflow-hidden selection:bg-liminal-primary selection:text-black">
@@ -96,8 +87,8 @@
         <div class="flex-1 overflow-y-auto hide-scrollbar">
             <div class="p-6 border-b border-liminal-border flex items-center gap-4 bg-black/40">
                 <div class="relative">
-                    <i class="ph-fill ph-infinity text-4xl text-liminal-primary animate-pulse-fast"></i>
-                    <div class="absolute inset-0 bg-liminal-primary blur-md opacity-20"></div>
+                    <i class="ph-fill ph-infinity text-4xl text-liminal-primary" id="nav-logo-icon"></i>
+                    <div class="absolute inset-0 bg-liminal-primary blur-md opacity-20 dynamic-glow"></div>
                 </div>
                 <div>
                     <h1 class="font-bold tracking-widest text-lg text-white leading-tight">LiminOS</h1>
@@ -132,32 +123,17 @@
     </nav>
 
     <main class="flex-1 h-full overflow-y-auto relative z-10 scroll-smooth pb-20 md:pb-0 hide-scrollbar" id="main-content">
-        
         <section id="view-home" class="page-view block-view p-6 md:p-12 lg:p-16 max-w-7xl mx-auto">
             <header class="mb-16 animate-slide-up" style="animation-delay: 0.1s;">
                 <div class="inline-block px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-mono text-liminal-muted mb-6">SYSTEM DASHBOARD</div>
                 <h2 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">Proprietary Architecture <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-liminal-primary to-yellow-600">Online.</span></h2>
-                <p class="text-liminal-muted text-lg max-w-3xl font-mono leading-relaxed">
-                    You are accessing the highly classified <span class="text-liminal-primary font-bold">LiminOS Terminal</span>. This independent, proprietary framework provides strictly deterministic mapping, precise dimensional metrics, and absolute anomalous telemetry decoupled from M.E.G. interference.
-                </p>
+                <p class="text-liminal-muted text-lg max-w-3xl font-mono leading-relaxed">You are accessing the highly classified <span class="text-liminal-primary font-bold">LiminOS Terminal</span>. This independent, proprietary framework provides strictly deterministic mapping, precise dimensional metrics, and absolute anomalous telemetry decoupled from M.E.G. interference.</p>
             </header>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-slide-up" style="animation-delay: 0.2s;">
-                <div class="glass-panel p-6 rounded-xl border-t-2 border-t-liminal-primary relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors">
-                    <div class="text-5xl font-mono font-bold text-white relative z-10">14,291</div>
-                    <h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Catalogued Realms</h3>
-                </div>
-                <div class="glass-panel p-6 rounded-xl border-t-2 border-t-blue-500 relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors">
-                    <div class="text-5xl font-mono font-bold text-white relative z-10">804</div>
-                    <h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Active Field Agents</h3>
-                </div>
-                <div class="glass-panel p-6 rounded-xl border-t-2 border-t-purple-500 relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors">
-                    <div class="text-5xl font-mono font-bold text-white relative z-10">0.04%</div>
-                    <h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Dimensional Drift</h3>
-                </div>
-                <div class="glass-panel p-6 rounded-xl border-t-2 border-t-red-500 relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors">
-                    <div class="text-5xl font-mono font-bold text-white relative z-10">MINIMAL</div>
-                    <h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Global Threat</h3>
-                </div>
+                <div class="glass-panel p-6 rounded-xl border-t-2 border-t-liminal-primary relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors"><div class="text-5xl font-mono font-bold text-white relative z-10">14,291</div><h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Catalogued Realms</h3></div>
+                <div class="glass-panel p-6 rounded-xl border-t-2 border-t-blue-500 relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors"><div class="text-5xl font-mono font-bold text-white relative z-10">804</div><h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Active Field Agents</h3></div>
+                <div class="glass-panel p-6 rounded-xl border-t-2 border-t-purple-500 relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors"><div class="text-5xl font-mono font-bold text-white relative z-10">0.04%</div><h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Dimensional Drift</h3></div>
+                <div class="glass-panel p-6 rounded-xl border-t-2 border-t-red-500 relative overflow-hidden group bg-black/40 hover:bg-white/5 transition-colors"><div class="text-5xl font-mono font-bold text-white relative z-10">MINIMAL</div><h3 class="text-xs font-bold text-liminal-muted uppercase tracking-wider mt-2 relative z-10">Global Threat</h3></div>
             </div>
             <div class="mt-12 flex gap-4 animate-slide-up" style="animation-delay: 0.3s;">
                 <a href="#/levels" class="bg-liminal-primary text-black font-bold px-8 py-4 rounded hover:bg-liminal-primaryHover transition flex items-center gap-2">Access Level Archive <i class="ph ph-arrow-right"></i></a>
@@ -168,73 +144,36 @@
         <section id="view-live" class="page-view flex-col p-6 md:p-8 max-w-[1600px] mx-auto min-h-full">
             <header class="mb-6 flex flex-col md:flex-row justify-between md:items-end gap-4 animate-slide-up">
                 <div>
-                    <div class="flex items-center gap-3 mb-2">
-                        <div class="w-3 h-3 rounded-full bg-blue-500 shadow-[0_0_12px_#3b82f6] animate-pulse"></div>
-                        <h2 class="text-3xl font-bold text-white tracking-tight">Quantum Telemetry Core</h2>
-                    </div>
+                    <div class="flex items-center gap-3 mb-2"><div class="w-3 h-3 rounded-full bg-blue-500 shadow-[0_0_12px_#3b82f6] animate-pulse"></div><h2 class="text-3xl font-bold text-white tracking-tight">Quantum Telemetry Core</h2></div>
                     <p class="text-liminal-muted font-mono text-sm">Real-time data stream from Liminality Company probes across all sectors.</p>
                 </div>
                 <div class="text-right font-mono glass-panel p-3 rounded border border-liminal-border bg-black/50">
-                    <div class="text-xl text-white font-bold tracking-wider" id="live-big-time">00:00:00:000</div>
-                    <div class="text-xs text-blue-400" id="live-big-date">YYYY-MM-DD</div>
+                    <div class="text-xl text-white font-bold tracking-wider" id="live-big-time">00:00:00:000</div><div class="text-xs text-blue-400" id="live-big-date">YYYY-MM-DD</div>
                 </div>
             </header>
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-6 flex-1 mb-6">
-                <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 p-4 flex flex-col relative overflow-hidden h-[300px]">
-                    <h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono mb-2 z-10">Entity/Anomaly Proximity Sweep</h3>
-                    <div class="flex-1 relative flex items-center justify-center">
-                        <canvas id="live-radar-canvas" class="absolute inset-0 w-full h-full opacity-80"></canvas>
-                    </div>
-                </div>
-                <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 p-4 flex flex-col relative overflow-hidden h-[300px]">
-                    <h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono mb-2 z-10 flex justify-between">
-                        <span>Dimensional Resonance Matrix</span>
-                        <span class="text-liminal-primary" id="matrix-status">STABLE</span>
-                    </h3>
-                    <div class="flex-1 relative">
-                        <canvas id="live-matrix-canvas" class="absolute inset-0 w-full h-full"></canvas>
-                    </div>
-                </div>
-                <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 flex flex-col h-[300px]">
-                    <div class="p-3 border-b border-liminal-border bg-blue-900/10">
-                        <h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono">Real-Time Event Log</h3>
-                    </div>
-                    <div class="flex-1 overflow-y-auto p-3 space-y-1.5 font-mono text-[9px] hide-scrollbar" id="live-metrics-list"></div>
-                </div>
+                <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 p-4 flex flex-col relative overflow-hidden h-[300px]"><h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono mb-2 z-10">Entity/Anomaly Proximity Sweep</h3><div class="flex-1 relative flex items-center justify-center"><canvas id="live-radar-canvas" class="absolute inset-0 w-full h-full opacity-80"></canvas></div></div>
+                <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 p-4 flex flex-col relative overflow-hidden h-[300px]"><h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono mb-2 z-10 flex justify-between"><span>Dimensional Resonance Matrix</span><span class="text-liminal-primary" id="matrix-status">STABLE</span></h3><div class="flex-1 relative"><canvas id="live-matrix-canvas" class="absolute inset-0 w-full h-full"></canvas></div></div>
+                <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 flex flex-col h-[300px]"><div class="p-3 border-b border-liminal-border bg-blue-900/10"><h3 class="text-[10px] font-bold text-white uppercase tracking-wider font-mono">Real-Time Event Log</h3></div><div class="flex-1 overflow-y-auto p-3 space-y-1.5 font-mono text-[9px] hide-scrollbar" id="live-metrics-list"></div></div>
             </div>
             <div class="glass-panel border border-liminal-border rounded-xl bg-black/50 flex flex-col overflow-hidden">
-                <div class="p-4 border-b border-liminal-border bg-black/80 flex items-center justify-between">
-                    <h3 class="text-xs font-bold text-white uppercase tracking-wider font-mono">Global Node Diagnostics (30 Arrays)</h3>
-                    <div class="flex items-center gap-2">
-                        <div class="w-2 h-2 rounded-full bg-liminal-safe shadow-[0_0_8px_#22c55e] animate-pulse"></div>
-                        <span class="text-[9px] font-mono text-liminal-safe">LIVE</span>
-                    </div>
-                </div>
+                <div class="p-4 border-b border-liminal-border bg-black/80 flex items-center justify-between"><h3 class="text-xs font-bold text-white uppercase tracking-wider font-mono">Global Node Diagnostics (30 Arrays)</h3><div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-liminal-safe shadow-[0_0_8px_#22c55e] animate-pulse"></div><span class="text-[9px] font-mono text-liminal-safe">LIVE</span></div></div>
                 <div class="p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3" id="fixed-metrics-grid"></div>
             </div>
         </section>
 
         <section id="view-classifications" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto">
-            <header class="mb-12 animate-slide-up">
-                <h2 class="text-4xl font-bold text-white mb-4 tracking-tight border-b-2 border-red-500 pb-4 inline-block">Liminality Classification Index</h2>
-                <p class="text-liminal-muted font-mono leading-relaxed mt-4 max-w-3xl">Standardized threat algorithms applied globally across the proprietary LiminOS network. Do not deviate from protocol. Understanding hazard semantics drastically improves survival expectancy.</p>
-            </header>
+            <header class="mb-12 animate-slide-up"><h2 class="text-4xl font-bold text-white mb-4 tracking-tight border-b-2 border-red-500 pb-4 inline-block">Liminality Classification Index</h2><p class="text-liminal-muted font-mono leading-relaxed mt-4 max-w-3xl">Standardized threat algorithms applied globally across the proprietary LiminOS network. Do not deviate from protocol. Understanding hazard semantics drastically improves survival expectancy.</p></header>
             <div id="classification-container" class="space-y-12"></div>
         </section>
 
         <section id="view-levels" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto">
-            <header class="mb-10 border-b border-liminal-border pb-6">
-                <h2 class="text-4xl font-bold text-white tracking-tight flex items-center gap-4"><i class="ph ph-stack text-liminal-primary"></i> Levels Archive</h2>
-                <p class="text-liminal-muted font-mono text-sm mt-3">Full proprietary topological and spatial database.</p>
-            </header>
+            <header class="mb-10 border-b border-liminal-border pb-6"><h2 class="text-4xl font-bold text-white tracking-tight flex items-center gap-4"><i class="ph ph-stack text-liminal-primary"></i> Levels Archive</h2><p class="text-liminal-muted font-mono text-sm mt-3">Full proprietary topological and spatial database.</p></header>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="levels-grid"></div>
         </section>
 
         <section id="view-entities" class="page-view block-view p-6 md:p-12 max-w-7xl mx-auto">
-            <header class="mb-10 border-b border-liminal-border pb-6">
-                <h2 class="text-4xl font-bold text-white tracking-tight flex items-center gap-4"><i class="ph ph-ghost text-purple-400"></i> Entities Index</h2>
-                <p class="text-liminal-muted font-mono text-sm mt-3">Categorization of anomalous flora, fauna, and conceptual beings.</p>
-            </header>
+            <header class="mb-10 border-b border-liminal-border pb-6"><h2 class="text-4xl font-bold text-white tracking-tight flex items-center gap-4"><i class="ph ph-ghost text-purple-400"></i> Entities Index</h2><p class="text-liminal-muted font-mono text-sm mt-3">Categorization of anomalous flora, fauna, and conceptual beings.</p></header>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="entities-grid"></div>
         </section>
 
@@ -244,6 +183,12 @@
                 <div id="data-hero-bg-tile" class="absolute inset-0 opacity-40 mix-blend-luminosity transform scale-105 transition-transform duration-[10s]" style="background-repeat: repeat; background-size: auto;"></div>
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a07] via-[#0a0a07]/80 to-transparent"></div>
                 <div class="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+                
+                <div class="absolute top-4 right-4 z-30 flex gap-2">
+                    <a id="btn-prev" class="px-4 py-2 bg-black/60 hover:bg-black/80 border border-white/10 rounded text-xs font-mono text-white transition-colors flex items-center gap-2 backdrop-blur"><i class="ph ph-caret-left"></i> PREV</a>
+                    <a id="btn-next" class="px-4 py-2 bg-black/60 hover:bg-black/80 border border-white/10 rounded text-xs font-mono text-white transition-colors flex items-center gap-2 backdrop-blur">NEXT <i class="ph ph-caret-right"></i></a>
+                </div>
+
                 <div class="absolute bottom-0 left-0 p-6 md:px-12 md:py-8 w-full animate-slide-up flex flex-col md:flex-row md:items-end justify-between gap-4 z-10">
                     <div>
                         <div class="flex flex-wrap items-center gap-2 mb-3" id="data-tags"></div>
@@ -252,7 +197,6 @@
                             <span class="text-2xl md:text-3xl text-liminal-primary font-mono font-normal tracking-normal opacity-90" id="data-title-name">"Name"</span>
                         </h2>
                     </div>
-                    <div class="text-right font-mono text-[10px] text-liminal-muted hidden md:block" id="data-hero-stats"></div>
                 </div>
             </div>
 
@@ -266,9 +210,7 @@
                     <div class="flex-1 bg-[#050505] overflow-y-auto hide-scrollbar flex flex-col relative">
                         <div class="p-4 border-b border-liminal-border bg-black/80 sticky top-0 z-10 flex justify-between items-center backdrop-blur-md shadow-md">
                             <div>
-                                <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2" id="metrics-panel-title">
-                                    <i class="ph ph-chart-polar text-liminal-primary"></i> Absolute Telemetry
-                                </h3>
+                                <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2" id="metrics-panel-title"><i class="ph ph-chart-polar text-liminal-primary"></i> Absolute Telemetry</h3>
                                 <p class="text-[9px] text-liminal-muted font-mono mt-1">Cross-referencing Global & Specific Data Models</p>
                             </div>
                             <button onclick="document.getElementById('metrics-search').classList.toggle('hidden')" class="w-8 h-8 rounded bg-white/5 flex items-center justify-center text-liminal-muted hover:text-white hover:bg-white/10 transition-colors"><i class="ph ph-magnifying-glass"></i></button>
@@ -285,33 +227,34 @@
 
     <script>
         const Router = {
-            currentDataId: null,
-            currentDataType: null,
+            currentDataId: null, currentDataType: null, currentDataObj: null,
             init() {
                 window.addEventListener('hashchange', () => this.handleRoute());
-                if (!window.location.hash) { window.location.hash = '/home'; } 
-                else { this.handleRoute(); }
-                
+                if (!window.location.hash) { window.location.hash = '/home'; } else { this.handleRoute(); }
                 this.buildClassifications();
                 this.buildDirectory('levels', LiminOSDatabase.levels);
                 this.buildDirectory('entities', LiminOSDatabase.entities);
             },
-
             handleRoute() {
                 const hash = window.location.hash.replace('#/', '');
                 document.querySelectorAll('.nav-btn').forEach(btn => {
                     const target = btn.dataset.target;
                     if (target === hash || (target === 'levels' && hash.startsWith('level/')) || (target === 'entities' && hash.startsWith('entity/'))) {
-                        btn.classList.add('bg-white/10', 'text-white', 'border-liminal-primary');
-                        btn.classList.remove('text-liminal-muted', 'border-transparent');
+                        btn.classList.add('bg-white/10', 'text-white', 'border-liminal-primary'); btn.classList.remove('text-liminal-muted', 'border-transparent');
                     } else {
-                        btn.classList.remove('bg-white/10', 'text-white', 'border-liminal-primary');
-                        btn.classList.add('text-liminal-muted', 'border-transparent');
+                        btn.classList.remove('bg-white/10', 'text-white', 'border-liminal-primary'); btn.classList.add('text-liminal-muted', 'border-transparent');
                     }
                 });
-
                 document.querySelectorAll('.page-view').forEach(v => v.classList.remove('active'));
                 LiveEngine.stop();
+
+                // Reset theme to default on non-data pages
+                if (!hash.startsWith('level/') && !hash.startsWith('entity/')) {
+                    document.documentElement.style.setProperty('--theme-primary', '#eab308');
+                    document.documentElement.style.setProperty('--theme-hover', '#ca8a04');
+                    document.documentElement.style.setProperty('--theme-glow', 'rgba(234, 179, 8, 0.2)');
+                    document.getElementById('nav-logo-icon').className = 'ph-fill ph-infinity text-4xl text-liminal-primary animate-pulse-fast';
+                }
 
                 if (hash === 'home') document.getElementById('view-home').classList.add('active');
                 else if (hash === 'live') { document.getElementById('view-live').classList.add('active'); LiveEngine.start(); }
@@ -327,44 +270,50 @@
                     if(LiminOSDatabase.entities[id]) { document.getElementById('view-data').classList.add('active'); this.loadData(LiminOSDatabase.entities[id], 'entity'); } 
                     else window.location.hash = '/entities';
                 } else window.location.hash = '/home';
-                
                 document.getElementById('main-content').scrollTop = 0;
             },
-
             buildClassifications() {
                 const container = document.getElementById('classification-container');
                 let html = '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">';
-                LiminOSClassifications.general.forEach(c => {
-                    html += `<div class="glass-panel p-5 rounded border border-white/5 bg-black/40 hover:bg-white/5 transition-colors cursor-help group"><div class="flex items-center gap-3 mb-3"><div class="w-3 h-3 rounded-full ${c.color} shadow-[0_0_10px_currentColor] group-hover:animate-pulse"></div><h3 class="text-white font-bold font-mono tracking-wide">${c.class}</h3></div><p class="text-xs text-liminal-primary font-bold uppercase mb-2 tracking-widest">${c.name}</p><p class="text-sm text-liminal-muted leading-relaxed">${c.desc}</p></div>`;
-                });
+                LiminOSClassifications.general.forEach(c => { html += `<div class="glass-panel p-5 rounded border border-white/5 bg-black/40 hover:bg-white/5 transition-colors cursor-help group"><div class="flex items-center gap-3 mb-3"><div class="w-3 h-3 rounded-full ${c.color} shadow-[0_0_10px_currentColor] group-hover:animate-pulse"></div><h3 class="text-white font-bold font-mono tracking-wide">${c.class}</h3></div><p class="text-xs text-liminal-primary font-bold uppercase mb-2 tracking-widest">${c.name}</p><p class="text-sm text-liminal-muted leading-relaxed">${c.desc}</p></div>`; });
                 html += '</div><h3 class="text-2xl font-bold text-white mt-12 mb-6 border-b border-white/10 pb-2">Specialized Anomalous Classes</h3><div class="grid grid-cols-1 md:grid-cols-3 gap-4">';
-                LiminOSClassifications.special.forEach(c => {
-                    html += `<div class="glass-panel p-5 rounded border border-${c.color.split('-')[1]}-500/30 bg-black/40 hover:bg-white/5 transition-colors cursor-help group"><h3 class="text-${c.color.split('-')[1]}-400 font-bold font-mono tracking-wide text-lg mb-1">${c.class}</h3><p class="text-xs text-white font-bold uppercase mb-3 tracking-widest">${c.name}</p><p class="text-sm text-liminal-muted leading-relaxed">${c.desc}</p></div>`;
-                });
-                html += '</div>';
-                container.innerHTML = html;
+                LiminOSClassifications.special.forEach(c => { html += `<div class="glass-panel p-5 rounded border border-${c.color.split('-')[1]}-500/30 bg-black/40 hover:bg-white/5 transition-colors cursor-help group"><h3 class="text-${c.color.split('-')[1]}-400 font-bold font-mono tracking-wide text-lg mb-1">${c.class}</h3><p class="text-xs text-white font-bold uppercase mb-3 tracking-widest">${c.name}</p><p class="text-sm text-liminal-muted leading-relaxed">${c.desc}</p></div>`; });
+                html += '</div>'; container.innerHTML = html;
             },
-
             buildDirectory(type, dataObj) {
                 const container = document.getElementById(`${type}-grid`);
-                let html = '';
-                const prefix = type === 'levels' ? 'level' : 'entity';
-                const icon = type === 'levels' ? 'ph-hexagon' : 'ph-ghost';
-                
+                let html = ''; const prefix = type === 'levels' ? 'level' : 'entity'; const icon = type === 'levels' ? 'ph-hexagon' : 'ph-ghost';
                 Object.keys(dataObj).forEach(key => {
                     const item = dataObj[key];
-                    html += `<a href="#/${prefix}/${key}" class="glass-panel p-5 rounded-xl border border-white/5 bg-black/40 hover:bg-white/10 hover:border-liminal-primary/50 transition-all cursor-pointer group flex flex-col h-full relative overflow-hidden"><div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div><div class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-50 transition-opacity group-hover:scale-105 duration-700" style="background-image: url('${item.heroImage}'); background-repeat: repeat; background-size: auto;"></div><div class="relative z-20 flex-1 flex flex-col justify-end"><div class="w-10 h-10 rounded bg-liminal-primary/10 border border-liminal-primary/30 flex items-center justify-center text-liminal-primary mb-3 shadow-[0_0_15px_rgba(234,179,8,0.1)]"><i class="ph-fill ${icon} text-xl"></i></div><h4 class="text-white font-bold text-2xl tracking-tight">${item.title}</h4><p class="text-liminal-primary font-mono text-sm mb-4">"${item.name}"</p><div class="flex flex-wrap gap-1">${item.tags.slice(0,2).map(tag => `<span class="px-1.5 py-0.5 bg-black/80 border border-white/10 text-[9px] font-bold rounded tracking-widest uppercase text-gray-300">${tag.label}</span>`).join('')}</div></div></a>`;
+                    const tColor = item.themeColor || '#eab308';
+                    html += `<a href="#/${prefix}/${key}" class="glass-panel p-5 rounded-xl border border-white/5 bg-black/40 hover:bg-white/10 hover:border-liminal-primary/50 transition-all cursor-pointer group flex flex-col h-full relative overflow-hidden"><div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div><div class="absolute inset-0 w-full h-full opacity-30 group-hover:opacity-50 transition-opacity group-hover:scale-105 duration-700" style="background-image: url('${item.heroImage}'); background-repeat: repeat; background-size: auto;"></div><div class="relative z-20 flex-1 flex flex-col justify-end"><div class="w-10 h-10 rounded bg-liminal-primary/10 border flex items-center justify-center mb-3 shadow-lg" style="border-color: ${tColor}50; color: ${tColor};"><i class="ph-fill ${icon} text-xl"></i></div><h4 class="text-white font-bold text-2xl tracking-tight">${item.title}</h4><p class="font-mono text-sm mb-4" style="color: ${tColor}">"${item.name}"</p><div class="flex flex-wrap gap-1">${item.tags.slice(0,2).map(tag => `<span class="px-1.5 py-0.5 bg-black/80 border border-white/10 text-[9px] font-bold rounded tracking-widest uppercase text-gray-300">${tag.label}</span>`).join('')}</div></div></a>`;
                 });
                 container.innerHTML = html;
             },
-
             loadData(data, type) {
-                this.currentDataId = data.id;
-                this.currentDataType = type;
+                this.currentDataId = data.id; this.currentDataType = type; this.currentDataObj = data;
+                
+                // Theme Application
+                document.documentElement.style.setProperty('--theme-primary', data.themeColor || '#eab308');
+                document.documentElement.style.setProperty('--theme-hover', data.themeHover || '#ca8a04');
+                document.documentElement.style.setProperty('--theme-glow', data.themeGlow || 'rgba(234, 179, 8, 0.2)');
+                
+                const animClass = data.idleAnimation || 'animate-pulse-fast';
+                document.getElementById('nav-logo-icon').className = `ph-fill ph-infinity text-4xl text-liminal-primary ${animClass}`;
+                
+                // Prev / Next Logic
+                const db = type === 'level' ? LiminOSDatabase.levels : LiminOSDatabase.entities;
+                const keys = Object.keys(db);
+                const idx = keys.indexOf(data.id);
+                const prevId = idx > 0 ? keys[idx - 1] : keys[keys.length - 1];
+                const nextId = idx < keys.length - 1 ? keys[idx + 1] : keys[0];
+                document.getElementById('btn-prev').href = `#/${type}/${prevId}`;
+                document.getElementById('btn-next').href = `#/${type}/${nextId}`;
 
                 document.getElementById('data-title-id').innerText = data.title;
                 document.getElementById('data-title-name').innerText = `"${data.name}"`;
                 document.getElementById('data-hero-bg-tile').style.backgroundImage = `url('${data.heroImage}')`;
+                if(data.idleAnimation) document.getElementById('data-hero-bg-tile').classList.add(data.idleAnimation);
                 
                 const tagsContainer = document.getElementById('data-tags');
                 tagsContainer.innerHTML = data.tags.map(tag => `<span class="px-2 py-1 ${tag.class} border text-[10px] font-bold rounded tracking-widest uppercase shadow-sm">${tag.label}</span>`).join('');
@@ -373,14 +322,16 @@
                 let tabsHtml = `<button class="tab-btn active px-4 py-2 text-xs md:text-sm font-bold text-liminal-primary border-b-2 border-liminal-primary transition-colors uppercase tracking-wide" onclick="switchTab('lore')">Documentation</button>`;
                 if(data.survivalGuide) tabsHtml += `<button class="tab-btn px-4 py-2 text-xs md:text-sm font-bold text-liminal-muted border-b-2 border-transparent hover:text-white transition-colors uppercase tracking-wide" onclick="switchTab('survival')">Survival / Interaction</button>`;
                 if(data.history) tabsHtml += `<button class="tab-btn px-4 py-2 text-xs md:text-sm font-bold text-liminal-muted border-b-2 border-transparent hover:text-white transition-colors uppercase tracking-wide" onclick="switchTab('history')">Historical Logs</button>`;
-                if(data.resonanceScan) tabsHtml += `<button class="tab-btn px-4 py-2 text-xs md:text-sm font-bold text-liminal-muted border-b-2 border-transparent hover:text-white transition-colors uppercase tracking-wide" onclick="switchTab('resonance')">Resonance Scan</button>`;
+                if(data.resonanceLogs) tabsHtml += `<button class="tab-btn px-4 py-2 text-xs md:text-sm font-bold text-liminal-muted border-b-2 border-transparent hover:text-white transition-colors uppercase tracking-wide" onclick="switchTab('resonance')">Resonance Scan</button>`;
                 tabsContainer.innerHTML = tabsHtml;
 
                 const contentArea = document.getElementById('data-content-area');
                 let contentHtml = `<div id="tab-lore" class="tab-content animate-fade-in lore-content block">${data.lore}</div>`;
                 if(data.survivalGuide) contentHtml += `<div id="tab-survival" class="tab-content hidden animate-fade-in lore-content">${data.survivalGuide}</div>`;
                 if(data.history) contentHtml += `<div id="tab-history" class="tab-content hidden animate-fade-in lore-content">${data.history}</div>`;
-                if(data.resonanceScan) contentHtml += `<div id="tab-resonance" class="tab-content hidden animate-fade-in">${data.resonanceScan}</div>`;
+                if(data.resonanceLogs) {
+                    contentHtml += `<div id="tab-resonance" class="tab-content hidden animate-fade-in"><div class="flex flex-col gap-4"><h3 class="text-xl font-bold text-white mb-2">Deep Resonance Protocol</h3><button onclick="runResonanceScan()" id="btn-run-scan" class="bg-liminal-primary/20 border border-liminal-primary text-liminal-primary hover:bg-liminal-primary hover:text-black font-mono font-bold py-3 px-6 rounded transition-all flex items-center justify-center gap-3"><i class="ph ph-scan text-xl"></i> INITIATE DEEP SCAN</button><div id="scan-terminal" class="hidden mt-4 bg-[#050505] border border-white/10 rounded p-4 font-mono text-[10px] md:text-xs h-64 overflow-y-auto"><div id="scan-terminal-content" class="space-y-1"></div></div></div></div>`;
+                }
                 contentArea.innerHTML = contentHtml;
 
                 const globalDataToUse = type === 'level' ? GlobalMetrics : GlobalEntityMetrics;
@@ -391,10 +342,7 @@
                     document.getElementById('metrics-panel-title').innerHTML = `<i class="ph ph-chart-polar text-liminal-primary"></i> Spatial Telemetry`;
                     moduleContainer.innerHTML = `
                         <div class="h-14 border-b border-liminal-border bg-black/90 backdrop-blur-xl flex items-center justify-between px-4 z-20 flex-shrink-0">
-                            <div class="flex items-center gap-3">
-                                <div class="relative w-6 h-6 flex items-center justify-center"><i class="ph-fill ph-crosshair text-liminal-primary relative z-10"></i><div class="absolute inset-0 bg-liminal-primary/20 blur-sm rounded-full animate-pulse"></div></div>
-                                <div class="flex flex-col"><span class="text-[10px] md:text-xs font-bold text-white uppercase tracking-wider font-mono">Cartography Engine</span><span class="text-[8px] text-liminal-safe font-mono tracking-widest">DETERMINISTIC UPLINK</span></div>
-                            </div>
+                            <div class="flex items-center gap-3"><div class="relative w-6 h-6 flex items-center justify-center"><i class="ph-fill ph-crosshair text-liminal-primary relative z-10"></i><div class="absolute inset-0 bg-liminal-primary/20 blur-sm rounded-full animate-pulse"></div></div><div class="flex flex-col"><span class="text-[10px] md:text-xs font-bold text-white uppercase tracking-wider font-mono">Cartography Engine</span><span class="text-[8px] text-liminal-safe font-mono tracking-widest">DETERMINISTIC UPLINK</span></div></div>
                             <div class="flex items-center gap-1 md:gap-2 font-mono text-[10px] md:text-xs">
                                 <div class="flex items-center bg-black/50 border border-liminal-border rounded hover:border-white/20 transition-colors"><span class="text-liminal-muted px-2 border-r border-liminal-border">X</span><input type="number" id="search-x" class="bg-transparent w-16 md:w-20 text-center text-white p-1.5 outline-none focus:bg-white/5" value="0"></div>
                                 <div class="flex items-center bg-black/50 border border-liminal-border rounded hover:border-white/20 transition-colors"><span class="text-liminal-muted px-2 border-r border-liminal-border">Y</span><input type="number" id="search-y" class="bg-transparent w-16 md:w-20 text-center text-white p-1.5 outline-none focus:bg-white/5" value="0"></div>
@@ -403,34 +351,16 @@
                         </div>
                         <div id="map-container" class="flex-1 w-full relative outline-none bg-[#030303]" tabindex="0">
                             <canvas id="levelMap" class="absolute inset-0 block w-full h-full"></canvas>
-                            <div class="absolute top-4 left-4 bg-black/80 p-3 rounded border border-white/5 backdrop-blur-md pointer-events-none shadow-2xl">
-                                <div class="text-[8px] font-mono text-liminal-muted mb-1 tracking-widest flex items-center gap-2"><div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>ABSOLUTE POSITION (1 Unit = 1m)</div>
-                                <div class="text-sm font-mono text-white tracking-wider font-bold" id="hud-coords">X: 0m | Y: 0m</div>
-                            </div>
+                            <div class="absolute top-4 left-4 bg-black/80 p-3 rounded border border-white/5 backdrop-blur-md pointer-events-none shadow-2xl"><div class="text-[8px] font-mono text-liminal-muted mb-1 tracking-widest flex items-center gap-2"><div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div>ABSOLUTE POSITION (1 Unit = 1m)</div><div class="text-sm font-mono text-white tracking-wider font-bold" id="hud-coords">X: 0m | Y: 0m</div></div>
                             <div class="absolute right-4 bottom-4 flex flex-col gap-2 z-20">
                                 <button onclick="mapEngine.zoomIn()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center"><i class="ph ph-plus"></i></button>
                                 <button onclick="mapEngine.resetView()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center"><i class="ph ph-arrows-in-simple"></i></button>
                                 <button onclick="mapEngine.zoomOut()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center"><i class="ph ph-minus"></i></button>
                                 <button onclick="mapEngine.toggleFullScreen()" class="w-9 h-9 bg-black/80 border border-white/10 rounded text-white hover:bg-white/10 transition-all flex justify-center items-center mt-2"><i class="ph ph-corners-out"></i></button>
                             </div>
-                            <div class="absolute left-4 bottom-4 z-20">
-                                <div class="bg-black/80 border border-white/10 rounded p-2 flex flex-col items-center gap-1 backdrop-blur-md">
-                                    <div class="text-[8px] text-liminal-primary font-mono tracking-widest mb-1 font-bold">Z-LAYER</div>
-                                    <button onclick="mapEngine.changeZ(1)" class="text-liminal-muted hover:text-white transition w-full py-1 hover:bg-white/5 rounded"><i class="ph ph-caret-up"></i></button>
-                                    <div class="font-mono text-white text-sm w-8 text-center font-bold" id="hud-z">0</div>
-                                    <button onclick="mapEngine.changeZ(-1)" class="text-liminal-muted hover:text-white transition w-full py-1 hover:bg-white/5 rounded"><i class="ph ph-caret-down"></i></button>
-                                </div>
-                            </div>
+                            <div class="absolute left-4 bottom-4 z-20"><div class="bg-black/80 border border-white/10 rounded p-2 flex flex-col items-center gap-1 backdrop-blur-md"><div class="text-[8px] text-liminal-primary font-mono tracking-widest mb-1 font-bold">Z-LAYER</div><button onclick="mapEngine.changeZ(1)" class="text-liminal-muted hover:text-white transition w-full py-1 hover:bg-white/5 rounded"><i class="ph ph-caret-up"></i></button><div class="font-mono text-white text-sm w-8 text-center font-bold" id="hud-z">0</div><button onclick="mapEngine.changeZ(-1)" class="text-liminal-muted hover:text-white transition w-full py-1 hover:bg-white/5 rounded"><i class="ph ph-caret-down"></i></button></div></div>
                             <div class="absolute top-4 right-4 text-right pointer-events-none"><div class="text-[9px] font-mono text-liminal-muted uppercase bg-black/60 px-2 py-1 rounded backdrop-blur border border-white/5 inline-block">Double-click to drop pin</div></div>
-                            <div id="pin-modal" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-liminal-panel border border-liminal-border p-5 rounded-lg shadow-2xl z-50 w-72 backdrop-blur-xl">
-                                <div class="flex items-center gap-2 mb-3"><i class="ph-fill ph-map-pin text-liminal-primary text-lg"></i><h4 class="text-sm font-bold text-white uppercase tracking-wider">Deploy Pin</h4></div>
-                                <div class="bg-black/50 p-2 rounded border border-white/5 mb-4 text-center"><p class="text-[10px] text-liminal-primary font-mono" id="pin-modal-coords">Coords</p></div>
-                                <input type="text" id="pin-name" placeholder="Enter Label..." class="w-full bg-black border border-liminal-border rounded p-3 text-xs text-white font-mono mb-4 outline-none focus:border-liminal-primary transition-colors" maxlength="30">
-                                <div class="flex gap-3">
-                                    <button onclick="mapEngine.cancelPin()" class="flex-1 py-2 bg-white/5 hover:bg-white/10 text-xs rounded transition text-white font-bold">Cancel</button>
-                                    <button onclick="mapEngine.confirmPin()" class="flex-1 py-2 bg-liminal-primary/20 hover:bg-liminal-primary hover:text-black border border-liminal-primary/50 text-liminal-primary text-xs font-bold rounded transition">Confirm</button>
-                                </div>
-                            </div>
+                            <div id="pin-modal" class="hidden absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-liminal-panel border border-liminal-border p-5 rounded-lg shadow-2xl z-50 w-72 backdrop-blur-xl"><div class="flex items-center gap-2 mb-3"><i class="ph-fill ph-map-pin text-liminal-primary text-lg"></i><h4 class="text-sm font-bold text-white uppercase tracking-wider">Deploy Pin</h4></div><div class="bg-black/50 p-2 rounded border border-white/5 mb-4 text-center"><p class="text-[10px] text-liminal-primary font-mono" id="pin-modal-coords">Coords</p></div><input type="text" id="pin-name" placeholder="Enter Label..." class="w-full bg-black border border-liminal-border rounded p-3 text-xs text-white font-mono mb-4 outline-none focus:border-liminal-primary transition-colors" maxlength="30"><div class="flex gap-3"><button onclick="mapEngine.cancelPin()" class="flex-1 py-2 bg-white/5 hover:bg-white/10 text-xs rounded transition text-white font-bold">Cancel</button><button onclick="mapEngine.confirmPin()" class="flex-1 py-2 bg-liminal-primary/20 hover:bg-liminal-primary hover:text-black border border-liminal-primary/50 text-liminal-primary text-xs font-bold rounded transition">Confirm</button></div></div>
                         </div>
                     `;
                     setTimeout(() => { mapEngine.init(data.mapConfig); }, 50);
@@ -456,7 +386,6 @@
                     if(mapEngine.animationFrame) cancelAnimationFrame(mapEngine.animationFrame);
                 }
             },
-
             buildMetricsUI(specificMetrics, globalDataModel) {
                 const container = document.getElementById('metrics-container');
                 let html = '';
@@ -484,11 +413,9 @@
 
         function switchTab(tabId) {
             document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active', 'text-liminal-primary', 'border-liminal-primary');
-                btn.classList.add('text-liminal-muted', 'border-transparent');
+                btn.classList.remove('active', 'text-liminal-primary', 'border-liminal-primary'); btn.classList.add('text-liminal-muted', 'border-transparent');
                 if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(`switchTab('${tabId}')`)) {
-                    btn.classList.add('active', 'text-liminal-primary', 'border-liminal-primary');
-                    btn.classList.remove('text-liminal-muted', 'border-transparent');
+                    btn.classList.add('active', 'text-liminal-primary', 'border-liminal-primary'); btn.classList.remove('text-liminal-muted', 'border-transparent');
                 }
             });
             document.querySelectorAll('.tab-content').forEach(c => { c.classList.remove('block'); c.classList.add('hidden'); });
@@ -497,8 +424,7 @@
         }
 
         function toggleMetricGroup(index) {
-            const group = document.getElementById(`group-${index}`);
-            const caret = document.getElementById(`caret-${index}`);
+            const group = document.getElementById(`group-${index}`); const caret = document.getElementById(`caret-${index}`);
             if (group.style.display === 'none') { group.style.display = 'block'; caret.style.transform = 'rotate(0deg)'; } 
             else { group.style.display = 'none'; caret.style.transform = 'rotate(-90deg)'; }
         }
@@ -506,8 +432,7 @@
         function filterMetrics() {
             const term = document.getElementById('metrics-search').value.toLowerCase();
             document.querySelectorAll('.metric-item').forEach(item => {
-                const label = item.querySelector('.metric-label').innerText.toLowerCase();
-                item.style.display = label.includes(term) ? 'flex' : 'none';
+                const label = item.querySelector('.metric-label').innerText.toLowerCase(); item.style.display = label.includes(term) ? 'flex' : 'none';
             });
         }
 
@@ -520,13 +445,10 @@
             term.classList.remove('hidden');
             content.innerHTML = '';
             
-            const logs = [
-                "> INITIALIZING QUANTUM PING...", "> TARGET: LOCAL TOPOLOGY [Z: " + mapEngine.camZ + "]", "> CALIBRATING HUME SENSORS... [OK]", "> BYPASSING M.E.G. INTERFERENCE... [OK]",
-                "<br>> <span class='text-liminal-primary'>ANALYZING ENVIRONMENT METRICS:</span>", "  - PULLING ATMOSPHERIC DATA...", "  - EXTRAPOLATING MATERIAL DENSITY...",
-                "<br>> <span class='text-yellow-400'>CHECKING STRUCTURAL INTEGRITY:</span>", "  - NOCLIP RESISTANCE EVALUATED.", "  - EUCLIDEAN CONSISTENCY VERIFIED.",
-                "<br>> <span class='text-red-400'>ENTITY PROXIMITY SWEEP:</span>", "  - SCANNING RADIUS: 1000m", "  - RESULT: DATA LOGGED TO METRICS.",
-                "<br>> SCAN COMPLETE. UPLOADING TO LIMINOS DATABASE."
-            ];
+            // Fetch logs from currently loaded object
+            const logs = Router.currentDataObj && Router.currentDataObj.resonanceLogs 
+                ? Router.currentDataObj.resonanceLogs 
+                : ["> ERROR: NO RESONANCE DATA FOUND FOR THIS ENTITY/LEVEL.", "> CONNECTION SEVERED."];
 
             for(let i=0; i<logs.length; i++) {
                 await new Promise(r => setTimeout(r, 400 + Math.random() * 600));
@@ -538,10 +460,7 @@
 
         function deterministicHash(x, y, z, seed, modifierStr) {
             let modHash = 0;
-            for (let i = 0; i < modifierStr.length; i++) {
-                modHash = (modHash << 5) - modHash + modifierStr.charCodeAt(i);
-                modHash |= 0; 
-            }
+            for (let i = 0; i < modifierStr.length; i++) { modHash = (modHash << 5) - modHash + modifierStr.charCodeAt(i); modHash |= 0; }
             let h = Math.imul(x ^ seed, 3432918353);
             h = Math.imul(h ^ y, 461845907);
             h = Math.imul(h ^ z, 1566083941);
@@ -557,32 +476,22 @@
             pins: [], pendingPin: null, animationFrame: null, eventsBound: false,
 
             init(config) {
-                this.canvas = document.getElementById('levelMap');
-                if(!this.canvas) return;
-                this.config = config;
-                this.ctx = this.canvas.getContext('2d');
+                this.canvas = document.getElementById('levelMap'); if(!this.canvas) return;
+                this.config = config; this.ctx = this.canvas.getContext('2d');
                 this.camX = 0; this.camY = 0; this.camZ = 0; this.zoom = 1;
-                this.resize();
-                window.addEventListener('resize', () => this.resize());
+                this.resize(); window.addEventListener('resize', () => this.resize());
                 if (!this.eventsBound) { this.setupEvents(); this.eventsBound = true; }
-                this.updateHUD();
-                this.drawLoop();
+                this.updateHUD(); this.drawLoop();
             },
-
             resize() {
-                const container = document.getElementById('map-container');
-                if(!container || !this.canvas) return;
-                this.canvas.width = container.clientWidth;
-                this.canvas.height = container.clientHeight;
-                this.draw();
+                const container = document.getElementById('map-container'); if(!container || !this.canvas) return;
+                this.canvas.width = container.clientWidth; this.canvas.height = container.clientHeight; this.draw();
             },
-            
             toggleFullScreen() {
                 const mc = document.getElementById('map-container');
                 if (!document.fullscreenElement) mc.requestFullscreen().catch(err => { console.log(err.message); });
                 else document.exitFullscreen();
             },
-
             setupEvents() {
                 this.canvas.addEventListener('mousedown', (e) => {
                     this.isDragging = true; this.lastMouseX = e.clientX; this.lastMouseY = e.clientY;
@@ -600,10 +509,8 @@
                     }
                 });
                 this.canvas.addEventListener('wheel', (e) => {
-                    e.preventDefault();
-                    const zoomFactor = e.deltaY > 0 ? 0.9 : 1.1;
-                    const rect = this.canvas.getBoundingClientRect();
-                    const mx = e.clientX - rect.left; const my = e.clientY - rect.top;
+                    e.preventDefault(); const zoomFactor = e.deltaY > 0 ? 0.9 : 1.1;
+                    const rect = this.canvas.getBoundingClientRect(); const mx = e.clientX - rect.left; const my = e.clientY - rect.top;
                     const wxBefore = this.camX + (mx - this.canvas.width/2) / (this.zoom * this.pixelsPerMeter);
                     const wyBefore = this.camY + (my - this.canvas.height/2) / (this.zoom * this.pixelsPerMeter);
                     this.zoom = Math.max(0.1, Math.min(this.zoom * zoomFactor, 10));
@@ -612,36 +519,26 @@
                     this.camX += (wxBefore - wxAfter); this.camY += (wyBefore - wyAfter);
                 }, {passive: false});
                 this.canvas.addEventListener('dblclick', (e) => {
-                    const rect = this.canvas.getBoundingClientRect();
-                    const mx = e.clientX - rect.left; const my = e.clientY - rect.top;
+                    const rect = this.canvas.getBoundingClientRect(); const mx = e.clientX - rect.left; const my = e.clientY - rect.top;
                     const wx = Math.round(this.camX + (mx - this.canvas.width/2) / (this.zoom * this.pixelsPerMeter));
                     const wy = Math.round(this.camY + (my - this.canvas.height/2) / (this.zoom * this.pixelsPerMeter));
                     this.openPinModal(wx, wy);
                 });
             },
-
-            zoomIn() { this.zoom = Math.min(10, this.zoom * 1.5); },
-            zoomOut() { this.zoom = Math.max(0.1, this.zoom * 0.7); },
+            zoomIn() { this.zoom = Math.min(10, this.zoom * 1.5); }, zoomOut() { this.zoom = Math.max(0.1, this.zoom * 0.7); },
             resetView() { this.camX = 0; this.camY = 0; this.zoom = 1; this.updateHUD(); },
             changeZ(delta) { this.camZ += delta; document.getElementById('hud-z').innerText = this.camZ; },
-            jumpToCoordinates() {
-                this.camX = parseFloat(document.getElementById('search-x').value) || 0;
-                this.camY = parseFloat(document.getElementById('search-y').value) || 0;
-                this.updateHUD();
-            },
+            jumpToCoordinates() { this.camX = parseFloat(document.getElementById('search-x').value) || 0; this.camY = parseFloat(document.getElementById('search-y').value) || 0; this.updateHUD(); },
             updateHUD() {
                 const hud = document.getElementById('hud-coords');
                 if(hud) {
                     hud.innerText = `X: ${Math.round(this.camX)}m | Y: ${Math.round(this.camY)}m`;
-                    document.getElementById('search-x').value = Math.round(this.camX);
-                    document.getElementById('search-y').value = Math.round(this.camY);
+                    document.getElementById('search-x').value = Math.round(this.camX); document.getElementById('search-y').value = Math.round(this.camY);
                 }
             },
             openPinModal(x, y) {
-                this.pendingPin = {x, y, z: this.camZ};
-                document.getElementById('pin-modal-coords').innerText = `X: ${x}, Y: ${y}, Z: ${this.camZ}`;
-                document.getElementById('pin-modal').classList.remove('hidden');
-                document.getElementById('pin-name').focus();
+                this.pendingPin = {x, y, z: this.camZ}; document.getElementById('pin-modal-coords').innerText = `X: ${x}, Y: ${y}, Z: ${this.camZ}`;
+                document.getElementById('pin-modal').classList.remove('hidden'); document.getElementById('pin-name').focus();
             },
             cancelPin() { document.getElementById('pin-modal').classList.add('hidden'); document.getElementById('pin-name').value = ''; this.pendingPin = null; },
             confirmPin() {
@@ -649,75 +546,44 @@
                 if(this.pendingPin) this.pins.push({...this.pendingPin, name, level: Router.currentDataId});
                 this.cancelPin();
             },
-
             drawLoop() {
                 if (document.getElementById('view-data').classList.contains('active') && Router.currentDataType === 'level') this.draw();
                 this.animationFrame = requestAnimationFrame(() => this.drawLoop());
             },
-
             draw() {
                 if(!this.ctx || !this.config) return;
                 const w = this.canvas.width; const h = this.canvas.height; const ctx = this.ctx;
                 
-                const bgColor = this.config.bgColor || '#030303';
-                ctx.fillStyle = bgColor;
-                ctx.fillRect(0, 0, w, h);
+                const bgColor = this.config.bgColor || '#030303'; ctx.fillStyle = bgColor; ctx.fillRect(0, 0, w, h);
+                const scale = this.zoom * this.pixelsPerMeter; const gs = this.config.gridSize || 5;
+                const style = this.config.renderStyle || 'grid'; const wallColor = this.config.wallColor || '#eab308';
                 
-                const scale = this.zoom * this.pixelsPerMeter;
-                const gs = this.config.gridSize || 5;
-                const style = this.config.renderStyle || 'grid';
-                const wallColor = this.config.wallColor || '#eab308';
-                
-                const viewDistX = (w / 2) / scale;
-                const viewDistY = (h / 2) / scale;
-                const startX = Math.floor((this.camX - viewDistX) / gs) * gs;
-                const endX = Math.ceil((this.camX + viewDistX) / gs) * gs;
-                const startY = Math.floor((this.camY - viewDistY) / gs) * gs;
-                const endY = Math.ceil((this.camY + viewDistY) / gs) * gs;
+                const viewDistX = (w / 2) / scale; const viewDistY = (h / 2) / scale;
+                const startX = Math.floor((this.camX - viewDistX) / gs) * gs; const endX = Math.ceil((this.camX + viewDistX) / gs) * gs;
+                const startY = Math.floor((this.camY - viewDistY) / gs) * gs; const endY = Math.ceil((this.camY + viewDistY) / gs) * gs;
 
-                ctx.save();
-                ctx.translate(w/2, h/2);
+                ctx.save(); ctx.translate(w/2, h/2);
                 
-                // Grid
-                ctx.strokeStyle = this.config.gridColor || 'rgba(255, 255, 255, 0.03)';
-                ctx.lineWidth = 1;
-                ctx.beginPath();
-                for (let x = Math.floor(this.camX - viewDistX); x <= Math.ceil(this.camX + viewDistX); x++) {
-                    let sx = (x - this.camX) * scale;
-                    ctx.moveTo(sx, -h/2); ctx.lineTo(sx, h/2);
-                }
-                for (let y = Math.floor(this.camY - viewDistY); y <= Math.ceil(this.camY + viewDistY); y++) {
-                    let sy = (y - this.camY) * scale;
-                    ctx.moveTo(-w/2, sy); ctx.lineTo(w/2, sy);
-                }
+                ctx.strokeStyle = this.config.gridColor || 'rgba(255, 255, 255, 0.03)'; ctx.lineWidth = 1; ctx.beginPath();
+                for (let x = Math.floor(this.camX - viewDistX); x <= Math.ceil(this.camX + viewDistX); x++) { let sx = (x - this.camX) * scale; ctx.moveTo(sx, -h/2); ctx.lineTo(sx, h/2); }
+                for (let y = Math.floor(this.camY - viewDistY); y <= Math.ceil(this.camY + viewDistY); y++) { let sy = (y - this.camY) * scale; ctx.moveTo(-w/2, sy); ctx.lineTo(w/2, sy); }
                 ctx.stroke();
 
-                // Advanced Rendering Logic based on Style
-                ctx.strokeStyle = wallColor;
-                ctx.lineWidth = Math.max(1.5, scale * (this.config.wallThickness || 0.15));
-                ctx.lineCap = 'square';
-                ctx.beginPath();
-
+                ctx.strokeStyle = wallColor; ctx.lineWidth = Math.max(1.5, scale * (this.config.wallThickness || 0.15)); ctx.lineCap = 'square'; ctx.beginPath();
                 for (let x = startX; x <= endX; x += gs) {
                     for (let y = startY; y <= endY; y += gs) {
-                        const sx = (x - this.camX) * scale;
-                        const sy = (y - this.camY) * scale;
-                        const nextSx = (x + gs - this.camX) * scale;
-                        const nextSy = (y + gs - this.camY) * scale;
-
+                        const sx = (x - this.camX) * scale; const sy = (y - this.camY) * scale;
+                        const nextSx = (x + gs - this.camX) * scale; const nextSy = (y + gs - this.camY) * scale;
                         const hWallH = deterministicHash(x, y, this.camZ, this.config.seed, 'wall_h');
                         const hWallV = deterministicHash(x, y, this.camZ, this.config.seed, 'wall_v');
                         
                         if (style === 'grid' || style === 'warehouse' || style === 'office') {
                             if (hWallH < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.lineTo(nextSx, sy); }
                             if (hWallV < this.config.wallDensity) { ctx.moveTo(sx, sy); ctx.lineTo(sx, nextSy); }
-                        } 
-                        else if (style === 'pipes') {
-                            // Pipes layout (long horizontal/vertical with gaps)
+                        } else if (style === 'pipes') {
                             if (hWallH < 0.8 && y % (gs*2) === 0) { ctx.moveTo(sx, sy); ctx.lineTo(nextSx, sy); }
                             if (hWallV < 0.6 && x % (gs*3) === 0) { ctx.moveTo(sx, sy); ctx.lineTo(sx, nextSy); }
-                        }
-                        else if (style === 'diagonal') {
+                        } else if (style === 'diagonal') {
                             const hDiag = deterministicHash(x, y, this.camZ, this.config.seed, 'diag');
                             if (hDiag < this.config.wallDensity) {
                                 if (hDiag < this.config.wallDensity / 2) { ctx.moveTo(sx, sy); ctx.lineTo(nextSx, nextSy); }
@@ -730,7 +596,6 @@
                 }
                 ctx.stroke();
 
-                // Draw POIs
                 ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
                 if(this.config.pois && this.config.pois.length > 0) {
                     for (let x = startX; x < endX; x += gs) {
@@ -739,97 +604,56 @@
                             if (poiHash < this.config.poiChance) {
                                 const poiTypeHash = deterministicHash(x, y, this.camZ, this.config.seed, 'poi_type');
                                 const poi = this.config.pois[Math.floor(poiTypeHash * this.config.pois.length)];
-                                
-                                const px = (x + gs/2 - this.camX) * scale;
-                                const py = (y + gs/2 - this.camY) * scale;
-
-                                ctx.beginPath();
-                                ctx.arc(px, py, scale * 0.8, 0, Math.PI * 2);
-                                ctx.fillStyle = poi.color + '22'; ctx.fill();
+                                const px = (x + gs/2 - this.camX) * scale; const py = (y + gs/2 - this.camY) * scale;
+                                ctx.beginPath(); ctx.arc(px, py, scale * 0.8, 0, Math.PI * 2); ctx.fillStyle = poi.color + '22'; ctx.fill();
                                 ctx.lineWidth = 1; ctx.strokeStyle = poi.color; ctx.stroke();
-                                
-                                ctx.font = `${Math.max(10, scale)}px sans-serif`;
-                                ctx.fillStyle = '#fff'; ctx.fillText(poi.icon, px, py + 1);
-
-                                if (this.zoom > 1.2) {
-                                    ctx.font = `10px "JetBrains Mono"`;
-                                    ctx.fillStyle = poi.color;
-                                    ctx.fillText(poi.name, px, py + scale * 1.5);
-                                }
+                                ctx.font = `${Math.max(10, scale)}px sans-serif`; ctx.fillStyle = '#fff'; ctx.fillText(poi.icon, px, py + 1);
+                                if (this.zoom > 1.2) { ctx.font = `10px "JetBrains Mono"`; ctx.fillStyle = poi.color; ctx.fillText(poi.name, px, py + scale * 1.5); }
                             }
                         }
                     }
                 }
 
-                // Draw Pins
                 this.pins.forEach(pin => {
                     if (pin.z === this.camZ && pin.level === Router.currentDataId) {
-                        const px = (pin.x - this.camX) * scale;
-                        const py = (pin.y - this.camY) * scale;
+                        const px = (pin.x - this.camX) * scale; const py = (pin.y - this.camY) * scale;
                         ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(px - 6, py - 14); ctx.lineTo(px + 6, py - 14);
-                        ctx.closePath(); ctx.fillStyle = '#22c55e'; ctx.fill();
-                        ctx.beginPath(); ctx.arc(px, py - 14, 6, 0, Math.PI*2); ctx.fill();
-                        ctx.font = 'bold 10px "JetBrains Mono"'; ctx.fillStyle = '#22c55e';
-                        ctx.fillText(pin.name, px, py - 26);
+                        ctx.closePath(); ctx.fillStyle = '#22c55e'; ctx.fill(); ctx.beginPath(); ctx.arc(px, py - 14, 6, 0, Math.PI*2); ctx.fill();
+                        ctx.font = 'bold 10px "JetBrains Mono"'; ctx.fillStyle = '#22c55e'; ctx.fillText(pin.name, px, py - 26);
                     }
                 });
 
-                // Crosshair
-                ctx.beginPath(); ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)'; ctx.lineWidth = 1;
-                ctx.moveTo(-10, 0); ctx.lineTo(10, 0); ctx.moveTo(0, -10); ctx.lineTo(0, 10); ctx.stroke();
-                ctx.restore();
+                ctx.beginPath(); ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)'; ctx.lineWidth = 1; ctx.moveTo(-10, 0); ctx.lineTo(10, 0); ctx.moveTo(0, -10); ctx.lineTo(0, 10); ctx.stroke(); ctx.restore();
             }
         };
 
         const LiveEngine = {
             isRunning: false, animationFrame: null, lastTick: 0, radarAngle: 0, matrixOffset: 0,
             fixedMetricsData: [
-                { name: "Global Hume Field", min: 98.0, max: 102.5, unit: " H", color: "text-blue-400" },
-                { name: "Kant Counter Avg", min: 0.8, max: 1.2, unit: " K", color: "text-blue-400" },
-                { name: "Quantum Entanglement", min: 99.1, max: 99.9, unit: "%", color: "text-green-400" },
-                { name: "Noclip Spikes/Hr", min: 140, max: 320, unit: " evt", color: "text-yellow-400" },
-                { name: "Arch-Node Latency", min: 0.1, max: 4.5, unit: " ms", color: "text-green-400" },
-                { name: "Sub-space Packet Loss", min: 0.01, max: 0.05, unit: "%", color: "text-green-400" },
-                { name: "Temporal Anchor Flux", min: -0.05, max: 0.05, unit: " Δt", color: "text-purple-400" },
-                { name: "DB Write Velocity", min: 450, max: 850, unit: " TB/s", color: "text-white" },
-                { name: "Agent Biometric Syncs", min: 800, max: 804, unit: " OK", color: "text-green-400" },
-                { name: "Ecto-plasmic Density", min: 0.0, max: 0.2, unit: " mg/L", color: "text-white" },
-                { name: "Server Core Temp", min: -270, max: -268, unit: " °C", color: "text-blue-400" },
-                { name: "Non-Euclidean Load", min: 88, max: 96, unit: "%", color: "text-yellow-400" },
-                { name: "Tesseract Folds/Sec", min: 1200, max: 1400, unit: " f/s", color: "text-purple-400" },
-                { name: "Cognitohazard Blocks", min: 14, max: 55, unit: " b/s", color: "text-green-400" },
-                { name: "Level 0 Saturation", min: 92, max: 99, unit: "%", color: "text-yellow-400" },
-                { name: "Corridor Gen Rate", min: 4000, max: 4500, unit: " m/s", color: "text-white" },
-                { name: "Entity Path Intercepts", min: 0, max: 5, unit: " /m", color: "text-red-400" },
-                { name: "Almond Water Purity", min: 98.9, max: 99.9, unit: "%", color: "text-green-400" },
-                { name: "Reality Bleed Output", min: 0.001, max: 0.005, unit: " mSv", color: "text-white" },
-                { name: "Void Pressure Diff", min: -14, max: -12, unit: " kPa", color: "text-purple-400" },
-                { name: "Liminal Expansion", min: 2.4, max: 2.8, unit: " c", color: "text-blue-400" },
-                { name: "Protocol Encryption", min: 4096, max: 4096, unit: " bit", color: "text-green-400" },
-                { name: "Sub-level Mapping", min: 12, max: 18, unit: " TB/m", color: "text-white" },
-                { name: "Memory Wipe Diagnostics", min: 100, max: 100, unit: "%", color: "text-green-400" },
-                { name: "Sanity Drain Predictor", min: 0.5, max: 2.5, unit: " %/h", color: "text-yellow-400" },
-                { name: "Soundwave Damping", min: 40, max: 95, unit: " dB", color: "text-white" },
-                { name: "Atmospheric Toxicity", min: 0.0, max: 0.1, unit: " ppm", color: "text-green-400" },
-                { name: "Z-Axis Instability", min: 0.001, max: 0.009, unit: " rad", color: "text-purple-400" },
-                { name: "Proprietary Handshake", min: 1, max: 1, unit: " SECURE", color: "text-green-400" },
-                { name: "Global Threat Assess.", min: 0.01, max: 0.05, unit: " MIN", color: "text-white" }
+                { name: "Global Hume Field", min: 98.0, max: 102.5, unit: " H", color: "text-blue-400" }, { name: "Kant Counter Avg", min: 0.8, max: 1.2, unit: " K", color: "text-blue-400" },
+                { name: "Quantum Entanglement", min: 99.1, max: 99.9, unit: "%", color: "text-green-400" }, { name: "Noclip Spikes/Hr", min: 140, max: 320, unit: " evt", color: "text-yellow-400" },
+                { name: "Arch-Node Latency", min: 0.1, max: 4.5, unit: " ms", color: "text-green-400" }, { name: "Sub-space Packet Loss", min: 0.01, max: 0.05, unit: "%", color: "text-green-400" },
+                { name: "Temporal Anchor Flux", min: -0.05, max: 0.05, unit: " Δt", color: "text-purple-400" }, { name: "DB Write Velocity", min: 450, max: 850, unit: " TB/s", color: "text-white" },
+                { name: "Agent Biometric Syncs", min: 800, max: 804, unit: " OK", color: "text-green-400" }, { name: "Ecto-plasmic Density", min: 0.0, max: 0.2, unit: " mg/L", color: "text-white" },
+                { name: "Server Core Temp", min: -270, max: -268, unit: " °C", color: "text-blue-400" }, { name: "Non-Euclidean Load", min: 88, max: 96, unit: "%", color: "text-yellow-400" },
+                { name: "Tesseract Folds/Sec", min: 1200, max: 1400, unit: " f/s", color: "text-purple-400" }, { name: "Cognitohazard Blocks", min: 14, max: 55, unit: " b/s", color: "text-green-400" },
+                { name: "Level 0 Saturation", min: 92, max: 99, unit: "%", color: "text-yellow-400" }, { name: "Corridor Gen Rate", min: 4000, max: 4500, unit: " m/s", color: "text-white" },
+                { name: "Entity Path Intercepts", min: 0, max: 5, unit: " /m", color: "text-red-400" }, { name: "Almond Water Purity", min: 98.9, max: 99.9, unit: "%", color: "text-green-400" },
+                { name: "Reality Bleed Output", min: 0.001, max: 0.005, unit: " mSv", color: "text-white" }, { name: "Void Pressure Diff", min: -14, max: -12, unit: " kPa", color: "text-purple-400" },
+                { name: "Liminal Expansion", min: 2.4, max: 2.8, unit: " c", color: "text-blue-400" }, { name: "Protocol Encryption", min: 4096, max: 4096, unit: " bit", color: "text-green-400" },
+                { name: "Sub-level Mapping", min: 12, max: 18, unit: " TB/m", color: "text-white" }, { name: "Memory Wipe Diagnostics", min: 100, max: 100, unit: "%", color: "text-green-400" },
+                { name: "Sanity Drain Predictor", min: 0.5, max: 2.5, unit: " %/h", color: "text-yellow-400" }, { name: "Soundwave Damping", min: 40, max: 95, unit: " dB", color: "text-white" },
+                { name: "Atmospheric Toxicity", min: 0.0, max: 0.1, unit: " ppm", color: "text-green-400" }, { name: "Z-Axis Instability", min: 0.001, max: 0.009, unit: " rad", color: "text-purple-400" },
+                { name: "Proprietary Handshake", min: 1, max: 1, unit: " SECURE", color: "text-green-400" }, { name: "Global Threat Assess.", min: 0.01, max: 0.05, unit: " MIN", color: "text-white" }
             ],
             logMessages: [
-                "Probe L-093 connection lost.", "Re-routing processing to Sector 4.", "Anomalous sound detected Level 2.",
-                "Syncing database block 8940A.", "Noclip event localized (Frontrooms).", "Reality anchor reset successful.",
-                "Compiling non-Euclidean mesh...", "Warning: Hume drop in Sector 7.", "Entity signature dissipated.",
-                "Arch-Node 12 reporting full stability.", "Extracting Almond Water samples remotely.", "Mapping loop detected, bypassing..."
+                "Probe L-093 connection lost.", "Re-routing processing to Sector 4.", "Anomalous sound detected Level 2.", "Syncing database block 8940A.", "Noclip event localized (Frontrooms).", "Reality anchor reset successful.",
+                "Compiling non-Euclidean mesh...", "Warning: Hume drop in Sector 7.", "Entity signature dissipated.", "Arch-Node 12 reporting full stability.", "Extracting Almond Water samples remotely.", "Mapping loop detected, bypassing..."
             ],
-            start() {
-                if(!this.isRunning) { this.isRunning = true; this.initGrid(); this.animationFrame = requestAnimationFrame((t) => this.loop(t)); }
-            },
-            stop() {
-                this.isRunning = false; if(this.animationFrame) cancelAnimationFrame(this.animationFrame);
-            },
+            start() { if(!this.isRunning) { this.isRunning = true; this.initGrid(); this.animationFrame = requestAnimationFrame((t) => this.loop(t)); } },
+            stop() { this.isRunning = false; if(this.animationFrame) cancelAnimationFrame(this.animationFrame); },
             initGrid() {
-                const grid = document.getElementById('fixed-metrics-grid');
-                if(!grid) return; grid.innerHTML = '';
+                const grid = document.getElementById('fixed-metrics-grid'); if(!grid) return; grid.innerHTML = '';
                 this.fixedMetricsData.forEach((metric, index) => {
                     grid.innerHTML += `<div class="bg-black/40 border border-white/5 p-3 rounded flex flex-col justify-between"><span class="text-[9px] font-mono text-liminal-muted uppercase truncate" title="${metric.name}">${metric.name}</span><div class="text-sm font-mono font-bold ${metric.color} mt-1 tracking-wider" id="fm-${index}">0.00${metric.unit}</div></div>`;
                 });
@@ -842,8 +666,7 @@
             },
             updateDOM() {
                 const d = new Date();
-                const timeStr = `${d.getHours().toString().padStart(2,'0')}:${d.getMinutes().toString().padStart(2,'0')}:${d.getSeconds().toString().padStart(2,'0')}:${d.getMilliseconds().toString().padStart(3,'0')}`;
-                document.getElementById('live-big-time').innerText = timeStr;
+                document.getElementById('live-big-time').innerText = `${d.getHours().toString().padStart(2,'0')}:${d.getMinutes().toString().padStart(2,'0')}:${d.getSeconds().toString().padStart(2,'0')}:${d.getMilliseconds().toString().padStart(3,'0')}`;
                 document.getElementById('live-big-date').innerText = d.toISOString().split('T')[0];
                 document.getElementById('nav-sync').innerText = (120 + Math.random() * 8).toFixed(2) + ' TB/s';
                 this.fixedMetricsData.forEach((metric, index) => {
@@ -866,8 +689,7 @@
             },
             drawRadar() {
                 const canvas = document.getElementById('live-radar-canvas'); if(!canvas) return;
-                const parent = canvas.parentElement;
-                if(canvas.width !== parent.clientWidth) canvas.width = parent.clientWidth; if(canvas.height !== parent.clientHeight) canvas.height = parent.clientHeight;
+                const parent = canvas.parentElement; if(canvas.width !== parent.clientWidth) canvas.width = parent.clientWidth; if(canvas.height !== parent.clientHeight) canvas.height = parent.clientHeight;
                 const ctx = canvas.getContext('2d'); const w = canvas.width; const h = canvas.height;
                 const cx = w/2; const cy = h/2; const r = Math.min(w, h) / 2 - 10;
                 ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'; ctx.fillRect(0, 0, w, h);
@@ -886,8 +708,7 @@
             },
             drawMatrix() {
                 const canvas = document.getElementById('live-matrix-canvas'); if(!canvas) return;
-                const parent = canvas.parentElement;
-                if(canvas.width !== parent.clientWidth) canvas.width = parent.clientWidth; if(canvas.height !== parent.clientHeight) canvas.height = parent.clientHeight;
+                const parent = canvas.parentElement; if(canvas.width !== parent.clientWidth) canvas.width = parent.clientWidth; if(canvas.height !== parent.clientHeight) canvas.height = parent.clientHeight;
                 const ctx = canvas.getContext('2d'); const w = canvas.width; const h = canvas.height;
                 ctx.fillStyle = '#050505'; ctx.fillRect(0, 0, w, h);
                 this.matrixOffset += 0.5; const gridSize = 20;
